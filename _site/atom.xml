@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
  <title>Reasonable Deviations</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
+ <link href="https://localhost:4000/atom.xml" rel="self"/>
+ <link href="https://localhost:4000/"/>
  <updated>2017-07-02T17:34:24+08:00</updated>
- <id>http://localhost:4000</id>
+ <id>https://localhost:4000</id>
  <author>
    <name>Robert Andrew Martin</name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>First test</title>
-   <link href="http://localhost:4000/2013/12/28/introducing-hyde/"/>
+   <link href="https://localhost:4000/2013/12/28/introducing-hyde/"/>
    <updated>2013-12-28T00:00:00+08:00</updated>
-   <id>http://localhost:4000/2013/12/28/introducing-hyde</id>
+   <id>https://localhost:4000/2013/12/28/introducing-hyde</id>
    <content type="html">&lt;p&gt;I intend for this to be a portfolio of sorts.&lt;/p&gt;
 
 &lt;p&gt;Python test:&lt;/p&gt;
@@ -66,9 +66,9 @@
  
  <entry>
    <title>Example content</title>
-   <link href="http://localhost:4000/2012/02/07/example-content/"/>
+   <link href="https://localhost:4000/2012/02/07/example-content/"/>
    <updated>2012-02-07T00:00:00+08:00</updated>
-   <id>http://localhost:4000/2012/02/07/example-content</id>
+   <id>https://localhost:4000/2012/02/07/example-content</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
   Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
 &lt;/div&gt;
@@ -161,9 +161,9 @@
 
 &lt;p&gt;Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://placehold.it/800x400&quot; alt=&quot;placeholder&quot; title=&quot;Large example image&quot; /&gt;
-&lt;img src=&quot;http://placehold.it/400x200&quot; alt=&quot;placeholder&quot; title=&quot;Medium example image&quot; /&gt;
-&lt;img src=&quot;http://placehold.it/200x200&quot; alt=&quot;placeholder&quot; title=&quot;Small example image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://placehold.it/800x400&quot; alt=&quot;placeholder&quot; title=&quot;Large example image&quot; /&gt;
+&lt;img src=&quot;https://placehold.it/400x200&quot; alt=&quot;placeholder&quot; title=&quot;Medium example image&quot; /&gt;
+&lt;img src=&quot;https://placehold.it/200x200&quot; alt=&quot;placeholder&quot; title=&quot;Small example image&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;tables&quot;&gt;Tables&lt;/h3&gt;
 
@@ -213,10 +213,10 @@
  
  <entry>
    <title>What's Jekyll?</title>
-   <link href="http://localhost:4000/2012/02/06/whats-jekyll/"/>
+   <link href="https://localhost:4000/2012/02/06/whats-jekyll/"/>
    <updated>2012-02-06T00:00:00+08:00</updated>
-   <id>http://localhost:4000/2012/02/06/whats-jekyll</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From &lt;a href=&quot;https://github.com/mojombo/jekyll/blob/master/README.markdown&quot;&gt;the project’s readme&lt;/a&gt;:&lt;/p&gt;
+   <id>https://localhost:4000/2012/02/06/whats-jekyll</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From &lt;a href=&quot;https://github.com/mojombo/jekyll/blob/master/README.markdown&quot;&gt;the project’s readme&lt;/a&gt;:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Jekyll is a simple, blog aware, static site generator. It takes a template directory […] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.&lt;/p&gt;
