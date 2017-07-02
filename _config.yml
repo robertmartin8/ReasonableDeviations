@@ -1,0 +1,24 @@
+# Dependencies
+plugins: [jekyll-paginate]
+
+# Permalinks
+permalink:        pretty
+
+
+# Setup
+title:            Reasonable Deviations
+tagline:          'another science blog'
+description:      'into the subjects of maths, physics, finance, and computer science'
+baseurl:          /
+
+author:
+  name:           'Robert Andrew Martin'
+  url:            https://twitter.com/mdo
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/poole/hyde
