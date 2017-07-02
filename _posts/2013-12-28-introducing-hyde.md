@@ -5,12 +5,16 @@ title: First test
 
 I intend for this to be a portfolio of sorts.
 
+Mathjax?
+
+$$\sum_{r=0}^{\infty} \frac{1}{r^2} = \frac{\pi ^2}{6}$$
+
 Python test:
 ```python
 final = []
 for i in range(10):
     final.append(list(map(lambda x: x**i, list(range(10)))
-    
+
 ```
 
 
