@@ -1,5 +1,6 @@
 # Dependencies
 plugins: [jekyll-paginate]
+markdown: redcarpet
 
 # Permalinks
 permalink:        pretty

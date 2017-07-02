@@ -3,11 +3,15 @@ layout: post
 title: First test
 ---
 
-I intend for this to be a portfolio of sorts.
+took me bloody ages to set this up but it's ok now.
 
-Mathjax?
+Pretty maths:
 
 $$\sum_{r=0}^{\infty} \frac{1}{r^2} = \frac{\pi ^2}{6}$$
+
+
+OK code:
+
 
 Python test:
 ```python
@@ -16,6 +20,10 @@ for i in range(10):
     final.append(list(map(lambda x: x**i, list(range(10)))
 
 ```
+
+# everything below is just the default stuff
+
+
 
 
 ### Built on Poole

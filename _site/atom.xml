@@ -2,10 +2,10 @@
 <feed xmlns="https://www.w3.org/2005/Atom">
 
  <title>Reasonable Deviations</title>
- <link href="https://localhost:4000/atom.xml" rel="self"/>
- <link href="https://localhost:4000/"/>
- <updated>2017-07-02T17:34:24+08:00</updated>
- <id>https://localhost:4000</id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2017-07-02T22:07:14+08:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name>Robert Andrew Martin</name>
    <email></email>
@@ -14,18 +14,26 @@
  
  <entry>
    <title>First test</title>
-   <link href="https://localhost:4000/2013/12/28/introducing-hyde/"/>
+   <link href="http://localhost:4000/2013/12/28/introducing-hyde/"/>
    <updated>2013-12-28T00:00:00+08:00</updated>
-   <id>https://localhost:4000/2013/12/28/introducing-hyde</id>
-   <content type="html">&lt;p&gt;I intend for this to be a portfolio of sorts.&lt;/p&gt;
+   <id>http://localhost:4000/2013/12/28/introducing-hyde</id>
+   <content type="html">&lt;p&gt;took me bloody ages to set this up but it’s ok now.&lt;/p&gt;
+
+&lt;p&gt;Pretty maths:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{r=0}^{\infty} \frac{1}{r^2} = \frac{\pi ^2}{6}&lt;/script&gt;
+
+&lt;p&gt;OK code:&lt;/p&gt;
 
 &lt;p&gt;Python test:&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;final&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-    
+
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;h1 id=&quot;everything-below-is-just-the-default-stuff&quot;&gt;everything below is just the default stuff&lt;/h1&gt;
 
 &lt;h3 id=&quot;built-on-poole&quot;&gt;Built on Poole&lt;/h3&gt;
 
@@ -66,9 +74,9 @@
  
  <entry>
    <title>Example content</title>
-   <link href="https://localhost:4000/2012/02/07/example-content/"/>
+   <link href="http://localhost:4000/2012/02/07/example-content/"/>
    <updated>2012-02-07T00:00:00+08:00</updated>
-   <id>https://localhost:4000/2012/02/07/example-content</id>
+   <id>http://localhost:4000/2012/02/07/example-content</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
   Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
 &lt;/div&gt;
@@ -213,9 +221,9 @@
  
  <entry>
    <title>What's Jekyll?</title>
-   <link href="https://localhost:4000/2012/02/06/whats-jekyll/"/>
+   <link href="http://localhost:4000/2012/02/06/whats-jekyll/"/>
    <updated>2012-02-06T00:00:00+08:00</updated>
-   <id>https://localhost:4000/2012/02/06/whats-jekyll</id>
+   <id>http://localhost:4000/2012/02/06/whats-jekyll</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From &lt;a href=&quot;https://github.com/mojombo/jekyll/blob/master/README.markdown&quot;&gt;the project’s readme&lt;/a&gt;:&lt;/p&gt;
 
 &lt;blockquote&gt;
