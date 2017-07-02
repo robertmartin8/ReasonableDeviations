@@ -9,7 +9,7 @@ permalink:        pretty
 title:            Reasonable Deviations
 tagline:          'another science blog'
 description:      'into the subjects of maths, physics, finance, and computer science'
-baseurl:          /
+baseurl:          /ReasonableDeviations/
 
 author:
   name:           'Robert Andrew Martin'
