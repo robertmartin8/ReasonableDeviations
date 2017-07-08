@@ -85,8 +85,7 @@ Get ready, I am about to throw a lot of notation at you.
     - This vector contains one element for each member in the network (including itself).
     - The $m$th entry of the vector $x_i$ encodes the enjoyment produced for individual $i$ by individual $m$.
     - We will denote the $m$th row of the vector $x_i$ as $[i, m]$.
-    - Let me reiterate that $x_i$ does *not* mean the *i* th element of a vector $x$. $\mathbf{x_i}$ is the vector!
-
+    - Let me reiterate that $x_i$ does *not* mean the *i* th element of a vector $x$. $\mathbf{x_i}$ **is the vector!**
 
 That is a lot to take in, but hopefully this notation will become clearer with an example. Here is the XKCD network, with the letter labels replaced by numerals.
 
@@ -479,20 +478,26 @@ The optimal arrangement is:  [4, 2, 8, 7, 3, 1, 6, 5],
 with an etotal of:  17
 ```
 
-![evolution of etotal](../assets/images/etotal_ev.png)
-
+<center>
+<img src="{{ site.imageurl }}etotal_ev.png" style="width:400px;"/>
+</center>
 
 I ran this a number of times on my system, and plotted all the results at once.
 
-<img src="../assets/images/many_etotal.png" style="width:700px;"/>
+<center>
+<img src="{{ site.imageurl }}many_etotal.png" style="width:400px;"/>
+</center>
 
 
-Notice how it is quite volatile: many generations have a lower maximum $\epsilon_\text{total}$ than their parent's generation. This is probably because our reproduction step is really just another form of mutation. That being said, all that matters is that our optimisation algorithm *hits* the maximum, it doesn't have to stay there.
+
+Notice how it is quite volatile: many generations have a *lower* maximum $\epsilon_\text{total}$ than their parent's generation. This is probably because our reproduction step is really just another form of mutation. However, because our code keeps track of best arrangement so far, all that matters is that our optimisation algorithm *hits* the maximum – it doesn't have to stay there.
 
 
 ## Conclusion
 
 So there you have it. While I haven't implemented a proper genetic algorithm, I *have* used some of the same reasoning – and the results aren't so bad.
+
+Try this
 
 This problem of optimising seating arrangements actually belongs to the much broader (and poorly understood) field of *combinatorial optimisation* – so it is a cousin of the famous Travelling Salesman problem, as we could interpret our investigation as trying to find the optimal route through the social network. Perhaps we could initialise many salesmen and let them evolve! Food for thought.
 
