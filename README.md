@@ -1,121 +1,76 @@
-# My Website
+# ReasonableDeviations
 
+https://surelyourejoking.github.io/ReasonableDeviations
 
-I'm currently STRUGGLING to get this website up and running.
+I recently decided to make a webpage to act as both a portfolio to demonstrate some of my interesting projects, as well as a 'scientific blog' to informally log what I have been thinking about.
 
-Hyde is a brazen two-column [Jekyll](https://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](https://getpoole.com), the Jekyll butler.
+I do like writing in markdown – I currently have a better-than-sublime (no pun intended) setup using the delicious
+[Atom text editor](https://atom.io/) which makes writing a pleasure. As such, I wanted a web platform
+that allows you to write posts in markdown. Github pages with Jekyll seemed to be the right choice. I had no prior experience in HTML/CSS, but it wasn't too hard to pick up the small bits necessary.
+
+## Theme and style
+
+I decided to use the Hyde theme as a basis. In the author's words:
+
+> Hyde is a brazen two-column [Jekyll](https://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](https://getpoole.com), the Jekyll butler.
 
 ![Hyde screenshot](https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png)
 
+But I've changed a few minor things, including the font and the colour.
 
-## Contents
+### Fonts
 
-- [Usage](#usage)
-- [Options](#options)
-  - [Sidebar menu](#sidebar-menu)
-  - [Sticky sidebar content](#sticky-sidebar-content)
-  - [Themes](#themes)
-  - [Reverse layout](#reverse-layout)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
+For the main body and all the text, I was torn between [Crimson](https://fonts.google.com/specimen/Crimson+Text?selection.family=Crimson+Text), Garamond, and Palatino.
+- Crimson is marginally more informal, and it is pretty easy on the eyes. I am worried that it is not 'web-safe'.
+- Palatino and Garamond are both classy, and it is hard to decide between the two. I'm leaning towards Palatino, as Garamond is a lot 'thinner'. Personal preference though.
 
-
-## Usage
-
-Hyde is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
-
-
-## Options
-
-Hyde includes some customizable options, typically applied via classes on the `<body>` element.
-
-
-### Sidebar menu
-
-Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](https://jekyllrb.com/docs/frontmatter/).
+Weighing in these considerations, my CSS looks like this:
 
 ```
----
-layout: page
-title: About
----
+font-family: "Crimson Text", Palatino, Garamond,
+Times, serif;
 ```
 
-**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
+For the sidebar, I decided to go with a sans-serif font. It looks cleaner and more professional. Arial was the easy option.
 
+### Colour
 
-### Sticky sidebar content
+The whole website is in a *lovely* shade of purple. Hyde comes packed with a choice of some base16 themes, but no thanks. I added the following css to define my purpz theme.
 
-By default Hyde ships with a sidebar that affixes it's content to the bottom of the sidebar. You can optionally disable this by removing the `.sidebar-sticky` class from the sidebar's `.container`. Sidebar content will then normally flow from top to bottom.
+```css
+.theme-base-purpz .sidebar {
+  background-color: #2f0857;
+}
+/* pww 2014-12-17 - moved from poole.css to each theme */
+.theme-base-purpz .content a,
+.theme-base-purpz h1, h2, h3, h4, h5, h6,
+.theme-base-purpz .related-posts li a:hover {
+  color: #5c14a4;
+}
+```
+
+Then it is just a matter of putting:
 
 ```html
-<!-- Default sidebar -->
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    ...
-  </div>
-</div>
-
-<!-- Modified sidebar -->
-<div class="sidebar">
-  <div class="container">
-    ...
-  </div>
-</div>
+<body class="theme-base-purpz">
 ```
 
+into your default layout html file.
 
-### Themes
 
-Hyde ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
+### Maths
 
-![Hyde in red](https://f.cloud.github.com/assets/98681/1831229/42b0b354-7384-11e3-8462-31b8df193fe5.png)
-
-There are eight themes available at this time.
-
-![Hyde theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
-
-To use a theme, add anyone of the available theme classes to the `<body>` element in the `default.html` layout, like so:
+I am using MathJax to render my maths. To get it to work, I just added the following html into my `head.html` file under my `_includes/` folder:
 
 ```html
-<body class="theme-base-08">
-  ...
-</body>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } }, tex2jax: { inlineMath: [ ['$','$'],], displayMath: [ ['$$','$$'] ], processEscapes: true, } });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 ```
-
-To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/hyde/blob/master/assets/css/hyde.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
-
-### Reverse layout
-
-![Hyde with reverse layout](https://f.cloud.github.com/assets/98681/1831230/42b0d3ac-7384-11e3-8d54-2065afd03f9e.png)
-
-Hyde's page orientation can be reversed with a single class.
-
-```html
-<body class="layout-reverse">
-  ...
-</body>
-```
-
-
-## Development
-
-Hyde has two branches, but only one is used for active development.
-
-- `master` for development.  **All pull requests should be submitted against `master`.**
-- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
-
-
-## Author
-
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
 
 
 ## License
 
-Open sourced under the [MIT license](LICENSE.md).
-
-<3
+Code can be reproduced with attribution and without warranty, under the [MIT license](LICENSE.md).

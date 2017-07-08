@@ -2,10 +2,10 @@
 <feed xmlns="https://www.w3.org/2005/Atom">
 
  <title>Reasonable Deviations</title>
- <link href="https://localhost:4000/atom.xml" rel="self"/>
- <link href="https://localhost:4000/"/>
- <updated>2017-07-07T12:27:19+08:00</updated>
- <id>https://localhost:4000</id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2017-07-08T10:20:20+08:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name>Robert Andrew Martin</name>
    <email>martin.robertandrew@gmail.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>XKCD's Social Seating problem</title>
-   <link href="https://localhost:4000/2017/07/05/social-seating/"/>
+   <link href="http://localhost:4000/2017/07/05/social-seating/"/>
    <updated>2017-07-05T00:00:00+08:00</updated>
-   <id>https://localhost:4000/2017/07/05/social-seating</id>
+   <id>http://localhost:4000/2017/07/05/social-seating</id>
    <content type="html">&lt;h2 id=&quot;optimising-linear-seating-arrangements-with-a-pseudo-genetic-algorithm-in-python&quot;&gt;Optimising linear seating arrangements with a pseudo-genetic algorithm in python&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;That’s a bit of a mouthful!&lt;/em&gt;&lt;/p&gt;
@@ -530,9 +530,9 @@ with an etotal of:  17
  
  <entry>
    <title>First test</title>
-   <link href="https://localhost:4000/2013/12/28/introducing-hyde/"/>
+   <link href="http://localhost:4000/2013/12/28/introducing-hyde/"/>
    <updated>2013-12-28T00:00:00+08:00</updated>
-   <id>https://localhost:4000/2013/12/28/introducing-hyde</id>
+   <id>http://localhost:4000/2013/12/28/introducing-hyde</id>
    <content type="html">&lt;p&gt;took me bloody ages to set this up but it’s ok now.&lt;/p&gt;
 
 &lt;p&gt;Pretty maths:&lt;/p&gt;
@@ -590,9 +590,9 @@ with an etotal of:  17
  
  <entry>
    <title>Example content</title>
-   <link href="https://localhost:4000/2012/02/07/example-content/"/>
+   <link href="http://localhost:4000/2012/02/07/example-content/"/>
    <updated>2012-02-07T00:00:00+08:00</updated>
-   <id>https://localhost:4000/2012/02/07/example-content</id>
+   <id>http://localhost:4000/2012/02/07/example-content</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
   Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
 &lt;/div&gt;
@@ -737,9 +737,9 @@ with an etotal of:  17
  
  <entry>
    <title>What's Jekyll?</title>
-   <link href="https://localhost:4000/2012/02/06/whats-jekyll/"/>
+   <link href="http://localhost:4000/2012/02/06/whats-jekyll/"/>
    <updated>2012-02-06T00:00:00+08:00</updated>
-   <id>https://localhost:4000/2012/02/06/whats-jekyll</id>
+   <id>http://localhost:4000/2012/02/06/whats-jekyll</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From &lt;a href=&quot;https://github.com/mojombo/jekyll/blob/master/README.markdown&quot;&gt;the project’s readme&lt;/a&gt;:&lt;/p&gt;
 
 &lt;blockquote&gt;

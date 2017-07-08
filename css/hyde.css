@@ -34,7 +34,7 @@
  */
 
 html {
-  font-family: Palatino, Garamond, Times, serif;
+  font-family: "Crimson Text", Palatino, Garamond, Times, serif;
 }
 @media (min-width: 48em) {
   html {
@@ -82,7 +82,7 @@ html {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Arial", serif;
+  font-family: "Arial", sans-serif;
   font-size: 2.5rem;
 }
 
