@@ -10,7 +10,8 @@ that allows you to write posts in markdown. Github pages with Jekyll seemed to b
 
 ## Theme and style
 
-I decided to use the Hyde theme as a basis. In the author's words:
+I decided to use the
+[Hyde](https://www.github.com/poole/hyde) theme as a basis. In the author's words:
 
 > Hyde is a brazen two-column [Jekyll](https://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](https://getpoole.com), the Jekyll butler.
 
