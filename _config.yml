@@ -10,10 +10,13 @@ title:            Reasonable Deviations
 tagline:          'another science blog'
 description:      'into the subjects of maths, physics, finance, and computer science'
 baseurl:          /ReasonableDeviations/
+imageurl:       '/ReasonableDeviations/assets/images/'
 
 author:
   name:           'Robert Andrew Martin'
   url:            https://twitter.com/mdo
+  email:        'martin.robertandrew@gmail.com'
+
 
 paginate:         5
 

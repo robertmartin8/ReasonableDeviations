@@ -2,36 +2,36 @@
 <html lang="en-us">
 
   <head>
-  <link href="https://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>
-    
-      Reasonable Deviations &middot; another science blog
-    
-  </title>
+    <title>
+         Reasonable Deviations &middot; another science blog 
+    </title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/ReasonableDeviations/css/poole.css">
-  <link rel="stylesheet" href="/ReasonableDeviations/css/syntax.css">
-  <link rel="stylesheet" href="/ReasonableDeviations/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/ReasonableDeviations/css/poole.css">
+    <link rel="stylesheet" href="/ReasonableDeviations/css/syntax.css">
+    <link rel="stylesheet" href="/ReasonableDeviations/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ReasonableDeviations/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/ReasonableDeviations/public/favicon.ico">
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ReasonableDeviations/assets/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/ReasonableDeviations/assets/favicon.ico">
 
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  <!-- JS -->
-  <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
+    <!-- JS -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } }, tex2jax: { inlineMath: [ ['$','$'],], displayMath: [ ['$$','$$'] ], processEscapes: true, } });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 </head>
 
 
@@ -94,11 +94,531 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/2013/12/28/introducing-hyde/">
+      <a href="/ReasonableDeviations/2017/07/05/social-seating/">
+        XKCD's Social Seating problem
+      </a>
+    </h1>
+
+    <span class="post-date">05 Jul 2017</span>
+
+    <h2 id="optimising-linear-seating-arrangements-with-a-pseudo-genetic-algorithm-in-python">Optimising linear seating arrangements with a pseudo-genetic algorithm in python</h2>
+
+<p><em>That’s a bit of a mouthful!</em></p>
+
+<center>
+<img src="/ReasonableDeviations/assets/images/movie_seating.png" style="width:400px;" />
+</center>
+
+<p>Social groups are remarkably complex affairs, and on many occasions this complexity can lead to awkward situations. Randall Munroe humorously portrays one such example in XKCD #173. This comic naturally begs the question – how <em>do</em> we find the optimal linear seating arrangement for a given social group?</p>
+
+<p>If you’re not a fan of people trying to examine overly logical dissewctions of non-mathematical things, now would be a good time to cut your losses (at least you got to see the XKCD comic!). Otherwise, don your cringe-protection glasses and we can move on.</p>
+
+<p>The precise problem here is that the nonlinear ‘social graph’ has to be compressed onto a linear arrangement, which, as the comic points out, is computationally hard. Nevertheless, we will attempt to find a good arrangmenet (not necessarily the optimal one) by using a genetic algorithm of sorts. But before that, we must firstly quantify the various parameters in this problem.</p>
+
+<p><em>If you’d prefer to see this post as a jupyter notebook, check it out <a href="https://github.com/surelyourejoking/RandomWalks/blob/master/social_seating.ipynb">here</a>. For more information on jupyter notebooks, head to <a href="http://jupyter.org/">jupyter.org</a>.</em></p>
+
+<h2 id="1-developing-the-initial-model">1. Developing the initial model</h2>
+
+<p>What does it mean for a seating arrangement to be optimal? I am going to take a disgustingly utilitarian approach, by simply calculating the enjoyment per individual for a certain arrangement then summing over all individuals to find the <em>total enjoyment</em>. The optimal arrangement is then just the one with the highest total enjoyment (duh).  Before going further, we must first decide on a way of describing social networks which will allow us to do this analysis.</p>
+
+<h3 id="examining-a-social-network">Examining a social network</h3>
+
+<p>Following the XKCD comic, each individual be denoted by a circular node. We will consider four types of relationships between individuals: friends, one-way ‘crushes’, romantic relationships, and acquaintances. I’m going to slightly modify the notation of the comic though:</p>
+
+<center>
+<img src="/ReasonableDeviations/assets/images/relationship_types.png" style="width:400px;" />
+</center>
+
+<p>The major advantage of this notation is that it encourages us to only consider the <em>outgoing</em> connections from a particular individual, which will be a big simplification when we come to considering an individual’s enjoyment. But it is far from perfect. For example, this notation implies that a romantic relationship is the same as a mutual crush, i.e. that I would get as much enjoyment from sitting next to my crush as I would to my partner.</p>
+
+<p>Proceeding anyway, we assign each type of outgoing arrow a weighting, corresponding to how much enjoyment an individual experiences when sitting next to a person of that relation. Here is one proposed weighting:</p>
+
+<ul>
+  <li>
+    <p>Crush (arrowed line): weight = 2</p>
+  </li>
+  <li>
+    <p>Friend (solid line): weight = 1</p>
+  </li>
+  <li>
+    <p>Acquaintance (dotted line): weight = 0.5</p>
+  </li>
+  <li>
+    <p>Stranger (no line): weight = 0</p>
+  </li>
+</ul>
+
+<p>Of course, the actual values are quite arbitrary – what matters is their relative ordering. I think it is fair to say that any individual’s seating preferences follow the above list in descending order. That is, given free choice, you would enjoy most to sit next to your crush, and least enjoy sitting next to a stranger. Choosing precise weightings would require you to quantify, for example, exactly how much more you would prefer to sit with a crush than with a friend – good luck with that!</p>
+
+<h3 id="a-quick-example">A quick example</h3>
+
+<p>Now that we can <em>describe</em> a social network, let’s try to calculate the total enjoyment for a seating arrangement.
+We may as well use the network given in the comic. Here it is reproduced with our new notation (labelling each individual with a letter of the alphabet):</p>
+
+<center>
+<img src="/ReasonableDeviations/assets/images/xkcdgraphletters.png" style="width:400px;" />
+</center>
+
+<p>If this group has to sit down in a line, they will form an arrangement
+that will be denoted by a sequence of letters. For example, the
+arrangement <em>BFGHECDA</em> represents <em>F</em> sitting to
+the right of <em>B</em>, <em>G</em> to the right of <em>F</em>, etc. For each of the
+8! possible arrangements, we could calculate a total enjoyment, denoted
+by $\epsilon_{\text{total}}$, which is done as follows. Consider the arrangement $ABCDEFGH$:</p>
+
+<center>
+<img src="/ReasonableDeviations/assets/images/xkcdline.png" style="width:400px;" />
+</center>
+
+<p>Assuming that an individual can only be affected by the individuals immediately to their left or right, each individual can have up to two outgoing connections,  which can assume values of 2, 1, 0.5, or 0 depending on the relationship. For each individual, we add up these values, then to find $\epsilon_\text{total}$ we just sum over all the individuals.</p>
+
+<p>This is easy to do with just one arrangement, but we need a robust way of finding $\epsilon_{\text{total}}$ for <em>any</em> arrangement.</p>
+
+<h2 id="2-refining-the-model">2. Refining the model</h2>
+
+<p>Get ready, I am about to throw a lot of notation at you.</p>
+
+<ul>
+  <li>Let the number of individuals in a network be denoted by $n$. In the XKCD network, there are 8 individuals, so $n=8$.</li>
+  <li>Each individual will be arbitrarily labelled $1, 2, 3, \ldots , n$, rather than using letters of the alphabet.</li>
+  <li>In order to define an individual’s relationships with other members of the group, we will associate a vector $x_i$ with each individual in the group, where $x_i \in \mathbb{R}^n$.
+    <ul>
+      <li>This vector contains one element for each member in the network (including itself).</li>
+      <li>The $m$th entry of the vector $x_i$ encodes the enjoyment produced for individual $i$ by individual $m$.</li>
+      <li>We will denote the $m$th row of the vector $x_i$ as $[i, m]$.</li>
+      <li>Let me reiterate that $x_i$ does <em>not</em> mean the <em>i</em> th element of a vector $x$. $\mathbf{x_i}$ is the vector!</li>
+    </ul>
+  </li>
+</ul>
+
+<p>That is a lot to take in, but hopefully this notation will become clearer with an example. Here is the XKCD network, with the letter labels replaced by numerals.</p>
+
+<center>
+<img src="/ReasonableDeviations/assets/images/xkcdgraphnumbers.png" style="width:400px;" />
+</center>
+
+<p>Corresponding to the sixth individual, we have: $ x_6 = \langle 0,0,0,2,1,0,0.5,0 \rangle $. Let’s break this down to make sure we are on the same page. Recalling our relationship weightings from earlier on:</p>
+
+<ul>
+  <li>
+    <p>The first three entries (and the final one) are equal to zero,
+because individual 6 has no relationship with individuals 1, 2, 3,
+and 8 (i.e they are strangers to him). We could also write $[6,1] = [6,2] = [6,3] = [6,8] = 0$.</p>
+  </li>
+  <li>
+    <p>The fourth entry is equal to two, because individual 6 has a crush
+on individual 4. We could also write $[6,4] = 2$.</p>
+  </li>
+  <li>
+    <p>The fifth entry is equal to one, because individual 6 is friends
+with individual 5. We could also write $[6,5] = 1$.</p>
+  </li>
+  <li>
+    <p>The seventh entry is equal to a half, because individual 6 is an
+acquaintance of individual 7. We could also write $[6,7] = 0.5$.</p>
+  </li>
+</ul>
+
+<p>You may notice that I neglected to mention the sixth entry of $x_6$. $[6, 6]$ represents the enjoyment produced for the sixth individual by the sixth individual. I suppose that some people do enjoy being alone, but seeing as we are dealing with a group of friends at a cinema, I will set this entry to zero. That is to say, if $i=m, [i,m] = 0$. In our model, individuals get no enjoyment from sitting next to themselves.</p>
+
+<p>We can write a vector $x_i$ for every individual in our network. After doing this, <em>we do not need the graph any more</em> – our network is fully defined by these <em>n</em> vectors!</p>
+
+<h3 id="the-total-enjoyment-for-a-general-arrangement">The total enjoyment for a general arrangement</h3>
+
+<p>We will denote a general linear arrangement of individuals as
+<script type="math/tex">u_1, u_2, u_3, \ldots, u_n</script>. (earlier we had <em>ABCDEFGH</em>). You may be wondering why I have decided to add <em>yet another</em> set of variables – am I just trying to be novel in my notation? As it happens, there is a very important distinction between the individual’s location $\left(u\right)$ and the <em>label</em> of the individual ($i$). <strong>$\mathbf{u_1}$ is not the same as individual 1</strong>. $u_1$ could be any of the people in the network – but what matters is that this individual is in the first position of the arrangement. <strong>The <em>u</em> terms are a way of representing the order of people in their seats</strong>. Strictly speaking, I should therefore be saying things like “the individual <em>at</em> $u_1$”, but I will often just say “the individual $u_1$” or just “$u_1$”. This is an important point, so I’ll give you a concrete example:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+    u_1 &= 3 \\
+    u_2 &= 7 \\
+    u_3 &= 1 \\
+    u_4 &= 2 \\
+    u_5 &= 5  \\
+    u_6 &= 8 \\
+    u_7 &= 6  \\
+    u_8 &= 4
+\end{align*} %]]></script>
+
+<p>corresponds to a seating arrangement 3, 7, 1, 2, 5, 8, 6, 4. Remember, each numeral is the label of a person, so this could alternatively be thought of as <em>CGABEHFD</em>.</p>
+
+<p>In order to calculate $\epsilon_\text{total}$, we need to calculate the enjoyment for each $u$ term then take the sum of all these. Because of our simplification that an individual is only affected by the
+people immediately to their left or right, a neat trick is to group
+the arrangement into pairs. So we will think of the arrangement as:</p>
+
+<script type="math/tex; mode=display">(u_1, u_2), (u_2,u_3), (u_3, u_4), \ldots, (u_{n-2}, u_{n-1}),(u_{n-1}, u_n),</script>
+
+<p>where each pair of parentheses encloses the relationship between two individuals.</p>
+
+<p>It is at this stage that we need to recall the previously-defined vector notation. Just as $x_6$ represents the relationship of individual 6 to the network, the vector representing individual $u_1$’s relationship to the network is $x_{u_1}$.</p>
+
+<p>If we wanted to find how much indiviudal 4 contributes to the enjoyment of individual 6, we would look in the 4th entry of $x_6$. Likewise, the enjoyment produced in individual $u_1$ by individual $u_2$ can be
+found by looking in the $u_2$th entry of the vector $x_{u_1}$. This subscript-within-subscript notation is very confusing, which is why we defined an alternative notation, the square-bracket notation wherein $[i, m]$ represents the $m$th row of the vector $x_i$.</p>
+
+<p>With this notation, the $u_2$th entry of the vector $x_{u_1}$ is simply written as $[u_1, u_2]$.
+However, note that in the pair $(u_1, u_2)$, individual $u_1$ also
+produces some enjoyment in $u_2$. Thus the <em>total</em> enjoyment produced
+within the pair $(u_1, u_2)$ is equal to:</p>
+
+<script type="math/tex; mode=display">[u_1, u_2] + [u_2, u_1]</script>
+
+<p>Now all we need to do is sum over all the $n-1$ pairs. Therefore:</p>
+
+<script type="math/tex; mode=display">\epsilon_\text{total} = \sum_{r = 1}^{n-1} \left( [u_r, u_{r+1}] + [u_{r+1}, u_r] \right),</script>
+
+<p>where $r$ is a dummy variable.</p>
+
+<h3 id="back-to-the-xkcd-network">Back to the XKCD network</h3>
+
+<p>Let’s calculate the $\epsilon_\text{total}$ of a random arrangement. I’ll choose this with my custom arrangement-randomiser:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">random_arrangement</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<p>To begin with, we need to know the vectors $x_i$. These unfortunately have to be hard-coded based on the network. Earlier we showed the full form of $x_6$ and how we got there. Let’s repeat the same process to find $x_i, i = 1,2,3,…,8$
+(because $n=8$).</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+    x_1 &= \langle 0,2,0,0,0,0,0,0 \rangle \\
+    x_2 &= \langle 2,0,1,0,0,0,0,1 \rangle \\
+    x_3 &= \langle 0,1,0,1,0,0,0,0.5 \rangle \\
+    x_4 &= \langle 0,0,1,0,0.5,2,0,0 \rangle \\
+    x_5 &= \langle 0,0,0,0.5,0,1,0,0 \rangle \\
+    x_6 &= \langle 0,0,0,2,1,0,0.5,0 \rangle \\
+    x_7 &= \langle 0,0,0,0,0,0.5,0,2 \rangle \\
+    x_8 &= \langle 0,,0.5,0,0,0,1,0 \rangle
+\end{align*} %]]></script>
+
+<p>In order to calculate $\epsilon_\text{total}$, we just need to apply our formula:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+    \epsilon_\text{total} &= \sum_{r = 1}^{n-1} \left( [u_r, u_{r+1}] + [u_{r+1}, u_r] \right) \\
+    &= [3, 2] + [2, 3] + [2, 8] + [8, 2] + \ldots + [1, 7] + [7, 1]  \\
+    &= 1+1+1+1+0+0+0.5+0.5+2+2+0+0+0+0 \\
+    &= 9
+\end{align*} %]]></script>
+
+<p>It is worth commenting on the fact that all of the above values come in identical pairs (that is, $[u_r, u_{r+1}] = [u_{r+1}, u_r]$), which is <strong>not true</strong> generally. However, for this particular network, there is only one asymmetrical relationship, the one-way crush between individuals 7 and 8
+– and in our particular arrangement, 7 is not next to 8.</p>
+
+<p>We could have found $\epsilon_\text{total}$ without our vector notation, and simply with arithmetic by looking at the linkages on the graph. However, the process that we have described in this section does not require actually looking at the networks, meaning that we can write code to do it for us.</p>
+
+<h2 id="3-optimising-the-arrangement">3. Optimising the arrangement</h2>
+
+<p>Now that we can effectively calculate $\epsilon_\text{total}$ for any given arrangement. We are ready to find the optimal arrangement.</p>
+
+<p>A brute force search (i.e, calculating
+$\epsilon_\text{total}$ for every possible arrangement and returning the maximum), is not feasible due to the computational complexity, which is $\Theta(n!)$. For those not familiar with Big O notation and it’s variants – this is equivalent to saying that it’ll take one hell of a long time.</p>
+
+<p>So we need an alternative. The problem is that many optimisation algorithms rely on calculus, which requires a continuous independent variable. Our independent variable is the arrangement, which is certainly not continuous,
+meaning that we cannot use many of these algorithms. How, then, do we approach this problem?</p>
+
+<h3 id="genetic-algorithms">Genetic algorithms</h3>
+
+<p>A genetic algorithm is an optimisation heuristic (shorcut) that mimics Darwinian natural selection.</p>
+
+<p>A brief summary of Darwin’s theory is as follows:</p>
+
+<ol>
+  <li>
+    <p>There is a population of <strong>phenotypes</strong>, individual members
+with different genetics and hence different characteristics.</p>
+  </li>
+  <li>
+    <p>This variety means that certain individuals are better suited to
+their environment.</p>
+  </li>
+  <li>
+    <p>The ‘fitter’ individuals survive and reproduce, passing on their
+genetic information to the next generation.</p>
+  </li>
+  <li>
+    <p>During the process of reproduction, random mutations may occur,
+resulting in slight changes to the child phenotype.</p>
+  </li>
+  <li>
+    <p>The process repeats, and over time, the species gets increasingly
+better adapted to the environment.</p>
+  </li>
+</ol>
+
+<p>A genetic algorithm follows the same steps, but in computer science terms:</p>
+
+<ol>
+  <li>
+    <p>There is a ‘population’ of different possible arrangements.</p>
+  </li>
+  <li>
+    <p>Some of these arrangements have a higher $\epsilon_\text{total}$.</p>
+  </li>
+  <li>
+    <p>These phenotypes survive, and some of the survivors ‘reproduce’ – their arrangements are somehow combined. In computer science, this step is known as the <strong>crossover</strong>.</p>
+  </li>
+  <li>
+    <p>Random mutations occur, i.e. some arrangements may be changed slightly.</p>
+  </li>
+  <li>
+    <p>The process repeats, and over time, the mean $\epsilon_\text{total}$ of the population should increase.</p>
+  </li>
+</ol>
+
+<h2 id="4-implementing-the-pseudo-genetic-algorithm-in-python">4. Implementing the (pseudo)-genetic algorithm in python</h2>
+
+<p>In this section we will write python code to find the optimum arrangement for the XKCD network, though of course we could use it for any other network.</p>
+
+<p>Let us represent our network as a list of lists, where each sublist corresponds to a vector $x_i$.</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">network</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">network_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">network</span><span class="p">)</span>
+<span class="n">population_size</span> <span class="o">=</span> <span class="mi">16</span>
+</code></pre>
+</div>
+
+<p>However, don’t forget that python indexing starts from zero. So to find the enjoyment that indiviudal 5 produces in individual 3, we look at <code class="highlighter-rouge">network[2][4]</code>, <strong>not</strong> <code class="highlighter-rouge">network[3][5]</code>. We will also define two global variables: the <code class="highlighter-rouge">network_size</code> (number of individuals in the network) and the <code class="highlighter-rouge">population_size</code> (number of arrangements in the population).</p>
+
+<h3 id="generating-the-population">Generating the population</h3>
+
+<p>Creating our population of arrangements is a simple matter of shuffling a list of numbers.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">generate_population</span><span class="p">(</span><span class="n">network_size</span><span class="p">,</span> <span class="n">population_size</span><span class="p">):</span>
+    <span class="s">"""
+    :param network_size: the number of individuals in the network
+    :param population_size: the number of different arrangements
+    """</span>
+    <span class="c"># Empty list which will contain the arrangements</span>
+    <span class="n">population</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c"># Produce the simplest arrangement, which is just the</span>
+    <span class="c"># individuals in order of their index, i.e [1,2,3,4,5,6,7,8].</span>
+    <span class="n">test_phenotype</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">network_size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="c"># Shuffle the test_phenotype to generate the population</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">population_size</span><span class="p">):</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">test_phenotype</span><span class="p">)</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">test_phenotype</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">population</span>
+
+<span class="n">generate_population</span><span class="p">(</span><span class="n">network_size</span><span class="p">,</span> <span class="n">population_size</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>This function will return the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[[3, 4, 5, 6, 8, 2, 1, 7],
+ [1, 5, 2, 3, 7, 8, 6, 4],
+ [1, 5, 6, 3, 2, 8, 4, 7],
+ [7, 2, 6, 4, 3, 1, 5, 8],
+ [1, 5, 2, 4, 6, 8, 3, 7],
+ [5, 6, 3, 1, 4, 7, 8, 2],
+ [4, 5, 2, 1, 3, 8, 6, 7],
+ [5, 8, 4, 1, 7, 6, 2, 3],
+ [7, 2, 5, 1, 3, 8, 4, 6],
+ [5, 3, 1, 2, 6, 7, 4, 8],
+ [7, 1, 2, 4, 6, 8, 3, 5],
+ [7, 8, 2, 4, 6, 1, 3, 5],
+ [2, 4, 3, 7, 1, 8, 6, 5],
+ [1, 8, 7, 5, 3, 6, 4, 2],
+ [3, 8, 5, 7, 2, 1, 6, 4],
+ [3, 1, 6, 8, 7, 4, 5, 2]]
+</code></pre>
+</div>
+
+<h3 id="evaluating-a-phenotypes-fitness">Evaluating a phenotype’s fitness</h3>
+
+<p>We now need to implement a function to calculate the $\epsilon_\text{total}$ of a particular arrangement. We do this by initially setting $\epsilon_\text{total} = 0$, then cumulatively adding the contributions from each pair.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">evaluate_etotal</span><span class="p">(</span><span class="n">arrangement</span><span class="p">):</span>
+    <span class="n">etotal</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">network_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c"># u_r1 is meant to represent u_{r+1}</span>
+        <span class="c"># When defining u_r and u_r1, we subtract 1,</span>
+        <span class="c"># because indices in python start from zero.</span>
+        <span class="n">u_r</span> <span class="o">=</span> <span class="n">arrangement</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">u_r1</span> <span class="o">=</span> <span class="n">arrangement</span><span class="p">[</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="c"># network[u_r][u_r1] is the same as [u_r, u_r1]</span>
+        <span class="c"># epair is the contribution from each pair</span>
+        <span class="n">epair</span> <span class="o">=</span> <span class="n">network</span><span class="p">[</span><span class="n">u_r</span><span class="p">][</span><span class="n">u_r1</span><span class="p">]</span> <span class="o">+</span> <span class="n">network</span><span class="p">[</span><span class="n">u_r1</span><span class="p">][</span><span class="n">u_r</span><span class="p">]</span>
+        <span class="n">etotal</span> <span class="o">+=</span> <span class="n">epair</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">etotal</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>We can test this function on the random arrangement that we examined earlier, by running: <code class="highlighter-rouge">evaluate_etotal([3, 2, 8, 5, 4, 6, 1, 7])</code>. This returns a value of <code class="highlighter-rouge">9.0</code>, which agrees with our calculation.</p>
+
+<h3 id="survival-of-the-fittest-and-reproduction">Survival of the fittest and reproduction.</h3>
+
+<p>Now that we have a funciton to measure the fitness of an arrangement, we need to find a way to remove the ‘weak’ individuals, leaving only survivors. Then, we need to let these survivors reproduce. But what does this mean in terms of arrangements and <code class="highlighter-rouge">etotal</code>s? The first part is simple: we will consider an arrangement to be <em>weak</em> if it’s $\epsilon_\text{total}$ is less than the median $\epsilon_\text{total}$ (which I think is reasonable).</p>
+
+<p>However, once we have the survivors, how can we get them to ‘reproduce’ to form new arrangements? The important aspect of reproduction, when it comes to genetic
+algorithms, is that the offspring receives features from both parents (who are themselves ‘fit’) – there is a crossover of genetic material. However, the individuals of our population are <em>arrangements</em> we cannot just take the first half of one and combine it with the second half of another.</p>
+
+<p>I thought for a long time about this, and came up with a rather unsatisfactory solution. Instead of mixing genetics from two parents, I decided to define a child as half of a parent’s arrangement, plus the shuffle of the other half.</p>
+
+<p>Yes, I know. It’s hardly reproduction – more like a glorified form of mutation, but this is why I have titled the post as a <em>psuedo</em>-genetic algorithm. If anyone can come up with a better idea for what reproduction could mean in the context of seating arrangements, I’m all ears.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">statistics</span>
+
+<span class="k">def</span> <span class="nf">survive_and_reproduce</span><span class="p">(</span><span class="n">population</span><span class="p">):</span>
+    <span class="c"># We will make a new list that stores the 'fitness' of each phenotype</span>
+    <span class="c"># in the population, where 'fitness' depends on the e_total.</span>
+    <span class="n">population_fitness</span> <span class="o">=</span> <span class="p">[</span><span class="n">evaluate_etotal</span><span class="p">(</span><span class="n">phenotype</span><span class="p">)</span> <span class="k">for</span> <span class="n">phenotype</span> <span class="ow">in</span> <span class="n">population</span><span class="p">]</span>
+
+    <span class="c"># If a phenotype has an etotal lower than the median etotal, it is WEAK.</span>
+    <span class="n">median</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">population_fitness</span><span class="p">)</span>
+    <span class="n">weaklings</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">population</span><span class="p">))</span> <span class="k">if</span> <span class="n">population_fitness</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">median</span><span class="p">]</span>
+
+    <span class="c"># Destroy the weak arrangements by excluding them from the survivor list</span>
+    <span class="n">survivors</span> <span class="o">=</span> <span class="p">[</span><span class="n">population</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">population</span><span class="p">))</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">weaklings</span><span class="p">]</span>
+
+    <span class="n">number_removed</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">population</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">survivors</span><span class="p">)</span>
+
+    <span class="c"># Now, the survivors 'breed'. This for loop maintains the population_size.</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_removed</span><span class="p">):</span>
+        <span class="c"># Pick a parent from the survivors</span>
+        <span class="n">parent</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">survivors</span><span class="p">)</span>
+        <span class="c"># A child is the first half of a parent, plus the shuffled second half.</span>
+        <span class="n">estranged_father</span> <span class="o">=</span> <span class="n">parent</span><span class="p">[</span>
+                    <span class="nb">int</span><span class="p">(</span><span class="n">network_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">):</span><span class="n">network_size</span><span class="p">]</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">estranged_father</span><span class="p">)</span>
+        <span class="n">child</span> <span class="o">=</span> <span class="n">parent</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">network_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">+</span> <span class="n">estranged_father</span>
+
+        <span class="c"># The child is now part of the new generation</span>
+        <span class="n">survivors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">survivors</span>
+</code></pre>
+</div>
+
+<h3 id="mutation">Mutation</h3>
+
+<p>Mutations are random changes to the genetic material. With regard to seating arrangements, I will consider a mutation to be the swapping of any two members within the arrangement.
+A required parameter is the <em>mutation rate</em>, which encodes how often mutations should occur. A value of 0.05 (which is what we shall use) means that, on average, 5 in every 100 arrangements will contain a swap.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">generation</span><span class="p">,</span> <span class="n">mutation_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+    <span class="c"># Each member of the population has a chance of being mutated</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">generation</span><span class="p">)):</span>
+        <span class="c"># random.random() returns a float between 0 and 1,</span>
+        <span class="c"># so this is equivalent to a probability of the mutation_rate.</span>
+        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">mutation_rate</span><span class="p">:</span>
+            <span class="c"># A mutation entails two elements of the arrangement swapping.</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">network_size</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">population</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">b</span><span class="p">],</span> <span class="n">population</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">population</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">a</span><span class="p">],</span> <span class="n">population</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">b</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<h3 id="iteration">Iteration</h3>
+
+<p>Evolution requires many generations to happen. In the context of our algorithm, this just means that we need to repeat the process of survival, crossover, and mutation over and over again.</p>
+
+<p>That being said, we also want to get a feel for how our algorithm is doing, so I will write a <code class="highlighter-rouge">progress</code> function to do that. The idea is that at every iteration, we will run <code class="highlighter-rouge">progress(generation)</code>, which will log the best $\epsilon_\text{total}$ of that generation, and the corresponding arrangement.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">progress_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">hall_of_fame</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">progress</span><span class="p">(</span><span class="n">generation</span><span class="p">):</span>
+    <span class="n">population_fitness</span> <span class="o">=</span> <span class="p">[</span><span class="n">evaluate_etotal</span><span class="p">(</span><span class="n">phenotype</span><span class="p">)</span> <span class="k">for</span> <span class="n">phenotype</span> <span class="ow">in</span> <span class="n">population</span><span class="p">]</span>
+    <span class="n">progress_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">population_fitness</span><span class="p">))</span>
+    <span class="n">max_location</span> <span class="o">=</span> <span class="n">population_fitness</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">population_fitness</span><span class="p">))</span>
+    <span class="n">hall_of_fame</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">population</span><span class="p">[</span><span class="n">max_location</span><span class="p">])</span>
+</code></pre>
+</div>
+
+<h2 id="back-to-the-xkcd-network-for-the-last-time">Back to the XKCD network (for the last time)</h2>
+
+<p>Now that we have everything ready, we are ready to find the optimal arrangement for the XKCD network.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">network</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+           <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">network_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">network</span><span class="p">)</span>
+<span class="n">population_size</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">population</span> <span class="o">=</span> <span class="n">generate_population</span><span class="p">(</span><span class="n">network_size</span><span class="p">,</span> <span class="n">population_size</span><span class="p">)</span>
+
+<span class="n">gen_number</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="k">while</span> <span class="n">gen_number</span><span class="p">:</span>
+    <span class="n">next_generation</span> <span class="o">=</span> <span class="n">survive_and_reproduce</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+    <span class="n">progress</span><span class="p">(</span><span class="n">next_generation</span><span class="p">)</span>
+    <span class="n">mutate</span><span class="p">(</span><span class="n">next_generation</span><span class="p">)</span>
+    <span class="n">population</span> <span class="o">=</span> <span class="n">next_generation</span>
+
+    <span class="k">if</span> <span class="n">gen_number</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">champion_location</span> <span class="o">=</span> <span class="n">progress_list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span>
+                    <span class="nb">max</span><span class="p">(</span><span class="n">progress_list</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"The optimal arrangement is: "</span><span class="p">,</span> <span class="n">hall_of_fame</span><span class="p">[</span><span class="n">champion_location</span><span class="p">],</span> <span class="s">", with an etotal of: "</span><span class="p">,</span>
+              <span class="nb">max</span><span class="p">(</span><span class="n">progress_list</span><span class="p">))</span>
+
+    <span class="n">gen_number</span> <span class="o">-=</span> <span class="mi">1</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">progress_list</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Evolution of etotal'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Generation number'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">r'$</span><span class="err">\</span><span class="s">epsilon$ total'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>One example of running this gave the output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>The optimal arrangement is:  [4, 2, 8, 7, 3, 1, 6, 5],
+with an etotal of:  17
+</code></pre>
+</div>
+
+<p><img src="../assets/images/etotal_ev.png" alt="evolution of etotal" /></p>
+
+<p>I ran this a number of times on my system, and plotted all the results at once.</p>
+
+<p><img src="../assets/images/many_etotal.png" style="width:700px;" /></p>
+
+<p>Notice how it is quite volatile: many generations have a lower maximum $\epsilon_\text{total}$ than their parent’s generation. This is probably because our reproduction step is really just another form of mutation. That being said, all that matters is that our optimisation algorithm <em>hits</em> the maximum, it doesn’t have to stay there.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>So there you have it. While I haven’t implemented a proper genetic algorithm, I <em>have</em> used some of the same reasoning – and the results aren’t so bad.</p>
+
+<p>This problem of optimising seating arrangements actually belongs to the much broader (and poorly understood) field of <em>combinatorial optimisation</em> – so it is a cousin of the famous Travelling Salesman problem, as we could interpret our investigation as trying to find the optimal route through the social network. Perhaps we could initialise many salesmen and let them evolve! Food for thought.</p>
+
+<hr />
+
+<p><em>I hope you enjoyed what turned out to be a rather long article. *All the code is on my <a href="https://github.com/surelyourejoking/RandomWalks/blob/master/social_seating.py">GitHub</a>, feel free to fork it and try out your own networks</em>.</p>
+
+<p><em>Actually, this whole post was based on an ‘article’ I wrote when I was much younger, trying to be all professional and everything. If you’re up for a laugh, you can find it <a href="http://vixra.org/pdf/1605.0109v1.pdf">here</a></em></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/ReasonableDeviations/2013/12/28/introducing-hyde/">
         First test
       </a>
     </h1>
-   
+
     <span class="post-date">28 Dec 2013</span>
 
     <p>took me bloody ages to set this up but it’s ok now.</p>
@@ -158,11 +678,11 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/2012/02/07/example-content/">
+      <a href="/ReasonableDeviations/2012/02/07/example-content/">
         Example content
       </a>
     </h1>
-   
+
     <span class="post-date">07 Feb 2012</span>
 
     <div class="message">
@@ -309,11 +829,11 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/2012/02/06/whats-jekyll/">
+      <a href="/ReasonableDeviations/2012/02/06/whats-jekyll/">
         What's Jekyll?
       </a>
     </h1>
-   
+
     <span class="post-date">06 Feb 2012</span>
 
     <p><a href="https://jekyllrb.com">Jekyll</a> is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From <a href="https://github.com/mojombo/jekyll/blob/master/README.markdown">the project’s readme</a>:</p>
