@@ -18,8 +18,6 @@ If you're not a fan of people trying to examine overly logical dissewctions of n
 
 The precise problem here is that the nonlinear 'social graph' has to be compressed onto a linear arrangement, which, as the comic points out, is computationally hard. Nevertheless, we will attempt to find a good arrangmenet (not necessarily the optimal one) by using a genetic algorithm of sorts. But before that, we must firstly quantify the various parameters in this problem.
 
-*If you'd prefer to see this post as a jupyter notebook, check it out [here](https://github.com/surelyourejoking/RandomWalks/blob/master/social_seating.ipynb). For more information on jupyter notebooks, head to [jupyter.org](https://jupyter.org/).*
-
 
 ## 1. Developing the initial model
 
@@ -504,7 +502,7 @@ This problem of optimising seating arrangements actually belongs to the much bro
 
 ---
 
-*I hope you enjoyed what turned out to be a rather long article. *All the code is on my [GitHub](https://github.com/surelyourejoking/RandomWalks/blob/master/social_seating.py), feel free to fork it and try out your own networks*.
+*I hope you enjoyed what turned out to be a rather long article. All the code is on my [GitHub](https://github.com/surelyourejoking/RandomWalks/blob/master/social_seating.py), feel free to fork it and try out your own networks*.
 
   [1dcea476]: https://github.com/surelyourejoking/RandomWalks/blob/master/social_seating.ipynb "ipython notebook"
 
