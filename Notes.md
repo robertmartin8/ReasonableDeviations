@@ -3,11 +3,10 @@ layout: page
 title: Revision notes
 ---
 
-Over the course of my studies, I have amassed a large quantity of notes and summaries. Over time, I will try to upload some of these. 
+Over the course of my studies, I have amassed a large quantity of notes and summaries. Over time, I will try to upload as many as possible – it'll be nice if they are all in one place. 
 
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
-
 
 - [IB notes](#ib-notes)
 	- [Mathematics (higher level)]({{ site.noteurl }}hl_maths)
@@ -20,19 +19,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 - [Miscellaneous notes](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
 
-
 <!-- /TOC -->
-
-
-# IB notes
-
-NB: these were for the November 2015 exams. Since then, the syllabus for physics and chemistry have changed.
-
-## Mathematics (higher level)
-
-## Physics (higher level)
-
-## Chemistry (higher level)
 
 
 # Textbook notes
