@@ -7,18 +7,17 @@ title: XKCD's Social Seating problem
 
 *That's a bit of a mouthful!*
 
-
 <center>
 <img src="{{ site.imageurl }}movie_seating.png" style="width:400px;"/>
 </center>
 
 Social groups are remarkably complex affairs, and on many occasions this complexity can lead to awkward situations. Randall Munroe humorously portrays one such example in XKCD #173. This comic naturally begs the question – how *do* we find the optimal linear seating arrangement for a given social group?
 
-If you're not a fan of people trying to examine overly logical dissewctions of non-mathematical things, now would be a good time to cut your losses (at least you got to see the XKCD comic!). Otherwise, don your cringe-protection glasses and we can move on.
+If you're not a fan of people trying to logically dissect non-mathematical things, now would be a good time to cut your losses (at least you got to see the XKCD comic!). Otherwise, don your cringe-protection glasses and we can move on.
 
-The precise problem here is that the nonlinear 'social graph' has to be compressed onto a linear arrangement, which, as the comic points out, is computationally hard. Nevertheless, we will attempt to find a good arrangmenet (not necessarily the optimal one) by using a genetic algorithm of sorts. But before that, we must firstly quantify the various parameters in this problem.
+The precise problem here is that the nonlinear 'social graph' has to be compressed onto a linear arrangement, which, as the comic points out, is computationally hard. Nevertheless, we will attempt to find a good arrangement (not necessarily the optimal one) by using a genetic algorithm of sorts. But before that, we must firstly quantify the various parameters in this problem.
 
-
+<br/>
 ## 1. Developing the initial model
 
 What does it mean for a seating arrangement to be optimal? I am going to take a disgustingly utilitarian approach, by simply calculating the enjoyment per individual for a certain arrangement then summing over all individuals to find the *total enjoyment*. The optimal arrangement is then just the one with the highest total enjoyment (duh).  Before going further, we must first decide on a way of describing social networks which will allow us to do this analysis.
@@ -72,7 +71,7 @@ Assuming that an individual can only be affected by the individuals immediately 
 
 This is easy to do with just one arrangement, but we need a robust way of finding $\epsilon_{\text{total}}$ for *any* arrangement.
 
-
+<br/>
 ## 2. Refining the model
 
 Get ready, I am about to throw a lot of notation at you.
@@ -141,7 +140,7 @@ where each pair of parentheses encloses the relationship between two individuals
 
 It is at this stage that we need to recall the previously-defined vector notation. Just as $x_6$ represents the relationship of individual 6 to the network, the vector representing individual $u_1$'s relationship to the network is $x_{u_1}$.
 
- If we wanted to find how much indiviudal 4 contributes to the enjoyment of individual 6, we would look in the 4th entry of $x_6$. Likewise, the enjoyment produced in individual $u_1$ by individual $u_2$ can be
+ If we wanted to find how much individual 4 contributes to the enjoyment of individual 6, we would look in the 4th entry of $x_6$. Likewise, the enjoyment produced in individual $u_1$ by individual $u_2$ can be
 found by looking in the $u_2$th entry of the vector $x_{u_1}$. This subscript-within-subscript notation is very confusing, which is why we defined an alternative notation, the square-bracket notation wherein $[i, m]$ represents the $m$th row of the vector $x_i$.
 
 With this notation, the $u_2$th entry of the vector $x_{u_1}$ is simply written as $[u_1, u_2]$.
@@ -197,7 +196,7 @@ It is worth commenting on the fact that all of the above values come in identica
 – and in our particular arrangement, 7 is not next to 8.
 
 We could have found $\epsilon_\text{total}$ without our vector notation, and simply with arithmetic by looking at the linkages on the graph. However, the process that we have described in this section does not require actually looking at the networks, meaning that we can write code to do it for us.
-
+<br/>
 ## 3. Optimising the arrangement
 
 
@@ -212,7 +211,7 @@ meaning that we cannot use many of these algorithms. How, then, do we approach t
 
 ### Genetic algorithms
 
-A genetic algorithm is an optimisation heuristic (shorcut) that mimics Darwinian natural selection.
+A genetic algorithm is an optimisation heuristic (shortcut) that mimics Darwinian natural selection.
 
 A brief summary of Darwin's theory is as follows:
 
@@ -245,8 +244,8 @@ A genetic algorithm follows the same steps, but in computer science terms:
 5.  The process repeats, and over time, the mean $\epsilon_\text{total}$ of the population should increase.
 
 
-
-## 4. Implementing the (pseudo)-genetic algorithm in python
+<br/>
+## 4. Implementing the (pseudo-)genetic algorithm in python
 
 In this section we will write python code to find the optimum arrangement for the XKCD network, though of course we could use it for any other network.
 
@@ -265,7 +264,7 @@ network_size = len(network)
 population_size = 16
 ```
 
-However, don't forget that python indexing starts from zero. So to find the enjoyment that indiviudal 5 produces in individual 3, we look at `network[2][4]`, **not** `network[3][5]`. We will also define two global variables: the `network_size` (number of individuals in the network) and the `population_size` (number of arrangements in the population).
+However, don't forget that python indexing starts from zero. So to find the enjoyment that individual 5 produces in individual 3, we look at `network[2][4]`, **not** `network[3][5]`. We will also define two global variables: the `network_size` (number of individuals in the network) and the `population_size` (number of arrangements in the population).
 
 ### Generating the population
 
@@ -346,39 +345,47 @@ We can test this function on the random arrangement that we examined earlier, by
 
 ### Survival of the fittest and reproduction.
 
-Now that we have a funciton to measure the fitness of an arrangement, we need to find a way to remove the 'weak' individuals, leaving only survivors. Then, we need to let these survivors reproduce. But what does this mean in terms of arrangements and `etotal`s? The first part is simple: we will consider an arrangement to be *weak* if it's $\epsilon_\text{total}$ is less than the median $\epsilon_\text{total}$ (which I think is reasonable).
+Now that we have a function to measure the fitness of an arrangement, we need to find a way to remove the 'weak' individuals, leaving only survivors. Then, we need to let these survivors reproduce. But what does this mean in terms of arrangements and `etotal`s? The first part is simple: we will consider an arrangement to be *weak* if it's $\epsilon_\text{total}$ is less than the median $\epsilon_\text{total}$ (which I think is reasonable).
 
 However, once we have the survivors, how can we get them to 'reproduce' to form new arrangements? The important aspect of reproduction, when it comes to genetic
 algorithms, is that the offspring receives features from both parents (who are themselves ‘fit’) – there is a crossover of genetic material. However, the individuals of our population are *arrangements* we cannot just take the first half of one and combine it with the second half of another.
 
 I thought for a long time about this, and came up with a rather unsatisfactory solution. Instead of mixing genetics from two parents, I decided to define a child as half of a parent's arrangement, plus the shuffle of the other half.
 
-Yes, I know. It's hardly reproduction – more like a glorified form of mutation, but this is why I have titled the post as a *psuedo*-genetic algorithm. If anyone can come up with a better idea for what reproduction could mean in the context of seating arrangements, I'm all ears.
+Yes, I know. It's hardly reproduction – more like a glorified form of mutation, but this is why I have titled the post as a *pseudo*-genetic algorithm. If anyone can come up with a better idea for what reproduction could mean in the context of seating arrangements, I'm all ears.
 
 ```python
 import statistics
 
 def survive_and_reproduce(population):
-    # We will make a new list that stores the 'fitness' of each phenotype
-    # in the population, where 'fitness' depends on the e_total.
-    population_fitness = [evaluate_etotal(phenotype) for phenotype in population]
+    # We will make a new list that stores the 'fitness' of each
+    # phenotype in the population, where 'fitness'
+    # depends on the e_total.
+    population_fitness = [evaluate_etotal(phenotype)
+                          for phenotype in population]
 
-    # If a phenotype has an etotal lower than the median etotal, it is WEAK.
+    # If a phenotype has an etotal lower than the median etotal,
+    # it is WEAK.
     median = statistics.median(population_fitness)
-    weaklings = [i for i in range(len(population)) if population_fitness[i] < median]
+    weaklings = [i for i in range(len(population))
+                 if population_fitness[i] < median]
 
-    # Destroy the weak arrangements by excluding them from the survivor list
-    survivors = [population[i] for i in range(len(population)) if i not in weaklings]
+    # Destroy the weak arrangements by excluding them
+    # from the survivor list
+    survivors = [population[i] for i in range(len(population))
+                 if i not in weaklings]
 
     number_removed = len(population) - len(survivors)
 
-    # Now, the survivors 'breed'. This for loop maintains the population_size.
+    # Now, the survivors 'breed'. This for loop maintains
+    # the population_size.
     for i in range(number_removed):
         # Pick a parent from the survivors
         parent = random.choice(survivors)
-        # A child is the first half of a parent, plus the shuffled second half.
-        estranged_father = parent[
-                    int(network_size / 2):network_size]
+
+        # A child is the first half of a parent,
+        # plus the shuffled second half (estranged_father).
+        estranged_father = parent[int(network_size / 2):network_size]
         random.shuffle(estranged_father)
         child = parent[0:int(network_size / 2)] + estranged_father
 
@@ -402,9 +409,11 @@ def mutate(generation, mutation_rate=0.05):
         # random.random() returns a float between 0 and 1,
         # so this is equivalent to a probability of the mutation_rate.
         if random.random() < mutation_rate:
-            # A mutation entails two elements of the arrangement swapping.
+            # A mutation entails two elements of
+            # the arrangement swapping with each other.
             a, b = random.sample(range(network_size), 2)
-            population[i][b], population[i][a] = population[i][a], population[i][b]
+            population[i][b], population[i][a] = \
+                                    population[i][a], population[i][b]
 ```
 
 ### Iteration
@@ -418,13 +427,14 @@ progress_list = []
 hall_of_fame = []
 
 def progress(generation):
-    population_fitness = [evaluate_etotal(phenotype) for phenotype in population]
+    population_fitness = [evaluate_etotal(phenotype) for phenotype in
+                          population]
     progress_list.append(max(population_fitness))
     max_location = population_fitness.index(max(population_fitness))
     hall_of_fame.append(population[max_location])
 ```
 
-
+<br/>
 ## Back to the XKCD network (for the last time)
 
 Now that we have everything ready, we are ready to find the optimal arrangement for the XKCD network.
@@ -454,13 +464,13 @@ while gen_number:
     if gen_number == 1:
         champion_location = progress_list.index(
                     max(progress_list))
-        print("The optimal arrangement is: ", hall_of_fame[champion_location], ", with an etotal of: ",
-              max(progress_list))
+        print("The optimal arrangement is {}, with an etotal of: {}"
+              .format(hall_of_fame[champion_location],
+                      max(progress_list)))
 
     gen_number -= 1
 
 import matplotlib.pyplot as plt
-
 
 plt.plot(progress_list)
 plt.title('Evolution of etotal')
@@ -472,8 +482,8 @@ plt.show()
 One example of running this gave the output:
 
 ```
-The optimal arrangement is:  [4, 2, 8, 7, 3, 1, 6, 5],
-with an etotal of:  17
+The optimal arrangement is: [4, 2, 8, 7, 3, 1, 6, 5],
+with an etotal of: 17
 ```
 
 <center>
@@ -490,7 +500,7 @@ I ran this a number of times on my system, and plotted all the results at once.
 
 Notice how it is quite volatile: many generations have a *lower* maximum $\epsilon_\text{total}$ than their parent's generation. This is probably because our reproduction step is really just another form of mutation. However, because our code keeps track of best arrangement so far, all that matters is that our optimisation algorithm *hits* the maximum – it doesn't have to stay there.
 
-
+<br/>
 ## Conclusion
 
 So there you have it. While I haven't implemented a proper genetic algorithm, I *have* used some of the same reasoning – and the results aren't so bad.
