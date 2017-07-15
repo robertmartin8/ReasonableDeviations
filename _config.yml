@@ -18,10 +18,19 @@ author:
   email:        'martin.robertandrew@gmail.com'
 
 
-paginate:         5
+
 
 # Custom vars
 version:          2.1.0
 
 github:
   repo:           https://github.com/surelyourejoking
+
+
+# Structure
+paginate:         5
+
+collections:
+  notes:
+      output: true
+      permalink: /:collection/:path/
