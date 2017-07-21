@@ -3,9 +3,7 @@ layout: post
 title: Intuiting the gamma function, part 1
 ---
 
-# How do factorials relate to calculus?
-
-## Introduction
+## How do factorials relate to calculus?
 
 When high-school students study the Binomial Theorem, a classic problem is the expansion of a binomial with a fractional power, such as $(1+x)^{1/2}$. Speaking from experience, a student’s first attempt is often to naïvely substitute values into the formula for the Binomial Theorem, leading to
 
