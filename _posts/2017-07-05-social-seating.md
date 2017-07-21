@@ -1,9 +1,9 @@
 ---
 layout: post
-title: XKCD's Social Seating problem
+title: Combinatorial optimisation with a pseudo-genetic algorithm
 ---
 
-## Optimising linear seating arrangements with a pseudo-genetic algorithm in python
+## or XKCD's Social Seating problem: a python approach
 
 *That's a bit of a mouthful!*
 
