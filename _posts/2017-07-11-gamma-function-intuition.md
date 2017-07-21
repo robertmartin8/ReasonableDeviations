@@ -3,7 +3,7 @@ layout: post
 title: Intuiting the gamma function, part 1
 ---
 
-# 1. How do factorials relate to calculus?
+# How do factorials relate to calculus?
 
 ## Introduction
 
@@ -21,17 +21,15 @@ However, it is well known that there *is* a natural extension of the factorial t
 
 $$ \Gamma (x) = \int_0^\infty t^{x-1}e^{-t} dt, \qquad x \in \mathbb{C}| x \not\in \mathbb{Z}^-$$
 
-Don't let the *t* distract you: it is just a dummy variable. The gamma function is a function of *x*.
-
-*What on earth has this got to do with factorials?* As it happens, there is a wonderful intuitive reason for the form of the gamma function, which I aim to explain. Following along will require the reader to have a reasonable understanding of differentiation and integration, but I will try to assume little else.
+Don't let the *t* distract you: it is just a dummy variable. The gamma function is a function of *x*. But the question is, *what on earth has this got to do with factorials?* As it happens, there is a wonderful intuitive reason for the form of the gamma function, and how it relates to $x!$, which I aim to explain. Following along will require the reader to have a reasonable understanding of differentiation and integration, but I will try to assume little else.
 
 Just a disclaimer: the maths used here isn't going to be formally rigorous, but it will definitely be valid and hopefully intuitive.
 
 <br/>
 ## The Factorial
 
-For $\forall n \in \mathbb{N}$, the factorial (which will henceforth be
-referred to as the ‘traditional factorial’) is defined by the following two conditions:
+For $\forall n \in \mathbb{N}$ (this means 'for all natural numbers'), the factorial, which will henceforth be
+referred to as the ‘traditional factorial’, is defined by the following two conditions:
 - $1! = 1$
 - $n! = n(n-1)!$, the **recursion condition**
 
@@ -45,7 +43,7 @@ Now the problem is that there is no obvious way to apply these two conditions to
 
 $$2.5! = 2.5 \cdot 1.5! = 2.5 \cdot 1.5 \cdot 0.5!$$
 
-But we are now left with the conundrum of working out $0.5!$
+But we are now left with the conundrum of working out $0.5!$. Nevertheless, it is important to discuss this, because any function that claims to extend the factorial must also meet these conditions. We shall eventually prove that the gamma function *does* have these two properties, but first we must understand its shape.
 
 <br/>
 ## The Gamma Function
@@ -54,7 +52,7 @@ Just a reminder that our final goal is to explain:
 
 $$\Gamma(x) = \int_0 ^\infty t^{x-1}e^{-t}dt$$
 
-We will approach this in a slightly round-about way. To begin with, we need to find an area of mathematics in which the factorial is used then see if we can tweak the method to work with non-integers. The most common use of the factorial is in permutations and combinations, but these deal with integers so are unlikely to be of use. Another area in which the factorial seems to appear is in Taylor’s theorem. Consider the Maclaurin series (a simpler special case of the Taylor series) for $e^x$:
+We will approach this in a slightly round-about way. To begin with, we need to find an area of mathematics in which the factorial is used then see if we can tweak the method to work with non-integers. The most common use of the factorial is in permutations and combinations, but these deal with integers so are unlikely to be of use. However, another area in which the factorial appears is in Taylor’s theorem. Consider the Maclaurin series (a simpler special case of the Taylor series) for $e^x$:
 
 $$ e^x = 1 + x + \frac{1}{2!}x^2 + \frac{1}{3!}x^3 + \ldots + \frac{1}{n!}x^n + \ldots $$
 
@@ -64,15 +62,22 @@ Actually, this just begs the question: why is there an $n!$ in the Maclaurin ser
 <br/>
 ## Deriving the Maclaurin series
 
-We will assume that a function $f(x)$ can be expressed by a polynomial of degree *n* plus some remainder term $R(x)$ – hereafter I will ignore this term:
+We will assume that a function $f(x)$ can be written as a polynomial of degree *n* plus some remainder term $R(x)$ (which we will ignore):
 
 $$f(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n + R(x)$$
 
-Now all we have to do is find the values of our coefficients $a_i$, and we will have our approximation. Well for starters, we can easily find $a_0$ because it is the constant term. If we substitute in $x = 0$, everything except that constant will disappear, so we can see that:
+This is a reasonable assumption, because you've probably seen that polynomials can often be made to look like other functions. Here is a graph on which I've plotted $y = \sin x$ as well as $y = x - \frac{x^3}{3!} + \frac{x^5}{5!}$, which are the first three terms of the Maclaurin series for $\sin x$.
+
+<center>
+<img src="{{ site.imageurl }}maclaurin.png" style="width:400px;"/>
+</center>
+
+
+But I digress. Going back to our expression for a general function $f(x)$, all we have to do is find the values of our coefficients $a_0, a_1, a_2, \ldots, a_n$, and we will have our approximation. Well for starters, we can easily find $a_0$ because it is the constant term. If we substitute in $x = 0$, everything except that constant will disappear, so we can see that:
 
 $$f(0) = a_0$$
 
-A nice trick is that we can actually also use similar reasoning to find every other coefficient, but we must first differentiate. Why?
+A nice trick is that we can actually also use similar reasoning to find *every other coefficient*. How? By differentiating. Notice that:
 
 $$f'(x) = a_1 + 2a_2x + \cdots + na_n x^{n-1}$$
 
@@ -108,10 +113,6 @@ which completes our derivation of the Maclaurin series. If you want to find the 
 <br/>
 ## Conclusion for Part 1
 
-I know I haven't even started to explain the form of the gamma function, but in this post I showed that factorials have a natural relation to calculus, when one repeatedly differentiates a power of *x*. I trust that because of this, the reader may be getting a sneaking suspicion that there might actually be a link between factorials and *integrals*, which would explain why the gamma function looks the way it does.
+I know that this is an abrupt end, and that I haven't even started to explain the form of the gamma function, but in this post I showed that factorials have a natural relation to calculus, when one repeatedly differentiates a power of *x*. I trust that because of this, the reader may be getting a sneaking suspicion that there might actually be a link between factorials and *integrals*, which would explain why the gamma function looks the way it does.
 
-In fact, there is a certain type of integration that *does* involve repeated differentiation. In fact, if you did A-level mathematics or an equivalent, you will almost certainly have come across it, though you may not see right now how it relates to factorials. I am referring to *Integration by Parts*.
-
----
-
-*Link to Part 2*
+In fact, there is a certain type of integration that *does* involve repeated differentiation. If you did A-level mathematics or an equivalent, you will almost certainly have come across it, though you may not see right now how it relates to factorials. I am referring to *Integration by Parts*. Head to [Part 2]({{ site.baseurl }}{% post_url 2017-07-16-gamma-intuition-2 %}) to find out more.
