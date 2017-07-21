@@ -3,24 +3,25 @@ layout: page
 title: Revision notes
 ---
 
-Over the course of my studies, I have amassed a large quantity of notes and summaries. Over time, I will try to upload as many as possible – it'll be nice if they are all in one place. 
+Over the course of my studies, I have amassed a large quantity of notes and summaries. Over time, I will try to upload as many as possible – it'd be nice if they were all in one place.
 
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
-- [IB notes](#ib-notes)
+- **IB notes**
 	- [Mathematics (higher level)]({{ site.noteurl }}hl_maths)
 	- [Physics (higher level)]({{ site.noteurl }}hl_physics)
 	- [Chemistry (higher level)]({{ site.noteurl }}hl_chemistry)
-- [Textbook notes](#textbook-notes)
+- [**Textbook notes**](#textbook-notes)
 	- [QED: The Strange Theory, by Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
 	- [The Feynman Lectures on Physics](#the-feynman-lectures-on-physics)
 	- [Why Chemical Reactions Happen, Keeler and Wothers](#why-chemical-reactions-happen)
-- [Miscellaneous notes](#miscellaneous-notes)
+- [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
 
 <!-- /TOC -->
 
+---
 
 # Textbook notes
 
@@ -48,16 +49,17 @@ So far I've only done a few chapters of volume 1. I really intended to work thro
 
 ## Why Chemical Reactions Happen
 
-[Why Chemical Reactions Happen notes]( {{ site.imageurl }}../notes/why_chemical_reactions_happen.pdf)
+Link: [Why Chemical Reactions Happen (notes)]( {{ site.imageurl }}../notes/why_chemical_reactions_happen.pdf)
 
 In January, when I was examining the reading lists for Cambridge and reading example personal statements for Natural Sciences, I noticed that a common denominator was the book _Why Chemical Reactions Happen_, by Keeler and Wothers. I proceeded to read the first two chapters, and was able to easily follow the physics-based reasoning. I therefore listed it on my personal statement, with the full intention of reading the whole thing before the interview. However, after the first few chapters, the material becomes extremely dense (especially with the focus on MO theory), and pretty hard going. To help summarise what I needed to know, I made notes on this book. These notes turned out to be quite verbose, because the book itself is quite succinct anyway. I wasn't asked anything about the book in my interview, which I suppose is fortunate because I would have probably struggled. Nevertheless, that meant that the notes were a waste of time. If any of you are in a similar predicament, I hope you benefit from them.
 
+---
 
 # Miscellaneous notes
 
 ## The Binomial Theorem
 
-[Notes on the Binomial Theorem](https://reasonabledeviations.files.wordpress.com/2016/02/binomial.pdf "Binomial")
+Link: [Notes on the Binomial Theorem](https://reasonabledeviations.files.wordpress.com/2016/02/binomial.pdf "Binomial")
 
 An acquaintance of mine was once having trouble wrapping their head around the Binomial Theorem. As someone who likes maths (and likes teaching people maths), I felt some responsibility to try and explain what was happening.  It wasn't as easy as I thought, especially because the Binomial Theorem was so intuitively ingrained in my head. For example, while I understand in my head the origin of the combinatorial coefficient, it's hard to put in words why it should be there.
 
