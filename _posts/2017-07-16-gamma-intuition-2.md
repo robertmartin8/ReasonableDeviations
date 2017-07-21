@@ -147,4 +147,4 @@ Compare this to the gamma function, and you will see that there is only a slight
 
 $$ \Gamma (x) = \int_0^\infty t^{x-1}e^{-t} dt $$
 
-The first integral has an $x$ in the exponent, while the second has an $x-1$. You can connect the dots here on your own, but in [Part 3]({{ site.baseurl }}{% post_url 2017-07-21-gamma-intuition-3 %}) I will explicitly show how the gamma function related to the factorial.
+The first integral has an $x$ in the exponent, while the second has an $x-1$. You can connect the dots here on your own, but in Part 3 I will explicitly show how the gamma function related to the factorial.
