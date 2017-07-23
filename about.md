@@ -17,7 +17,17 @@ Whenever I need a computer to help me, I first turn to python. I have been using
 
 However, I concede that R has a better statistics ecosystem – there is an R implementation for basically any useful theorem/procedure in statistics. I have used R for a number of data science projects, and I do appreciate its data visualisation capabilities, which are arguably superior to those of python.
 
- I have also frequently turned to 'knowledge based computing', a nice euphemism for 'asking Mathematica what the answer is'. I've also dabbled in C++ and a little bit of Haskell, and I would *love* to become more proficient at the latter.
+I have also frequently turned to 'knowledge based computing', a nice euphemism for 'asking Mathematica what the answer is'. I've dabbled in C++ and a little bit of Haskell, and I would *love* to become more proficient at the latter. Understanding quicksort in haskell was a marvellous moment:
+
+```haskell
+quicksort :: (Ord a) => [a] -> [a]
+quicksort [] = []
+quicksort [x] = [x]
+quicksort (x:xs) =
+    let smallersorted = quicksort (filter (<= x) xs)
+        biggersorted = quicksort (filter (> x) xs)
+    in smallersorted ++ [x] ++ biggersorted
+```
 
 One day soon I am going to start learning Java, partially because that's what Cambridge will teach in their first year for computer science, and partially because pain builds character.
 
@@ -26,7 +36,7 @@ One day soon I am going to start learning Java, partially because that's what Ca
 
 Finance is inherently interesting to me, because it represents a quantification of the beliefs and wills of so many individuals (point particles if you like) – and in my mind, quantification is the first step to prediction and/or understanding. Of course, a nice side effect of prediction is that you can make money from it.
 
-I have spent a lot of time building predictive systems based on machine/deep learning. I'm not naïve: I know that whatever I do is probably being done far better by a hedge fund somewhere. But regardless, I do think it's interesting to test the limits of statistical methods in a universe as chaotic as the American stock market.
+I have spent a lot of time building predictive systems based on machine/deep learning. I'm not naïve: I know that whatever I do is probably being done far better by a hedge fund somewhere. But regardless, I do think it's interesting to test the limits of statistical methods in a system as chaotic as the American stock market.
 
 One day I wish to be able to use my knowledge in physics and mathematical methods to be able to properly find order in financial markets, or failing that, to quantify the chaos and understand how to mitigate its effects.
 
@@ -47,7 +57,7 @@ On top of the very general 'physics and maths', here are some specific interests
 Still waiting for October 2018 when I can start at Cambridge. In the mean while, I'm trying to make the most of my time in NS.
 
 **January 2017**    
-Passed out from the Medical Response Force, a unit of specially trained combat medics who deal with chemical, biological and radiological threats. MRF is part of the Special Operations Taskforce, which means we went through some very difficult training and are now expected to be operationally ready at all times. I am now a specialist, and I am also a trained military driver.
+Passed out from the Medical Response Force conversion course, which was 7 weeks of hell. MRF is a unit of specially trained combat medics who deal with chemical, biological and radiological threats. It is part of the Special Operations Taskforce, so we are expected to be operationally ready at all times. I am now a specialist, as well as a trained military driver.
 
 **July 2016**     
 Enlisted into the army. In Singapore, there are two years of compulsory national service (NS) for citizens or permanent residents (that's me). Basic Military Training was until September.
