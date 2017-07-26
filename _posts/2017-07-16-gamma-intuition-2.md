@@ -22,7 +22,7 @@ Notice some things:
 
 As we saw in the previous post, in order to end up with a factorial, we will have to repeatedly differentiate something like $x^n$. As such, I am going to let $f(t) = t^n$. This is because $f(t)$ is always differentiated in the IBP formula.
 
-We also need to choose a $g(t)$, which will be always be integrated. I will choose the exponential function because it stays the same and makes everything easier. Maybe you think that I'm just choosing it because I know for a fact that the gamma function includes an exponential, but even if you think so, I urge you to read on as this doesn't affect the intuition behind the gamma function – it just changes makes this post an *explanation* instead of a *derivation*.
+We also need to choose a $g(t)$, which will be always be integrated. I will choose the exponential function because it stays the same and makes everything easier. Maybe you think that I'm just choosing it because I know for a fact that the gamma function includes an exponential, but even if you think so, I urge you to read on as this doesn't affect the intuition behind the gamma function – it just makes this post an *explanation* instead of a *derivation*.
 
 <br/>
 ## A shortcut for repeated IBP
@@ -107,7 +107,9 @@ We will now evaluate $\int t^ne^{-t}dt$:
 
 Thus we see that:
 
-$$\int t^n e^{-t}dt = -t^ne^{-t} - nt^{n-1}e^{-t}-n(n-1)t^{n-2}e^{-t}-\ldots - n(n-1)(n-2)(\cdots)(3)(2)te^{-t} - n!e^{-t}$$
+$$\begin{multline*}
+    \int t^n e^{-t}dt = -t^ne^{-t} - nt^{n-1}e^{-t}-n(n-1)t^{n-2}e^{-t}-\ldots \\ - n(n-1)(n-2)(\cdots)(3)(2)te^{-t} - n!e^{-t}
+\end{multline*}$$
 
 Note very carefully the last term – we have managed to produce an $n!$ (I would put another exclamation mark there, but...)
 
@@ -147,4 +149,4 @@ Compare this to the gamma function, and you will see that there is only a slight
 
 $$ \Gamma (x) = \int_0^\infty t^{x-1}e^{-t} dt $$
 
-The first integral has an $x$ in the exponent, while the second has an $x-1$. You can connect the dots here on your own, but in Part 3 I will explicitly show how the gamma function related to the factorial.
+The first integral has an $x$ in the exponent, while the second has an $x-1$. You can connect the dots here on your own, but in [Part 3]({{ site.baseurl }}{% post_url 2017-07-21-gamma-intuition-3 %}) I will explicitly show how the gamma function related to the factorial.
