@@ -15,9 +15,9 @@ $$\binom{n}{r} = \frac{n!}{r!(n-r)!}$$
 
 but the student will soon encounter the troubling question of how to evaluate $0.5!.$ Clearly, the traditional definition of the factorial does not make any provision for non-integers.
 
-However, it is well known that there *is* a natural extension of the factorial to all complex numbers excluding the negative integers – this is the **gamma function**, $\Gamma (x)$. The gamma function is defined using an integral:
+However, it is well known that there *is* a natural extension of the factorial to all complex numbers excluding the nonpositive integers – this is the **gamma function**, $\Gamma (x)$. The gamma function is defined using an integral:
 
-$$ \Gamma (x) = \int_0^\infty t^{x-1}e^{-t} dt, \qquad x \in \mathbb{C}| x \not\in \mathbb{Z}^-$$
+$$ \Gamma (x) = \int_0^\infty t^{x-1}e^{-t} dt, \qquad x \in \mathbb{C}| x \not\in \left \{ \{0\} \cup \mathbb{Z}^- \right \}$$
 
 Don't let the *t* distract you: it is just a dummy variable. The gamma function is a function of *x*. But the question is, *what on earth has this got to do with factorials?* As it happens, there is a wonderful intuitive reason for the form of the gamma function, and how it relates to $x!$, which I aim to explain. Following along will require the reader to have a reasonable understanding of differentiation and integration, but I will try to assume little else.
 
