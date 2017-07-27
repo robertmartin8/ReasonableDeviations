@@ -1,5 +1,3 @@
-
-
 /*
  *  __                  __
  * /\ \                /\ \
@@ -47,6 +45,20 @@ html {
     font-size: 20px;
   }
 }
+
+.text-justify {
+  text-align: justify;
+}
+
+.left {
+   float: left;
+   padding: 0 20px 20px 0;
+}
+
+.right {
+   float: right;
+   padding: 0 20px 20px 0;
+} 
 
 
 /*
@@ -171,9 +183,7 @@ a.sidebar-nav-item:focus {
 }
 
 
-/*
- * Themes
- */
+/* Themes */
 
 /* Purple */
 .theme-base-purpz .sidebar {
@@ -184,9 +194,4 @@ a.sidebar-nav-item:focus {
 .theme-base-purpz h1, h2, h3, h4, h5, h6,
 .theme-base-purpz .related-posts li a:hover {
   color: #5c14a4;
-}
-
-
-.text-justify {
-  text-align: justify;
 }
