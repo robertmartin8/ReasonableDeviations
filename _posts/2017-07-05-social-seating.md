@@ -5,8 +5,6 @@ title: Combinatorial optimisation with a pseudo-genetic algorithm
 
 ## or XKCD's Social Seating problem: a python approach
 
-*That's a bit of a mouthful!*
-
 <center>
 <img src="{{ site.imageurl }}movie_seating.png" style="width:400px;"/>
 </center>
