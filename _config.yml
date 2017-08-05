@@ -33,4 +33,4 @@ paginate:         5
 collections:
   Notes:
       output: true
-      permalink: /:collection/:path/
+      permalink: /Notes/:path/
