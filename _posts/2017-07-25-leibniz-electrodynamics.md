@@ -43,7 +43,7 @@ A cylinder can be thought of as many discs; a disc can be thought of as many rin
 ### 1. A single point charge
 
 
-<img src="{{ site.imageurl }}edyn/point_charge.png" style="width:300px; margin:10px 0px;" class="right"/>
+<img src="{{ site.imageurl }}edyn/point_charge.png" style="width:300px; margin:10px 5px;" class="right"/>
 
 Recall the formula for the potential at a point $P$: 
 
