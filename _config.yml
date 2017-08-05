@@ -10,7 +10,7 @@ title:            Reasonable Deviations
 tagline:          'finding order in chaos'
 description:      'into maths, physics, finance, and comsci'
 baseurl:          
-imageurl:       '/ReasonableDeviations/assets/images/'
+imageurl:       '/assets/images/'
 
 author:
   name:           'Robert Andrew Martin'
