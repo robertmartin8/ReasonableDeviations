@@ -31,6 +31,6 @@ github:
 paginate:         5
 
 collections:
-  Notes:
+  notes:
       output: true
-      permalink: /Notes/:path/
+      permalink: /notes/:path/
