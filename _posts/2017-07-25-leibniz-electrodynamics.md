@@ -30,6 +30,7 @@ $$\begin{aligned}
 &= \sec^2x\sqrt{1+ \tan^3 x} - \cos x \sqrt{1 + \sin^3 x}  
 \end{aligned}$$
 
+<br />
 ## The electrodynamics problem
 
 I say 'electrodynamics', but really it is an electrostatics problem. Below I have reproduced the question from Chapter 2 (Electrostatics) of Griffith's *Introduction to Electrodynamics*. It has been edited slightly.
@@ -150,6 +151,7 @@ In this case it is even simpler, because the derivatives of the limits are one. 
 $$\mathbf{E} = \frac{\rho}{2\epsilon_0} \left[L + \sqrt{R^2 + (z-L/2)^2} - \sqrt{R^2 + 
 (z+L/2)^2} \right] \mathbf{\hat{z}} $$
 
+<br />
 ## Conclusion
 
 In many electrodynamics problems, one finds the electric field by first calculating the potential, 
