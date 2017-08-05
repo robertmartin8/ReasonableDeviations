@@ -2,11 +2,28 @@
 
 [https://reasonabledeviations.science](https://reasonabledeviations.science)
 
+## Contents
+
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
+
+- [Rationale](#rationale)
+- [Theme and style](#theme-and-style)
+	- [Fonts](#fonts)
+	- [Colour](#colour)
+	- [Maths](#maths)
+- [Domain](#domain)
+- [License](#license)
+
+<!-- /TOC -->
+
+## Rationale
+
 I recently decided to make a webpage to act as both a portfolio to demonstrate some of my interesting projects, as well as a 'scientific blog' to informally log what I have been thinking about.
 
 I do like writing in markdown – I currently have a better-than-sublime (no pun intended) setup using the delicious
 [Atom text editor](https://atom.io/) which makes writing a pleasure. As such, I wanted a web platform
 that allows you to write posts in markdown. Github pages with Jekyll seemed to be the right choice. I had no prior experience in HTML/CSS, but it wasn't too hard to pick up the small bits necessary.
+
 
 ## Theme and style
 
@@ -71,6 +88,13 @@ I am using MathJax to render my maths. To get it to work, I just added the follo
 </script>
 ```
 
+## Domain
+
+I started with the default domain, which was `surelyourejoking.github.io/ReasonableDeviations`, but after a while I started to feel that this was too clunky. I decided to shop around for a nice domain, and found what I thought was a bargain on [namecheap.com](https://www.namecheap.com/). I think my new domain is costing me US$6 for the next 5 years, which is a good deal.
+
+Namecheap offers a very useful [guide](https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages) for linking your new domain with github pages blogs, and this was actually very easy to do.
+
+*However*, it broke a lot of the CSS and internal links because of the new url, which means that I had to go and edit all the baseurl stuff etc. So my advice for someone aspiring to make a github pages blog is to set up your custom domain before adding content. 
 
 ## License
 
