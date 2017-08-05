@@ -9,7 +9,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
 - **IB notes**
-	- [Mathematics (higher level)]({{ site.noteurl }}hl_maths)
+	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
 	- [Physics (higher level)]({{ site.noteurl }}hl_physics)
 	- [Chemistry (higher level)]({{ site.noteurl }}hl_chemistry)
 - [**Textbook notes**](#textbook-notes)
