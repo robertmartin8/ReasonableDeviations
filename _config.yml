@@ -28,7 +28,7 @@ github:
 
 
 # Structure
-paginate:         5
+paginate:         3
 
 collections:
   notes:
