@@ -1,6 +1,6 @@
 # ReasonableDeviations
 
-https://surelyourejoking.github.io/ReasonableDeviations
+[https://reasonabledeviations.science](https://reasonabledeviations.science)
 
 I recently decided to make a webpage to act as both a portfolio to demonstrate some of my interesting projects, as well as a 'scientific blog' to informally log what I have been thinking about.
 
