@@ -9,9 +9,9 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
 - **IB notes**
-	- [Mathematics (higher level)]({{ site.url }}/Notes/hl_maths)
-	- [Physics (higher level)]({{ site.url }}/Notes/hl_physics)
-	- [Chemistry (higher level)]({{ site.url }}/Notes/hl_chemistry)
+	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
+	- [Physics (higher level)]({{ site.url }}/notes/hl_physics)
+	- [Chemistry (higher level)]({{ site.url }}/notes/hl_chemistry)
 - [**Textbook notes**](#textbook-notes)
 	- [QED: The Strange Theory, by Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
 	- [The Feynman Lectures on Physics](#the-feynman-lectures-on-physics)
