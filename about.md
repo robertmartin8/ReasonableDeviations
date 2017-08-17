@@ -17,7 +17,7 @@ Whenever I need a computer to help me, I first turn to python. I have been using
 
 However, I concede that R has a better statistics ecosystem – there is an R implementation for basically any useful theorem/procedure in statistics. I have used R for a number of data science projects, and I do appreciate its data visualisation capabilities, which are arguably superior to those of python.
 
-I have also frequently turned to 'knowledge based computing', a nice euphemism for 'asking Mathematica what the answer is'. I've dabbled in C++ and a little bit of Haskell, and I would *love* to become more proficient at the latter. Understanding quicksort in haskell was a marvellous moment:
+I have also frequently turned to 'knowledge based computing', a nice euphemism for 'asking Mathematica what the answer is'. I've dabbled in C++ and a little bit of Haskell, and I would *love* to become more proficient at both. Understanding quicksort in haskell was a marvellous moment:
 
 ```haskell
 quicksort :: (Ord a) => [a] -> [a]
@@ -45,8 +45,7 @@ One day I wish to be able to use my knowledge in physics and mathematical method
 
 On top of the very general 'physics and maths', here are some specific interests (in no particular order):
 - machine learning on fundamental stock data
-- nice tricks to do integrals
-- backtesting various technical analysis strategies to separate the fairy tales from the profit.
+- nice tricks to evaluate integrals
 - 'pure' statistics (e.g probability generating functions)
 - blockchain-based smart contracts, especially Ethereum
 
