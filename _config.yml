@@ -9,6 +9,7 @@ permalink:        pretty
 title:            Reasonable Deviations
 tagline:          'finding order in chaos'
 description:      'into maths, physics, finance, and comp-sci'
+url:               'https://reasonabledeviations.science'
 baseurl:          
 imageurl:       '/assets/images/'
 
