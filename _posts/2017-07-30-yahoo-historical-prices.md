@@ -82,9 +82,10 @@ Or will it? I have found the hard way that web-related code often runs into erro
 ```python
 for ticker in tickers:
     try:
-        link = ("https://query1.finance.yahoo.com/v7/finance/download"
-                "/{}?period1=946656000&period2=1501948800&interval=1d"
-                "&events=history&crumb=BkT/GAawAXc".format(ticker))
+        link = ("https://query1.finance.yahoo.com/v7/finance/"
+                "download/{}?period1=946656000&"
+                "period2=1501948800&interval=1d&events=history"
+                "&crumb=BkT/GAawAXc".format(ticker))
         webbrowser.open(link)
     except Exception as e:
         print(ticker, str(e))
