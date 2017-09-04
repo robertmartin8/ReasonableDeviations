@@ -18,7 +18,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Why Chemical Reactions Happen, Keeler and Wothers](#why-chemical-reactions-happen)
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
-
+- [**Notes on academic papers**]({{ site.url }}/notes/academic_papers)
 <!-- /TOC -->
 
 ---
