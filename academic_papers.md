@@ -26,5 +26,5 @@ div {
 ### Quantitative Finance
 
 - Huang, W., Nakamori, Y., & Wang, S. (2005). [Forecasting stock market movement direction with support vector machine]({{ site.imageurl }}../notes/stock_direction_svm.pdf) . Computers and Operations Research, 32, 2513–2522. [https://doi.org/10.1016/j.cor.2004.03.016](https://doi.org/10.1016/j.cor.2004.03.016)
-- Kimoto, T., Asakawa, K., Yoda, M., & Takeoka, M. (1990). Stock market prediction system with modular neural networks. 1990 IJCNN International Joint Conference on Neural Networks, 1–6 vol.1. [https://doi.org/10.1109/IJCNN.1990.137535](https://doi.org/10.1109/IJCNN.1990.137535)
+- Kimoto, T., Asakawa, K., Yoda, M., & Takeoka, M. (1990). [Stock market prediction system with modular neural networks]({{ site.imageurl }}../notes/modular_NN.pdf). 1990 IJCNN International Joint Conference on Neural Networks, 1–6 vol.1. [https://doi.org/10.1109/IJCNN.1990.137535](https://doi.org/10.1109/IJCNN.1990.137535)
 - Lawrence, R. (1997). [Using Neural Networks to Forecast Stock Market Prices]({{ site.imageurl }}../notes/nn_forecast_stock.pdf). Retrieved from [http://people.ok.ubc.ca/rlawrenc/research/Papers/nn.pdf](http://people.ok.ubc.ca/rlawrenc/research/Papers/nn.pdf) [literature survey]
