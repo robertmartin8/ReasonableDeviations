@@ -56,13 +56,13 @@ On top of the very general 'physics and maths', here are some specific interests
 Still waiting for October 2018 when I can start at Cambridge. In the mean while, I'm trying to make the most of my time in NS.
 
 **January 2017**    
-Passed out from the Medical Response Force conversion course, which was 7 weeks of hell. MRF is a unit of specially trained combat medics who deal with chemical, biological and radiological threats. It is part of the Special Operations Taskforce, so we are expected to be operationally ready at all times. I am now a specialist, as well as a trained military driver.
+Passed out from the Medical Response Force conversion course, which was 7 weeks of very tough training. MRF is a unit of specially trained combat medics who deal with chemical, biological and radiological threats. It is part of the Special Operations Taskforce, so we are expected to be operationally ready at all times. I am now a specialist, as well as a trained military driver.
 
 **July 2016**     
 Enlisted into the army. In Singapore, there are two years of compulsory national service (NS) for citizens or permanent residents (that's me). Basic Military Training was until September.
 
 **January 2016**    
-Accepted to study the Physical Natural Sciences at Christ's College Cambridge, with two years deferred entry. I will enter in
+Accepted to study the Physical Natural Sciences at Christ's College Cambridge, with two years deferred entry (entry in October 2018)
 
 **November 2015**    
-Graduated from high school, having completed my International Baccalaureate with my three higher level subjects being maths, chemistry, and physics, with my extended essay in maths. I scored 45 points overall.
+Graduated from high school, having completed my International Baccalaureate with my three higher level subjects being maths, chemistry, and physics, and extended essay in maths – I scored 45 points overall.
