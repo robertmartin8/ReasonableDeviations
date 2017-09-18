@@ -13,12 +13,13 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Physics (higher level)]({{ site.url }}/notes/hl_physics)
 	- [Chemistry (higher level)]({{ site.url }}/notes/hl_chemistry)
 - [**Textbook notes**](#textbook-notes)
-	- [QED: The Strange Theory, by Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
+	- [QED: The Strange Theory - Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
 	- [The Feynman Lectures on Physics](#the-feynman-lectures-on-physics)
-	- [Why Chemical Reactions Happen, Keeler and Wothers](#why-chemical-reactions-happen)
+	- [Why Chemical Reactions Happen - Keeler and Wothers](#why-chemical-reactions-happen)
+	- [Introduction to Statistical Learning – James, Witten, Hastie, Tibshirani]({{ site.url }}/notes/intro_stat_learn)
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
-- [**Notes on academic papers**]({{ site.url }}/notes/academic_papers)
+- [**Notes on academic papers**]({{ site.url }}/academic_papers)
 <!-- /TOC -->
 
 ---
