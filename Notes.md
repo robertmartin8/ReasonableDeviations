@@ -17,6 +17,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [The Feynman Lectures on Physics](#the-feynman-lectures-on-physics)
 	- [Why Chemical Reactions Happen - Keeler and Wothers](#why-chemical-reactions-happen)
 	- [Introduction to Statistical Learning – James, Witten, Hastie, Tibshirani]({{ site.url }}/notes/intro_stat_learn)
+	- [Elements of Statistical learning - Hastie, Tibshirani, Friedman]({{ site.url }}/notes/el_stat_learn)
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
 - [**Notes on academic papers**]({{ site.url }}/academic_papers)
