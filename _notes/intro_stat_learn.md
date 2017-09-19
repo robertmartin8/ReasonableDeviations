@@ -5,6 +5,7 @@ title: Introduction to Statistical Learning
 
 # Introduction to Statistical Learning – James, Witten, Hastie, Tibshirani
 
+*So far I have only looked at Chapter 8, on tree-based methods, because I needed specifically to learn more about that. Because the boosting method wasn't sufficiently detailed, I turned to Elements of Statistical Learning (the big brother of this textbook)*
 
 ## 8. Tree-based methods
 
@@ -32,14 +33,12 @@ $$\sum_{m=1}^{|T|} \sum_{i: x_i \in R_m}(y_i - \hat{y}_{R_m})^2 + \alpha |T|$$
 
 $\hat{y}_{R_m}$ is the subset of the predictor space corresponding to the *m*th terminal node. 
 
----
-
 **Decision tree algorithm:**
 
-1. Grow tree with recursive binary splitting until each terminal node has fewer than k observations, where k is a preset minimum.
-2. Obtain a sample of subtrees for different values of $\alpha$
-3. K-fold CV to choose $\alpha$
-4. Return tree
+> 1. Grow tree with recursive binary splitting until each terminal node has fewer than k observations, where k is a preset minimum.
+> 2. Obtain a sample of subtrees for different values of $\alpha$
+> 3. K-fold CV to choose $\alpha$
+> 4. Return tree
 
 ### 8.1.2 Classification trees
 
