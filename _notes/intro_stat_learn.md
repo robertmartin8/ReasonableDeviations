@@ -23,8 +23,10 @@ $$RSS = \sum_{i: x_i \in R_1}(y_i - \hat{y}_{R_1})^2
 + \sum_{i: x_i \in R_2}(y_i - \hat{y}_{R_2})^2$$
 
 - If the number of predictors is moderate, this calculation can be done quickly. 
-- To prevent overfitting, we can **prune** a tree $T_0$ into a **subtree** *T*, using **cost complexity pruning**. 
-- For each $T \subset T_0$, |T| is the number of terminal nodes (a measure of complexity). We penalise larger values of |T| (very similar to regularisation). Minimise:
+- To prevent overfitting, we can **prune** a tree $T_0$ into a **subtree** *T*, using 
+**cost complexity pruning**. 
+- For each $T \subset T_0$, \|T\| is the number of terminal nodes (a measure of complexity). We penalise larger values of \|T\| (very similar to regularisation). Minimise
+
 
 $$\sum_{m=1}^{|T|} \sum_{i: x_i \in R_m}(y_i - \hat{y}_{R_m})^2 + \alpha |T|$$
 
