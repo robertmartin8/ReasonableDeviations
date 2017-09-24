@@ -10,7 +10,7 @@ title: Elements of Statistical Learning
 - [2. Overview of Supervised Learning](#2-overview-of-supervised-learning)
 	- [Statistical decision theory](#statistical-decision-theory)
 - [10. Boosting and Additive trees](#10-boosting-and-additive-trees)
-	- [10.1 Discrete Adaboost](#101-discrete-adaboost)
+	- [10.1 Discrete AdaBoost](#101-discrete-adaboost)
 	- [10.2 Boosting and additive models](#102-boosting-and-additive-models)
 	- [10.3 Forward Stagewise Additive Modelling (FSAM)](#103-forward-stagewise-additive-modelling-fsam)
 	- [10.4 Exponential Loss and AdaBoost](#104-exponential-loss-and-adaboost)
@@ -62,7 +62,7 @@ $$\hat{f}(x) = \text{Ave}(y_i|x_i \in N_k(x))$$
 
 ## 10. Boosting and Additive trees
 
-### 10.1 Discrete Adaboost
+### 10.1 Discrete AdaBoost
 
 - Let $Y= G(X)$ be a classifier such that $G(x) \in \\{-1, 1\\}$
 - A **weak classifier** is one whose predictions are only slightly better than random guessing. 
