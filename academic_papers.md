@@ -16,7 +16,7 @@ div {
 
 ### Computer Science
 
-- Buterin, V. (2014). [A next-generation smart contract and decentralized application platform]({{ site.imageurl }}../notes/eth_whitepaper.pdf). Ethereum, (January), 1–36. Retrieved from [https://github.com/ethereum/wiki/wiki/White-Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
+- Buterin, V. (2014). [A next-generation smart contract and decentralized application platform]({{ site.url }}/notes/papers/eth_whitepaper). Ethereum, (January), 1–36. Retrieved from [https://github.com/ethereum/wiki/wiki/White-Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 - Glorot, X., Bordes, A., & Bengio, Y. (2011). [Deep sparse rectifier neural networks]({{ site.imageurl }}../notes/deep_sparse_nn.pdf). AISTATS ’11: Proceedings of the 14th International Conference on Artificial Intelligence and Statistics, 15, 315–323. [https://doi.org/10.1.1.208.6449](https://doi.org/10.1.1.208.6449)
 
 ### Finance and economics
@@ -27,4 +27,4 @@ div {
 
 - Huang, W., Nakamori, Y., & Wang, S. (2005). [Forecasting stock market movement direction with support vector machine]({{ site.url }}/notes/papers/forecasting_with_svm) . Computers and Operations Research, 32, 2513–2522. [https://doi.org/10.1016/j.cor.2004.03.016](https://doi.org/10.1016/j.cor.2004.03.016)
 - Kimoto, T., Asakawa, K., Yoda, M., & Takeoka, M. (1990). [Stock market prediction system with modular neural networks]({{ site.imageurl }}../notes/modular_NN.pdf). 1990 IJCNN International Joint Conference on Neural Networks, 1–6 vol.1. [https://doi.org/10.1109/IJCNN.1990.137535](https://doi.org/10.1109/IJCNN.1990.137535)
-- Lawrence, R. (1997). [Using Neural Networks to Forecast Stock Market Prices]({{ site.imageurl }}../notes/nn_forecast_stock.pdf). Retrieved from [http://people.ok.ubc.ca/rlawrenc/research/Papers/nn.pdf](http://people.ok.ubc.ca/rlawrenc/research/Papers/nn.pdf) [literature survey]
+- Lawrence, R. (1997). [Using Neural Networks to Forecast Stock Market Prices]({{ site.url }}/notes/papers/nn_forecast_stock). Retrieved from [http://people.ok.ubc.ca/rlawrenc/research/Papers/nn.pdf](http://people.ok.ubc.ca/rlawrenc/research/Papers/nn.pdf) [literature survey]
