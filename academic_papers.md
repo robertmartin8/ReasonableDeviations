@@ -18,7 +18,7 @@ div {
 
 - Buterin, V. (2014). [A next-generation smart contract and decentralized application platform]({{ site.url }}/notes/papers/eth_whitepaper). Ethereum, (January), 1–36. Retrieved from [https://github.com/ethereum/wiki/wiki/White-Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 - Schapire, R. E., & Freund, Y. (2009). [A Short Introduction to Boosting]({{ site.url }}/notes/papers/short_intro_boosting). Society, 14(5), 771–780. https://doi.org/10.1.1.112.5912
-- Glorot, X., Bordes, A., & Bengio, Y. (2011). [Deep sparse rectifier neural networks]({{ site.imageurl }}../notes/deep_sparse_nn.pdf). AISTATS ’11: Proceedings of the 14th International Conference on Artificial Intelligence and Statistics, 15, 315–323. [https://doi.org/10.1.1.208.6449](https://doi.org/10.1.1.208.6449)
+- Glorot, X., Bordes, A., & Bengio, Y. (2011). [Deep sparse rectifier neural networks]({{ site.url }}/notes/papers/deep_sparse_nn). AISTATS ’11: Proceedings of the 14th International Conference on Artificial Intelligence and Statistics, 15, 315–323. [https://doi.org/10.1.1.208.6449](https://doi.org/10.1.1.208.6449)
 - Quinlan, J. R. (1986). [Induction of Decision Trees]({{ site.url }}/notes/papers/induction_decision_trees). Machine Learning, 1(1), 81–106. https://doi.org/10.1023/A:1022643204877
 
 ### Finance and economics
