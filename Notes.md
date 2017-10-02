@@ -22,6 +22,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Bitcoin and Cryptocurrencies – Princeton]({{ site.url }}/notes/princeton_bitcoin) 
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
+    - [Introduction to Boosted trees]({{ site.url }}/notes/intro_boosted_trees), based on the [slides by Tianqi Chen ](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
 - [**Notes on academic papers**]({{ site.url }}/academic_papers)
 <!-- /TOC -->
 
