@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Introduction to Boosting
 ---
 
 ## A Short Introduction to Boosting

@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Deep Sparse Rectifier NNs
 ---
 
 ## Deep Sparse Rectifier Neural Networks

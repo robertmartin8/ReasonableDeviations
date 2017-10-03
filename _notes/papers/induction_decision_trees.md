@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Induction of Decision Trees
 ---
 
 ## Induction of Decision Trees

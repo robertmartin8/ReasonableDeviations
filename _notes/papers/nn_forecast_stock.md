@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Neural Networks to Forecast Stock Market Prices
 ---
 
 ## Using Neural Networks to Forecast Stock Market Prices [Survey]

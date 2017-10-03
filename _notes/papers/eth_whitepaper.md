@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Ethereum whitepaper
 ---
 
 ## Next generation smart contract and decentralised application platform

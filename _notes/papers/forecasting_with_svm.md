@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Forecasting stock market movement with SVM 
 ---
 
 ## Forecasting stock market movement with SVM 
