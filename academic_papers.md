@@ -16,6 +16,7 @@ div {
 
 ### Computer Science
 
+- Anderson, A., & Kleinberg, J. (2016). [Assessing Human Error Against a Benchmark of Perfection]({{ site.imageurl }}../notes/chess_blunders.pdf). In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 705–714). San Francisco, California, USA: ACM. [https://doi.org/10.1145/2939672.2939803](https://doi.org/10.1145/2939672.2939803)
 - Buterin, V. (2014). [A next-generation smart contract and decentralized application platform]({{ site.url }}/notes/papers/eth_whitepaper). Ethereum, (January), 1–36. Retrieved from [https://github.com/ethereum/wiki/wiki/White-Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 - Chen, T., & Guestrin, C. (2016). [XGBoost: A Scalable Tree Boosting System]({{ site.imageurl }}../notes/xgboost.pdf). In Proceedings of the 22Nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 785–794). New York, NY, USA: ACM. [https://doi.org/10.1145/2939672.2939785](https://doi.org/10.1145/2939672.2939785)
 - Schapire, R. E., & Freund, Y. (2009). [A Short Introduction to Boosting]({{ site.url }}/notes/papers/short_intro_boosting). Society, 14(5), 771–780. [https://doi.org/10.1.1.112.5912](https://doi.org/10.1.1.112.5912)
