@@ -22,6 +22,7 @@ div {
 - Schapire, R. E., & Freund, Y. (2009). [A Short Introduction to Boosting]({{ site.url }}/notes/papers/short_intro_boosting). Society, 14(5), 771–780. [https://doi.org/10.1.1.112.5912](https://doi.org/10.1.1.112.5912)
 - Glorot, X., Bordes, A., & Bengio, Y. (2011). [Deep sparse rectifier neural networks]({{ site.url }}/notes/papers/deep_sparse_nn). AISTATS ’11: Proceedings of the 14th International Conference on Artificial Intelligence and Statistics, 15, 315–323. [https://doi.org/10.1.1.208.6449](https://doi.org/10.1.1.208.6449)
 - Quinlan, J. R. (1986). [Induction of Decision Trees]({{ site.url }}/notes/papers/induction_decision_trees). Machine Learning, 1(1), 81–106. [https://doi.org/10.1023/A:1022643204877](https://doi.org/10.1023/A:1022643204877)
+- Schwartz, D., Youngs, N., & Britto, A. (2014). [The Ripple protocol consensus algorithm]({{ site.url }}/notes/papers/ripple_consensus_protocol). Ripple Labs Inc White Paper, 1–8. Retrieved from [http://www.naation.com/ripple-consensus-whitepaper.pdf](http://www.naation.com/ripple-consensus-whitepaper.pdf)
 
 ### Finance and economics
 
