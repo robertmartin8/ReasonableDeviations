@@ -316,7 +316,7 @@ Highly parallelised with high-throughput, can be optimised for SHA256.
 * A top down analysis (as of 22/6/17):
     * each block worth 25 * 2500 = 62500USD
     * one block every 10 minutes, therefore $104 per second
-    * electricity costs $0.05 per kWh = $0.0139/MJ
+    * electricity costs 0.05 per kWh = 0.0139/MJ
     * assuming all miners just break even, this is 7488 MW
 *  Thus in the grand scale of things bitcoin doesn’t consume that much energy. Also, it’s no different to traditional currency. 
 
