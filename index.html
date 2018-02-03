@@ -11,9 +11,10 @@ title: Home
         {{ post.title }}
       </a>
     </h1>
-
-    <span align="right" class="post-date">{{ post.date | date_to_string }}</span>
-
+    <!-- Estimate reading time given WPM 150 -->
+    <span align="right" class="post-date">
+        {{ post.date | date_to_string }} &middot; 
+         {% assign words = post.content | number_of_words %}{{ words | divided_by:150 }} min read</span>
     {{ post.content }}
   </div>
 <hr />
