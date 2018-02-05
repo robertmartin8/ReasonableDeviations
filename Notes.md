@@ -8,22 +8,23 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
-- **IB notes**
-	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
-	- [Physics (higher level)]({{ site.url }}/notes/hl_physics)
-	- [Chemistry (higher level)]({{ site.url }}/notes/hl_chemistry)
+
 - [**Textbook notes**](#textbook-notes)
 	- [QED: The Strange Theory – Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
 	- [The Feynman Lectures on Physics – Richard Feynman](#the-feynman-lectures-on-physics)
 	- [Why Chemical Reactions Happen – Keeler and Wothers](#why-chemical-reactions-happen)
 	- [Introduction to Statistical Learning – James, Witten, Hastie, Tibshirani]({{ site.url }}/notes/intro_stat_learn)
 	- [Elements of Statistical learning – Hastie, Tibshirani, Friedman]({{ site.url }}/notes/el_stat_learn)
+- [**Notes on academic papers**]({{ site.url }}/academic_papers)
+- **IB notes**
+	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
+	- [Physics (higher level)]({{ site.url }}/notes/hl_physics)
+	- [Chemistry (higher level)]({{ site.url }}/notes/hl_chemistry)
 - **Online courses**
 	- [Bitcoin and Cryptocurrencies – Princeton]({{ site.url }}/notes/princeton_bitcoin) 
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
-    - [Introduction to Boosted trees]({{ site.url }}/notes/intro_boosted_trees), based on the [slides by Tianqi Chen ](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
-- [**Notes on academic papers**]({{ site.url }}/academic_papers)
+    - [Introduction to Boosted trees]({{ site.imageurl }}../notes/intro_boosted_trees.pdf), based on the [slides by Tianqi Chen ](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
 <!-- /TOC -->
 
 ---
@@ -56,7 +57,7 @@ So far I've only done a few chapters of volume 1. I really intended to work thro
 
 Link: [Why Chemical Reactions Happen (notes)]( {{ site.imageurl }}../notes/why_chemical_reactions_happen.pdf)
 
-In January, when I was examining the reading lists for Cambridge and reading example personal statements for Natural Sciences, I noticed that a common denominator was the book _Why Chemical Reactions Happen_, by Keeler and Wothers. I proceeded to read the first two chapters, and was able to easily follow the physics-based reasoning. I therefore listed it on my personal statement, with the full intention of reading the whole thing before the interview. However, after the first few chapters, the material becomes extremely dense (especially with the focus on MO theory), and pretty hard going. To help summarise what I needed to know, I made notes on this book. These notes turned out to be quite verbose, because the book itself is quite succinct anyway. I wasn't asked anything about the book in my interview, which I suppose is fortunate because I would have probably struggled. Nevertheless, that meant that the notes were a waste of time. If any of you are in a similar predicament, I hope you benefit from them.
+In January, when I was examining the reading lists for Cambridge and reading example personal statements for Natural Sciences, I noticed that a common denominator was the book _Why Chemical Reactions Happen_, by Keeler and Wothers. I proceeded to read the first two chapters, and was able to easily follow the physics-based reasoning. I therefore listed it on my personal statement, with the full intention of reading the whole thing before the interview. However, after the first few chapters, the material becomes extremely dense (especially with the focus on MO theory), and pretty hard going. To help summarise what I needed to know, I made notes on this book. These notes turned out to be quite verbose, because the book itself is quite succinct anyway. I wasn't asked anything about the book in my interview, which I suppose is fortunate because I would have probably struggled. Nevertheless, that meant that on paper, the notes were a waste of time (pun intended?). But if any of you are in a similar predicament, I hope you benefit from having some notes to refer to. 
 
 ---
 
