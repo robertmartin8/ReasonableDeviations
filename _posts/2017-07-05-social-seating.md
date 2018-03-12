@@ -510,8 +510,8 @@ This problem of optimising seating arrangements actually belongs to the much bro
 
 ---
 
-*I hope you enjoyed what turned out to be a rather long article. All the code is on my [GitHub](https://github.com/surelyourejoking/RandomWalks/blob/master/social_seating.py), feel free to fork it and try out your own networks*.
+*I hope you enjoyed what turned out to be a rather long article. All the code is on my [GitHub](https://github.com/robertmartin8/RandomWalks/blob/master/social_seating.py), feel free to fork it and try out your own networks*.
 
-  [1dcea476]: https://github.com/surelyourejoking/RandomWalks/blob/master/social_seating.ipynb "ipython notebook"
+  [1dcea476]: https://github.com/robertmartin8/RandomWalks/blob/master/social_seating.ipynb "ipython notebook"
 
 *Actually, this whole post was based on an 'article' I wrote when I was much younger, trying to be all professional and everything. If you're up for a laugh, you can find it [here](https://vixra.org/pdf/1605.0109v1.pdf)*

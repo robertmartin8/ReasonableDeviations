@@ -202,7 +202,7 @@ See for yourself.
 
 ---
 
-*Check out my [PyGameofLife repository](https://github.com/surelyourejoking/PyGameofLife) on GitHub, which includes the code used in this post (under `basic_demo.py`), but also a slightly more professional refactoring, with a number of built-in seeds, allowing a user to do something like:*
+*Check out my [PyGameofLife repository](https://github.com/robertmartin8/PyGameofLife) on GitHub, which includes the code used in this post (under `basic_demo.py`), but also a slightly more professional refactoring, with a number of built-in seeds, allowing a user to do something like:*
 
 ```python
 from game_of_life import animate_life
