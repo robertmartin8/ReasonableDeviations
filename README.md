@@ -90,7 +90,7 @@ I am using MathJax to render my maths. To get it to work, I just added the follo
 
 ## Domain
 
-I started with the default domain, which was `surelyourejoking.github.io/ReasonableDeviations`, but after a while I started to feel that this was too clunky. I decided to shop around for a nice domain, and found what I thought was a bargain on [namecheap.com](https://www.namecheap.com/). I think my new domain is costing me US$6 for the next 5 years, which is a good deal.
+I started with the default domain, which was `robertmartin8.github.io/ReasonableDeviations`, but after a while I started to feel that this was too clunky. I decided to shop around for a nice domain, and found what I thought was a bargain on [namecheap.com](https://www.namecheap.com/). I think my new domain is costing me US$6 for the next 5 years, which is a good deal.
 
 Namecheap offers a very useful [guide](https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages) for linking your new domain with github pages blogs, and this was actually very easy to do.
 
