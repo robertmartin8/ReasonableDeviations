@@ -1,5 +1,5 @@
 <!-- Snippet to calculate reading time assuming WPM 150 -->
 <span align="right" class="post-date" title="Estimated read time">
     {{ page.date | date_to_string }} &middot;
-  {% assign words = content | number_of_words %}{{ words | divided_by:150 }} min read
+  {% assign words = content | number_of_words %}{{ words | divided_by:180 }} min read
 </span>
