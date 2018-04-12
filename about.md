@@ -11,6 +11,14 @@ I'm a logical person who holds rationalism dear. Physics and mathematics are my 
 
 I think man's best friend is the computer. Someone once said that the best and worst thing about them is that they do exactly what you tell them – they can be extremely reliable in theory, if they are coded by a theoretically perfect person.
 
+If you'd like to get in touch, click the link below (even if you haven't got a mail client set up, you can still see the address) 
+
+<script language="JavaScript">
+var user1 = "martin.robertandrew";
+var host1 = "gmail.com";
+document.write("<a href='" + "mailto:" + user1 + "@" + host1 + "'><b>Email me!</b></a>");
+</script>
+
 ## Programming
 
 Whenever I need a computer to help me, I first turn to python. I have been using python (primarily for scientific purposes) for about 3 years, though it was only a year ago that I started to make use of some core language features like classes. With its pseudocode-like syntax and extremely clear objectives (type `import this` to a python console), it lets you get your ideas into a computer with relative ease.
