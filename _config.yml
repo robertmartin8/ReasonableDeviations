@@ -26,6 +26,8 @@ version:          2.1.0
 github:
   repo:           https://github.com/robertmartin8
 
+social:
+    linkedin: https://www.linkedin.com/in/robert-martin-1787368b/
 
 # Structure
 paginate:         3
