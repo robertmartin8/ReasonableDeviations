@@ -28,10 +28,22 @@
       {% endfor %}
 
       <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a> -->
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}">
+      <div class="sidebar-nav-item">
+          <p>
+              <a href="{{ site.github.repo }}">
+              Github <i class="fa fa-github" aria-hidden="true"></i></a>
+              &nbsp;
+              <a href="{{ site.social.linkedin }}">
+                  LinkedIn <i class="fa fa-linkedin-square"></i>
+              </a>
+          </p>
+      </div>
+      <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}">
           GitHub <i class="fa fa-github" aria-hidden="true"></i>
       </a>
-
+      <a class="sidebar-nav-item" href="{{ site.github.repo }}">
+          LinkedIn <i class="fa fa-github" aria-hidden="true"></i>
+      </a> -->
       <!-- <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
     </nav>
 
