@@ -9,11 +9,11 @@ Two years ago I was an absolute novice at machine learning: I had read around th
 <img src="{{ site.imageurl }}/mt_stupid.png" style="width:400px;"/>
 </center>
 
-Fast forward to the present day -- I'm just about escaping the local minimum on the other side. Although I definitely wouldn't claim anything close to mastery of the subject, a few months ago I took a step back to look at my progress and realised that I was definitely not a beginner any longer: I had built a couple of extensive project, created some educational resources, and even written a journal article (unpublished as of now) applying ML. I therefore think that I am in a reasonable place to share the mistakes I made when learning ML, so that other people don't have to make them!
+Fast forward to the present day -- I'm just about escaping the local minimum on the other side. Although I definitely wouldn't claim anything close to mastery of the subject, a few months ago I took a step back to look at my progress and realised that I was definitely not a beginner any longer: I had built a couple of extensive projects, created some educational resources, and even written a journal article (unpublished as of now) applying ML. I therefore think that I am in a reasonable place to share the mistakes I made when learning ML, so that other people don't have to make them!
 
 It is worth noting that two years is a very long time; I was far too occupied (with the army, among other things) to commit fully to machine learning, but I think that most people could achieve near-mastery in 6 months if they so pleased. 
 
-In any case, from the perspective of a fellow learner who has had a small head start, and without any guarantees of it being the most efficient way to learn the subject, I'm going to present some advice. The rough overview is this:
+In any case, from the perspective of a fellow learner who has had a small head start, and without any guarantees of it being the most efficient way to learn the subject, I'm going to present some advice. The rough overview is as follows:
 
 1. [Learn to code](#learn-to-code)
 2. [Learn the basics of ML](#learn-the-basics-of-ml)
@@ -32,11 +32,12 @@ For those new to programming, a natural question is what language to use. This i
 I can't remember exactly how I learnt python (it was a long time ago): I recall it being a dark and uncomfortable time, probably because I tried to navigate my own way through. I suggest you choose one of the many tutorials available. Here are two suggestions
 
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/), by Al Sweigart. Very highly regarded, although it doesn't directly address data science. It teaches the syntax, and just how useful python can be. Even if you know for a fact that you're only interested in data science, the first 12 chapters are critical.
-- [Python course from Rice University](https://www.coursera.org/learn/interactive-python-1). Comprehensive and beginner-friendly. 
+- [A Byte of Python](https://python.swaroopch.com/). A great online book which teachers you quite a lot of the language. I used this a lot while I was learning.
+- [Python course from Rice University](https://www.coursera.org/learn/interactive-python-1). Comprehensive and beginner-friendly, but perhaps with an excessive focus on GUI programming.
 
 Some tips:
 - You don't need to know all that much about writing classes in python, at least for ML. I think one of the most important things is list comprehensions. 
-- Please use python 3
+- Please use python 3.
 - I'd recommend against trying to learn about ML and learning the python language at the same time.
 
 ### Learn the basics of ML
@@ -47,7 +48,7 @@ One of the seemingly unanimous recommendations is Andrew Ng's [Coursera course](
 
 My personal recommendations are:
 
-- [Georgia Tech machine learning](https://www.udacity.com/course/machine-learning--ud262?utm_medium=referral&utm_campaign=api). This course spends a lot more time explaining the intuition behind the algorithms before going into the maths or the code, which is invaluable as a learner.
+- [Georgia Tech Machine Learning](https://www.udacity.com/course/machine-learning--ud262?utm_medium=referral&utm_campaign=api). This course spends a lot more time explaining the intuition behind the algorithms before going into the maths or the code, which is invaluable as a learner.
 - [Udemy Machine Learning](https://www.udemy.com/machinelearning/). While I am generally very unwilling to pay for educational resources, I ended up buying this for \$10 during one of the sales. The course is extremely comprehensive, basically demonstrating how to use every algorithm of note in both python and R. This course *does not* teach you very much about how the algorithm works, but it excels at showing you how to apply the algorithms. For a long time, this really frustrated me, but looking back, I realise how useful it is to be given a practical tour across the whole ML scene. To be fair, you can probably learn this directly from the [scikit-learn documentation ](http://scikit-learn.org/), but it does help to have video explanations. I've put my code for this course onto [GitHub](https://github.com/robertmartin8/udemyML).
 
 Tips:
@@ -91,4 +92,4 @@ Although it is true that there is always more to learn about a subject, sometime
 
 After researching a lot into stock prediction and boosted decision trees, I noticed a gap in the literature -- nobody had tried to apply gradient boosting to the markets. I ended up writing a paper, and as soon as the paper trading results are in, I'm looking to publish it in *Expert Systems with Applications*. But actually what I'm most proud of is an extensive tutorial I made, [MachineLearningStocks](https://github.com/robertmartin8/MachineLearningStocks), which is meant to help beginners get started with applying ML to stock prediction. I guess releasing the tutorial 'completed the circle' -- after you learn enough about a topic, it starts being your job to propagate that knowledge to the next iteration of learners.
 
-With that, I'll conclude this post. Machine learning is a subject that is not hard to pick up, but has a learning curve that steepens the further you get into it. Just being able to *apply* machine learning puts you ahead of most of the world. It is constantly evolving, with a startling amount of research released daily. But don't let this put you off: with concerted effort and the right resources, it's definitely feasible for you to start contributing to that expanding corpus in less than a year. I really think it would be worth the effort, but perhaps I'm biased. 
+With that, I'll conclude this post. Machine Learning is a subject that is not hard to pick up, but has a learning curve that steepens the further you get into it. Just being able to *apply* machine learning puts you ahead of most of the world. It is constantly evolving, with a startling amount of research released daily. But don't let this put you off: with concerted effort and the right resources, it's definitely feasible for you to start contributing to that expanding corpus in less than a year. I really think it would be worth the effort, but perhaps I'm biased. 
