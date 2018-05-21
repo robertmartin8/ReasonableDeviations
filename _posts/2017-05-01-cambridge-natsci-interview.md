@@ -109,6 +109,10 @@ What they wanted was much more simple. I had already shown that changes in *g* w
 
 At this point, the second interviewer took over. I was thankful to switch interviewers (the first had been a bit grumpy), but I knew that the second interviewer was the author of my IB maths textbook, which is a bit of a daunting prospect. 
 
+**Integrate $f(x) = \arcsin(x)$**
+
+Standard trick, use integration by parts with $u=\arcsin(x)$ and $dv = 1$.
+
 **Differentiate $f(x) = \arcsin (\cos x)$**
 
 I was very happy to get some calculus, because I thought it was my strong suit. 
