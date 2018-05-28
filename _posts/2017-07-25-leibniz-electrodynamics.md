@@ -102,10 +102,9 @@ $$ V = \frac{\sigma}{2\epsilon_0} \left(\sqrt{R^2+z^2} - z \right)$$
 
 ### 4. A cylinder of charge
 
-We are now ready to tackle the problem Griffiths actually asked us (I haven't forgotten about it). Here's the problem again: 
+We are now ready to tackle the original problem. Here it is again:
 
 > Find the electric field on the axis of a uniformly charged solid cylinder, at a distance *z* from the centre. The length of the cylinder is *L*, its radius is *R*, and the charge density is $\rho$. 
-
 
  I'll set up the solution in the same way Griffiths does – this image is taken from the solution manual. 
 
@@ -133,7 +132,7 @@ we write it in one expression first:
 
 $$\mathbf{E} = - \mathbf{\hat{z}}  \frac{\rho}{2\epsilon_0} \frac{\partial}{\partial z} \int_{z-L/2}^{z+L/2}\left( \sqrt{R^2 + x^2} - x \right) dx $$
 
-This might *look* more complicated, but in fact it makes our lives very easy. Because we are taking the 
+This might *look* more complicated, but in fact it makes life much easier. Because we are taking the 
 derivative of an integral, we can simply apply the Leibniz integral rule. The limits are not constant, but the integrand is independent of *z*, so the rule tells us that:
 
 
@@ -143,21 +142,20 @@ $$\begin{align*}
     & - \left( \sqrt{R^2 + (z-L/2)^2} - (z-L/2) \right) \frac{\partial}{\partial z}(z-L/2) \bigg]
 \end{align*}$$
 
-There is some kind of 'cancellation' between the differentiation and integration, so we simply 
-substitute the limits into the integrand (and multiply by the derivative of the limit since it is not constant), then subtract. 
-
-In this case it is even simpler, because the derivatives of the limits are one. Tidying up, we see that:
+Intuitively, there is some kind of 'cancellation' between the differentiation and integration, so we simply 
+substitute the limits into the integrand (and multiply by the derivative of the limit since it is not constant), then subtract. In this case it is even simpler because the derivatives of the limits are one:
 
 $$\mathbf{E} = \frac{\rho}{2\epsilon_0} \left[L + \sqrt{R^2 + (z-L/2)^2} - \sqrt{R^2 + 
 (z+L/2)^2} \right] \mathbf{\hat{z}} $$
 
-<br />
+</br>
+
 ## Conclusion
 
 In many electrodynamics problems, one finds the electric field by first calculating the potential, 
 then taking the gradient. I hope I've given you a reasonable motivation to *not* just do this mechanically –
 keep an eye out for shortcuts that will save you time, and reduce the chances of you making a minor
-algebraic mistake. 
+algebraic error.
 
 
 
