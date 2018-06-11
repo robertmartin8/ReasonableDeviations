@@ -171,7 +171,7 @@ im_ani = animation.ArtistAnimation(fig, ims, interval=700,
 repeat_delay=1000, blit=True)
 
 # Optional to save the animation
-im_ani.save('beacon.mp4', writer=animation.FFMpegWriter())
+im_ani.save('beacon.gif', writer="imagemagick")
 ```
 
 Putting it all together, the output is:
@@ -202,14 +202,10 @@ See for yourself.
 
 ---
 
-*Check out my [PyGameofLife repository](https://github.com/robertmartin8/PyGameofLife) on GitHub, which includes the code used in this post (under `basic_demo.py`), but also a slightly more professional refactoring, with a number of built-in seeds, allowing a user to do something like:*
+*Check out my [PyGameofLife repository](https://github.com/robertmartin8/PyGameofLife) on GitHub, which includes a slightly more professional refactoring with a number of built-in seeds allowing a user to generate gifs from the command line. The R-pentomino animation above can be created with:*
 
-```python
-from game_of_life import animate_life
-
-animate_life(universe_size=(100, 100), seed='r_pentomino',
-             seed_position=(50, 50), n_generations=500,
-             interval=50, save=True)
+```
+python life.py -seed r_pentomino -n 500 -interval 50
  ```
 
-*which will create (and save) that R-pentomino animation. Feel free to submit a pull request if you’d like to add more seeds or functionality.*
+*Feel free to submit a pull request if you’d like to add more seeds or functionality.*
