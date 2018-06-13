@@ -5,7 +5,7 @@ title: Assessing Human Error Against a Benchmark of Perfection
 
 ## Assessing Human Error Against a Benchmark of Perfection
 
-**Anderson, Kleinberg, Mullainathan**
+*Anderson, A., & Kleinberg, J. (2016). Assessing Human Error Against a Benchmark of Perfection. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 705–714). San Francisco, California, USA: ACM. [https://doi.org/10.1145/2939672.2939803](https://doi.org/10.1145/2939672.2939803)*
 
 Can we analyse a large dataset of human decisions to discover the instances in which people are most likely to make errors? Instead of using ML to make optimal decisions, we can use it to predict when humans are more prone to error. 
 

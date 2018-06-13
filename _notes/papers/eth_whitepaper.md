@@ -5,7 +5,9 @@ title: Ethereum whitepaper
 
 ## Next generation smart contract and decentralised application platform
 
-The Ethereum Whitepaper, **Vitalik Buterin**
+*Buterin, V. (2014). A next-generation smart contract and decentralized application platform. Ethereum, (January), 1–36.*
+
+*The Ethereum whitepaper, available on [GitHub](https://github.com/ethereum/wiki/wiki/White-Paper)**
 
 ### Bitcoin
 
@@ -16,7 +18,7 @@ The Ethereum Whitepaper, **Vitalik Buterin**
 
 - Each transaction converts an old state into a new state or throws an error.
     - the state is the collection of **UTXO** (unspent transaction outputs), each UTXO having a denomination and owner.
-    - a transaction maps 1+ inputs (with signatures) to 1+ outputs
+    - a transaction maps one or more inputs (with signatures) to one or more outputs
 
 > **for each** input **in** TX:
 > - **if** input UTXO **not in** S: ERROR

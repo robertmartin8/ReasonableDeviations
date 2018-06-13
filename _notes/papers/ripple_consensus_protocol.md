@@ -5,7 +5,8 @@ title: The Ripple Protocol Consensus Algorithm
 
 ## The Ripple Protocol Consensus Algorithm
 
-**David Schwartz, Noah Youngs, Arthur Britto**
+*Schwartz, D., Youngs, N., & Britto, A. (2014). The Ripple protocol consensus algorithm. Ripple Labs Inc White Paper, 1–8. Retrieved from
+[ripple.com](https://ripple.com/files/ripple_consensus_whitepaper.pdf).*
 
 - Distributed consensus systems allow for fast, low-cost, decentralised transactions. Technical problems are grouped into three categories: correctness, agreement, utility.
 - **Correctness**:

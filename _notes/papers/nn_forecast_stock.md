@@ -3,9 +3,9 @@ layout: default
 title: Neural Networks to Forecast Stock Market Prices
 ---
 
-## Using Neural Networks to Forecast Stock Market Prices [Survey]
+## Using Neural Networks to Forecast Stock Market Prices
 
-**Ramon Lawrence**
+*Lawrence, R. (1997). Using Neural Networks to Forecast Stock Market Prices. Retrieved from [http://people.ok.ubc.ca/rlawrenc/research/Papers/nn.pdf](http://people.ok.ubc.ca/rlawrenc/research/Papers/nn.pdf) [Literature Survey]*
 
 ### Possible approaches to quantitative investing
 

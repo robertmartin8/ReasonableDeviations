@@ -5,7 +5,7 @@ title: Honey, I Shrunk the Sample Covariance Matrix
 
 ## Honey, I Shrunk the Sample Covariance Matrix
 
-**Olivier Ledoit, Michael Wolf**
+*Ledoit, O., & Wolf, M. (2004). Honey, I Shrunk the Sample Covariance Matrix. The Journal of Portfolio Management, 30(4), 110–119. [https://doi.org/10.3905/jpm.2004.110](https://doi.org/10.3905/jpm.2004.110)*
 
 Mean-variance optimisation (MVO) proposed by Markowitz provides theoretical guarantees, and can be coded to run very efficiently, but it needs good inputs. In particular, it requires a good **risk model**, that is, a good estimator of covariance. 
 

@@ -5,7 +5,7 @@ title: Introduction to Boosting
 
 ## A Short Introduction to Boosting
 
-**Freund and Schapire**
+*Schapire, R. E., & Freund, Y. (2009). A Short Introduction to Boosting. Society, 14(5), 771–780. [https://doi.org/10.1.1.112.5912](https://doi.org/10.1.1.112.5912)*
 
 Let a training set be denoted by $\\{(x_i,y_i)\\}^m$, where $x_i \in$ **domain/instance space**, and $y_i \in $ **label set** *Y*
 

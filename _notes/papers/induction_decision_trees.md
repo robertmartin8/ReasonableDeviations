@@ -5,7 +5,7 @@ title: Induction of Decision Trees
 
 ## Induction of Decision Trees
 
-**J.R. Quinlan**
+*Quinlan, J. R. (1986). Induction of Decision Trees. Machine Learning, 1(1), 81–106. [https://doi.org/10.1023/A:1022643204877](https://doi.org/10.1023/A:1022643204877)*
 
 - Top-Down Induction of Decision Trees (TDIDT) is a family of algorithms which construct trees starting from the root and ending with leaves
 - The **induction task**: for a universe of objects with specific discrete attributes, develop a classification rule from a training set to classify the object as a positive (P) or negative (N) instance

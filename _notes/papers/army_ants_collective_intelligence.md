@@ -5,7 +5,7 @@ title: Army Ants - A Collective Intelligence
 
 ## Army Ants: A Collective Intelligence
 
-**Nigel R. Franks**
+*Franks, N. R. (1989). Army Ants: A Collective Intelligence: A neural network Seems an apt analogy as a colony of army ants navigates the tropical rain forest. American Scientist, 77(2), 138–145.*
 
 Individual army ants are very unsophisticated and remain so even in groups of 100, in which they will walk around in circles until they die. However, colonies of ants show very sophisticated behaviour and problem-solving capabilities. Thus studying army ants helps us understand how intelligence arises: it could be an emergent property of collective communication. Franks hypothesises that human consciousness could similarly be an epiphenomenon of parallel processing.
 

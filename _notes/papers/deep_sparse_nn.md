@@ -5,7 +5,7 @@ title: Deep Sparse Rectifier NNs
 
 ## Deep Sparse Rectifier Neural Networks
 
-**Glorot, Bordes, Bengio**
+*Glorot, X., Bordes, A., & Bengio, Y. (2011). Deep sparse rectifier neural networks. AISTATS ’11: Proceedings of the 14th International Conference on Artificial Intelligence and Statistics, 15, 315–323. [https://doi.org/10.1.1.208.6449](https://doi.org/10.1.1.208.6449)*
 
 - The **rectifier function** $\max(0,x)$ is both a useful model for neuron activation in neuroscience and an efficient activation function in neural networks. 
 - Biological neurons can have activations that are **asymmetric** ($1 \rightarrow -1$), **symmetric** ($1 \rightarrow 1$), or **one-sided** ($1 \rightarrow 0$)

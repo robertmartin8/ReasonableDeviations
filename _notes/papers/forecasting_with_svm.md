@@ -5,7 +5,7 @@ title: Forecasting stock market movement with SVM
 
 ## Forecasting stock market movement with SVM 
 
-**Huang, Nakamori, Wang**
+*Huang, W., Nakamori, Y., & Wang, S. (2005). Forecasting stock market movement direction with support vector machine. Computers and Operations Research, 32, 2513–2522. [https://doi.org/10.1016/j.cor.2004.03.016](https://doi.org/10.1016/j.cor.2004.03.016)*
 
 SVMs are used because:
 
