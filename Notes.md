@@ -22,6 +22,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Chemistry (higher level)]({{ site.url }}/notes/hl_chemistry)
 - **Online courses**
 	- [Bitcoin and Cryptocurrencies – Princeton]({{ site.url }}/notes/princeton_bitcoin) 
+	- [Quantopian Lecture Series on Quantitative Finance]({{ site.url }}/notes/quantopian_lectures).
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
     - [Introduction to Boosted trees]({{ site.imageurl }}../notes/intro_boosted_trees.pdf), based on the [slides by Tianqi Chen ](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
