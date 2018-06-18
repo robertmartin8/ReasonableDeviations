@@ -15,6 +15,30 @@ If you're not a fan of people trying to logically dissect non-mathematical thing
 
 The precise problem here is that the nonlinear 'social graph' has to be compressed onto a linear arrangement, which, as the comic points out, is computationally hard. Nevertheless, we will attempt to find a good arrangement (not necessarily the optimal one) by using a genetic algorithm of sorts. But before that, we must firstly quantify the various parameters in this problem.
 
+## Contents
+
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
+
+- [1. Developing the initial model](#1-developing-the-initial-model)
+	- [Examining a social network](#examining-a-social-network)
+	- [A quick example](#a-quick-example)
+- [2. Refining the model](#2-refining-the-model)
+	- [The total enjoyment for a general arrangement](#the-total-enjoyment-for-a-general-arrangement)
+	- [Back to the XKCD network](#back-to-the-xkcd-network)
+- [3. Optimising the arrangement](#3-optimising-the-arrangement)
+	- [Genetic algorithms](#genetic-algorithms)
+- [4. Implementing the (pseudo-)genetic algorithm in python](#4-implementing-the-pseudo-genetic-algorithm-in-python)
+	- [Generating the population](#generating-the-population)
+	- [Evaluating a phenotype's fitness](#evaluating-a-phenotypes-fitness)
+	- [Survival of the fittest and reproduction.](#survival-of-the-fittest-and-reproduction)
+	- [Mutation](#mutation)
+	- [Iteration](#iteration)
+- [Application to the XKCD network](#application-to-the-xkcd-network)
+- [Conclusion](#conclusion)
+
+<!-- /TOC -->
+
+
 <br/>
 ## 1. Developing the initial model
 
@@ -29,7 +53,7 @@ Following the XKCD comic, each individual be denoted by a circular node. We will
 <img src="{{ site.imageurl }}relationship_types.png" style="width:400px;"/>
 </center>
 
-The major advantage of this notation is that it encourages us to only consider the *outgoing* connections from a particular individual, which will be a big simplification when we come to considering an individual's enjoyment. But it is far from perfect. For example, this notation implies that a romantic relationship is the same as a mutual crush, i.e. that I would get as much enjoyment from sitting next to my crush as I would to my partner.
+The major advantage of this notation is that it encourages us to only consider the *outgoing* connections from a particular individual, which will be a big simplification when we come to considering an individual's enjoyment. But it is far from perfect. For example, this notation implies that a romantic relationship is the same as a mutual crush, i.e. that an individual would get as much enjoyment from sitting next to their crush as they would with their partner.
 
 Proceeding anyway, we assign each type of outgoing arrow a weighting, corresponding to how much enjoyment an individual experiences when sitting next to a person of that relation. Here is one proposed weighting:
 
@@ -41,7 +65,7 @@ Proceeding anyway, we assign each type of outgoing arrow a weighting, correspond
 
 -   Stranger (no line): weight = 0
 
-Of course, the actual values are quite arbitrary – what matters is their relative ordering. I think it is fair to say that any individual's seating preferences follow the above list in descending order. That is, given free choice, you would enjoy most to sit next to your crush, and least enjoy sitting next to a stranger. Choosing precise weightings would require you to quantify, for example, exactly how much more you would prefer to sit with a crush than with a friend – good luck with that!
+Of course, the actual values are quite arbitrary – what matters is their relative ordering. I think it is fair to say that an individual's seating preferences follow the above list in descending order. That is, given free choice, you would enjoy most to sit next to your crush, and least enjoy sitting next to a stranger. Choosing precise weightings would require you to quantify, for example, exactly how much more you would prefer to sit with a crush than with a friend – good luck with that!
 
 
 ### A quick example
@@ -72,7 +96,7 @@ This is easy to do with just one arrangement, but we need a robust way of findin
 <br/>
 ## 2. Refining the model
 
-Get ready, I am about to throw a lot of notation at you.
+We will define the system as follows:
 
 - Let the number of individuals in a network be denoted by $n$. In the XKCD network, there are 8 individuals, so $n=8$.
 - Each individual will be arbitrarily labelled $1, 2, 3, \ldots , n$, rather than using letters of the alphabet.
@@ -404,14 +428,14 @@ A required parameter is the *mutation rate*, which encodes how often mutations s
 def mutate(generation, mutation_rate=0.05):
     # Each member of the population has a chance of being mutated
     for i in range(len(generation)):
-        # random.random() returns a float between 0 and 1,
-        # so this is equivalent to a probability of the mutation_rate.
+        # random.random() returns a float between 0 and 1, so 
+        # this is equivalent to a probability of the mutation_rate.
         if random.random() < mutation_rate:
             # A mutation entails two elements of
             # the arrangement swapping with each other.
             a, b = random.sample(range(network_size), 2)
-            population[i][b], population[i][a] = \
-                                    population[i][a], population[i][b]
+            population[i][b],population[i][a] = \
+                                    population[i][a],population[i][b]
 ```
 
 ### Iteration
@@ -433,7 +457,7 @@ def progress(generation):
 ```
 
 <br/>
-## Back to the XKCD network (for the last time)
+## Application to the XKCD network
 
 Now that we have everything ready, we are ready to find the optimal arrangement for the XKCD network.
 
@@ -501,11 +525,9 @@ Notice how it is quite volatile: many generations have a *lower* maximum $\epsil
 <br/>
 ## Conclusion
 
-So there you have it. While I haven't implemented a proper genetic algorithm, I *have* used some of the same reasoning – and the results aren't so bad.
+So there you have it. Using pseudo genetic algorithm, we have managed to find good linear seating arrangments given a friendship network.
 
-Try this
-
-This problem of optimising seating arrangements actually belongs to the much broader (and poorly understood) field of *combinatorial optimisation* – so it is a cousin of the famous Travelling Salesman problem, as we could interpret our investigation as trying to find the optimal route through the social network. Perhaps we could initialise many salesmen and let them evolve! Food for thought.
+This problem of optimising seating arrangements actually belongs to the much broader (and actively researched) field of *combinatorial optimisation* – so it is a cousin of the famous Travelling Salesman problem, as we could interpret our investigation as trying to find the optimal route through the social network. Perhaps we could initialise many salesmen and let them evolve! Food for thought.
 
 
 ---
@@ -513,5 +535,3 @@ This problem of optimising seating arrangements actually belongs to the much bro
 *I hope you enjoyed what turned out to be a rather long article. All the code is on my [GitHub](https://github.com/robertmartin8/RandomWalks/blob/master/social_seating.py), feel free to fork it and try out your own networks*.
 
   [1dcea476]: https://github.com/robertmartin8/RandomWalks/blob/master/social_seating.ipynb "ipython notebook"
-
-*Actually, this whole post was based on an 'article' I wrote when I was much younger, trying to be all professional and everything. If you're up for a laugh, you can find it [here](https://vixra.org/pdf/1605.0109v1.pdf)*
