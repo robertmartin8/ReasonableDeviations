@@ -21,36 +21,33 @@ document.write("<a href='" + "mailto:" + user1 + "@" + host1 + "'><b>Email me!</
 
 Whenever I need a computer to help me, I first turn to python. I have been using python (primarily for scientific purposes) for about {{ 'now' | date: "%Y" | minus: 2014  }} years, and its initial charm has never really faded. With its pseudocode-like syntax and extremely clear objectives (type `import this` to a python console), it lets you get your ideas into a computer with relative ease. Of course you aren't going to get C-like speeds natively, but nowadays there are options like cython or Numba which can alleviate this to a certain extent.
 
-However, I concede that R has a better statistics ecosystem – there is an R implementation for basically any useful theorem/procedure in statistics (though python is rarely far behind). I have used R for a number of data science projects, and I do appreciate its data visualisation capabilities and intuitive data processing.
+However, I concede that R has a better statistics ecosystem – there is an R implementation for basically any useful theorem/procedure in statistics (though python is rarely far behind). I have used R for a number of data science projects, and I do appreciate its and intuitive data processing.
 
-I have also frequently turned to 'knowledge based computing', a nice euphemism for 'asking Mathematica what the answer is'. I've dabbled in C++ and a little bit of Haskell, and I would *love* to become more proficient at both. Understanding quicksort in Haskell was a marvellous moment:
+I have also frequently turned to 'knowledge based computing', a nice euphemism for asking Mathematica what the answer is. I've dabbled in C++, and would love to become more proficient. One day soon I am going to start learning Java, partially because that's what Cambridge will teach in their first year for computer science, and partially because pain builds character.
 
-```haskell
-quicksort :: (Ord a) => [a] -> [a]
-quicksort [] = []
-quicksort [x] = [x]
-quicksort (x:xs) =
-    let smallersorted = quicksort (filter (<= x) xs)
-        biggersorted = quicksort (filter (> x) xs)
-    in smallersorted ++ [x] ++ biggersorted
-```
-
-One day soon I am going to start learning Java, partially because that's what Cambridge will teach in their first year for computer science, and partially because pain builds character.
-
-I have built a couple of full-stack projects using python (Flask), and of course CSS/HTML/JS, but if I'm honest I don't get as much of a kick out of this compared to working with pure python.
+I have built a couple of full-stack projects using python (Flask), and of course CSS/HTML/JS, but if I'm honest I don't get as much of a kick out of frontend work as I do with pure python.
 
 ## Finance
 
 Finance is inherently interesting to me, because it represents a quantification of the beliefs and wills of so many individuals (point particles if you like) – and in my mind, quantification is the first step to prediction and/or understanding. Of course, a nice side effect of prediction is that you can make money from it.
 
-I have spent a lot of time building predictive systems based on machine/deep learning. I'm not naïve: I know that whatever I do is probably being done far better by a hedge fund somewhere. But regardless, I do think it's interesting to test the limits of statistical methods in a system as chaotic as the American stock market.
+I have spent a lot of time building predictive systems based on machine/deep learning. I'm not naïve: I know that whatever I do is probably being done far better by a hedge fund somewhere. But regardless, I do think it's interesting to test the limits of statistical inference in such a complex and dynamic system.
 
-One day I'd like to be able to use my knowledge in physics and mathematical methods to be able to properly find order in financial markets, or failing that, to quantify the chaos and understand how to mitigate its effects.
+One day I'd like to be able to use my knowledge of physics and mathematical methods to be able to properly find order in financial markets, or failing that, to quantify the chaos and understand how to mitigate its effects.
+
+## Reading
+
+I try not to limit my reading to specific subjects – I think it can be incredibly valuable to continuously attempt to read about subjects that are new to you, that way you know what you don't know. I think this also applies to a lesser degree with fiction.
+
+Below are some of my favourite books (or short stories); I suppose there is an overrepresentation of science fiction, but I can't apologise for being fascinated by it
+
+{% include goodreads.html %}
 
 
 ## Other specific interests
 
 On top of the very general 'physics and maths', here are some specific interests (in no particular order):
+
 - machine learning on fundamental stock data
 - nice tricks to evaluate integrals
 - 'pure' statistics (e.g probability generating functions)
