@@ -111,10 +111,10 @@ We are going to treat rulesets as python dictionaries. This is quite natural, si
 
 
 ```python
-def rule_keys(n_rules):
+def rule_keys(n_rules, radius=3):
     rule_input = []
     for i in range(n_rules):
-        binary = str(bin(i))[2:].zfill(7)
+        binary = str(bin(i))[2:].zfill(2*radius + 1)
         rule_input.append(binary)
     return rule_input
 ```
@@ -196,20 +196,15 @@ To remain general, our iteration function should take in a configuration, a rule
 ```python
 def single_iteration(config, ruleset, radius):
     next_iteration = ""
-    for idx, digit in enumerate(config):
-        neighbours = list(range(-radius, radius + 1))
-        s = ""
-        for i in neighbours:
-            s += config[(idx + i) % len(config)]
-        next_iteration += ruleset[s]
+    # Support wrapping by extending either end
+    extended_config = config[-radius:] + config + config[:radius]
+    for i in range(radius, len(config) + radius):
+        neighbours = extended_config[i-radius:i+radius+1]
+        next_iteration += ruleset[neighbours]
     return next_iteration
 ```
 
-The complexity in the above implementation arises because the universe is circular, so it's not possible to do something like
-
-```python
-ruleset[config[idx - radius : idx + radius + 1]]
-```
+The complexity in the above implementation arises because we need a circular universe, so we must extend the configuration to allow for 'wrapping'.
 
 To iterate multiple times, we repeatedly apply the `single_iteration()` function:
 
