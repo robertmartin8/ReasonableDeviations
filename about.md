@@ -5,27 +5,31 @@ title: About
 
 My name is Robert. I am a soon-to-be undergraduate natural sciences (physical) student at the University of Cambridge.
 
-I like to try to find intuitive quantitative explanations for complex phenomena, even if those intuitive explanations concede a lack of determinism. It is always nice to find order in chaos, but I think we should accept that it may very well be chaos all the way down. I'm a logical person who holds rationalism dear. Physics and mathematics are my fortes, but as of late I have been expanding that to computer science and finance.
+I like to try to find intuitive quantitative explanations for complex phenomena, even if those intuitive explanations concede a lack of determinism. It is always nice to find order in complexity, but I think we should accept that it may very well be complex all the way down. I'm a logical person who holds rationalism dear. Physics and mathematics are my fortes, but as of late I have been expanding that to computer science and finance.
 
-I think man's best friend is the computer. The best and worst thing about them is that they do exactly what you tell them to – they can be extremely reliable in theory, if they are coded by a theoretically perfect person.
+The best and worst thing about computers is that they do exactly what you tell them to – they are flawless in theory, if they are coded by a theoretically perfect person, but I'd take buggy code over by-hand calculations any day.
 
-If you'd like to get in touch, click the link below (even if you haven't got a mail client set up, you can still see the address) 
+## Get in touch
 
-<script language="JavaScript">
-var user1 = "martin.robertandrew";
-var host1 = "gmail.com";
-document.write("<a href='" + "mailto:" + user1 + "@" + host1 + "'><b>Email me!</b></a>");
-</script>
+<form class="wj-contact" action="https://formspree.io/{{ site.author.email }}" method="POST">
+    <input type="text" name="name" placeholder="Name">    
+    <input type="text" name="email" placeholder="Email Address">
+    <textarea type="text" name="content" rows="10" placeholder="Message"></textarea>
+    <input type="hidden" name="_next" value="{{ site.url }}/thanks.html">
+    <input type="hidden" name="_subject" value="New Contact Form Submission">
+    <input type="text" name="_gotcha" style="display:none">
+    <input type="submit" value="Submit">
+</form>
+
 
 ## Programming
 
-Whenever I need a computer to help me, I first turn to python. I have been using python (primarily for scientific purposes) for about {{ 'now' | date: "%Y" | minus: 2014  }} years, and its initial charm has never really faded. With its pseudocode-like syntax and extremely clear objectives (type `import this` to a python console), it lets you get your ideas into a computer with relative ease. Of course you aren't going to get C-like speeds natively, but nowadays there are options like cython or Numba which can alleviate this to a certain extent.
+Whenever I need a computer to help me, I first turn to python. I have been using python (primarily for scientific purposes) for about {{ 'now' | date: "%Y" | minus: 2014  }} years, and its initial charm has never really faded. With its pseudocode-like syntax and extremely clear ethos (type `import this` into a python console), it lets you get your ideas into a computer with relative ease. Of course you aren't going to get C-like speeds natively, but nowadays there are options like cython or Numba which can alleviate this to a certain extent. I've built a couple of full-stack projects using python (Flask), and of course CSS/HTML/JS, but if I'm honest I don't get as much of a kick out of frontend work as I do with pure python.
 
-However, I concede that R has a better statistics ecosystem – there is an R implementation for basically any useful theorem/procedure in statistics (though python is rarely far behind). I have used R for a number of data science projects, and I do appreciate its and intuitive data processing.
+However, I concede that R has a better statistics ecosystem – there is an R implementation for basically any useful theorem/procedure in statistics. I have used R for a number of data science projects, and I do appreciate its intuitive data processing. As long as there are people who are willing to re-implement R packages in python, I think R's small lead on the statistical front won't last forever.
 
-I have also frequently turned to 'knowledge based computing', a nice euphemism for asking Mathematica what the answer is. I've dabbled in C++, and would love to become more proficient. One day soon I am going to start learning Java, partially because that's what Cambridge will teach in their first year for computer science, and partially because pain builds character.
+I have also frequently turned to 'knowledge based computing', a nice euphemism for asking Mathematica what the answer is. I've dabbled in C++, and would love to become more proficient. I also taught myself Java, partially because that's what Cambridge will teach in their first year for computer science, and partially because pain builds character. Yes it's fast, and the JVM is seriously impressive, but writing Java doesn't really me happy.
 
-I have built a couple of full-stack projects using python (Flask), and of course CSS/HTML/JS, but if I'm honest I don't get as much of a kick out of frontend work as I do with pure python.
 
 ## Finance
 

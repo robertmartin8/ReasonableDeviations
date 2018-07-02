@@ -13,6 +13,7 @@
  * https://github.com/poole/hyde.
  */
 
+/* This css file deals with the sidebar and the macro layout */
 
 /*
  * Contents
@@ -158,13 +159,27 @@ a.sidebar-nav-item:focus {
 }
 
 
+/* Themes */
+
+/* Purple */
+.theme-base-purpz .sidebar {
+  background-color: #2f0857;
+}
+/* pww 2014-12-17 - moved from poole.css to each theme */
+.theme-base-purpz .content a,
+.theme-base-purpz h1, h2, h3, h4, h5, h6,
+.theme-base-purpz .related-posts li a:hover {
+  color: #5c14a4;
+}
+
+
 /*
  * Reverse layout
  *
  * Flip the orientation of the page by placing the `.sidebar` on the right.
  */
 
-@media (min-width: 48em) {
+/* @media (min-width: 48em) {
   .layout-reverse .sidebar {
     left: auto;
     right: 0;
@@ -180,18 +195,6 @@ a.sidebar-nav-item:focus {
     margin-left: 4rem;
     margin-right: 22rem;
   }
-}
+} */
 
 
-/* Themes */
-
-/* Purple */
-.theme-base-purpz .sidebar {
-  background-color: #2f0857;
-}
-/* pww 2014-12-17 - moved from poole.css to each theme */
-.theme-base-purpz .content a,
-.theme-base-purpz h1, h2, h3, h4, h5, h6,
-.theme-base-purpz .related-posts li a:hover {
-  color: #5c14a4;
-}
