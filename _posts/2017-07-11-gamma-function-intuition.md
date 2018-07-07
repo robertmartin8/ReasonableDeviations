@@ -23,7 +23,7 @@ Don't let the *t* distract you: it is just a dummy variable. The gamma function 
 
 Just a disclaimer: the maths used here isn't going to be formally rigorous, but it will definitely be valid and hopefully intuitive.
 
-<br/>
+
 ## The Factorial
 
 For $\forall n \in \mathbb{N}$ (this means 'for all natural numbers'), the factorial, which will henceforth be
@@ -43,7 +43,7 @@ $$2.5! = 2.5 \cdot 1.5! = 2.5 \cdot 1.5 \cdot 0.5!$$
 
 But we are now left with the conundrum of working out $0.5!$. Nevertheless, it is important to discuss this, because any function that claims to extend the factorial must also meet these conditions. We shall eventually prove that the gamma function *does* have these two properties, but first we must understand its shape.
 
-<br/>
+
 ## The Gamma Function
 
 Just a reminder that our final goal is to explain:
@@ -57,7 +57,7 @@ $$ e^x = 1 + x + \frac{1}{2!}x^2 + \frac{1}{3!}x^3 + \ldots + \frac{1}{n!}x^n + 
 Actually, this just begs the question: why is there an $n!$ in the Maclaurin series? This is interesting enough to warrant a tangent, though it will soon become apparent that it is not so much a tangent as a key to understanding the gamma function.
 
 
-<br/>
+
 ## Deriving the Maclaurin series
 
 We will assume that a function $f(x)$ can be written as a polynomial of degree *n* plus some remainder term $R(x)$ (which we will ignore):
@@ -108,7 +108,7 @@ $$ f(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \ldots + \frac{f^{(n)}(0)}{n!}x
 
 which completes our derivation of the Maclaurin series. If you want to find the Maclaurin series for a particular function, you just have to compute it's *n*th derivative and substitute in $x=0$.
 
-<br/>
+
 ## Conclusion for Part 1
 
 I know that this is an abrupt end, and that I haven't even started to explain the form of the gamma function, but in this post I showed that factorials have a natural relation to calculus, when one repeatedly differentiates a power of *x*. I trust that because of this, the reader may be getting a sneaking suspicion that there might actually be a link between factorials and *integrals*, which would explain why the gamma function looks the way it does.

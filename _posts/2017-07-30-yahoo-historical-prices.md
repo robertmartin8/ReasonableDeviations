@@ -122,7 +122,6 @@ For AAPL.csv, the code would print:
 
 and the file would be moved from the former location to the latter. Note that it will also move any other CSVs, but I didn't need to fix this as I don't normally have CSVs in my downloads. 
 
-<br />
 ## Conclusion
 
 It is always a nice feeling when you can use some python to save you hours of manual labour, and this was certainly the case here. Using this code, one can automate the downloading of a large number of datafiles which contain historical stock prices. This was a very important aspect of my MachineLearningStocks project, as it is meaningless to try to learn from data without having the data. 

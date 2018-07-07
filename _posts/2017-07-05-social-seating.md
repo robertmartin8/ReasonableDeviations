@@ -38,8 +38,6 @@ The precise problem here is that the nonlinear 'social graph' has to be compress
 
 <!-- /TOC -->
 
-
-<br/>
 ## 1. Developing the initial model
 
 What does it mean for a seating arrangement to be optimal? I am going to take a disgustingly utilitarian approach, by simply calculating the enjoyment per individual for a certain arrangement then summing over all individuals to find the *total enjoyment*. The optimal arrangement is then just the one with the highest total enjoyment (duh).  Before going further, we must first decide on a way of describing social networks which will allow us to do this analysis.
@@ -58,11 +56,8 @@ The major advantage of this notation is that it encourages us to only consider t
 Proceeding anyway, we assign each type of outgoing arrow a weighting, corresponding to how much enjoyment an individual experiences when sitting next to a person of that relation. Here is one proposed weighting:
 
 -   Crush (arrowed line): weight = 2
-
 -   Friend (solid line): weight = 1
-
 -   Acquaintance (dotted line): weight = 0.5
-
 -   Stranger (no line): weight = 0
 
 Of course, the actual values are quite arbitrary – what matters is their relative ordering. I think it is fair to say that an individual's seating preferences follow the above list in descending order. That is, given free choice, you would enjoy most to sit next to your crush, and least enjoy sitting next to a stranger. Choosing precise weightings would require you to quantify, for example, exactly how much more you would prefer to sit with a crush than with a friend – good luck with that!
@@ -93,7 +88,7 @@ Assuming that an individual can only be affected by the individuals immediately 
 
 This is easy to do with just one arrangement, but we need a robust way of finding $\epsilon_{\text{total}}$ for *any* arrangement.
 
-<br/>
+
 ## 2. Refining the model
 
 We will define the system as follows:
@@ -218,7 +213,7 @@ It is worth commenting on the fact that all of the above values come in identica
 – and in our particular arrangement, 7 is not next to 8.
 
 We could have found $\epsilon_\text{total}$ without our vector notation, and simply with arithmetic by looking at the linkages on the graph. However, the process that we have described in this section does not require actually looking at the networks, meaning that we can write code to do it for us.
-<br/>
+
 ## 3. Optimising the arrangement
 
 
@@ -266,7 +261,7 @@ A genetic algorithm follows the same steps, but in computer science terms:
 5.  The process repeats, and over time, the mean $\epsilon_\text{total}$ of the population should increase.
 
 
-<br/>
+
 ## 4. Implementing the (pseudo-)genetic algorithm in python
 
 In this section we will write python code to find the optimum arrangement for the XKCD network, though of course we could use it for any other network.
@@ -456,7 +451,7 @@ def progress(generation):
     hall_of_fame.append(population[max_location])
 ```
 
-<br/>
+
 ## Application to the XKCD network
 
 Now that we have everything ready, we are ready to find the optimal arrangement for the XKCD network.
@@ -522,7 +517,7 @@ I ran this a number of times on my system, and plotted all the results at once.
 
 Notice how it is quite volatile: many generations have a *lower* maximum $\epsilon_\text{total}$ than their parent's generation. This is probably because our reproduction step is really just another form of mutation. However, because our code keeps track of best arrangement so far, all that matters is that our optimisation algorithm *hits* the maximum – it doesn't have to stay there.
 
-<br/>
+
 ## Conclusion
 
 So there you have it. Using pseudo genetic algorithm, we have managed to find good linear seating arrangments given a friendship network.

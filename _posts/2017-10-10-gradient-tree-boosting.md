@@ -9,7 +9,6 @@ But decision trees happen to be the cornerstone of a powerful class of learning 
 
 Note that I will *not* be covering the actual functioning of decision trees; for that, you may either refer to [my notes]({{ site.url }}/notes/papers/induction_decision_trees) on the original paper, or to the excellent [Wikipedia page](https://en.wikipedia.org/wiki/Decision_tree_learning). 
 
-<br/>
 ### Weak learners and boosting
 
 As I have mentioned, I don't think decision trees on their own are especially useful. You might even say that they are 'weak classifiers', or generally, 'weak learners'. This, in fact, is a technical term which refers to predictive models which only do a little bit better than random guessing.
@@ -51,7 +50,6 @@ an optimal $\beta_m$ and $\gamma_m$, and add the new term to the existing predic
 > 
 > **Return** $~f_M(x)$
 
-<br/>
 
 ### Gradient tree boosting  
 
@@ -121,7 +119,7 @@ randomly selected (without replacement) at each boosting round.
 *Stochastic gradient boosting* subsamples by row; not
 all available training data is used in a given round. These methods have been found to give computational benefits and improved generalisation.
 
-<br/>
+
 ## XGBoost
 
 [XGBoost](https://github.com/dmlc/xgboost) (‘eXtreme Gradient Boosting’) is as an open-source
@@ -196,7 +194,6 @@ Then, we do a linear scan over the training examples for each feature to decide 
 
 Apart from the inbuilt complexity penalty, XGBoost offers shrinkage and row subsampling, but also *column subsampling* -- the regularisation method of choice for Random Forests. In column subsampling, each boosting round neglects a certain portion of the features. This increases the overall model’s robustness by reducing the emphasis placed on one or two key variables, giving other variables ‘a chance to speak’, so to speak. 
 
-<br/>
 ## Conclusion
 
 This has been quite an unexpectedly detailed post on the development of XGBoost, and I fear that I have failed in my goal of presenting the subject intuitively. While the logic behind the mathematics is not hard to follow, I will agree that the notation is often quite arcane: there are many different indexing values to keep track of. However, it is very rewarding to be able to understand just how clever XGBoost is, even more so because with it, you can achieve amazing performance on many learning tasks. 

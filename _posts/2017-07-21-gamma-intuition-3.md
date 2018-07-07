@@ -27,7 +27,6 @@ In terms of the gamma function, we thus need to show that
 - $\Gamma (2) = 1$, the **boundary condition**
 - $\Gamma (x+1) = x \Gamma (x)$, the **recursion condition**
 
-<br/>
 ## The boundary condition
 
 To evaluate $\Gamma(2)$, we can start by substituting $x=2$ into the definition of the gamma function:
@@ -53,7 +52,6 @@ In any case, we can conclude that
 
 $$\Gamma(2) = \int_0^\infty t e^{-t} dt =  \left[ \lim_{t \rightarrow \infty} \left( -\frac{t}{e^t}\right) \right] + 1 = 1 \qquad QED$$
  
-<br/>
 ## The recursion condition
 
 As a quick reminder, we need to show that:
@@ -97,7 +95,6 @@ $$\begin{aligned}
   
 We have successfully shown that the gamma function satisfies both the boundary condition and the recursion condition of the factorial function. This means that it will *always* give the same result as the traditional factorial (ignoring the shift). For example, we know for sure that $1729! = \Gamma(1730)$ without having to calculate either quantity. 
 
-<br/>
 ## Extending the factorial
 
 It is a fact that $\Gamma(x)$ is defined for all complex numbers except the negative integers (and zero), but unfortunately, its values are rarely 'nice' and can often only be evaluated with a computer. However, I'd like to show you one example that *does* turn out nicely: $\Gamma(\frac 1 2)$. 

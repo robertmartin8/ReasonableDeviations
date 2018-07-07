@@ -24,7 +24,7 @@ As we saw in the previous post, in order to end up with a factorial, we will hav
 
 We also need to choose a $g(t)$, which will be always be integrated. I will choose the exponential function because it stays the same and makes everything easier. Maybe you think that I'm just choosing it because I know for a fact that the gamma function includes an exponential, but even if you think so, I urge you to read on as this doesn't affect the intuition behind the gamma function – it just makes this post an *explanation* instead of a *derivation*.
 
-<br/>
+
 ## A shortcut for repeated IBP
 
 It may not be clear what I am trying to say at first, but it will make the eventual moment of understanding that much better. Follow along with the steps for now, and hopefully I will be able to make it all come together.
@@ -77,7 +77,7 @@ $$\therefore \int t^4 e^t dt = t^4e^t - 4t^3e^t -24te^t + 24e^t$$
 
 This is reminiscent of the Maclaurin expansion in the sense that we are differentiating a power of *t* many times. When we did that $n$ times, the result was a factorial. Could we apply the same logic here? Why don't we just go ahead and evaluate $\int t^n e^tdt$?
 
-<br/>
+
 ## A minor problem
 
 Due to the alternating signs in the first column of our table, we will not be able to properly evaluate the integral $\int t^n e^tdt$ – how would we know whether the *n*th term is positive or negative? However, there is an elegant workaround: we change our $g'(t)$ from $e^t$ to $e^{-t}$. Successive integrations of $e^{-t}$ have alternating sings, so when we multiply out with the alternating signs in the first column of our table, they will all cancel so that everything will be negative!
@@ -96,7 +96,7 @@ $$= -t^ne^{-t} - nt^{n-1}e^{-t}-n(n-1)t^{n-2}e^{-t}-\ldots$$
 
 Every term has a negative sign, because we have two sets of alternating signs that cancel to a negative! Because we know that all the terms are negative, we can proceed.
 
-<br/>
+
 ## Integrating by parts *n* times
 
 We will now evaluate $\int t^ne^{-t}dt$:
@@ -138,7 +138,7 @@ Hence choosing a lower limit of 0 produces $n!$ and nothing more. Wouldn't it be
 
 Doesn't this look familiar?
 
-<br/>
+
 ## Conclusion for part 2
 
 We have shown that repeated integration by parts can produce a factorial, and in fact that

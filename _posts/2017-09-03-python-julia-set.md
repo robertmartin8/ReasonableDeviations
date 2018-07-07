@@ -170,7 +170,6 @@ It is worth noting that the fractal we produced is actually infinitely complex. 
 <img src="{{ site.imageurl }}juliaset/julia_highres.png" style="width:500px;"/>
 </center>
 
-<br />
 ## Conclusion
 
 Clearly, this post doesn't present the most efficient computation of a Julia set. For speed, we would use array manipulation rather than iterating over each pixel. However, the code is very easy to understand and we can still get some very pretty results. 

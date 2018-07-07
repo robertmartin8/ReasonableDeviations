@@ -30,7 +30,6 @@ $$\begin{aligned}
 &= \sec^2x\sqrt{1+ \tan^3 x} - \cos x \sqrt{1 + \sin^3 x}  
 \end{aligned}$$
 
-<br />
 ## The electrodynamics problem
 
 I say 'electrodynamics', but really it is an electrostatics problem. Below I have reproduced the question from Chapter 2 (Electrostatics) of Griffith's *Introduction to Electrodynamics*. It has been edited slightly.
@@ -148,7 +147,6 @@ substitute the limits into the integrand (and multiply by the derivative of the 
 $$\mathbf{E} = \frac{\rho}{2\epsilon_0} \left[L + \sqrt{R^2 + (z-L/2)^2} - \sqrt{R^2 + 
 (z+L/2)^2} \right] \mathbf{\hat{z}} $$
 
-</br>
 
 ## Conclusion
 
