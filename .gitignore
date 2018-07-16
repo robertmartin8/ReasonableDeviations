@@ -1,5 +1,6 @@
 # Project specifics
 assets/images/img_creation_docs
+_drafts/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
