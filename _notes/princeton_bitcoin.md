@@ -5,7 +5,7 @@ title: Princeton Bitcoin
 
 # Bitcoin and Cryptocurrencies – Princeton
 
-*The course can be found [here](https://www.coursera.org/learn/cryptocurrency). I thought that it was really a rather good introduction to the subject.*
+The course can be found [on Coursera](https://www.coursera.org/learn/cryptocurrency). I thought that it was really a rather good introduction to the subject. Though bear in mind that some of the content may seem a little dated, given that it was released long before the crypto boom.
 
 ## Contents
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
