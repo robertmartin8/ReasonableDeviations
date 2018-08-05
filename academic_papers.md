@@ -16,15 +16,18 @@ These are notes/summaries I have made of various journal articles or scientific 
 
 For each article, I have hyperlinked the title of the article to the pdf/markdown version of my notes. Within each topic, they are arranged by author. If you are looking for a specific article, I suggest you cmd/ctrl-f, as there are a decent number of them.
 
-### Computer Science
+### Machine Learning
 
-- Anderson, Kleinberg, Mullainathan (2016). [Assessing Human Error Against a Benchmark of Perfection]({{ site.url }}/notes/papers/chess_blunders).
-- Buterin (2014). [A next-generation smart contract and decentralized application platform]({{ site.url }}/notes/papers/eth_whitepaper) (the Ethereum whitepaper).
 - Chen and Guestrin (2016). [XGBoost: A Scalable Tree Boosting System]({{ site.imageurl }}../notes/xgboost.pdf).  
 - Glorot, Bordes, Bengio (2011). [Deep sparse rectifier neural networks]({{ site.url }}/notes/papers/deep_sparse_nn).
-- Mitchell, Crutchfield, Das (1996). [Evolving cellular automata with genetic algorithms: A review of recent work]({{ site.url }}/notes/papers/evolving_cellular_automata).
 - Quinlan (1986). [Induction of Decision Trees]({{ site.url }}/notes/papers/induction_decision_trees).
+- Rashmi and Gilad-Bachrach (2015). [DART: Dropouts meet Multiple Additive Regression Trees]({{ site.url }}/notes/papers/dart).
 - Schapire and Freund (2009). [A Short Introduction to Boosting]({{ site.url }}/notes/papers/short_intro_boosting).
+
+
+### Blockchain
+
+- Buterin (2014). [A next-generation smart contract and decentralized application platform]({{ site.url }}/notes/papers/eth_whitepaper) (the Ethereum whitepaper).
 - Schwartz, Youngs, Britto (2014). [The Ripple protocol consensus algorithm]({{ site.url }}/notes/papers/ripple_consensus_protocol).
 
 ### Finance and economics
@@ -42,3 +45,5 @@ For each article, I have hyperlinked the title of the article to the pdf/markdow
 ### Other
 
 - Franks (1989). [Army Ants: A Collective Intelligence]({{ site.url }}/notes/papers/army_ants_collective_intelligence).
+- Mitchell, Crutchfield, Das (1996). [Evolving cellular automata with genetic algorithms: A review of recent work]({{ site.url }}/notes/papers/evolving_cellular_automata).
+- Anderson, Kleinberg, Mullainathan (2016). [Assessing Human Error Against a Benchmark of Perfection]({{ site.url }}/notes/papers/chess_blunders).
