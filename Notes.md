@@ -15,6 +15,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Why Chemical Reactions Happen – Keeler and Wothers](#why-chemical-reactions-happen)
 	- [Introduction to Statistical Learning – James, Witten, Hastie, Tibshirani]({{ site.url }}/notes/intro_stat_learn)
 	- [Elements of Statistical learning – Hastie, Tibshirani, Friedman]({{ site.url }}/notes/el_stat_learn)
+	- [Advances in Financial Machine Learning – Marcos Lopez de Prado]({{ site.url }}/notes/adv_fin_ml)
 - [**Notes on academic papers**]({{ site.url }}/academic_papers)
 - **IB notes**
 	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
@@ -26,14 +27,15 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Valuation – Aswath Damodaran]({{ site.url }}/notes/aswath_valuation)
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
-    - [Introduction to Boosted trees]({{ site.imageurl }}../notes/intro_boosted_trees.pdf), based on the [slides by Tianqi Chen ](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
+    - [CT1 Financial Mathematics](#ct1-financial-mathematics)
+    - [Introduction to Boosted Trees](#introduction-to-boosted-trees)
 <!-- /TOC -->
 
 ---
 
-# Textbook notes
+## Textbook notes
 
-## QED: The Strange Theory, by Richard Feynman
+### QED: The Strange Theory, by Richard Feynman
 
 [QED Chapters 1 and 2](https://reasonabledeviations.files.wordpress.com/2016/02/qed-chapters-1-and-2.pdf "QED Chapters 1 and 2")
 
@@ -41,7 +43,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 
 A few years ago I read 'Surely You're Joking, Mr Feynman', and since then fell in love with Feynman's style of teaching physics. 'QED: A Strange Theory' is a semi-technical book in which Feynman discusses the physics substantively rather than just talking about physics as a discipline. Just to clarify, I have no complaint whatsoever with him talking about physics from a more 'meta' point of view, as was done in 'The Character of Physical Law'. I read the book, and loved it. He doesn't sacrifice any of his characteristic charm, while still explaining the counterintuitive theory. This book was transcribed from a series of lectures ([available on youtube](https://www.youtube.com/watch?v=eLQ2atfqk2c)), so is naturally quite verbose.
 
-## The Feynman Lectures on Physics
+### The Feynman Lectures on Physics
 
 So far I've only done a few chapters of volume 1. I really intended to work through it in its totality at one stage, but I realised that I should use my time before university to learn things other than physics.
 
@@ -55,7 +57,7 @@ So far I've only done a few chapters of volume 1. I really intended to work thro
 - [Feynman 13-14](https://reasonabledeviations.files.wordpress.com/2016/02/feynman-13-14.pdf "Feynman 13-14")
 
 
-## Why Chemical Reactions Happen
+### Why Chemical Reactions Happen
 
 Link: [Why Chemical Reactions Happen (notes)]( {{ site.imageurl }}../notes/why_chemical_reactions_happen.pdf)
 
@@ -63,9 +65,9 @@ In January, when I was examining the reading lists for Cambridge and reading ex
 
 ---
 
-# Miscellaneous notes
+## Miscellaneous notes
 
-## The Binomial Theorem
+### The Binomial Theorem
 
 Link: [Notes on the Binomial Theorem](https://reasonabledeviations.files.wordpress.com/2016/02/binomial.pdf "Binomial")
 
@@ -76,3 +78,17 @@ $$(a+b)^n = \sum \limits_{r=0}^n \binom{n}{r} a^{n-r}b^r$$
 Sure, one can simply plug things into the formula, but that is certainly not a helpful explanation, and may let you down for more challenging problems.
 
 I got a bit carried away in trying to intuitively explain this topic, and ended up producing a LaTeX document explaining the Binomial Theorem, and providing exercises with worked solutions.
+
+### CT1 Financial Mathematics
+
+Link: [Notes on CT1 Financial Mathematics]({{ site.imageurl }}../notes/ct1.pdf)
+
+As I was considering a career in actuarial sciences, I thought it might be interesting to take one of the exams to get a better understanding of the material. Following the 'study plan' from the Institute and Faculty of Actuaries, I was torn between CT1 (financial maths) and CT3 (statistics). I decided to choose CT1, because I was already confident with the CT3 content, so I thought that I would learn more from studying CT1.
+
+These notes were made following the free [Warwick notes](https://bcgts.wordpress.com/), which were a sufficient guide for the exams in my opinion.
+
+### Introduction to Boosted Trees
+
+Link: [Introduction to Boosted trees]({{ site.imageurl }}../notes/intro_boosted_trees.pdf).
+
+As I have mentioned elsewhere, for a period I became very interested in gradient tree boosting, particularly XGBoost – a review can be found in [this post]({{ site.baseurl }}{% post_url 2017-10-10-gradient-tree-boosting %}). One of the best expositions of XGBoost was some informal [slides](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf), made by its creator, Tianqi Chen. I think it's well worth a little bit of effort to understand XGBoost, because it is a very powerful algorithm.
