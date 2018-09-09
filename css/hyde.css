@@ -33,7 +33,7 @@
  */
 
 html {
-  font-family: "Crimson Text", Palatino, Garamond, Times, serif;
+  font-family: "Crimson Text", Times, serif;
   text-align: justify;
 }
 @media (min-width: 48em) {
