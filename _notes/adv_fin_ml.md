@@ -26,9 +26,20 @@ title: Advances in Financial Machine Learning
 - [10. Bet sizing](#10-bet-sizing)
 - [11. The dangers of backtesting](#11-the-dangers-of-backtesting)
 - [12. Backtesting through CV](#12-backtesting-through-cv)
+- [13. Backtesting on synthetic data](#13-backtesting-on-synthetic-data)
+- [14. Backtest statistics](#14-backtest-statistics)
+- [15. Understanding strategy risk](#15-understanding-strategy-risk)
+- [16. Machine learning asset allocation](#16-machine-learning-asset-allocation)
+- [17. Structural breaks](#17-structural-breaks)
+- [18. Entropy Features](#18-entropy-features)
+- [19. Microstructural features](#19-microstructural-features)
+	- [19.1 Price sequences](#191-price-sequences)
+	- [19.2 Strategic Models](#192-strategic-models)
+	- [19.3 Sequental models](#193-sequental-models)
+	- [19.4 Other microstructural features](#194-other-microstructural-features)
+- [20-23 High performance computing](#20-23-high-performance-computing)
 
 <!-- /TOC -->
-
 ## 1. Financial ML as a distinct subject
 
 *Chapter 1 is available for free online at [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3104847). I would highly recommend that it be read in its entirety – the below notes do not do justice.*
@@ -196,7 +207,7 @@ $$y =\left\{\begin{aligned}
 
 ## 7. Cross-validation
 
-- K-fold CV vastly overinflates results because of the lookahead bias.
+- K-fold CV vastly over-inflates results because of the lookahead bias.
 - **Purged k-fold CV** solves this by removing training set observations whose labels overlap with test set labels: if a test set label $Y_j$ depends on information $\Phi_j$, training set labels that depend on $\Phi_j$ should be removed.
 - Alternatively, a small embargo can be added after a test set before the next training fold. 
 
@@ -232,11 +243,11 @@ $$\ln x \sim U(\ln a, \ln b)$$
 
 - Negative log loss is generally superior to accuracy because it incorporates confidence in predictions. We use negative log loss so that it follows with the intuition that a higher score is better than a lower score.
 
-## 10. Bet sizing 
+## 10. Bet sizing 
 
-*This is a hard chapter to summarise because it is terse and highly mathematical.*
+*This is a hard chapter to summarise because it is terse and highly mathematical. It is best to consult the original text to learn more.*
 
-## 11. The dangers of backtesting 
+## 11. The dangers of backtesting 
 
 A backtest is *not* an experiment. It is a sanity check for behaviour under realistic conditions. There are many errors one can make, but these are the 7 deadly sins:
 
@@ -276,4 +287,168 @@ A backtest is *not* an experiment. It is a sanity check for behaviour under real
     - statistics like the Sharpe ratio can then be analysed over multiple paths
     - leads to lower variance
 
-<!-- ## 13. Backtesting on synthetic data -->
+## 13. Backtesting on synthetic data
+
+- Generating synthetic data strongly reduces the problem of backtest overfitting. It is particularly useful in deciding where to place stop losses.
+- The mark-to-market PnL $\pi_{i,t}$ is given by the number of units multiplied by the change in price. 
+- A standard profit-take/stop-loss rule closes a position when $\pi_{i,T}$ crosses some threshold value, denoted $\overline{\pi}$ and $\underline{\pi}$ respectively.
+- Trying to discover the optimal thresholds by brute force with historical data easily leads to overfitting. 
+- We can try to fit a discrete **Ornstein-Uhlenbeck** process, then generate many paths. For each path, we can test the resulting Sharpe ratio for different $(\overline{\pi}, \underline{\pi})$ pairs. 
+- For market makers, $\tau$ is small and equilibrium is zero. We should set a low profit-take, and a long stop-loss (i.e allow big drops).
+- For positive equilibrium, the  $(\overline{\pi}, \underline{\pi})$ characteristics are much more diffuse.
+- It is still an open question as to whether the optimum Sharpe ratio is unique, though empirical results support it.
+
+
+## 14. Backtest statistics 
+
+**General characteristics**
+
+- Time range: the horizon of bets may be important in architecture considerations.
+- AUM: average, minimum and capacity
+- Leverage and ratio of longs to shorts
+- Bet frequency and the average holding period (useful for inventory management)
+- Maximum dollar position size (risk management)
+- Annualised turnover
+- Correlation to underlying assets
+
+**Performance metrics**
+
+- PnL (broken down by long and short)
+- Annualised rate of return
+- Hit ratio, and the average return from hits and misses 
+- Time weighted rate of return
+
+**Runs and drawdowns**
+
+- Runs increase downside risk
+- Concentration of returns can be measured with the  **Herfindahl-Hirschman Index (HHI)**
+- 95th percentile drawdown or time under water
+
+**Implementation shortfall**
+
+- Fees/slippage per portfolio turnover
+- Return on execution costs
+
+**Attribution**
+
+Break down returns by sector, risk class, timeframe to gain better insight as to where positive and negative performance is coming from.
+
+**Efficiency**
+
+- The Sharpe Ratio is an accepted metric for efficiency.
+- The probabilistic SR estimates P(observed SR > benchmark SR)
+- The **Deflated SR** takes into account multiplicity of trials
+
+
+**Marcos' Third Law: Every backtest must be reported with all trials involved in its production.**
+
+## 15. Understanding strategy risk
+
+*This is an important chapter which teaches us how to think about the overall strategy risk, and the sensitivity of the outcome to our initial assumptions.*
+
+## 16. Machine learning asset allocation
+
+*This chapter focuses on hierarchical risk parity (HRP) portfolio optimisation. I have found in practice that HRP portfolios don't seem to be the panacea that Lopez de Prado implies they may be, but nevertheless it is a good technique to have in the toolbox. Additionally, this chapter feels very out of place, so I have neglected to include it here.*
+
+## 17. Structural breaks
+
+- Structural breaks offer the best risk/rewards, because other market participants may be unprepared. 
+- CUSUM tests sample whenever some cumulative variable exceeds a predefined threshold. The **Brown-Durbin-Evans** CUSUM test on recursive residuals is one method.
+- Explosiveness tests look for "bubbles"
+	- **Chow-type Dickey-Fuller** tests test for a switch from a random walk to an explosive process
+	- **Supremum Augmented Dickey Fuller** tests look for repeated bubble behaviour.
+
+## 18. Entropy Features 
+
+- The information content of a price series may be a good indicator of potential profitability.
+- Shannon defined entropy as $H(X) = \sum_j p_j \log_2 j$, but this requires the full distribution.
+- The **mutual information** between two variables is defined as the KL divergence between the joint pdf and product of pdfs:
+
+$$MI(X, Y) = E_{f(x,y)}[\log \frac{f(x,y)}{f(x)f(y)}] = H(X) + H(Y) - H(X, Y)$$
+
+- MI is related to Pearson's $\rho$:
+
+$$MI(X, Y ) = -\frac 1 2 \log(1-\rho^2)$$
+
+- Estimating entropy requires encoding:
+	- binary encoding works best when $\|r_t\|$ is relatively constant, which can be achieved by using bars. 
+	- quantile encoding assigns a letter to each quantile of returns
+	- $\sigma$ encoding assigns a letter based on the return in increments of the volatility. 
+- The entropy of an IID gaussian is $\frac 1 2 \log(2\pi e \sigma^2)$
+	- can be used to benchmark entropy estimators
+	- if $r_t \sim N(\mu, \sigma^2)$, then $\sigma$ can be a function of *H*, giving us the entropy-implied volatility. 
+- Entropy of returns indicates the degree of market efficiency.
+- It has been suggested that entropy-maximising actions are most profitable.
+- Informed trading can be identified as follows:
+	- within a volume bar, classify ticks as buys or sells using the **Lee-Ready** rule. 
+	- sum buy and sell volume 
+	- calculate the **probability of informed trading** (PIN) as $E[\|2v^B - 1\|]$
+- Market makers must estimate order flow imbalance to avoid adverse selection:
+	- for some volume bars, determine the portion of buys
+	- compute quantiles on the volume, then map each bar to a letter
+	- estimate entropy with the **Lempel-Ziv** algorithm 
+	- compute the CDF of entropy
+	- use the CDF score of a new sample as a predictive feature
+	
+## 19. Microstructural features 
+
+### 19.1 Price sequences 
+
+- The tick rule determines the aggressor based on what happens to the price:
+
+$$b_t =\left\{\begin{aligned}
+&1,& \Delta p_t < 0 \\
+&-1,& \Delta p_t < 0 \\
+&b_{t-1},& \Delta p_t = 0
+\end{aligned}\right.$$
+
+- We can then use the tick series to build different features:
+	- Kalman filters on $E(B_t+1)$
+	- Entropy of the $\\{ b_t \\}$ sequence 
+	- t-values from tests of runs 
+	- fractional differentiation of the cumulative $\\{ b_t \\}$ series 
+- **Roll's model** explains the bid-ask spread as a function of serial covariance and the true noise, which may be useful for market makers. 
+- OHLC volatility estimators may be more predictive than close-close volatility. For example, Beckers 1983, Corwin and Schultz, Garman-Klass-Yang-Zhang.
+
+### 19.2 Strategic Models
+
+- The t-values of features are often as useful as the features. 
+- **Kyle's $\lambda$** is derived by modeling people who trade on noise and informed traders, estimated by fitting $\Delta p_t = \lambda(b_tV_t) + \epsilon_t$.
+- **Amihud's $\lambda$** models price response per dollar of volume:
+
+$$|\Delta \log (p_t)| = \lambda \sum_{t \in B_t}(p_t V_t) + \epsilon_t$$
+
+### 19.3 Sequental models 
+
+- Easley et al (1996) models trader influx with a Poisson distribution to get a dynamic probability of informed trading. 
+- For volume bars, we can use:
+
+$$VPIN = \frac{\sum_{\tau = 1}^n |v_\tau^B - v_\tau^S|}{nV}$$
+
+### 19.4 Other microstructural features
+
+- Frequency of round-sized trades:
+	- likely from GUI traders 
+	- deviation from base frequency may be a signal. 
+- Predatory algorithms:
+	- quote stuffers: sending many quotes which only you know are uninformative
+	- quote danglers: force squeezed traders to chase a price
+	- liquidity squeezes: trade in the same direction as someone liquidating
+	- pack hunters collude to force out stop
+- TWAP execution signatures: check if there is a persistent component in minute by minute order imbalance
+- Look at options markets:
+	- options quotes are much less informative than trades
+	- stocks with relatively expensive calls outperform those with relatively expensive puts.
+	- the put-call implied stock price may be a useful feature.
+- Serial correlation of signed volume can often be a useful proxy feature.
+- An overall metric for microstructural information can be defined as follows:
+	- create a feature matrix $X = \\{X_t\\}_{t=1,2,\ldots, T}$ using the VPIN, $\lambda$, cancellation rates etc.
+	- label array $y = \\{ y_t \\}$ based on whether the market maker made a profit or loss
+	- fit a classifier 
+	- as new observations come, predict and calculate cross-entropy loss $L_\tau$
+	- fit a KDE on $\\{-L_t\\}_{t=T+1, \ldots, \tau}$ to get the CDF $F(x)$
+	- estimate the information as $\phi_\tau= F(-L_\tau)$
+
+## 20-23 High performance computing 
+
+*Though I read the chapters with interest, I didn't feel the need to take notes as the majority of the content here is not very applicable to small players.*
