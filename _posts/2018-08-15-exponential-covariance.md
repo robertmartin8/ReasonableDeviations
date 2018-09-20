@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Exponential Covariance
+title: Exponential Covariance
 ---
 
 For the past few months, I have been doing a lot of research into portfolio optimisation, whose main task can be summarised as follows:
