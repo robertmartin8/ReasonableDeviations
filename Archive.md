@@ -12,9 +12,9 @@ title: Archive
   {% endif %}
 {% endfor %}
 
-<center>
+<!-- <center>
     <figure>   
     <img src="{{ site.imageurl }}blog_wordcloud.png" style="width:800px;"/>
     <figcaption>Wordcloud based on all posts and pages</figcaption>
     </figure>
-</center>
+</center> -->
