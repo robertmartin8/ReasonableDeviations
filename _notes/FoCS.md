@@ -256,8 +256,6 @@ We can emulate functioning of a set using lists. We want:
 - Intersection
 
 ```ocaml
-infix mem;
-
 fun mem (x, []) = false 
     | mem (x, y::ys) = (x=y) orelse mem (x, ys);
     
@@ -511,3 +509,270 @@ fun postorder (Lf, vs) = vs
             postorder (t1, postorder (t2, v::vs))    
 ```
 
+### Functional arrays 
+
+A **functional array** is a finite map from integers to data. Updating the array is not an imperative command, rather it is a function that returns the updated array. 
+
+A functional array can be represented as a binary tree. The position of subscript *k* is determined by starting at the root and repeatedly (integer) dividing *k* by 2. At each stage, if the remainder is zero, move it to the left subtree. Otherwise right. 
+
+
+<center>
+<img src="{{ site.imageurl }}note_img/functional_array.png" style="width:80%;"/>
+</center>
+
+```ocaml
+exception Subscript;
+
+fun sub (Lf, _) = raise Subscript;
+  | sub (Br(v, t1, t2), k) = 
+        if k = 1 then v 
+        else if k mod 2 = 0 then sub (t1, k div 2)
+        ekse sub (t2, k div 2);
+        
+fun update (Lf, k, w) = 
+        if k = 1 then Br(w, Lf, Lf)
+  | update (Br(v, t1, t2), k, w) =
+        if k = 1 then Br(w, t1, t2)
+        else if k mod 2 = 0 
+            then Br(v, update(t1, k div 2, w), t2)
+        else Br(v, t1, update(t2, k div 2, w));
+        
+fun delete (Br(v, Lf, Lf)) = Lf
+  | delete (Br(v, Br(w, t2, t3), t1)) = 
+                    Br(w, t1, delete(Br(w,t2,t3)));
+```
+
+## Search strategies
+
+A stack is a data structure that lets you add, discard, or return to/from the top only. It can be easily implemented with ML lists. We can use a stack to store the trees in a depth-first search. 
+
+### Queues and breadth-first search 
+
+In order to search a tree breadth-first, we keep a list of trees to visit, and do not traverse those until we have visited the nodes at the current depth. A naive list implementation would be very inefficient because we must append the trees to the back. 
+
+A queue is a FIFO data structure with the following functions:
+
+- `enq` adds an element at the end.
+- `qhd` returns the first element
+- `deq` discards the element at the head 
+
+
+We can represent a queue as a pair of lists: the front half of the queue is stored in the first list, and the second half is *stored in reverse order* in the second list.
+
+```ocaml 
+datatype 'a queue = Q of 'a list * 'a list;
+
+fun norm (Q([], tls)) = Q(rev tls, [])
+  | norm q = q;
+  
+fun enq (Q(hds, tls), x) = norm(Q(hds, x::tls));
+fun deq (Q(x::hds, tls)) = norm(Q(hds, tls));
+fun qhd (Q(x::_, _)) = x;
+```
+
+`enq` will then always be constant time. `deq` will be $O(1)$ except when the front list is empty, in which case we must normalise the queue (reversal is $O(n)$). Thus on average, for *n* enqueues and dequeues, there will be $O(n)$ operations, so the **amortised complexity** is $O(1)$. But because this complexity is not evenly distributed, this data structure may not be suitable for real-time programming.
+
+Using a queue, the breadth-first traversal is:
+
+```ocaml
+fun breadth q = 
+    if qnull q then [] else
+    case qhd q of 
+        Lf => breadth (deq q)
+      | Br(v, t1, t2) => breadth (enq(enq(deq q, t1), t2));
+```
+
+### Depth-first iterative deepening
+
+The main problem with BFS is that it has exponential space complexity: it keeps track of $O(b^d)$ nodes (for a binary tree, $2^d -1$ nodes). 
+
+Iterative deepening searches the tree repeatedly, each time bounded by a finite depth. The time complexity of this is only $b/(b-1)$ greater than BFS, because of the exponential growth. But the space requirement is that of a DFS, i.e $O(d)$.
+
+## Functions as values
+
+ML allows for **functionals** (**higher-order functions**) which operate on other functions (because functions are just values). We can define these as anonymous **lambda functions**:
+
+```ocaml
+fn x => x**x;
+> val it = fn : int -> int
+```
+
+In ML, all functions have exactly one argument. Previously we have been passing tuples, but an alternative is to use **currying**. A **curried function** returns another function as its result. They allow for **partial application**. 
+
+ML has a builtin `map` functional, which could be defined as follows:
+
+```ocaml
+fun map f [] = []
+  | map f (x::xs) = (f x) :: map f xs;
+  
+ > val it = fn: ('a -> 'b) -> 'a list -> 'b list
+```
+
+Note that the `->` symbol associates to the right, so we actually have: `('a -> 'b) -> ('a list -> 'b list)`, i.e `map` takes in some polymorphic function and returns a function that converts an input list into the mapped list.  
+
+We can apply `map` to matrix transposes and products:
+
+```ocaml
+fun hd (x::_) = x;
+fun tl (_::xs) = xs;
+
+fun transp ([]::_) = []
+  | transp rows = (map hd rows) :: (transp (map tl rows));
+  
+fun dot [] [] = 0
+  | dot (x::xs) (y::ys) = x*y + (dot xs ys);
+  
+fun matprod (Arows, Brows) = 
+    let val cols = transp Brows
+    in map (fn row => map (dot row) cols) Arows
+    end;
+```
+
+`dot row` is partially applied to all of the columns in B. 
+
+### List functionals for predicates
+
+These functionals transform a predicate into a predicate over lists. 
+
+```ocaml
+fun exists p [] = false
+  | exists p (x::xs) = (p x) orelse exists p xs;
+  
+fun filter p [] = []
+  | filter p (x::xs) = 
+        if p x then x :: filter p xs
+        else filter p xs;
+        
+fun all p [] = true
+  | all p (x::xs) = (p x) andalso all p xs;
+```
+
+These can be used to simplify many set operations:
+
+```ocaml
+fun mem (x, l) = exists (fn y => y=x) l; 
+
+fun inter (xs, ys) = filter (fn x => mem (x, ys)) xs;
+```
+
+## Lazy lists
+
+**Sequential programs** accept an input problem, processes it, then terminates. **Reactive programs** interact with the environment, e.g interactive and event-triggered. e.g in the following **pipeline**
+
+```
+producer -> filter -> ... -> filter -> consumer 
+```
+
+The **consumer** requests and consumes results: nothing is computed otherwise. A simple way to model this in ML is with **lazy lists** (a.k.a **sequences**):
+
+- allow for **delayed evaluation** 
+- can be unbounded
+- not quite the same as lazy evaluation.
+
+We can delay evaluation by using the empty tuple `()` (of type `unit`). 
+
+```ocaml
+fn f () => E
+```
+
+Note that `E` is not evaluated until `f` is called. We can use this to define a sequence of the form `Cons(x, xf)`, where `x` is the head and `xf` is a delayed function to compute the tail. 
+
+```ocaml
+datatype 'a seq = Nil
+                | Cons of 'a * (unit -> 'a seq);
+
+fun head (Cons(x, _)) = x;
+fun tail (Cons(_, xf)) = xf();
+
+fun from k = Cons(k, fn() => from(k+1));
+
+fun get(0, xq) = []
+    | get (n, Nil) = []
+    | get (n, Cons(x,xf)) = x :: get (n-1, xf());
+```
+
+Rather than appending sequences (which fails if one is infinite), it may be better to **interleave**:
+
+```ocaml
+fun interleave (Nil, yq) = yq 
+  | interleave (Cons(x, xf), yq) =
+                Cons(x, fn() => interleave(yq, xf()));
+```
+
+We can define functionals with boolean predicates, which can be useful to produce a list of a certain type:
+
+```ocaml
+fun filterq p Nil = Nil
+  | filterq p (Cons(x, xf)) = 
+        if (p x) then Cons(x, fn() => filterq p (xf()))
+        else filterq p (xf());
+
+fun iterates f x = Cons(x, fn() => iterates f (f x));
+```
+
+## Polynomial arithmetic 
+
+Programming involves finding **data representations** for abstract concepts. For example, we may try to implement finite sets:
+
+- We will represent the abstract concept with concrete objects - repetition-free lists. 
+- The abstract object will be represented by at least one concrete object e.g `{3,4,5} -> [3,4,5]`.
+- There may be concrete objects that do not represent an abstract object, e.g `[3,3,5]`.
+- Operations on the abstract data must preserve the representation.
+
+We will represent the polynomial $a_n x^n + \cdots + a_1x + a_0$ as a sparse `(int*real)list`, with real (nonzero) coefficients and decreasing exponents. 
+
+e.g $~x^{500} - 2x + 3 \rightarrow$ `[(500, 1.0), (1, ~2.0), (0, 3.0)]`.
+
+The polynomial sum is easy to implement but we must be careful to check all cases to preserve the representation. 
+
+```ocaml
+fun polysum [] us = us :(int*real) list
+  | polysum ts [] = ts
+  | polysum ((m,a)::ts) ((n,b)::us) = 
+        if m > n then (m,a):: polysum ts ((n,b)::us)
+        else if m < n 
+            then (n, b) :: polysum us ((m,a)::ts)
+        else if a+b = 0.0 then polysum ts us
+             else (m, a+b) :: polysum ts us;
+```
+
+In order to multiply polynomials, rather than naively mapping a product over both polynomials 
+
+```ocaml
+fun termprod (m,a) (n,b) = (m+n, a*b);
+
+fun polyprod [] us = []
+  | polyprod ((m,a)::ts) us =
+        polysum (map (termprod (m,a)) us) 
+                (polyprod ts us);
+```
+
+This function is inefficient because `polysum` will have to merge lists with lengths that differ greatly. We can improve it in the style of mergesort:
+
+```ocaml
+fun polyprod [] us = []
+  | polyprod [(m,a)] us = map (termprod (m,a)) us
+  | polyprod ((m,a)::ts) us = 
+        let val k = length ts div 2
+        in polysum ((polyprod (take(ts, k)) us))
+                   ((polyprod (drop(ts, k)) us))
+        end;
+```
+
+Polynomial division can be done using the standard algorithm to return a `(quotient, remainder)` tuple. 
+
+- If the divisor is empty, there is no remainder so return the quotient (must be reversed because we accumulated with cons).
+- If the degree of the numerator is smaller than that of the denominator, return the numerator as the remainder.
+- Otherwise divide out the leading power, multiply out, then subtract.
+
+```ocaml
+fun polydivide ts ((n,b)::us) = 
+  let fun quo []         qs = (rev qs, [])
+       |  quo ((m,a)::ts) qs = 
+            if m<n then (rev qs, (m,a)::ts)
+            else
+            quo (polysum ts 
+                        (map termprod(m-n, ~a/b) us))
+                ((m-n, a/b) :: qs)
+ in quo ts [] end; 
+```
