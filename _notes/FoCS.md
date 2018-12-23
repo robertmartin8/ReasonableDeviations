@@ -776,3 +776,73 @@ fun polydivide ts ((n,b)::us) =
                 ((m-n, a/b) :: qs)
  in quo ts [] end; 
 ```
+
+## Procedural programming
+
+Procedural programming involves transforming **state** through **commands** or **statements**. Though functional programming abstracts away the state, in reality it still must deal with storage. 
+
+ML models memory as **mutable cells**, and provides the following primitives for references:
+
+- `'a ref` is the type of a reference to an $\alpha$ type value.
+- `val P = ref E` creates an $\alpha$ type reference – i.e `ref` is also function that returns an `'a ref`.
+- `!P` returns the current contents of reference *P* (**dereferencing**).
+- `P := E` updates the contents of *P* to the value of *E*
+
+Values in ML are immutable – only memory cells support reassignment. In the below example, `ps` doesn't change, only the contents of the reference at its head do. 
+
+```ocaml
+val ps = [ref 77, ref 6];
+hd ps := 3;
+```
+
+ML uses **aliasing** - if you assign a new reference to equal an old one, updating either will update both. In order to make references 'private', we can design "factory methods" that return functions with their own references.  
+
+
+### Commands and control flow
+
+A **command** is an expression that affects state, normally returning `unit`. Multiple commands can be executed using $C_1; C_2; \ldots; C_n$. This evaluates each expression but only returns $C_n$.
+
+This can be used in `while` loops, which evaluate some statements until the predicate is false. 
+
+```ocaml
+while B do (C1; C2; C3);
+```
+
+Because of the way commands are evaluated, we can make a `do-while` loop as follows:
+
+```ocaml
+while (C1; B) do (C2; C3);
+```
+
+### Arrays 
+
+ML arrays can be thought of as references that contain several elements. The array primitives are:
+
+- `'a Array.array` - an array that contains $\alpha$ type values
+- `Array.tabulate(n, f)` creates an *n*-element array where `A[i]` holds $f(i)$
+- `Array.sub(A,i)` returns the contents of `A[i]`
+- `Array.update(A,i,E)` updates `A[i]` to the value of *E*.
+
+These arrays are safer than C arrays because they are still abstracted (i.e you can't edit the machine's memory). However, they are less flexible (e.g for 2D arrays).
+
+### Example: mutable linked lists
+
+We can implement mutable linked lists using a custom recursive datatype, representing it as a head and a reference to the rest of the list. 
+
+```ocaml
+datatype 'a mlist = Nil
+                  | Cons of 'a * ('a mlist ref);
+                  
+fun mlistOf [] = Nil;
+  | mlistOf (x::l) = Cons(x, ref (mlistOf l));
+  
+fun extend (mlp, x) = 
+  let val last = ref Nil
+  in mlp := Cons(x, last);
+     last;
+  end;
+```
+
+The `extend` function accepts a reference to a list and a new value. It is important that it returns `last`: this is needed so that we can add values via `extend (it, newVal)`.
+
+
