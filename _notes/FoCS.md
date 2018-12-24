@@ -5,11 +5,47 @@ title: Foundations of Computer Science
 
 # Foundations of Computer Science
 
+## Contents
+
+<!-- TOC -->
+- [Basic syntax](#basic-syntax)
+- [Expressions and complexity](#expressions-and-complexity)
+- [Lists](#lists)
+    - [Strings](#strings)
+    - [List functions](#list-functions)
+    - [Searching](#searching)
+    - [Zipping and Unzipping](#zipping-and-unzipping)
+    - [Making change](#making-change)
+    - [Defining a set](#defining-a-set)
+- [Sorting](#sorting)
+    - [Insertion sort](#insertion-sort)
+    - [Quicksort](#quicksort)
+    - [Mergesort](#mergesort)
+- [Datatypes](#datatypes)
+    - [Exceptions](#exceptions)
+- [Binary trees](#binary-trees)
+    - [Dictionaries and binary search trees](#dictionaries-and-binary-search-trees)
+    - [Traversing trees](#traversing-trees)
+    - [Functional arrays](#functional-arrays)
+- [Search strategies](#search-strategies)
+    - [Queues and breadth-first search](#queues-and-breadth-first-search)
+    - [Depth-first iterative deepening](#depth-first-iterative-deepening)
+- [Functions as values](#functions-as-values)
+    - [List functionals for predicates](#list-functionals-for-predicates)
+- [Lazy lists](#lazy-lists)
+- [Polynomial arithmetic](#polynomial-arithmetic)
+- [Procedural programming](#procedural-programming)
+    - [Commands and control flow](#commands-and-control-flow)
+    - [Arrays](#arrays)
+    - [Example: mutable linked lists](#example-mutable-linked-lists)
+<!-- /TOC -->
+
+## Basic syntax
+
 - Computing is largely about abstraction: what services should be provided at different levels and how should these interface?
 - The goal of programming is to describe computation mechanically, allowing for correct, efficient and maintainable code. 
 - ML abstracts away the underlying hardware (and memory management), and is similar to mathematics.
 
-## Basic syntax
 
 This is a **value declaration** with `pi` as the identifier. 
 
