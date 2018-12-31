@@ -71,7 +71,8 @@ And we are done! This simple procedure is all that is required to incorporate th
 
 This post has presented a modification of the covariance matrix especially suited to time series like asset returns. It is simple to extend this to an exponential covariance matrix and use it in portfolio optimisation – it is reasonable to suggest that this matrix will be positive definite if the sample covariance matrix is positive definite. 
 
-While I cannot comment on specifics, I will say that I have used the exponential covariance to great effect regarding portfolio optimisation on real assets. Backtested results have affirmed that the exponential covariance matrix strongly outperforms both the sample covariance and shrinkage estimators when applied to minimum variance portfolios.
+I have used the exponential covariance to great effect regarding portfolio optimisation on real assets. Backtested results have affirmed that the exponential covariance matrix strongly outperforms both the sample covariance and shrinkage estimators when applied to minimum variance portfolios. 
 
 At some stage in future, I will consider implementing this in my portfolio optimisation package [PyPortfolioOpt](https://github.com/robertmartin8/PyPortfolioOpt), but for the time being this post will have to suffice. Please [drop me a note]({{ site.url }}/about/) if you'd like to use the ideas herein for any further research or software.
 
+*Update: as of 20/9/18, exponential covariance has been added to PyPortfolioOpt!*
