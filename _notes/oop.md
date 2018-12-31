@@ -4,7 +4,6 @@ title: Object Oriented Programming
 ---
 
 # Object Oriented Programming
-
 <!-- TOC -->
 - [Introduction](#introduction)
 - [1. Types, Objects, Classes](#1-types-objects-classes)
@@ -41,12 +40,13 @@ title: Object Oriented Programming
 
 <!-- /TOC -->
 
+*Some images herein have been borrowed from the Course Handout*
 
 ## Introduction 
 
 - **Declarative languages** specify what to do, not how to do it. Functional languages like ML are a subset of declarative languages: the compiler may replace your implementation with something else (e.g tail optimisation).
 - **Imperative languages** require you to specify exactly how a computation should be done. 
-- **Procedural programming** is a paradigm within declarative programming in which statements are grouped into procedures which manipulate state.
+- **Procedural programming** is a paradigm within declarative programming in which statements are grouped into procedures that manipulate state.
 - **Object oriented programming** is an extension to procedural programming which also groups certain aspects of the state with the procedures. 
 - ML code consists of expressions which evaluate to values, which are **immutable**. Java uses statements and expressions with mutable state. 
 
@@ -96,7 +96,7 @@ Vector2d v1 = new Vector2d(3.0, 4.0);
 ```
 - The constructor has the same name as the class, and has no return type. 
 - In general, we should minimise the work done by the constructor.
-- If no constructor is defined, Java generates a blank **default constructor** with no arguments. The fields all get set to the 'zero' value for the type, e.g int -> 0, string -> "".
+- If no constructor is defined, Java generates a blank **default constructor** with no arguments. The fields all get set to the 'zero' value for the type, e.g 0 for int, "" for string.
 
 The **prototype** of a function refers to the function name, arguments, and return types. Functions can be be **overloaded** to support different arguments (possibly with a different return type) – this also applies to the constructor. 
 
@@ -106,14 +106,16 @@ We can also have **static methods**, which do not require any instance-specific 
 
 ## 2. Designing classes
 
-Classes should logically group state (nouns) and behaviour (verbs). We can visualise thus using a UML Class diagram. 
+Classes should logically group state (nouns) and behaviour (verbs). We can visualise thus using a UML Class diagram
 
 <center>
 <img src="{{ site.imageurl }}note_img/uml1.png" style="width:80%;"/>
 </center>
 
-
-To model "has-a" associations, we use open arrowheads and annotate the multiplicity. In real terms, "has-a" means that an object contains a reference to other object(s).
+- Protected fields and methods are preceded by `#`
+- Write `static` next to the return type if needed.
+- Interfaces should have `<<interface>>` at the top
+- To model "has-a" associations, we use open arrowheads and annotate the multiplicity. In real terms, "has-a" means that an object contains a reference to other object(s).
 
 <center>
 <img src="{{ site.imageurl }}note_img/uml2.png" style="width:80%;"/>
@@ -214,7 +216,7 @@ Foo f = new Bar(); // ERROR!!
 In contrast to the "has-a" relationship, inheritance is described by empty arrowheads that describe the "is-a" relationship.
 
 <center>
-<img src="{{ site.imageurl }}note_img/inheritance_uml.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}note_img/inheritance_uml.png" style="width:100%;"/>
 </center>
 
 
@@ -247,11 +249,11 @@ When an object is created, Java stores the information at a specific memory loca
 
 ### Inheriting fields and methods
 
-All fields are except for private fields (JLS 8.2). Subclass objects actually do contain the superclass's private fields, but do not have access to them. 
+All fields are inherited except for private fields (JLS 8.2). Subclass objects actually do contain the superclass's private fields, but do not have access to them. 
 
 **Shadowing** is when a field in the subclass has the same name as a field in the parent class. We can specify which field we want to access using `this` and `super`.
 
-When a subclass has a method of the same as a parent method, we say that the method is **overridden**. It is best practice to use the `@Override` annotation. 
+When a subclass has a method of the same name as a parent method, we say that the method is **overridden**. It is best practice to use the `@Override` annotation. 
 
 ### Abstract classes
 
@@ -280,8 +282,8 @@ Java's alternative is **interfaces**, which are like special classes which:
 
 - only support type inheritance
 - have no state 
-- only have abstract methods (public by default) except for the next point
-- possibly have **default methods** which provide a default implementation 
+- only have abstract methods (public by default) which must be overridden
+- (actually may have **default methods** which provide a default implementation)
 
 
 They are represented on UML with a `<<interface>>` label, and are generally named as adjectives. 
@@ -338,6 +340,10 @@ Parent fields initialised first, then parent constructor, then child fields, the
 
 Java does not do this. Java instead uses **garbage collection** to automatically delete objects. Though there are **finalisers** (deprecated), these are not guaranteed to run and are very unreliable. As an alternative to RAII, Java offers **try-with-resources**:
 
+<center>
+<img src="{{ site.imageurl }}note_img/try-with-resources.png" style="width:100%;"/>
+</center>
+
 
 The garbage collector is a separate process that monitors the program. It will slow down a program but helps minimise memory leaks. The different philosophies are:
 
@@ -345,9 +351,6 @@ The garbage collector is a separate process that monitors the program. It will s
 2. **Incremental** – garbage collect in multiple phases letting the program run in the meanwhile 
 3. **Concurrent** – no pause. Ideal but hard to implement.
 
-<center>
-<img src="{{ site.imageurl }}note_img/try-with-resources.png" style="width:100%;"/>
-</center>
 
 ### Garbage collection algorithms
 
@@ -404,7 +407,7 @@ A list is an ordered collection of elements that may contain duplicates.
 
 ### Queue interface 
 
-An ordered collection that supports removal of elements from the head (`poll()`) and addition to the back (`offer()`). `peek()` can be used to look at the head without removal. 
+An ordered collection that supports removal of elements from the head (`poll`) and addition to the back (`offer`). `peek()` can be used to look at the head without removal. 
 
 - `LinkedList` has $O(1)$ `offer` and `poll`
 - `PriorityQueue` adds a notion of priority so more important elements move to the top.
@@ -433,7 +436,7 @@ for (Map.Entry<String, String> entry : map.entrySet())
 hash.forEach((key, tab) -> /* do something with key and tab */);
 ```
 
-When iterating over an object, it is dangerous to change the structure (e.g by deleting). To do this we must use the `Iterator` class, which supports `hasNext()`, `next()` and `remove()`, but does not support `forEach`.
+When iterating over a collection, it is dangerous to change the structure (e.g by deleting). To do this we must use the `Iterator` class, which supports `hasNext()`, `next()` and `remove()`, but does not support `forEach`.
 
 ```java
 Iterator<Integer> it = list.iterator();
@@ -465,7 +468,7 @@ In order to compare objects, their class should implement the `Comparable<T>` in
 - If the object is more than `o`, return positive
 - If `o` is null, throw `NullPointerException`.
 
-Implementing comparable defines a **natural ordering** for the class, which should be consistent with equals and define a **total order**:
+Implementing `Comparable` defines a **natural ordering** for the class, which should be consistent with equals and define a **total order**:
 
 - Antisymmetry: $a \leq b \text{ and } b \leq a \implies a = b$
 - Transitivity: $a \leq b \text{ and } b \leq c \implies a \leq c$
@@ -627,4 +630,194 @@ Java arrays are covariant: an array of type `T[]` can contains elements of type 
 
 ## 10. Language evolution 
 
+When implementing new features, a key issue is backward compatibility. For example, java initially included `Vector` as an expandable array. It has since been completely replaced by `ArrayList`, but only remains for backwards compatibility. 
+
+### Generics
+
+Initially, `Collections` dealt with objects only. But this requires constant casting and can cause accidental type mixing in the collection. 
+
+In order to fix this while maintaining backwards-compatibility, Java uses **type erasure**, such that within a generic, the compiler deletes all instances of the generic type so that it is converted into the old code. 
+
+<center>
+<img src="{{ site.imageurl }}note_img/type_erasure.png" style="width:100%;"/>
+</center>
+
+This explains why primitives cannot be passed directly, and must first be boxed.
+
+Because of this type erasure, generics must be **invariant**. Unlike arrays, `List<S>` is not a subtype of `List<T>` even if `S` is a subtype of `T`.
+
+```java
+ArrayList<String> strList = new ArrayList<>();
+ArrayList<Object> superList = strList; // NOT OK
+```
+
+### Anonymous functions
+
+Java 8 added support for syntax reminiscent of functional programming, which can reduce the boilerplate. In many cases we will only want to use a function or object once, so it is unnecessary to define a method/class just for that purpose.
+
+For example, consider a simple GUI with a clickable button. We thus need to register an `ActionListener` which increments a counter whenever the button is clicked. The obvious way to structure this is:
+
+```java
+class ButtonCounter implements ActionListener {
+    // Fields and constructor 
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        counter++;
+        button.setText(String.valueOf(counter));
+    }
+}
+
+public class Gui {
+    // Fields
+    
+    Gui() {
+        button = new JButton("mybutton");
+        button.addActionListener(new ButtonCounter(button));
+    }
+    // Other GUI stuff
+}
+```
+
+However, `ButtonCounter` is only needed as this specific part of the GUI. Thus we can improve using an **inner class**, in which we simply move `ButtonCounter` into `Gui` (its fields become Gui's fields). This can increase encapsulation, because inner classes can be given access modifiers.
+
+However, because we only need to register this listener once, we have wasted effort in creating a reusable class. An **anonymous inner class** defines one on the spot. 
+
+```java 
+public class Gui {
+    // Fields 
+    
+    Gui() {
+        button = new JButton("mybutton");
+        button.addActionListener(
+                 new ActionListener() {
+                     @Override
+                     public void actionPerformed(ActionEvent e) {
+                         button.setText(String.valueOf(counter++));
+                     }
+                 });
+    }
+    // Other GUI stuff 
+}
+```
+
+But this whole class has been defined just to get the `actionPerformed` functionality! We can use a **lambda function** instead:
+
+
+```java
+public class Gui {
+    // Fields 
+    
+    Gui() {
+        button = new JButton("mybutton");
+        button.addActionListener(
+                a -> button.setText(String.valueOf(counter++))
+        );
+    }
+    // Other GUI stuff
+}
+```
+
+This is only possible because `addActionListener()` implements a **functional interface**. Such an interface only has one abstract method – a lambda function is an instance of a functional interface.
+
+- Lambdas can work without parameters: `() -> something();`
+- Lambdas can take multiple parameters: `(x, y) -> x+y;`
+- Lambdas can replace comparators. 
+- These functions can be composed using `andThen()`
+- An **expression lambda** has some expression on the right hand side, whereas a **statement lambda** can have multiple statements (see below)
+- Lambdas can sometimes be replaced with **method references**, if the only thing the lambda does is calling another method.
+
+
+```java
+List<String> list = new LinkedList<>();
+
+// Expression lambda 
+list.forEach(s -> System.out.println(s + s));
+
+// Statement lambda 
+list.forEach(s -> {s = s.toUpperCase();
+                   System.out.println(s);});
+                   
+// Method reference
+list.forEach(System.out::println);
+```
+
+Different functional interfaces allow functions to be treated as 'values', with different characteristics.
+
+```java 
+// No arguments, void return
+Runnable r = () -> System.out.println("Some state change");
+r.run()
+
+// No arguments, non-void return 
+Callable<Double> pi = () -> 3.141;
+pi.call();
+
+// One argument, non-void return
+Function<String, Integer> f = s -> s.length();
+f.apply("Some input string");
+```
+ 
+### Streams 
+
+Collections can be made into **streams**, which we can then **filter** and **map** (though they get consumed in the process).
+
+```java
+// 1. Create stream from collection
+// 2. Element-wise operate
+// 3. Aggregate
+List<Integer> list = new ArrayList<>(List.of(1,2,3,4,5));
+list.stream().filter(x -> x*x).collect(Collectors.toList());
+```
+
 ## 11. Design patterns
+
+A **design pattern** is a general reusable solution to a commonly occurring problem in software design. Many of them follow the **Open-Closed principle**, that classes should be open for extension but closed for modification.
+
+### Decorator
+
+How can we add state or methods at runtime? e.g supporting gift-wrapped books in an online store.
+
+- We want to be able to **Decorate** any implementations of some **Component** interface.
+- An abstract `Decorator` class inherits from `Component`, but also keeps a reference to a concrete component. 
+- Subclasses of the decorator will call the component's methods via `super` but will also add their own state and functionality 
+
+<center>
+<img src="{{ site.imageurl }}note_img/decorator_pattern.png" style="width:100%;"/>
+</center>
+
+
+### Singleton
+
+How can we ensure that only one instance of an object is created by developers using the code? e.g database connections.
+
+The Singleton pattern does this by having a private constructor and storing the only instance as a private static final field. 
+
+```java 
+public class Singleton {
+    private static final Singleton instance;
+    
+    public static getInstance() {
+        if (instance == null ) {
+            instance = new Singleton();
+        }
+        return instance;
+    } 
+    private Singleton() {} // private constr blocks creation
+}
+```
+
+We can then call it with `Singleton.getInstance()`. We can improve this to make it lazy by initially setting `instance = null` then creating if null in `getInstance()`.
+
+### State
+
+How can we let a **Context** object alter its behaviour when its internal **state** changes? e.g pressing the play button does something different depending on whether the music is on or off. 
+
+- `Context` keeps a private reference to an object of type `State` (which can refer to its subtypes as well). When we want to run a particular method, we call `state.action()`.
+- `State` is an interface that contains the abstract methods which depend on state. 
+    - We then implement concrete states (e.g `StartState` and `StopState`), which override `action()` with their own implementation. 
+    - If these subclasses are to change the state, they need to be passed an instance of `Context` so we can `setState()`.
+
+<center>
+<img src="{{ site.imageurl }}note_img/state_pattern.png" style="width:80%;"/>
+</center>
