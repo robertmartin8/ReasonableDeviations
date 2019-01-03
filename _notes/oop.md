@@ -767,25 +767,16 @@ Collections can be made into **streams**, which we can then **filter** and **map
 // 2. Element-wise operate
 // 3. Aggregate
 List<Integer> list = new ArrayList<>(List.of(1,2,3,4,5));
-list.stream().filter(x -> x*x).collect(Collectors.toList());
+list.stream().map(x -> x*x).collect(Collectors.toList());
 ```
 
 ## 11. Design patterns
 
-A **design pattern** is a general reusable solution to a commonly occurring problem in software design. Many of them follow the **Open-Closed principle**, that classes should be open for extension but closed for modification.
+A **design pattern** is a general reusable solution to a commonly occurring problem in software design. Many of them follow the **Open-Closed principle**, that classes should be open for extension but closed for modification. There are three classes of design pattern:
 
-### Decorator
-
-How can we add state or methods at runtime? e.g supporting gift-wrapped books in an online store.
-
-- We want to be able to **Decorate** any implementations of some **Component** interface.
-- An abstract `Decorator` class inherits from `Component`, but also keeps a reference to a concrete component. 
-- Subclasses of the decorator will call the component's methods via `super` but will also add their own state and functionality 
-
-<center>
-<img src="{{ site.imageurl }}note_img/decorator_pattern.png" style="width:100%;"/>
-</center>
-
+- **Creational patterns** - creating objects, e.g Singleton
+- **Structural patterns** - composition of objects, e.g Decorator, Composite 
+- **Behavioural Patterns** - object interaction, e.g Observer, State, Strategy.
 
 ### Singleton
 
@@ -809,6 +800,50 @@ public class Singleton {
 
 We can then call it with `Singleton.getInstance()`. We can improve this to make it lazy by initially setting `instance = null` then creating if null in `getInstance()`.
 
+
+### Decorator
+
+How can we add state or methods at runtime? e.g supporting gift-wrapped books in an online store.
+
+This pattern describes how we can **Decorate** implementations of some **Component** interface. 
+
+- An abstract `Decorator` class inherits from `Component`, but also keeps a reference to a concrete component. 
+- Subclasses of the decorator will call the component's methods via `super` but will also add their own state and functionality 
+
+<center>
+<img src="{{ site.imageurl }}note_img/decorator_pattern.png" style="width:100%;"/>
+</center>
+
+### Composite 
+
+How can we treat a group of **Component** objects as a single **Composite** object?
+
+- `Composite` has to inherit from the abstract `Component` class, but also maintains a list of `Component` subclass instances, which are called **Leafs**
+- Functions within `Composite` can then be defined to affect all `Leaf` objects, e.g 
+
+```java
+for (Component c: children) c.operation();
+```
+
+<center>
+<img src="{{ site.imageurl }}note_img/composite_pattern.png" style="width:80%;"/>
+</center>
+  
+
+### Observer 
+
+When an object changes state, how can other objects know? e.g action on click in a GUI.
+
+This pattern refers to how an **observer** can monitor changes in the state of a **subject**. It is straightforward conceptually: 
+
+- Subject maintains a list of observers and tells them to update when there is a state change. 
+- Each observer maintains a subject instance. When told to update, it gets the state from the subject. 
+
+<center>
+<img src="{{ site.imageurl }}note_img/observer_pattern.png" style="width:80%;"/>
+</center>
+
+
 ### State
 
 How can we let a **Context** object alter its behaviour when its internal **state** changes? e.g pressing the play button does something different depending on whether the music is on or off. 
@@ -821,3 +856,28 @@ How can we let a **Context** object alter its behaviour when its internal **stat
 <center>
 <img src="{{ site.imageurl }}note_img/state_pattern.png" style="width:80%;"/>
 </center>
+
+### Strategy 
+
+How can we select an algorithm implementation at runtime? 
+
+The Strategy pattern is designed in the same way as State (with `Context` being used as a 'switcher'), however its main purpose is to reduce code repetition during development:
+
+- Strategies will not depend on internal state
+- Strategies may not involve different functionality – they may just be different implementations.
+- While State allows for different functionality at runtime, Strategy assumes that the implementation is selected at compile time. 
+
+
+## 12. The JVM and Bytecode
+
+In order to build a distributable platform, we can use an interpreter, but this is not as efficient as a compiled language. Java uses a hybrid model:
+
+- Developer writes in Java, then runs the compiler.
+- The compiler returns bytecode, which is platform-independent and can be distributed. 
+- The JVM converts bytecode into machine code for a particular architecture.
+
+The advantages of bytecode:
+
+- Not easy to reverse engineer, so protects application logic. 
+- The JVM contains many libraries, so bytecode will be relatively small. 
+- Interpreting bytecode is relatively fast (though not as fast as running native code). 
