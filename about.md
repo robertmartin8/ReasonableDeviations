@@ -3,9 +3,9 @@ layout: page
 title: About
 ---
 
-My name is Robert. I am a soon-to-be undergraduate natural sciences (physical) student at the University of Cambridge.
+My name is Robert. I am an undergraduate at the University of Cambridge studying Physical Natural Sciences (Physics, Computer Science, Mathematics, Materials Science).
 
-I like to try to find intuitive quantitative explanations for complex phenomena, even if those intuitive explanations concede a lack of determinism. It is always nice to find order in complexity, but I think we should accept that it may very well be complex all the way down. I'm a logical person who holds rationalism dear. Physics and mathematics are my fortes, but as of late I have been expanding that to computer science and finance.
+I am interested in finding intuitive quantitative explanations for complex phenomena, even if those intuitive explanations concede a lack of determinism. It is always nice to find order in complexity, but I think we should accept that it may very well be complex all the way down. I'm a logical person who holds rationalism dear. I have traditionally considered physics and mathematics to be my fortes, but I a have been actively expanding that to computer science and finance.
 
 The best and worst thing about computers is that they do exactly what you tell them to – they are flawless in theory, if they are coded by a theoretically perfect person, but I'd take buggy code over by-hand calculations any day.
 
@@ -35,7 +35,7 @@ I have also frequently turned to 'knowledge based computing', a nice euphemism f
 
 Finance is inherently interesting to me, because it represents a quantification of the beliefs and wills of so many individuals (point particles if you like) – and in my mind, quantification is the first step to prediction and/or understanding. Of course, a nice side effect of prediction is that you can make money from it.
 
-I have spent a lot of time building predictive systems based on machine/deep learning. I'm not naïve: I know that whatever I do is probably being done far better by a hedge fund somewhere. But regardless, I do think it's interesting to test the limits of statistical inference in such a complex and dynamic system.
+I have spent a lot of time building predictive systems based on machine/deep learning. I'm not naïve: I know that whatever I do has probably being done far better by a quant fund somewhere. But regardless, I do think it's interesting to test the limits of statistical inference in such a complex and dynamic system.
 
 One day I'd like to be able to use my knowledge of physics and mathematical methods to be able to properly find order in financial markets, or failing that, to quantify the chaos and understand how to mitigate its effects.
 
@@ -60,8 +60,12 @@ On top of the very general 'physics and maths', here are some specific interests
 
 ## Timeline
 
-**Right now**    
-Waiting for October 2018 when I  start at Cambridge. Trying to learn as much as I can about finance and statistics in the meanwhile, because I'll probably be mostly occupied with physics at uni. 
+**Right now**   
+
+Either doing supervision work, reading about finance, or building software projects!
+
+**October 2018**
+Started at Cambridge! I spent the previous months trying to learn as much as I could about finance and statistics in the meanwhile, because I knew that I'd probably be mostly occupied with physics and maths at uni.
 
 **May 2018**
 
