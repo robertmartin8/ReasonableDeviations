@@ -4,7 +4,9 @@ title: Object Oriented Programming
 ---
 
 # Object Oriented Programming
+
 <!-- TOC -->
+
 - [Introduction](#introduction)
 - [1. Types, Objects, Classes](#1-types-objects-classes)
     - [Object construction](#object-construction)
@@ -36,8 +38,17 @@ title: Object Oriented Programming
 - [9. Copying Objects](#9-copying-objects)
     - [Variance of return types](#variance-of-return-types)
 - [10. Language evolution](#10-language-evolution)
+    - [Generics](#generics)
+    - [Anonymous functions](#anonymous-functions)
+    - [Streams](#streams)
 - [11. Design patterns](#11-design-patterns)
-
+    - [Singleton](#singleton)
+    - [Decorator](#decorator)
+    - [Composite](#composite)
+    - [Observer](#observer)
+    - [State](#state)
+    - [Strategy](#strategy)
+- [12. The JVM and Bytecode](#12-the-jvm-and-bytecode)
 <!-- /TOC -->
 
 *Some images herein have been borrowed from the Course Handout*
