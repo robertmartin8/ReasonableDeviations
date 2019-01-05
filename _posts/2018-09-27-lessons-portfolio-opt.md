@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lessons learnt in portfolio optimisation
+title: "Portfolio optimisation: lessons learnt"
 ---
 
 Over the past few months I have been busy doing a mixture of blockchain consulting and quantitative finance work for a couple of companies in South East Asia. In particular, I have had the opportunity to investigate the interesting problem of portfolio management for cryptoassets – it was not my first experience with portfolio optimisation, having implemented efficient frontier portfolios at a roboadvisor startup, but this time I took the opportunity to do a deep dive into the subject.  
