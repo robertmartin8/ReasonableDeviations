@@ -180,7 +180,7 @@ We can define functions with separate clauses in order to pattern-match.
 
 ```ocaml
 fun nlength [] = 0
-    | nlength (X::xs) = 1 + nlength xs;
+    | nlength (x::xs) = 1 + nlength xs;
 ```
 
 For list functions, sometimes using cons instead of append leaves the result the wrong way round. The cost of `rev` should be considered.
@@ -447,7 +447,7 @@ fun change (till, 0) = []
         handle ChangeError => change(till, amt);
 ```
 
-If a particular choice of coin makes it impossible to find change in the next recursive call, the handler undoes the most recent choice. If making change is impossible, the second pattern will eventually match an the ChangeError will be raise with no handler. 
+If a particular choice of coin makes it impossible to find change in the next recursive call, the handler undoes the most recent choice. If making change is impossible, the second pattern will eventually match and the ChangeError will be raise with no handler. 
 
 An alternative to exceptions is to declare an `option` datatype, but this requires constant checking for NONE
 
@@ -772,7 +772,7 @@ fun polysum [] us = us :(int*real) list
              else (m, a+b) :: polysum ts us;
 ```
 
-In order to multiply polynomials, rather than naively mapping a product over both polynomials 
+In order to multiply polynomials, we can map a pairwise product over both polynomials
 
 ```ocaml
 fun termprod (m,a) (n,b) = (m+n, a*b);
