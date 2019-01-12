@@ -20,6 +20,8 @@ General things that I have learnt:
  
  <!-- TOC -->
 
+<!-- TOC -->
+
 - [Standard ML exercises and solutions](#standard-ml-exercises-and-solutions)
     - [Sorting](#sorting)
         - [Insertion sort](#insertion-sort)
@@ -45,7 +47,19 @@ General things that I have learnt:
         - [4.16 Redefining an ML list](#416-redefining-an-ml-list)
         - [4.17 Tree where leaves have values](#417-tree-where-leaves-have-values)
         - [4.18 Non-binary trees](#418-non-binary-trees)
+    - [Questions from the course notes](#questions-from-the-course-notes)
+        - [2.1 Iterative power function](#21-iterative-power-function)
+        - [3.1 Sum of list elements](#31-sum-of-list-elements)
+        - [3.2 Last element of a non-empty list](#32-last-element-of-a-non-empty-list)
+        - [3.3 Get elements with an even index](#33-get-elements-with-an-even-index)
+        - [3.4 Return the list of tails](#34-return-the-list-of-tails)
+        - [4.1 Set union](#41-set-union)
+        - [4.2 Separate list into nonnegative and negative](#42-separate-list-into-nonnegative-and-negative)
+        - [5.2 Selection sort](#52-selection-sort)
+        - [5.3 Bubblesort](#53-bubblesort)
+        - [8.2 Lexicographical ordering](#82-lexicographical-ordering)
 
+<!-- /TOC -->
 <!-- /TOC -->
 
 ## Sorting
@@ -489,3 +503,162 @@ Br(1, [Lf, Lf, Lf]);
 Br(1, [Br(2, [Lf]), Lf, Lf]);
 Br(1, [Lf, Lf, Br(2, [Lf, Br(2, [Lf, Lf])])]);
 ```
+
+
+## Questions from the course notes 
+
+### 2.1 Iterative power function
+
+Use the recurrence relationship $x^{2n} = (x^2)^n$ and $x^{2n+1} = x* (x^2)^n$ to make this $O(\log n)$.
+
+```ocaml
+fun npower (x:real, n, total) = 
+    if n = 0 then total
+    else if (n mod 2 = 0) then npower(x*x, n div 2, total)
+    else npower(x*x, n div 2, x * total);
+    
+fun pow (x:real, n) = npower (x, n, 1.0);
+```
+
+### 3.1 Sum of list elements 
+
+```ocaml
+(* Recursive *)
+fun listsum [] = 0
+  | listsum (x::xs) = x + listsum(xs);
+
+(* Iterative *)
+fun itsum ([], total) = total
+  | itsum (x::xs, total) = itsum(xs, total + x);
+
+fun listsum2 ls = itsum (ls, 0);
+```
+
+### 3.2 Last element of a non-empty list
+
+```ocaml
+fun last [] = []
+  | last [x] = [x]
+  | last (x::xs) = last xs;
+```
+
+### 3.3 Get elements with an even index
+
+```ocaml
+fun evenIndex [] = []
+  | evenIndex [x] = [x]
+  | evenIndex (x::y::xs) = x :: evenIndex(xs);
+```
+
+### 3.4 Return the list of tails
+
+```ocaml
+fun tails [] = [[]]
+  | tails (x::xs) = (x::xs) :: tails xs;
+```
+
+### 4.1 Set union
+
+```ocaml 
+fun mem (x, []) = false
+  | mem (x, y::ys) = (x=y) orelse mem (x, ys);
+
+fun union ([], ys) = ys
+  | union (xs, []) = xs
+  | union (x::xs, ys) = if mem (x, ys) 
+                        then union(xs, ys)
+                        else x :: union(xs, ys);
+```
+
+### 4.2 Separate list into nonnegative and negative
+
+When I first did this as homework, I think I implemented a pretty naive solution using two accumulators. It works, but it doesn't really embrace functional programming.
+
+```ocaml
+fun sep([], pos, neg) = [pos, neg]
+  | sep ([x], pos, neg) = if x >= 0 then [x::pos, neg]
+                          else [pos, x::neg] 
+  | sep (x::xs, pos, neg) = if x >=0 then sep(xs, x::pos, neg) 
+                            else sep(xs, pos, x::neg);
+```
+
+I'm fairly sure that what I have here is the 'proper' solution, though actually it isn't actually more efficient. 
+
+```ocaml 
+fun sep [] = ([], [])
+  | sep (x::xs) = 
+        let val (pos, neg) = sep xs 
+        in 
+            if x >= 0 then (x::pos, neg) 
+                      else (pops, x::neg)
+        end;
+```
+
+### 5.2 Selection sort 
+
+My atrocious solution: define three functions:
+
+- find the minimum value in a list
+- delete the first instance of a value
+- recursively apply the above two functions, putting the minimum at the head each time.
+
+```ocaml 
+fun lsmin [] = raise Match
+  | lsmin [x] = x
+  | lsmin (x::xs) = 
+        let val m = lsmin(xs)
+        in if x < m then x else m
+        end;
+
+(* delete the first instance *)
+fun rmVal ([], x) = []
+  | rmVal (y::ys, x) = if (x=y) then ys
+                      else y::rmVal(ys, x);
+
+fun selsort [] = []
+  | selsort [x] = [x]
+  | selsort (x::xs) = 
+        let val min = lsmin(x::xs)
+        in min :: selsort(rmVal(x::xs, min))
+        end;
+```
+
+### 5.3 Bubblesort 
+
+The `bubble` function is quite obvious: iterating over the list and swapping elements that are out of order. However, you then need to check if the list is sorted before calling `bubble` again.
+
+```ocaml 
+fun bubble [] = []
+  | bubble [x] = [x]
+  | bubble (x::y::xs) = 
+        if x <= y then x::bubble(y::xs)
+        else y::bubble(x::xs);
+        
+fun isSorted [] = true
+  | isSorted [x] = true
+  | isSorted (x::y::xs) = (x<=y)
+                          andalso isSorted(y::xs);
+
+fun bubblesort [] = []
+  | bubblesort l = if (isSorted l) then l
+                   else bubblesort (bubble l);
+```
+
+
+### 8.2 Lexicographical ordering
+
+This question is about writing a function that can compare two tuples, where the first and second values of the tuples may be different types (and thus need different ordering functions).
+
+```ocaml
+fun intComp (a, b) = a < b;
+fun lsComp (xl, yl) = (hd xl) < (hd yl);
+
+fun lexcomp f1 f2 ((x1, y1), (x2, y2)) = 
+            if (x1=x2) then f2 (y1, y2)
+            else f1 (x1, x2);
+            
+lexcomp intComp lsComp ((1, [3,1,1]), (2, [4,2,5]));
+lexcomp intComp lsComp ((1, [3,1,1]), (1, [9,2,5]));
+lexcomp intComp lsComp ((1, [9,1,1]), (1, [3,2,5]));
+```
+
