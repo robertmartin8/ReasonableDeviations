@@ -662,3 +662,32 @@ lexcomp intComp lsComp ((1, [3,1,1]), (1, [9,2,5]));
 lexcomp intComp lsComp ((1, [9,1,1]), (1, [3,2,5]));
 ```
 
+### 9.5 Lazy list of all lists of zeroes and ones
+
+i.e every possible ordinary list of zeroes and ones needs to be included in the lazy list. Questions about lazy lists are most easily answered by defining a `next` function:
+
+```ocaml 
+fun next [] = [0]
+  | next [0] = [1]
+  | next [1] = [0, 0]
+  | next (x::xs) = if x=0 then 1::xs
+                          else 0::next(xs);
+
+fun zo ls = Cons(ls, fn() => zo (next ls));
+```
+
+`zo` just applies the `next` function in sequence. It can be 'started' by calling `zo []`.
+
+
+### 9.6 Lazy list of all palindromes of 0 and 1
+
+I personally think the most elegant way is to filter the lazy list from the previous question to check for palindromes. 
+
+```ocaml 
+fun filterq p Nil = Nil
+  | filterq p (Cons(x, xf)) = 
+            if (p x) then Cons(x, fn() => filterq p (xf()))
+            else filterq p (xf());
+            
+val palindromes = filterq (fn x => (x = rev x)) (zo []);
+```

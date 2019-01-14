@@ -117,7 +117,7 @@ We can also have **static methods**, which do not require any instance-specific 
 
 ## 2. Designing classes
 
-Classes should logically group state (nouns) and behaviour (verbs). We can visualise thus using a UML Class diagram
+Classes should logically group state (nouns) and behaviour (verbs). We can visualise this using a UML Class diagram
 
 <center>
 <img src="{{ site.imageurl }}note_img/uml1.png" style="width:80%;"/>
@@ -148,7 +148,7 @@ We can interact with private fields from outside the class by using **getters** 
 
 ### Immutable objects
 
-If we have private fields and remove any setters, they become **immutable**. The advantages of this are:
+If we have private fields and remove any setters, the class becomes **immutable**. The advantages of this are:
 
 - Easier to construct, test and use. 
 - Can be used for concurrency
@@ -262,7 +262,7 @@ When an object is created, Java stores the information at a specific memory loca
 
 All fields are inherited except for private fields (JLS 8.2). Subclass objects actually do contain the superclass's private fields, but do not have access to them. 
 
-**Shadowing** is when a field in the subclass has the same name as a field in the parent class. We can specify which field we want to access using `this` and `super`.
+**Shadowing** is when a field (or static method) in the subclass has the same name as a field (or static method) in the parent class. We can specify which field we want to access using `this` and `super`.
 
 When a subclass has a method of the same name as a parent method, we say that the method is **overridden**. It is best practice to use the `@Override` annotation. 
 
@@ -292,12 +292,12 @@ Multiple inheritance allows classes to inherit from multiple parents. Java *does
 Java's alternative is **interfaces**, which are like special classes which:
 
 - only support type inheritance
-- have no state 
+- only offer `public static final` state. 
 - only have abstract methods (public by default) which must be overridden
 - (actually may have **default methods** which provide a default implementation)
 
 
-They are represented on UML with a `<<interface>>` label, and are generally named as adjectives. 
+They are represented on UML with a `<<interface>>` label, and are generally named as adjectives. Interfaces can extend other interfaces.
 
 <center>
 <img src="{{ site.imageurl }}note_img/interfaces.png" style="width:50%;"/>
@@ -327,7 +327,7 @@ class Car implements Drivable, Identifiable {
 
 ## 6. Lifecycle of an object
 
-When an object created, Java goes through the following process:
+When an object is created, Java goes through the following process:
 
 1. Load class (if not already loaded), allocate static fields, and run static initialisers.
 2. Allocate memory for object
@@ -590,8 +590,10 @@ By default this is set to a shallow copy, so all reference types will still poin
 ```java 
 @Override
 public Object clone() {
-    MyClass cloned = (MyClass) super.clone(); // Copies primitives etc
-    cloned.attr = deepCopy(this.attr); // deep copy reference types
+    // Copies primitives etc:
+    MyClass cloned = (MyClass) super.clone(); 
+    // Deep copy reference types
+    cloned.attr = deepCopy(this.attr); 
     return cloned;  // this is of type MyClass... see below
 }
 ```
@@ -809,7 +811,7 @@ public class Singleton {
 }
 ```
 
-We can then call it with `Singleton.getInstance()`. We can improve this to make it lazy by initially setting `instance = null` then creating if null in `getInstance()`.
+We can then call it with `Singleton.getInstance()`. This version of Singleton is *lazy*, because we initially set `instance = null` and only create it when `getInstance()` is called.
 
 
 ### Decorator

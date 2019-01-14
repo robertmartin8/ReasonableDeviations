@@ -53,7 +53,7 @@ This is a **value declaration** with `pi` as the identifier.
 val pi = 3.1415;
 ```
 
-If we compute an expression, ML actually declares an identifier `it` and sets it to the value of the computed expression. We can also perform a simultaneous declaration using `val a=1 and b=2` (which can also swap names).
+If we compute an expression, ML actually declares an identifier `it` and sets it to the value of the computed expression. We can also perform a simultaneous declaration using `val a=1 and b=2` (which can also be used to swap names).
 
 
 Functions are also values, just with a special declaration syntax. This invites the use of recursion:
@@ -563,7 +563,7 @@ fun sub (Lf, _) = raise Subscript;
   | sub (Br(v, t1, t2), k) = 
         if k = 1 then v 
         else if k mod 2 = 0 then sub (t1, k div 2)
-        ekse sub (t2, k div 2);
+        else sub (t2, k div 2);
         
 fun update (Lf, k, w) = 
         if k = 1 then Br(w, Lf, Lf)
@@ -693,7 +693,7 @@ fun inter (xs, ys) = filter (fn x => mem (x, ys)) xs;
 
 ## Lazy lists
 
-**Sequential programs** accept an input problem, processes it, then terminates. **Reactive programs** interact with the environment, e.g interactive and event-triggered. e.g in the following **pipeline**
+**Sequential programs** accept an input problem, processes it, then terminates. **Reactive programs** interact with the environment, and are event-triggered, e.g in the following **pipeline**
 
 ```
 producer -> filter -> ... -> filter -> consumer 
