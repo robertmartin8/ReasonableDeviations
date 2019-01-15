@@ -27,15 +27,9 @@ Or, alternatively, a [zip file](https://drive.google.com/file/d/0B8zIkl4xIcCibTZ
 
 While these notes were for the exams in 2015, I think they might still be applicable for the syllabus starting in 2016. This is because, while I did have the syllabus beside me when I was making the notes, in the end I decided not to follow the same format as the syllabus. Instead, I grouped similar sections and put them in a logical order.
 
-The notes are more-or-less complete, but that being said in some cases I may have neglected obvious points. Make sure you check your syllabus to ensure that you are covered. In some cases, I have included derivations (or maths) beyond the syllabus, e.g I mention differential equations a few times (which sadly aren't on our HL maths syllabus either). I did this because I find the maths much more intuitive and it helps me to understand better. Some people prefer a purely conceptual understanding, and that's fine too.
+The notes are more-or-less complete, but that being said in some cases I may have neglected obvious points. Make sure you check your syllabus to ensure that you are covered. In some cases, I have included derivations (or maths) beyond the syllabus, e.g I mention differential equations a few times (which sadly aren't on our HL maths syllabus either). I did this because I find the maths much more intuitive and it helps me to understand better. Some people prefer a purely conceptual understanding, and that's fine for IB.
 
 The notes are not in the same order as the syllabus, because the syllabus order doesn't flow well (because they have to make it usable for the SL people as well). The order of the topics I've done can be seen in the 'cover page and contents' pdf, but I'll put it here too.
-
-
-## How to do physics
-
-I'll be honest, I'm not sure how useful it was for me making so many notes for physics. Sure, there are certainly some parts of IB physics that involve rote learning (did you know, for example, that the unvierse is about $10^{18}$ years old?). Nevertheless, I ended up writing down all of the explanations too. I guess I wrote these down just to be sure, but they were quite solidly planted in my head already. That being said, for readers who do not yet have a clear and fundamental understanding (or simply 'don't get' a topic), these notes ought to be of use. I think physics is best done by having a **clear idea of the intuition behind everything**. This is what helped me sail through IB physics and get accepted to study physics at a nice university. Don't just remember equations, this will be the death of you. Understand the derivations of the formulae. Argue with your teacher about their explanations, don't stop until you know exactly what's going on. I walked into my exam with confidence, knowing that I actually understood physics (or at least the IB physics course).
-
 
 ## Some other points
 
