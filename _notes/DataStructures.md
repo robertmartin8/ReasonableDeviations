@@ -6,14 +6,15 @@ title: DataStructures
 # Data Structures
 
 <!-- TOC -->
+
 - [Amortised analysis](#amortised-analysis)
 - [Stack ADT](#stack-adt)
 - [List ADT](#list-adt)
 - [Queue ADT](#queue-adt)
-- [Dequeue ADT](#dequeue-adt)
 - [Dictionary ADT](#dictionary-adt)
-- [Set ADT](#set-adt)
+- [Priority queue ADT](#priority-queue-adt)
 - [Binary Search Tree](#binary-search-tree)
+    - [BST Deletion](#bst-deletion)
 - [2-3-4 tree](#2-3-4-tree)
     - [2-3-4 Insertion](#2-3-4-insertion)
 - [Red Black Tree](#red-black-tree)
@@ -22,9 +23,13 @@ title: DataStructures
     - [B-tree insertion](#b-tree-insertion)
     - [B-tree deletion](#b-tree-deletion)
 - [Hash-tables](#hash-tables)
-- [Binary heap](#binary-heap)
+    - [Chaining](#chaining)
+    - [Open addressing](#open-addressing)
+- [Binary heap (TBC)](#binary-heap-tbc)
 - [Binomial heap](#binomial-heap)
 - [Fibonacci heap](#fibonacci-heap)
+    - [Analysis using potentials](#analysis-using-potentials)
+    - [Relationship to Fibonacci numbers](#relationship-to-fibonacci-numbers)
 
 <!-- /TOC -->
 
@@ -282,4 +287,43 @@ A B-tree is parameterised by a **minimum degreee** *t* such that each node will 
 
 ## Fibonacci heap
 
-- 
+- Designed to make Dijkstra's algorithm more practical by offering amortised $O(1)$ `push` and `decreasekey`.
+- Idea is to be lazy for these operations, only cleaning up when `popmin` is called. 
+- Uses a list of heaps (pointers to roots), as will as a pointer to `minroot`.
+- `push` creates a new heap with one node, adds it to the list of heaps, and updates `minroot` if necessary.
+- `popmin` also requires cleanup:
+    - delete the `minroot` node, then promote its children to be roots
+    - while there are two roots with the same degree, merge them.
+    - update `minroot`
+- `decreasekey` is slightly more complicated:
+    - instead of just dumping heap violations into the list, we may also need to dump its parent. Otherwise the `minroot` heap might be wide and shallow, leading to slow `popmin`
+    - if you lose one child, you get marked as a `loser` node
+    - if you lose two children, you get dumped into the root list and the mark is removed.
+
+### Analysis using potentials 
+
+- We need $\Phi$ to increase for `push` and `decreasekey` to build up for the expensive `popmin`, which does all the cleanup. Each `push` and `decreasekey` adds a root, while `popmin` removes the `loser` mark. Thus:
+
+$$\Phi = \text{num roots} + 2(\text{num loser nodes})$$
+
+- Every `push` has $\Delta \Phi = 1$, so the cost is $O(1)$ amortised. 
+- For `decreasekey`, the cost depends on whether the parents are losers etc, but the total amortised cost is still $O(1)$.
+- The cost of `popmin` will depend on $d_{max}$, the upper bound on the degree of any node in the heap.
+    - promoting the children of `minroot` has true cost $O(d_{max})$, and the same amortised cost.
+    - cleanup is $O(d_{max})$ as well.
+
+### Relationship to Fibonacci numbers
+
+- As a consequence of the grandchild rule, if a node in a Fibonacci heap has *d* children, then that the subtree rooted at that node has more than $\geq F_{d+2}$, where *F* is a Fibonacci number. 
+- Consider a node *x* in the Fibonacci heap, with children $y_1, y_2, \ldots, y_d$ in the order which they became children of *x*. 
+- When *x* acquired $y_2$, it already had $y_1$, so $y_2$ must have had $\geq 1$ child for it to be merged. Likewise, $y_3$ must have had $\geq 2$ children, $y_d$ must have had $\geq d -1$ children. 
+- But `decreasekey` could have caused them to lose at most one child.
+- The total number of nodes is then bounded by:
+
+$$N_d \geq N_{d-2} + N_{d-3} + \cdots + N_0 + N_0 + 1$$
+
+- Where $N_0 \geq 0$, corresponding to either $y_1$ or $y_2$. 
+- Thus by definition of the Fibonacci numbers:
+
+$$n \geq F_{d+2} \geq \phi^d \implies d_{max} = O(\log n)$$
+
