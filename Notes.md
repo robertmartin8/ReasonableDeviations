@@ -12,6 +12,8 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Foundations of Computer Science (Standard ML)]({{ site.url }}/notes/FoCS)
 	- [Standard ML exercises and solutions]({{ site.url }}/notes/SML_problems)
 	- [Object Oriented Programming (Java)]({{ site.url }}/notes/oop)
+	- [Algorithms]({{ site.url }}/notes/Algorithms)
+	- [Data Structures]({{ site.url }}/notes/DataStructures)
 	- [IA Materials Science]({{ site.url }}/notes/IA_materials_science)
 	- [IA Physics]({{ site.url }}/notes/IA_physics)
 - [**Textbook notes**](#textbook-notes)
