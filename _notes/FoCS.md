@@ -418,7 +418,7 @@ datatype vehicle = Bike of int (*n wheels*)
 
 ### Exceptions
 
-Raising an exception abandons the current computation; handing the exception attempts an alternative. 
+Raising an exception abandons the current computation; handling the exception attempts an alternative. 
 
 ```ocaml
 (* exception Failure *)
