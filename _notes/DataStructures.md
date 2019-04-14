@@ -13,6 +13,9 @@ title: DataStructures
 - [Queue ADT](#queue-adt)
 - [Dictionary ADT](#dictionary-adt)
 - [Priority queue ADT](#priority-queue-adt)
+- [Disjoint Set ADT](#disjoint-set-adt)
+    - [Flat forest and deep forest](#flat-forest-and-deep-forest)
+    - [Lazy forest](#lazy-forest)
 - [Binary Search Tree](#binary-search-tree)
     - [BST Deletion](#bst-deletion)
 - [2-3-4 tree](#2-3-4-tree)
@@ -25,7 +28,7 @@ title: DataStructures
 - [Hash-tables](#hash-tables)
     - [Chaining](#chaining)
     - [Open addressing](#open-addressing)
-- [Binary heap (TBC)](#binary-heap-tbc)
+- [Binary heap](#binary-heap)
 - [Binomial heap](#binomial-heap)
 - [Fibonacci heap](#fibonacci-heap)
     - [Analysis using potentials](#analysis-using-potentials)
@@ -64,12 +67,20 @@ ADT Stack {
 }
 ```
 
-Commonly implemented using an array and a TOS (top-of-stack) index
+Commonly implemented using an array and a TOS (top-of-stack) index or linked list.
 
 
 ## List ADT
 
-
+```java
+ADT List {
+    boolean isEmpty();
+    Item head(); // precondition: !isEmpty
+    void prepend(Item x);
+    List tail(); // precondition: !isEmpty
+    void setTail(List newTail); // precondition: !isEmpty
+}
+```
 
 ## Queue ADT
 
@@ -80,7 +91,7 @@ ADT Queue {
     boolean isEmpty();
     void push(Item x);
     Item pop(); // precondition: !isEmpty
-    Item peek(); // precondition: !isEmpty
+    Item first(); // precondition: !isEmpty
 }
 ```
 
@@ -96,24 +107,58 @@ ADT Dictionary {
 }
 ```
 
-If they keys are drawn from a relatively small range of integers, we can use **direct addressing** where the keys are just indices into an array, in which the values would be stored. 
-
-However, dictionaries are most often implemented as [binary search trees](#binary-search-tree).
+- If they keys are drawn from a relatively small range of integers, we can use **direct addressing** where the keys are just indices into an array, in which the values would be stored. 
+- However, dictionaries are most often implemented as [binary search trees](#binary-search-tree).
 
 ## Priority queue ADT
 
 - Used to keep track of a dynamic set of objects whose keys support a total ordering. 
 - Like a FIFO queue, except each key corresponds to a priority – items with higher priority move to the top.
+- Normally implemented as heaps.
 
 ```java
 ADT PriorityQueue {
     void insert(Item x)
     Item first();
     Item popmin();
-    void decrease_Key();
+    void decreasekey();
     void delete(Item x);
 }
 ```
+
+## Disjoint Set ADT
+
+- Used to keep track of a dynamic collection of items in disjoint sets (e.g Kruskal)
+- Each set is referred to by a handle, e.g a representative element from the set, or a hash ID. It doesn't matter as long as it is stable.
+
+```java
+ADT DisjointSet {
+    Handle get_set_with(Item x);
+    void add_singleton(Item x);
+    void merge(Handle x, Handle y);
+}
+```
+
+### Flat forest and deep forest
+
+- In the **flat forest** implementation, items in a set are stored as a linked list, but they also point to the set's handle.
+    - `get_set_with` is $O(1)$.
+    - to `merge` we just iterate through one set in $O(n) and update their pointers. 
+    - using the **weighted union heuristic**, we should keep track of the size of each set and always update the pointers on the smaller set. 
+    - the aggregate cost of *m* operations, *n* of which are `add_singleton`, is $O(m + n \lg n)$.
+
+- Alternatively, to make `merge` faster, we can just build a deeper tree by attaching one tree to the other
+    - although `merge` becomes $O(1)$, `get_set_with` needs to walk up the tree to find the root. 
+    - using the **union by rank heuristic**, we should keep track of the rank of each root (height) and attach the shorter tree to the taller one.
+
+### Lazy forest
+
+- In order to get the best benefits of flat and deep trees, we defer cleanup in the style of the Fibonacci heap, using the **path compression heuristic**. 
+- `merge` is the same as in a deep forest: update the handle of the shorter tree to point to the handle of the taller tree.
+- `get_set_with(x)` walks up the tree to find the root, then walks up again making *x* and all its parents point directly to the root. 
+- The ranks are not updated during cleanup, thus they only represent an upper bound. 
+- It can be shown the the cost of *m* operations on *n* items is $\approx O(m)$. 
+
 
 ## Binary Search Tree
 
@@ -123,24 +168,16 @@ ADT PriorityQueue {
 - The **successor** will be the left-most node in the right subtree (if that exists). Otherwise, walk up the tree until the link goes up-and-right. 
 - If a node has two children, its successor has no left child (otherwise there would be a smaller node).
 - Most operations are $O(\lg n)$ if the tree is balanced, but balance cannot be guaranteed.
-
-### BST Deletion 
-
-- It is trivial to delete a leaf node or a node with one child
-- To delete a node with two children, replace it with its successor (which must come from the right subtree), then delete, because the successor has no left child.
+- Deletion:
+    - it is trivial to delete a leaf node or a node with one child
+    - to delete a node with two children, replace it with its successor (which must come from the right subtree), then delete, because the successor has no left child.
 
 
 ## 2-3-4 tree 
 
-Each node can now have 2, 3, or 4 children (i.e 1, 2, 3 keys).
-
-### 2-3-4 Insertion 
-
-Always try to insert into the bottom layer: if you see any 4-nodes along the way, split them into two 2-nodes. Thus the tree can only increase in height if the root is a 4-node, in which case it is split into three 2-nodes.
-
-1. Go to the bottom level in the tree to where the key should be added.
-2. If the place is a 2-node or 3-node, insert directly.
-3. Otherwise, if we are going to insert into a 4-node, split it into two 2-nodes, and move the middle key up to the current level. 
+- Similar to a BST, except each node can now have 2, 3, or 4 children (i.e 1, 2, 3 keys).
+- A 2-3-4 tree is always balanced, so searching is bounded by $O(h)$.
+- Always try to insert into the bottom layer: if you see any 4-nodes along the way, split them into two 2-nodes. Thus the tree can only increase in height if the root is a 4-node, in which case it is split into three 2-nodes.
 
 ## Red Black Tree
 
@@ -188,11 +225,9 @@ if y != null:
 
 ### RBT Insertion 
 
-Let *p* denote the parent, *g* the grandparent, *u* the uncle, and *n* the new node to be inserted.
-
-If *p* is black, we can just insert a red child directly. 
-
-If *p* is red, we will insert a red *n* then clean up the tree. In this case, *g* must be black (because the tree cannot have two red nodes in a row).
+- Let *p* denote the parent, *g* the grandparent, *u* the uncle, and *n* the new node to be inserted.-
+- If *p* is black, we can just insert a red child directly. 
+- If *p* is red, we will insert a red *n* then clean up the tree. In this case, *g* must be black (because the tree cannot have two red nodes in a row).
 
 **Case 1 – red uncle**
 
@@ -210,7 +245,7 @@ If *p* is red, we will insert a red *n* then clean up the tree. In this case, *g
 <img src="{{ site.imageurl }}/note_img/rbt_case2.png" style="width:50%;"/>
 </center>
 
-- Left-rotate *n* and we are now in case 3.
+Left-rotate *n* and we are now in case 3.
 
 **Case 3 – black uncle, straight**
 
@@ -223,20 +258,14 @@ If *p* is red, we will insert a red *n* then clean up the tree. In this case, *g
 
 ## B-tree
 
-B-trees are a generalisation of BSTs with a high branching factor, with the idea that children may actually be stored on a separate disc.
-
-Each node of a B-tree has a lower and upper bound on the number of keys it may contain (except the root has no lower bound). 
-
-A B-tree is parameterised by a **minimum degreee** *t* such that each node will have between *t* and *2t* pointers. A 2-3-4 tree is thus a B-tree of degree 2.
-
-### B-tree insertion
-
-- On the way down, whenever you find a full node, split it into two and move the median key up one level.
-- Insertion can only happen in the bottom level.
+- B-trees are a generalisation of BSTs with a high branching factor, with the idea that children may actually be stored on a separate disc.
+- Each node of a B-tree has a lower and upper bound on the number of keys it may contain (except the root has no lower bound). 
+- A B-tree is parameterised by a **minimum degreee** *t* such that each node will have between *t* and *2t* pointers. A 2-3-4 tree is thus a B-tree of degree 2.
+- Insertion is generalised from 2-3-4 trees: on the way down, whenever you find a full node, split it into two and move the median key up one level. Insertion can only happen in the bottom level.
 
 ### B-tree deletion 
 
-- We can only delete a key from the bottom otherwise its children lose their separator. Hence we start by replacing the key with its successor.
+- We can only delete a key from the bottom otherwise its children lose their separator. Hence we start by replacing the key with its successor like with BSTs.
 - But we must prepare the tree first, because deleting might violate the minimum fullness requirement.
 - Hence if deletion would cause the node to become too small, we **refill** a node, redistributing some keys from its siblings if they can afford to lose some, or merging. 
 - Merging siblings makes the parent lose a key, so we might have to recursively refill the parent. 
@@ -245,21 +274,19 @@ A B-tree is parameterised by a **minimum degreee** *t* such that each node will 
 
 - A hash-table is a data structure that may be used to implement the dictionary ADT. 
 - Keys are mapped to an integer between 0 and $m-1$ with some **hash function** $h(k)$, and can then be stored at that index in an array of size *m*.
-- If two keys map to the same location, there is a **hash collision**
-
-### Chaining
-
-- Each array location points to a linked list. 
-- With a good hash function, keys will be evenly distributed in the array. 
-- Worst case is $O(n)$ if all items hash to one bucket.
+- If two keys map to the same location, there is a **hash collision**. This can be resolved by **chaining** or **open-addressing**
+- Chaining is a simple solution:
+    - Each array location points to a linked list. 
+    - With a good hash function, keys will be evenly distributed in the array. 
+    - Worst case is $O(n)$ if all items hash to one bucket.
 
 
 ### Open addressing
 
 - $h(k)$ is the first preference for where to store a given key. If it is already full, we use some rule to **probe** the hash table for another position.
-- - We then follow this succession rule every time we query an item, checking for key equality. 
+- We then follow this succession rule every time we query an item, checking for key equality. 
 - When an item is deleted, it should be marked as deleted rather than just removed – otherwise it interferes with the probing. 
-- - If insertion causes the occupancy to increase beyond a certain threshold, the size of the hash table should be increased (like with dynamic arrays).
+- If insertion causes the occupancy to increase beyond a certain threshold, the size of the hash table should be increased (like with dynamic arrays).
 
 - **Linear probing** simply finds the next available memory cell and inserts it there. 
     - return $h(k) + j \mod m$, where *j* is the number of attempts
@@ -273,11 +300,13 @@ A B-tree is parameterised by a **minimum degreee** *t* such that each node will 
     - best open-addressing scheme in terms of collision reduction but has overhead of extra hash
 
 
-## Binary heap (TBC)
+## Binary heap
 
 - A heap is an **almost full binary tree** which satisfies the **heap property**, where each node has a value at least as large as those of its children. Thus the root node is the maximum element.
+- The height of a binary heap is $\left \lfloor \lg n \right \rfloor$.
 - Isomorphic to an array where `a[k] >= a[2k+1]` and `a[k] >= a[2k+2]`.
 - Min-heaps can be used to implement the priority queue ADT, allowing for easy access of the highest priority item.
+- All operations are bounded by $O(\lg n)$ except for merging, which can only be done in $O(n)$ by concatenating the two arrays and heapifying. 
 
 ## Binomial heap
 
