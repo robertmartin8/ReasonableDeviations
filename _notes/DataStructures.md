@@ -35,7 +35,21 @@ title: DataStructures
 
 ## Amortised analysis
 
+- Amortised analysis makes it easier to reason about the aggregate costs of a sequence of operations. 
+- If we have a sequence of operations with true cost $c_i$, if we can invent $c_i'$ such that $\sum c_i \leq \sum c_i'$, then these $c_i'$ are valid amortised costs. 
 
+
+$$\text{aggregate true cost} \leq \text{aggregate amortised cost}$$
+
+- To find amortised costs, we can use the **potential method**:
+    - $\Phi$ is a function that maps possible states of the data structure to real numbers $\geq 0$
+    - $\Phi = 0$ for the empty data structure. 
+    - $c' = c + \Phi(S_{post}) - \Phi(S_{ante})$
+    - $\Phi$ should be chosen such that 'normal' operations, which build up the 'mess' in a data structure, lead to increasing $\Phi$. This builds up credit for the expensive operation that cleans that data structure. 
+    - As in physics, the total change in potential between two states is path-independent. This can be used to prove that the potential method results in a valid amortised cost.
+- For example, with a dynamic array we can use $\Phi = 2 \times (\text{num items}) - \text{capacity}$
+    - normal insert has true cost $O(1)$ and amortised cost $O(1)$
+    - doubling the array has true cost $O(n)$ but amortised cost $O(1)$, because $\Delta \Phi = 2-n$.
 
 ## Stack ADT
 
