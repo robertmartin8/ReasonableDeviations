@@ -596,30 +596,18 @@ fun sep [] = ([], [])
 
 ### 5.2 Selection sort 
 
-My atrocious solution: define three functions:
-
-- find the minimum value in a list
-- delete the first instance of a value
-- recursively apply the above two functions, putting the minimum at the head each time.
+Define a function that returns the minimum and a list excluding that minimum. Then recursively call the selection sort function.
 
 ```ocaml 
-fun lsmin [] = raise Match
-  | lsmin [x] = x
-  | lsmin (x::xs) = 
-        let val m = lsmin(xs)
-        in if x < m then x else m
-        end;
-
-(* delete the first instance *)
-fun rmVal ([], x) = []
-  | rmVal (y::ys, x) = if (x=y) then ys
-                      else y::rmVal(ys, x);
-
+fun getmin ([x], xs) = (x, xs)
+  | getmin (x::y::ys, xs) =
+        if y < x then getmin (y::ys, x::xs)
+        else getmin (x::ys, y::xs);
+        
 fun selsort [] = []
-  | selsort [x] = [x]
   | selsort (x::xs) = 
-        let val min = lsmin(x::xs)
-        in min :: selsort(rmVal(x::xs, min))
+        let val (y, ys) = getmin (l, [])
+        in y :: selsort(ys)
         end;
 ```
 
