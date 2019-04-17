@@ -98,13 +98,18 @@ def binary_insertion_sort(a):
     for i in range(1, len(a)):
         hi = i
         lo = 0
-        
         while lo < hi:
             j = (hi + lo) // 2
             if a[i] > a[j]:
                 lo = j + 1
             else:
                 hi = j
+        
+        # Swap a[i] into the right place
+        tmp = a[i]
+        for j from i - 1 down to (hi - 1):
+            a[j+1] = a[j]
+        a[hi] = tmp
 ```
 
 Binary insertion sort will be preferred to insertion sort when comparisons are expensive, but the swapping costs mean that it is still $O(n^2)$.
@@ -148,6 +153,9 @@ def quicksort(a):
         
     # ASSERT i == j + 1
     # ASSERT all items to the left of i <= pivot
+    swap(j, len(a) - 1)
+    quicksort(a[0:j])
+    quicksort(a[j+1:end])
 ```
 
 ### Order statistics 
@@ -219,17 +227,88 @@ We use insertion sort because each bucket should contain only one element on ave
 
 ## Dynamic programming 
 
+Dynamic programming tends to be useful when problems have the following features:
+
+1. There exist many choices each with some 'score'
+2. The optimal solution is composed of optimal solutions to subproblems
+3. The subproblems overlap.
+
+### Matrix multiplication
+
 ### Longest common substring
 
 ### Rod cutting
+
+## Greedy algorithms 
+
+
 
 ## Graph algorithms 
 
 ### DFS
 
+```python
+def dfs(g, s):
+    for v in g.vertices:
+        v.visited = False
+    stack = Stack()
+    stack.push(s)
+    s.visited = True
+    
+    while not stack.empty():
+        v = stack.pop()
+        for w in v.neighbours:
+            if not w.seen:
+                stack.push(w)
+            w.visited = True
+```
+
 ### BFS
 
+```python
+def bfs(g, s):
+    for v in g.vertices:
+        v.visited = False
+        
+    q = new Queue(s)
+    s.visited = True
+    
+    while not q.empty():
+        v = q.pop()
+        for w in v.neighbours():
+            if not w.visited:
+                q.push(w)
+            w.visited = True
+```
+
+To use DFS or BFS to find a path, we just have to update a `previous` field for each node, then walk back from the target to the start.
+
 ### Dijkstra
+
+After running this algorithm, the `distance` field contains the minimum distance from `s` to that vertex. 
+
+```python
+def dijkstra(g, s):
+    for v in g.vertices:
+        v.distance = infinity
+    
+    pq = PriorityQueue(sortkey = lambda v: v.distance)
+    pq.push(s)
+    s.distance = 0
+    
+    while not pq.empty():
+        v = pq.popmin()
+        for (w, edgecost) in v.neighbours:
+            dist = v.distance + edgecost
+            if dist < w.distance:
+                w.distance = dist
+                
+                if w in pq:
+                    pq.decreasekey(w)
+                else: 
+                    pq.push(w) 
+```
+
 
 ### Bellman-Ford
 
