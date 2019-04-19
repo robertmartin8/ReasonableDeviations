@@ -109,7 +109,7 @@ Vector2d v1 = new Vector2d(3.0, 4.0);
 - In general, we should minimise the work done by the constructor.
 - If no constructor is defined, Java generates a blank **default constructor** with no arguments. The fields all get set to the 'zero' value for the type, e.g 0 for int, "" for string.
 
-The **prototype** of a function refers to the function name, arguments, and return types. Functions can be be **overloaded** to support different arguments (possibly with a different return type) – this also applies to the constructor. 
+The **prototype** of a function refers to the function name, arguments, and return types. Functions can be be **overloaded** to support different arguments (possibly with a different return type) – this also applies to the constructor. However, choosing between overloaded functions is static, i.e it happens at compile time.
 
 When state is more logically associated with a class than an object, we can make a **static field** (same as class variable in python). These are most suited to class-related constants. 
 
@@ -260,11 +260,10 @@ When an object is created, Java stores the information at a specific memory loca
 
 ### Inheriting fields and methods
 
-All fields are inherited except for private fields (JLS 8.2). Subclass objects actually do contain the superclass's private fields, but do not have access to them. 
-
-**Shadowing** is when a field (or static method) in the subclass has the same name as a field (or static method) in the parent class. We can specify which field we want to access using `this` and `super`.
-
-When a subclass has a method of the same name as a parent method, we say that the method is **overridden**. It is best practice to use the `@Override` annotation. 
+- All fields are inherited except for private fields (JLS 8.2). Subclass objects actually do contain the superclass's private fields, but do not have access to them. 
+- If a method overrides a superclass method, it cannot have a lower access level.
+- **Shadowing** is when a field (or static method) in the subclass has the same name as a field (or static method) in the parent class. We can specify which field we want to access using `this` and `super`.
+- When a subclass has a method of the same name as a parent method, we say that the method is **overridden**. It is best practice to use the `@Override` annotation. 
 
 ### Abstract classes
 
@@ -278,7 +277,7 @@ When a subclass has a method of the same name as a parent method, we say that th
 
 When a subclass overrides a parent method and we refer to the object by the parent type, which method should we run?
 
-- **Static polymorphism** is decided at compile time and chooses based on the static type (default in C++)
+- **Static polymorphism** is decided at compile time and chooses based on the static type (default in C++).
 - **Dynamic polymorphism** (a.k.a **dynamic dispatch**) runs the child method because the compiler sees that the object is really from the subclass. 
     - java does this for methods by default: adds a performance cost at runtime 
     - does not apply to private, final or static methods.
@@ -296,6 +295,7 @@ Java's alternative is **interfaces**, which are like special classes which:
 - only have abstract methods (public by default) which must be overridden
 - (actually may have **default methods** which provide a default implementation)
 
+Interfaces should be used to represent types.
 
 They are represented on UML with a `<<interface>>` label, and are generally named as adjectives. Interfaces can extend other interfaces.
 
@@ -738,6 +738,7 @@ This is only possible because `addActionListener()` implements a **functional in
 - Lambdas can replace comparators. 
 - These functions can be composed using `andThen()`
 - An **expression lambda** has some expression on the right hand side, whereas a **statement lambda** can have multiple statements (see below)
+- Lambdas support type inference.
 - Lambdas can sometimes be replaced with **method references**, if the only thing the lambda does is calling another method.
 
 
