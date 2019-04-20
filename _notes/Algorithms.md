@@ -471,6 +471,33 @@ Runtime is dominated by the sort: $O(E log E) = O(E log V)$.
 
 ### Topological sort 
 
+- Recursive DFS (for all nodes), prepend to list once `visit(v)` returns.
+
+```python
+def topological_sort(g):
+    for v in g.vertices:
+        v.visited = False
+        # v.colour = "white"
+    
+    totalorder = []
+
+    for v in g.vertices:
+        if not v.visited: 
+            visit(v, totalorder)
+
+    return totalorder
+            
+def visit(v, totalorder):
+    v.visited = True
+    # v.colour = "grey"
+    for w in v.neighbours:
+        if not w.visited:
+            visit(w, totalorder)
+    totalorder.prepend(v)
+    # v.colour = "black"
+```
+
+Same runtime as DFS: $O(V+E)$
 
 ### Ford-Fulkerson
 
