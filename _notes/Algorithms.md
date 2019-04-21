@@ -232,8 +232,35 @@ $$T(n) = f(n/2) + kn = O(n)$$
 
 However, the worst case is $O(n^2)$ as with quicksort. There exists a guaranteed linear time algorithm but it is much more complicated.
 
-### Heapsort TODO
+### Heapsort
 
+1. Turn the array into a max-heap in $O(n)$
+2. Swap last item with max, reduce heapsize, then heapify down.
+3. Repeat until heapsize is 0.
+
+```python
+def heapsort(a):
+
+
+    for i in range(len(a) // 2, 0 included):
+        heapify(a[i], i, len(a))
+            
+    for k in range(len(a), 1):
+        # a[0:k] is a max-heap
+        # a[k:end] is sorted
+        swap(0, k - 1)
+        heapify(a, 0, k-1)
+        
+def heapify(a, iRoot, iEnd):
+    if a[iRoot] satisfies max-heap:
+        return
+    
+    j = largest child of iRoot
+    swap(iRoot, j)
+    heapify(a, j, iEnd)
+```
+
+Runtime $O(n \lg n)$
 
 ### Counting sort 
 
