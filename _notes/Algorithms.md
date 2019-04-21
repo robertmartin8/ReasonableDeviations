@@ -6,8 +6,8 @@ title: Algorithms
 # Algorithms
 
 *These algorithms are coded in a python-like pseudocode, but in some cases the pseudocode is actually valid python!*
-<!-- TOC -->
 
+<!-- TOC -->
 - [Complexity](#complexity)
 - [Sorting Algorithms](#sorting-algorithms)
     - [Insertion Sort](#insertion-sort)
@@ -16,24 +16,26 @@ title: Algorithms
     - [Bubblesort](#bubblesort)
     - [Mergesort](#mergesort)
     - [Quicksort](#quicksort)
-    - [Heapsort TODO](#heapsort)
+    - [Order statistics](#order-statistics)
+    - [Heapsort TODO](#heapsort-todo)
     - [Counting sort](#counting-sort)
     - [Bucketsort](#bucketsort)
-    - [Radix sort TODO](#radix-sort)
-- [Dynamic programming TODO](#dynamic-programming)
+    - [Radix sort TODO](#radix-sort-todo)
+- [Dynamic programming TODO](#dynamic-programming-todo)
+    - [Matrix multiplication](#matrix-multiplication)
     - [Longest common substring](#longest-common-substring)
     - [Rod cutting](#rod-cutting)
+- [Greedy algorithms TODO](#greedy-algorithms-todo)
 - [Graph algorithms](#graph-algorithms)
     - [DFS](#dfs)
     - [BFS](#bfs)
     - [Dijkstra](#dijkstra)
     - [Bellman-Ford](#bellman-ford)
-    - [Johnson](#johnson)
-    - [Prim TODO](#prim)
-    - [Kruskal TODO](#kruskal)
-    - [Topological sort TODO](#topological-sort)
-    - [Ford-Fulkerson TODO](#ford-fulkerson)
-- [Geometrical algorithms TODO](#geometrical-algorithms)
+    - [Prim](#prim)
+    - [Kruskal](#kruskal)
+    - [Topological sort](#topological-sort)
+    - [Ford-Fulkerson](#ford-fulkerson-todo)
+- [Geometrical algorithms TODO](#geometrical-algorithms-todo)
     - [Segment intersection](#segment-intersection)
     - [Jarvis's March](#jarviss-march)
     - [Graham's scan](#grahams-scan)
@@ -230,7 +232,7 @@ $$T(n) = f(n/2) + kn = O(n)$$
 
 However, the worst case is $O(n^2)$ as with quicksort. There exists a guaranteed linear time algorithm but it is much more complicated.
 
-### Heapsort
+### Heapsort TODO
 
 
 ### Counting sort 
@@ -280,10 +282,10 @@ def bucket_sort(a):
 
 We use insertion sort because each bucket should contain only one element on average. But the worst case is still $O(n^2)$ as a result.
 
-### Radix sort
+### Radix sort TODO
 
 
-## Dynamic programming 
+## Dynamic programming TODO
 
 Dynamic programming tends to be useful when problems have the following features:
 
@@ -297,7 +299,7 @@ Dynamic programming tends to be useful when problems have the following features
 
 ### Rod cutting
 
-## Greedy algorithms 
+## Greedy algorithms TODO
 
 
 
@@ -453,7 +455,7 @@ def kruskal(g):
     for v in g.vertices:
         partition.add_singleton(v)
         
-    edges = sorted(g.edges, sortkey = lambda u, v, edgeweight: edgeweight)
+    edges = sorted(g.edges, sortkey = edgeweight)
     
     for (u, v, edgeweight) in edges:
         p = partition.get_set_with(u)
@@ -501,8 +503,57 @@ Same runtime as DFS: $O(V+E)$
 
 ### Ford-Fulkerson
 
+While possible:
+- find an augmenting path in the residual graph by looking for spare capacity or removing it when there is an excess
+- compute the bottleneck capacity of the augmenting path
+- augment the flow in the original graph
 
-## Geometrical algorithms
+
+```python
+def find_augmenting_path(g):
+    # helper graph
+    h = new Graph(g.vertices)
+    
+    for each pair of vertices (v,w) in g:
+        if f(v -> w) < c(v -> w):
+            h.add_forward_edge(v -> w)
+        if f(w -> v) > 0: 
+            h.add_backward_edge(v -> w)
+        if h contains path(s to t):
+            return path
+        else:
+            # no more paths
+            return None
+
+def ford_fulkerson(g, s, t):
+    # zero flow initially
+    for (u, v) in g.edges:
+        f(u -> v) = 0
+    
+    while True:
+        p = find_augmenting_path()
+        
+        if p is None:
+            break
+
+        delta = infinity # bottleneck
+        for each edge (v1, v2) in p:
+            if edge.forwards:
+                delta = min(delta, c(v1 -> v2) - f(v1 -> v2))
+            else:
+                delta = min(delta, f(v2 -> v1))
+                
+        # Augment flow
+        for each edge (v1, v2) in p:
+            if edge.forwards: 
+                f(v1 -> v2) += delta
+            else:
+                f(v2 -> v1) -= delta
+```
+
+Complexity is $O(Ef^*)$$
+
+## Geometrical algorithms TODO
 
 ### Segment intersection 
 
