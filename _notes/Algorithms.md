@@ -240,8 +240,6 @@ However, the worst case is $O(n^2)$ as with quicksort. There exists a guaranteed
 
 ```python
 def heapsort(a):
-
-
     for i in range(len(a) // 2, 0 included):
         heapify(a[i], i, len(a))
             
@@ -309,7 +307,17 @@ def bucket_sort(a):
 
 We use insertion sort because each bucket should contain only one element on average. But the worst case is still $O(n^2)$ as a result.
 
-### Radix sort TODO
+### Radix sort
+
+Assuming all elements have the same number of digits, we use a stable sort each column *starting from the least significant digit*.
+
+```python
+def radix_sort(a, d):
+    for i in range(1, d):
+        stable_sort(a on digit i)
+```
+
+$O(n)$ if counting sort is used for digits.
 
 
 ## Dynamic programming TODO
@@ -327,8 +335,6 @@ Dynamic programming tends to be useful when problems have the following features
 ### Rod cutting
 
 ## Greedy algorithms TODO
-
-
 
 ## Graph algorithms 
 
@@ -406,11 +412,33 @@ def dijkstra(g, s):
 
 - $O(E + V \log V)$ runtime
 
+### Bellman equation
+
+- Used to find minweight path (i.e same as Dijkstra but works for negative weights)
+- $W_{ij}$ is the minweight action to go from state *i* to *j*:
+
+$$W_{ij} = \begin{cases}
+0, & i = j\\
+\text{weight}(i \to j), & \text{if there is an edge} \\
+\infty, & \text{otherwise} \\
+\end{cases}$$
+
+- The minimal weight path from *i* to *j* in *l* steps is denoted by $M_{ij}^{(l)}$. We can compute it with dynamic programming.
+
+$$\begin{aligned} M_{ij}^{(1)} &= W_{ij} \\
+M_{ij}^{(l)} &= \min_k \{ W_{ik} + M_{kj}^{(l-1)}\}
+\end{aligned}$$
+
+- This can be formulated as a matrix multiplication, where $x \wedge y \equiv \min(x,y), n = \|V\|$.
+
+$$M_{ij}^{(l)} = (W_{ij} + M_{1j}^{(l-1)}) \wedge (W_{i2} + M_{2j}^{(l-1)}) \wedge \cdots \wedge (W_{in} + M_{nj}^{(l-1)})$$
+
+- This is a brute force algorithm requiring $\log V$ matrix multiplications, so runtime is $O(V^3 \log V)$.
+
 ### Bellman-Ford
 
-Used to find the minweight path (i.e same as Dijkstra but works for negative weights)
-
-Relax all the edges in a graph, for V-1 passes. If there are any changes in the last round, there is a negative weight cycle.
+- Used to find the minweight path (i.e same as Dijkstra but works for negative weights)
+- Relax all the edges in a graph, for $V-1$$ passes. If there are any changes in the last round, there is a negative weight cycle.
 
 ```python
 def bellman_ford(g, s):
@@ -430,6 +458,30 @@ def bellman_ford(g, s):
         if v.minweight > u.minweight + c:
             raise NegativeWeightCycle()
 ```
+
+$O(VE)$ runtime.
+
+### Johnson's algorithm
+
+- Find the minimal weight paths between all pairs of vertices
+- Uses Bellman-Ford once to check for negative weight cycles, then makes weights positive and uses Dijkstra on every vertex.
+
+```python
+def johnson(g):
+    h = new Graph()
+    h.add_vertex(s, weights=[0, 0, 0,...])
+    
+    bellman_ford(g, s)
+    
+    # Make edges positive
+    for (u, v) in g.edges:
+        w(u -> v) = h.u.distance + w(u -> v) - h.v.distance
+    
+    for v in g.vertices:
+        dijkstra(g, v)
+```
+
+Runtime $O(VE + V^2 log V)$
 
 ### Prim
 
@@ -495,7 +547,7 @@ def kruskal(g):
     return tree_edges
 ```
 
-Runtime is dominated by the sort: $O(E log E) = O(E log V)$.
+Runtime is dominated by the sort: $O(E \log E) = O(E \log V)$.
 
 
 ### Topological sort 
@@ -530,10 +582,11 @@ Same runtime as DFS: $O(V+E)$
 
 ### Ford-Fulkerson
 
-While possible:
-- find an augmenting path in the residual graph by looking for spare capacity or removing it when there is an excess
-- compute the bottleneck capacity of the augmenting path
-- augment the flow in the original graph
+- Finds the maximal flow in a network (a graph where edges have positive capacities).
+- While possible:
+    - find an augmenting path in the residual graph by looking for spare capacity or removing it when there is an excess
+    - compute the bottleneck capacity of the augmenting path
+    - augment the flow in the original graph
 
 
 ```python
@@ -578,7 +631,7 @@ def ford_fulkerson(g, s, t):
                 f(v2 -> v1) -= delta
 ```
 
-Complexity is $O(Ef^*)$$
+Runtime is $O(Ef^*)$
 
 ## Geometrical algorithms TODO
 
