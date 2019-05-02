@@ -17,10 +17,10 @@ title: Algorithms
     - [Mergesort](#mergesort)
     - [Quicksort](#quicksort)
     - [Order statistics](#order-statistics)
-    - [Heapsort TODO](#heapsort-todo)
+    - [Heapsort](#heapsort)
     - [Counting sort](#counting-sort)
     - [Bucketsort](#bucketsort)
-    - [Radix sort TODO](#radix-sort-todo)
+    - [Radix sort](#radix-sort)
 - [Dynamic programming TODO](#dynamic-programming-todo)
     - [Matrix multiplication](#matrix-multiplication)
     - [Longest common substring](#longest-common-substring)
@@ -30,16 +30,15 @@ title: Algorithms
     - [DFS](#dfs)
     - [BFS](#bfs)
     - [Dijkstra](#dijkstra)
+    - [Bellman equation](#bellman-equation)
     - [Bellman-Ford](#bellman-ford)
+    - [Johnson's algorithm](#johnsons-algorithm)
     - [Prim](#prim)
     - [Kruskal](#kruskal)
     - [Topological sort](#topological-sort)
-    - [Ford-Fulkerson](#ford-fulkerson-todo)
-- [Geometrical algorithms TODO](#geometrical-algorithms-todo)
-    - [Segment intersection](#segment-intersection)
-    - [Jarvis's March](#jarviss-march)
+    - [Ford-Fulkerson](#ford-fulkerson)
+- [Geometrical algorithms](#geometrical-algorithms)
     - [Graham's scan](#grahams-scan)
-
 <!-- /TOC -->
 
 ## Complexity 
@@ -633,14 +632,27 @@ def ford_fulkerson(g, s, t):
 
 Runtime is $O(Ef^*)$
 
-## Geometrical algorithms TODO
-
-### Segment intersection 
-
-### Jarvis's March
+## Geometrical algorithms
 
 ### Graham's scan
 
+Used to find the corner points on a convex hull.
+
+```python
+
+def graham_scan(points):
+    let r0 be the lowest point
+    r = [r1, r2, r3, ..., rn]  = sort(points, sortkey=r.angle)
+    
+    S = new Stack([r1, r2, r3])
+    for i in range(3, n):
+        while r[i] is not on the left of the segment(S.first(), S.second()):
+            S.pop()
+        S.push(r[i])
+    return S
+```
+
+Runtime is $O(n \log n)$ from sorting the points.
 
 
 
