@@ -225,7 +225,7 @@ if y != null:
 
 ### RBT Insertion 
 
-- Let *p* denote the parent, *g* the grandparent, *u* the uncle, and *n* the new node to be inserted.-
+- Let *p* denote the parent, *g* the grandparent, *u* the uncle, and *n* the new node to be inserted.
 - If *p* is black, we can just insert a red child directly. 
 - If *p* is red, we will insert a red *n* then clean up the tree. In this case, *g* must be black (because the tree cannot have two red nodes in a row).
 
