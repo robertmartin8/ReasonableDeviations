@@ -9,13 +9,14 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
 
 - **Cambridge Natural Sciences**
-	- [Foundations of Computer Science (Standard ML)]({{ site.url }}/notes/FoCS)
-	- [Standard ML exercises and solutions]({{ site.url }}/notes/SML_problems)
-	- [Object Oriented Programming (Java)]({{ site.url }}/notes/oop)
-	- [Algorithms]({{ site.url }}/notes/Algorithms)
-	- [Data Structures]({{ site.url }}/notes/DataStructures)
 	- [IA Materials Science]({{ site.url }}/notes/IA_materials_science)
 	- [IA Physics]({{ site.url }}/notes/IA_physics)
+	- IA Computer Science
+		- [Foundations of Computer Science (Standard ML)]({{ site.url }}/notes/FoCS)
+		- [Standard ML exercises and solutions]({{ site.url }}/notes/SML_problems)
+		- [Object Oriented Programming (Java)]({{ site.url }}/notes/oop)
+		- [Algorithms]({{ site.url }}/notes/Algorithms)
+		- [Data Structures]({{ site.url }}/notes/DataStructures)
 - [**Textbook notes**](#textbook-notes)
 	- [QED: The Strange Theory – Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
 	- [The Feynman Lectures on Physics – Richard Feynman](#the-feynman-lectures-on-physics)

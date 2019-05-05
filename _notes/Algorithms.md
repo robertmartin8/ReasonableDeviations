@@ -337,6 +337,10 @@ Dynamic programming tends to be useful when problems have the following features
 
 ## Graph algorithms 
 
+- [Graphs]({{ site.imageurl }}../notes/1A_graphs.pdf)
+- [Networks and flows]({{ site.imageurl }}../notes/1A_networks_flows.pdf)
+
+
 ### DFS
 
 Used to traverse or search a graph. 
@@ -634,12 +638,13 @@ Runtime is $O(Ef^*)$
 
 ## Geometrical algorithms
 
+[Geometrical algorithms notes]({{ site.imageurl }}../notes/1A_geometrical_algo.pdf)
+
 ### Graham's scan
 
 Used to find the corner points on a convex hull.
 
 ```python
-
 def graham_scan(points):
     let r0 be the lowest point
     r = [r1, r2, r3, ..., rn]  = sort(points, sortkey=r.angle)
@@ -653,6 +658,3 @@ def graham_scan(points):
 ```
 
 Runtime is $O(n \log n)$ from sorting the points.
-
-
-
