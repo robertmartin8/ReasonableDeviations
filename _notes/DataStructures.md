@@ -38,13 +38,13 @@ title: DataStructures
 
 ## Amortised analysis
 
-- Amortised analysis makes it easier to reason about the aggregate costs of a sequence of operations. 
-- If we have a sequence of operations with true cost $c_i$, if we can invent $c_i'$ such that $\sum c_i \leq \sum c_i'$, then these $c_i'$ are valid amortised costs. 
-
+- Amortised analysis considers the average cost of a sequence of operations in a data structure.
+- Aggregate analysis puts an upper bound on the total cost of *n* operations then states that the amortised cost is $T(n)/n$.
+- If we have a sequence of operations with true cost $c_i$, if we can invent $c_i'$ such that $\sum c_i \leq \sum c_i'$, then these $c_i'$ are valid amortised costs.
 
 $$\text{aggregate true cost} \leq \text{aggregate amortised cost}$$
 
-- To find amortised costs, we can use the **potential method**:
+- An alternative method to find amortised costs is the **potential method**:
     - $\Phi$ is a function that maps possible states of the data structure to real numbers $\geq 0$
     - $\Phi = 0$ for the empty data structure. 
     - $c' = c + \Phi(S_{post}) - \Phi(S_{ante})$

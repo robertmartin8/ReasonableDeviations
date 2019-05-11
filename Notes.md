@@ -17,6 +17,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 		- [Object Oriented Programming (Java)]({{ site.url }}/notes/oop)
 		- [Algorithms]({{ site.url }}/notes/Algorithms)
 		- [Data Structures]({{ site.url }}/notes/DataStructures)
+	- [IA Maths]({{ site.imageurl }}../notes/1A_maths.pdf)
 - [**Textbook notes**](#textbook-notes)
 	- [QED: The Strange Theory – Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
 	- [The Feynman Lectures on Physics – Richard Feynman](#the-feynman-lectures-on-physics)

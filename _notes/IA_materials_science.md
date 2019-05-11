@@ -13,5 +13,5 @@ These are my (work in progress) notes for IA Materials Science. They are basical
 - [Course C: Diffraction]({{ site.imageurl }}../notes/1A_crsC.pdf)
 - [Course D: Microstructure]({{ site.imageurl }}../notes/1A_crsD.pdf)
 - [Course E: Mechanical Behaviour of Materials]({{ site.imageurl }}../notes/1A_crsE.pdf)
-- Course F: Biomaterials
+- [Course F: Biomaterials]({{ site.imageurl }}../notes/1A_crsF.pdf)
 - Course G: Materials under Extreme Conditions

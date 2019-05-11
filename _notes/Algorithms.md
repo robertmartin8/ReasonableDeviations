@@ -349,14 +349,15 @@ Used to traverse or search a graph.
 def dfs(g, s):
     for v in g.vertices:
         v.visited = False
+    s.visited = True
+
     stack = Stack()
     stack.push(s)
-    s.visited = True
     
     while not stack.empty():
         v = stack.pop()
         for w in v.neighbours:
-            if not w.seen:
+            if not w.visited:
                 stack.push(w)
             w.visited = True
 ```

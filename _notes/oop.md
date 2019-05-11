@@ -109,7 +109,7 @@ Vector2d v1 = new Vector2d(3.0, 4.0);
 - In general, we should minimise the work done by the constructor.
 - If no constructor is defined, Java generates a blank **default constructor** with no arguments. The fields all get set to the 'zero' value for the type, e.g 0 for int, "" for string.
 
-The **prototype** of a function refers to the function name, arguments, and return types. Functions can be be **overloaded** to support different arguments (possibly with a different return type) – this also applies to the constructor. However, choosing between overloaded functions is static, i.e it happens at compile time.
+The **prototype** of a function refers to the function name, arguments, and return types. Functions can be be **overloaded** to support different arguments (possibly with a different return type) – this also applies to the constructor. However, choosing between overloaded functions is static, i.e it happens at compile time. The JVM chooses the most specific method when resolving overloads.
 
 When state is more logically associated with a class than an object, we can make a **static field** (same as class variable in python). These are most suited to class-related constants. 
 
@@ -282,7 +282,6 @@ When a subclass overrides a parent method and we refer to the object by the pare
     - java does this for methods by default: adds a performance cost at runtime 
     - does not apply to private, final or static methods.
     - does not apply to fields
-
 
 ### Multiple inheritance 
 

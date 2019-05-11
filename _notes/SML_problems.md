@@ -5,20 +5,15 @@ title: Standard ML problems and solutions
 
 # Standard ML exercises and solutions 
 
-This document represents the majority of my revision for ML, as part of the Cambridge Computer Science Tripos Paper 1. For each problem, I present a brief description, my solution, the official solution if it exists and is significantly different to mine, and an explanation. In most cases, the solutions I offer represent my first attempt at the problem, so they may be flawed. My workflow was as follows:
+This document represents the majority of my revision for ML, as part of the Cambridge Computer Science Tripos Paper 1. For each problem, I present a brief description, my solution, the official solution if it exists and is significantly different to mine, and an explanation. In most cases, the solutions I offer represent my first attempt at the problem, so they may be flawed. 
 
-1. Write a solution to the problem in VSCode and test it in PolyML.
-2. If the solution works, copy it to this document and compare it with the actual solution. If there is a significant difference, add the actual solution and comment.
-3. If the solution doesn't work, copy the code to this document but put an 'x' next to the name. Revisit the problem another time. If I still can't get it to work, look at the solution and note down the main issue. At a later date, try solving the problem again without the answers (i.e return to step 1). 
-
-These problems have been taken from a number of sources, most notably [ML for the Working Programmer 2nd Edition](https://www.cl.cam.ac.uk/~lp15/MLbook/) and Cambridge's course notes for [Foundations of Computer Science]({{ site.url }}/notes/FoCS).
+These problems have been taken from a number of sources, most notably [ML for the Working Programmer 2nd Edition](https://www.cl.cam.ac.uk/~lp15/MLbook/), Cambridge's course notes for [Foundations of Computer Science]({{ site.url }}/notes/FoCS), and past tripos papers.
 
 General things that I have learnt: 
 
 - Don't be afraid to write a stupid solution using if/else if you can't immediately figure out the one-liner.
 - Pay special attention to base cases.
  
- <!-- TOC -->
 
 <!-- TOC -->
 
@@ -679,3 +674,26 @@ fun filterq p Nil = Nil
             
 val palindromes = filterq (fn x => (x = rev x)) (zo []);
 ```
+
+
+## Past tripos questions
+
+### Permuations of a list (2006Q5)
+
+1. For each item in a list, take that item and insert it in all possible positions.
+
+```ocaml
+fun cons x xs = x::xs;
+
+fun ins x [] = [[]]
+  | ins x (y::ys) = (x::y::ys) :: map (cons y) (ins x ys);
+  
+fun flatten [[]] = []
+    | flatten ([]::xss) = flatten xss
+    | flatten ((x::xs)::xss) = x :: flatten (xs::xss);
+
+fun perms [] = []
+  | perms [x] = [[x]]
+  | perms (x::xs) = flatten (map (ins x) (perms xs));
+```
+
