@@ -45,7 +45,7 @@ title: Algorithms
 
 $$f(n) \in O(g(n)) \Longleftrightarrow \exists N, c_1, c_2 >0 \text{ s.t. } \forall n > N: 0 \leq g(n) \leq k g(n) $$
 
-More informally, we can define other asymptotic nation as follows: 
+More informally, we can define other asymptotic notation as follows: 
 
 <center>
 <img src="{{ site.imageurl }}note_img/asymptotic_notation.png" style="width:80%;"/>
@@ -55,7 +55,7 @@ In the analysis of algorithms, many assumptions about hardware and basic operati
 
 ## Sorting Algorithms
 
-- Sorting is important because we can search sorted arrays very efficiently, in $O(\log n)$ time.
+- Sorting is important because we can use binary search on sorted arrays in $O(\log n)$ time.
 - In the worst case, $\Theta(n)$ exchanges will be needed. 
 - Comparison-based algorithms require at least $\Omega(n\lg n)$ comparisons.
 
@@ -319,7 +319,7 @@ def radix_sort(a, d):
 $O(n)$ if counting sort is used for digits.
 
 
-## Dynamic programming TODO
+## Dynamic programming
 
 Dynamic programming tends to be useful when problems have the following features:
 
@@ -327,13 +327,22 @@ Dynamic programming tends to be useful when problems have the following features
 2. The optimal solution is composed of optimal solutions to subproblems
 3. The subproblems overlap.
 
-### Matrix multiplication
+**Memoisation** is a technique often used in top-down dynamic programming:
 
-### Longest common substring
+- Memoization is a time-space trade-off which in which results to computations are stored (in an array or hashtable) so we don't have to recompute results. 
+- The table will be persistent between function calls, and every invocation will check whether its arguments correspond to a previously-computed result. If so, we can return it in constant time.
 
-### Rod cutting
+## Greedy algorithms
 
-## Greedy algorithms TODO
+- At every stage, choose the 'current best action' without considering the values of the actions in subsequent states.
+- It is necessary to prove that the greedy choice plus an optimal solution to the subproblem leads to an overall optimum solution.
+- Most greedy problems can be solved as DP problems but the greedy approach is more efficient (when valid).
+
+## Other solution strategies TODO
+
+- Divide and conquer
+- Backtracking
+- MM
 
 ## Graph algorithms 
 
@@ -442,17 +451,16 @@ $$M_{ij}^{(l)} = (W_{ij} + M_{1j}^{(l-1)}) \wedge (W_{i2} + M_{2j}^{(l-1)}) \wed
 ### Bellman-Ford
 
 - Used to find the minweight path (i.e same as Dijkstra but works for negative weights)
-- Relax all the edges in a graph, for $V-1$$ passes. If there are any changes in the last round, there is a negative weight cycle.
+- Relax all the edges in a graph, for $V-1$ passes. If there are any changes in the last round, there is a negative weight cycle.
 
 ```python
 def bellman_ford(g, s):
-    
     for v in g.vertices:
         v.minweight = infinity
     s.minweight = 0
     
-    # relax all edge
-    for _ in range(len(g.vertices) - 1):
+    # relax all edges
+    repeat len(g.vertices) - 1 times:
         for (u, v, c) in v.edges:
             if v.minweight > (u.minweight + c):
                 v.minweight = u.minweight + c
@@ -532,7 +540,6 @@ Runtime the same as Dijkstra, i.e $O(E + V \log V)$.
 ```python
 def kruskal(g):
     tree_edges = []
-    
     partition = DisjointSet() 
     
     for v in g.vertices:
