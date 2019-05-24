@@ -17,6 +17,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 		- [Object Oriented Programming (Java)]({{ site.url }}/notes/oop)
 		- [Algorithms]({{ site.url }}/notes/Algorithms)
 		- [Data Structures]({{ site.url }}/notes/DataStructures)
+		- [Numerical Analysis]({{ site.imageurl }}../notes/1A_numanalys.pdf)
 	- [IA Maths]({{ site.imageurl }}../notes/1A_maths.pdf)
 - [**Textbook notes**](#textbook-notes)
 	- [QED: The Strange Theory – Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
@@ -80,19 +81,13 @@ In January 2015, when I was examining the reading lists for Cambridge and readi
 
 Link: [Notes on the Binomial Theorem](https://reasonabledeviations.files.wordpress.com/2016/02/binomial.pdf "Binomial")
 
-An acquaintance of mine was once having trouble wrapping their head around the Binomial Theorem. As someone who likes maths (and likes teaching people maths), I felt some responsibility to try and explain what was happening.  It wasn't as easy as I thought, especially because the Binomial Theorem was so intuitively ingrained in my head. For example, while I understand in my head the origin of the combinatorial coefficient, it's hard to put in words why it should be there.
-
-$$(a+b)^n = \sum \limits_{r=0}^n \binom{n}{r} a^{n-r}b^r$$
-
-Sure, one can simply plug things into the formula, but that is certainly not a helpful explanation, and may let you down for more challenging problems.
-
-I got a bit carried away in trying to intuitively explain this topic, and ended up producing a LaTeX document explaining the Binomial Theorem, and providing exercises with worked solutions.
+An acquaintance of mine was once having trouble wrapping their head around the Binomial Theorem. As someone who likes maths (and likes teaching people maths), I wanted to come up with an intuitive explanation.
 
 ### CT1 Financial Mathematics
 
 Link: [Notes on CT1 Financial Mathematics]({{ site.imageurl }}../notes/ct1.pdf)
 
-As I was considering a career in actuarial sciences, I thought it might be interesting to take one of the exams to get a better understanding of the material. Following the 'study plan' from the Institute and Faculty of Actuaries, I was torn between CT1 (financial maths) and CT3 (statistics). I decided to choose CT1, because I was already confident with the CT3 content, so I thought that I would learn more from studying CT1.
+Because I was considering a career as an actuary, I thought it might be interesting to take one of the exams to get a better understanding of the material. Following the 'study plan' from the Institute and Faculty of Actuaries, I was torn between CT1 (financial maths) and CT3 (statistics). I decided to choose CT1, because I was already confident with the CT3 content, so I thought that I would learn more from studying CT1.
 
 These notes were made following the free [Warwick notes](https://bcgts.wordpress.com/), which were a sufficient guide for the exams in my opinion.
 
