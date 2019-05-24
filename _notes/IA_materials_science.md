@@ -5,7 +5,7 @@ title: Materials Science Notes
 
 # IA Materials Science
 
-These are my (work in progress) notes for IA Materials Science. They are basically a hand-written and condensed version of the course notes, with some minor additions. They were written on yellow paper, which unfortunately hasn't scanned very well.
+These are my notes for Cambridge's IA Materials Science course. They are basically a hand-written and condensed version of the course notes, with some minor additions. They were written on yellow paper, which unfortunately hasn't scanned very well.
 
 
 - [Course A: Atomic Structure of Materials]({{ site.imageurl }}../notes/1A_crsA.pdf)
@@ -14,4 +14,4 @@ These are my (work in progress) notes for IA Materials Science. They are basical
 - [Course D: Microstructure]({{ site.imageurl }}../notes/1A_crsD.pdf)
 - [Course E: Mechanical Behaviour of Materials]({{ site.imageurl }}../notes/1A_crsE.pdf)
 - [Course F: Biomaterials]({{ site.imageurl }}../notes/1A_crsF.pdf)
-- Course G: Materials under Extreme Conditions
+- [Course G: Materials under Extreme Conditions]({{ site.imageurl }}../notes/1A_crsG.pdf)
