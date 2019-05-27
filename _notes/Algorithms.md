@@ -21,11 +21,9 @@ title: Algorithms
     - [Counting sort](#counting-sort)
     - [Bucketsort](#bucketsort)
     - [Radix sort](#radix-sort)
-- [Dynamic programming TODO](#dynamic-programming-todo)
-    - [Matrix multiplication](#matrix-multiplication)
-    - [Longest common substring](#longest-common-substring)
-    - [Rod cutting](#rod-cutting)
-- [Greedy algorithms TODO](#greedy-algorithms-todo)
+- [Dynamic programming](#dynamic-programming)
+- [Greedy algorithms](#greedy-algorithms)
+- [Other solution strategies](#other-solution-strategies)
 - [Graph algorithms](#graph-algorithms)
     - [DFS](#dfs)
     - [BFS](#bfs)
@@ -318,7 +316,6 @@ def radix_sort(a, d):
 
 $O(n)$ if counting sort is used for digits.
 
-
 ## Dynamic programming
 
 Dynamic programming tends to be useful when problems have the following features:
@@ -327,7 +324,7 @@ Dynamic programming tends to be useful when problems have the following features
 2. The optimal solution is composed of optimal solutions to subproblems
 3. The subproblems overlap.
 
-**Memoisation** is a technique often used in top-down dynamic programming:
+**Memoization** is a technique often used in top-down dynamic programming:
 
 - Memoization is a time-space trade-off which in which results to computations are stored (in an array or hashtable) so we don't have to recompute results. 
 - The table will be persistent between function calls, and every invocation will check whether its arguments correspond to a previously-computed result. If so, we can return it in constant time.
@@ -338,11 +335,15 @@ Dynamic programming tends to be useful when problems have the following features
 - It is necessary to prove that the greedy choice plus an optimal solution to the subproblem leads to an overall optimum solution.
 - Most greedy problems can be solved as DP problems but the greedy approach is more efficient (when valid).
 
-## Other solution strategies TODO
+## Other solution strategies
 
-- Divide and conquer
-- Backtracking
-- MM
+- Recognise a variant of a known problem, e.g Graham's scan efficiently utilises a subroutine to compare the positions of two vectors.
+- Divide and conquer (e.g mergesort):
+    - If the problem instance is small enough, solve it by brute force.
+    - Otherwise, divide the problem into two parts.
+    - Recursively solve the smaller problems
+    - Recombine the solutions to smaller problems
+- Backtracking: have one part of the algorithm explore sensibly, with another backtracking as needed.
 
 ## Graph algorithms 
 
