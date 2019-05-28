@@ -270,6 +270,31 @@ Left-rotate *n* and we are now in case 3.
 - Hence if deletion would cause the node to become too small, we **refill** a node, redistributing some keys from its siblings if they can afford to lose some, or merging. 
 - Merging siblings makes the parent lose a key, so we might have to recursively refill the parent. 
 
+```python
+def delete(k):
+    if k is in bottom node B:
+        if B cannot lose key:
+            refill(B)
+        delete k from B
+    else:
+        swap(k, successor(k))
+        # now k is in a bottom node
+        delete(k)
+
+def refill(B):
+    """
+    PRECONDITION: B has t-1 keys
+    POSTCONDITION: B has more than t-1 keys
+    """
+    if either sibling can lose keys:
+        redistribute keys to B
+    else:
+        # B and all siblings have t-1 keys
+        merge B with a sibling
+        if B.parent has fewer than t-1 keys:
+            refill(B.parent)
+```
+
 ## Hash-tables
 
 - A hash-table is a data structure that may be used to implement the dictionary ADT. 
