@@ -143,11 +143,11 @@ ADT DisjointSet {
 
 - In the **flat forest** implementation, items in a set are stored as a linked list, but they also point to the set's handle.
     - `get_set_with` is $O(1)$.
-    - to `merge` we just iterate through one set in $O(n) and update their pointers. 
+    - to `merge` we just iterate through one set in $O(n)$ and update their pointers. 
     - using the **weighted union heuristic**, we should keep track of the size of each set and always update the pointers on the smaller set. 
     - the aggregate cost of *m* operations, *n* of which are `add_singleton`, is $O(m + n \lg n)$.
 
-- Alternatively, to make `merge` faster, we can just build a deeper tree by attaching one tree to the other
+- Alternatively, to make `merge` faster, we can just build a deeper tree by attaching one tree to the other, i.e **deep forest**
     - although `merge` becomes $O(1)$, `get_set_with` needs to walk up the tree to find the root. 
     - using the **union by rank heuristic**, we should keep track of the rank of each root (height) and attach the shorter tree to the taller one.
 
@@ -357,16 +357,66 @@ def refill(B):
 
 - Designed to make Dijkstra's algorithm more practical by offering amortised $O(1)$ `push` and `decreasekey`.
 - Idea is to be lazy for these operations, only cleaning up when `popmin` is called. 
-- Uses a list of heaps (pointers to roots), as will as a pointer to `minroot`.
+- Uses a list of heaps (pointers to roots), as well as a pointer to `minroot`.
 - `push` creates a new heap with one node, adds it to the list of heaps, and updates `minroot` if necessary.
-- `popmin` also requires cleanup:
+- `popmin` requires cleanup:
     - delete the `minroot` node, then promote its children to be roots
     - while there are two roots with the same degree, merge them.
     - update `minroot`
+
+```python
+def push(k, v):
+    h = new heap(k, v) # only one node
+    add h to rootlist
+    update minroot if k < minroot.key
+    
+def popmin():
+    min = copy(minroot)
+    for child in minroot.children:
+        clear child mark
+        add child to rootlist
+    delete minroot
+    cleanup()
+    minroot = minimum of rootlist
+    return min
+    
+def cleanup():
+    """
+    To cleanup, we use an auxiliary array where the index corresponds
+    to the degree. If there is already a tree in an index, merge.
+    """
+    root_array = [None, None, ...]
+    for tree t in roots:
+        x = t
+        while root_array[x.degree] is not None:
+            u = root_array[x.degree]
+            root_array[x.degree] = None
+            x = merge(x, u)
+        root_array[x.degree] = x
+    return [root for root in root_array if root is not None]
+```
+
 - `decreasekey` is slightly more complicated:
     - instead of just dumping heap violations into the list, we may also need to dump its parent. Otherwise the `minroot` heap might be wide and shallow, leading to slow `popmin`
     - if you lose one child, you get marked as a `loser` node
     - if you lose two children, you get dumped into the root list and the mark is removed.
+
+```python
+def decreasekey(v, new_key):
+    let n be the node containing v
+    n.key = new_key
+    if n violates heap condition:
+        repeat:
+            p = n.parent
+            remove n from p.children
+            insert n into rootlist, updaing minroot
+            n.loser = False
+            n = p
+        until p.loser == False
+        
+        if p not in rootlist:
+            p.loser = True 
+```
 
 ### Analysis using potentials 
 
