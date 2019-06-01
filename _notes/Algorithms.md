@@ -168,7 +168,7 @@ def merge(a, lo, mid, hi):
             i += 1
         else:
             aux[k] = a[j]
-            j++
+            j += 1
 ```
 
 - $\Theta (n \lg n)$ runtime, but requires $O(n)$ extra space.
@@ -445,7 +445,7 @@ M_{ij}^{(l)} &= \min_k \{ W_{ik} + M_{kj}^{(l-1)}\}
 
 - This can be formulated as a matrix multiplication, where $x \wedge y \equiv \min(x,y), n = \|V\|$.
 
-$$M_{ij}^{(l)} = (W_{ij} + M_{1j}^{(l-1)}) \wedge (W_{i2} + M_{2j}^{(l-1)}) \wedge \cdots \wedge (W_{in} + M_{nj}^{(l-1)})$$
+$$M_{ij}^{(l)} = (W_{i1} + M_{1j}^{(l-1)}) \wedge (W_{i2} + M_{2j}^{(l-1)}) \wedge \cdots \wedge (W_{in} + M_{nj}^{(l-1)})$$
 
 - This is a brute force algorithm requiring $\log V$ matrix multiplications, so runtime is $O(V^3 \log V)$.
 
@@ -462,7 +462,7 @@ def bellman_ford(g, s):
     
     # relax all edges
     repeat len(g.vertices) - 1 times:
-        for (u, v, c) in v.edges:
+        for (u, v, c) in g.edges:
             if v.minweight > (u.minweight + c):
                 v.minweight = u.minweight + c
 
