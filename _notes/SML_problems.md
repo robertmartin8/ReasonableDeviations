@@ -17,45 +17,123 @@ General things that I have learnt:
 
 <!-- TOC -->
 
-- [Standard ML exercises and solutions](#standard-ml-exercises-and-solutions)
-    - [Sorting](#sorting)
-        - [Insertion sort](#insertion-sort)
-        - [Quicksort](#quicksort)
-        - [Mergesort](#mergesort)
-    - [ML4WP Chapter 3 - Lists](#ml4wp-chapter-3---lists)
-        - [3.1 Maximum of list without pattern matching](#31-maximum-of-list-without-pattern-matching)
-        - [3.2 Last element of list](#32-last-element-of-list)
-        - [3.3 Take and drop](#33-take-and-drop)
-        - [3.4 nth element of list](#34-nth-element-of-list)
-        - [3.5 Append lists](#35-append-lists)
-        - [3.7 Efficient list reversal](#37-efficient-list-reversal)
-        - [3.9 Zip function that does not depend on order of pattern matching](#39-zip-function-that-does-not-depend-on-order-of-pattern-matching)
-        - [3.11 Roman numerals](#311-roman-numerals)
-        - [3.13 Making change with a finite purse](#313-making-change-with-a-finite-purse)
-        - [3.14 Making change with an accumulator](#314-making-change-with-an-accumulator)
-        - [3.15 Binary sum and product for list of booleans.](#315-binary-sum-and-product-for-list-of-booleans)
-        - [3.18 Converting decimal to binary and a large factorial](#318-converting-decimal-to-binary-and-a-large-factorial)
-    - [ML4WP Chapter 4 – Datatypes and trees](#ml4wp-chapter-4--datatypes-and-trees)
-        - [4.13 Generating a tree of a given depth with the same value](#413-generating-a-tree-of-a-given-depth-with-the-same-value)
-        - [4.14 Checking whether a tree is balanced](#414-checking-whether-a-tree-is-balanced)
-        - [4.15 Check if two trees are reflected](#415-check-if-two-trees-are-reflected)
-        - [4.16 Redefining an ML list](#416-redefining-an-ml-list)
-        - [4.17 Tree where leaves have values](#417-tree-where-leaves-have-values)
-        - [4.18 Non-binary trees](#418-non-binary-trees)
-    - [Questions from the course notes](#questions-from-the-course-notes)
-        - [2.1 Iterative power function](#21-iterative-power-function)
-        - [3.1 Sum of list elements](#31-sum-of-list-elements)
-        - [3.2 Last element of a non-empty list](#32-last-element-of-a-non-empty-list)
-        - [3.3 Get elements with an even index](#33-get-elements-with-an-even-index)
-        - [3.4 Return the list of tails](#34-return-the-list-of-tails)
-        - [4.1 Set union](#41-set-union)
-        - [4.2 Separate list into nonnegative and negative](#42-separate-list-into-nonnegative-and-negative)
-        - [5.2 Selection sort](#52-selection-sort)
-        - [5.3 Bubblesort](#53-bubblesort)
-        - [8.2 Lexicographical ordering](#82-lexicographical-ordering)
+- [Past tripos questions](#past-tripos-questions)
+    - [Permutations of a list (2006Q5)](#permutations-of-a-list-2006q5)
+    - [Making a list into a functional array (2015Q1)](#making-a-list-into-a-functional-array-2015q1)
+    - [N-ary tree (2016Q1)](#n-ary-tree-2016q1)
+    - [Sieve of Eratosthenes (2016Q2)](#sieve-of-eratosthenes-2016q2)
+- [Sorting](#sorting)
+    - [Insertion sort](#insertion-sort)
+    - [Quicksort](#quicksort)
+    - [Mergesort](#mergesort)
+- [ML4WP Chapter 3 - Lists](#ml4wp-chapter-3---lists)
+    - [3.1 Maximum of list without pattern matching](#31-maximum-of-list-without-pattern-matching)
+    - [3.2 Last element of list](#32-last-element-of-list)
+    - [3.3 Take and drop](#33-take-and-drop)
+    - [3.4 nth element of list](#34-nth-element-of-list)
+    - [3.5 Append lists](#35-append-lists)
+    - [3.7 Efficient list reversal](#37-efficient-list-reversal)
+    - [3.9 Zip function that does not depend on order of pattern matching](#39-zip-function-that-does-not-depend-on-order-of-pattern-matching)
+    - [3.11 Roman numerals](#311-roman-numerals)
+    - [3.13 Making change with a finite purse](#313-making-change-with-a-finite-purse)
+    - [3.14 Making change with an accumulator](#314-making-change-with-an-accumulator)
+    - [3.15 Binary sum and product for list of booleans.](#315-binary-sum-and-product-for-list-of-booleans)
+    - [3.18 Converting decimal to binary and a large factorial](#318-converting-decimal-to-binary-and-a-large-factorial)
+- [ML4WP Chapter 4 – Datatypes and trees](#ml4wp-chapter-4--datatypes-and-trees)
+    - [4.13 Generating a tree of a given depth with the same value](#413-generating-a-tree-of-a-given-depth-with-the-same-value)
+    - [4.14 Checking whether a tree is balanced](#414-checking-whether-a-tree-is-balanced)
+    - [4.15 Check if two trees are reflected](#415-check-if-two-trees-are-reflected)
+    - [4.16 Redefining an ML list](#416-redefining-an-ml-list)
+    - [4.17 Tree where leaves have values](#417-tree-where-leaves-have-values)
+    - [4.18 Non-binary trees](#418-non-binary-trees)
+- [Questions from the course notes](#questions-from-the-course-notes)
+    - [2.1 Iterative power function](#21-iterative-power-function)
+    - [3.1 Sum of list elements](#31-sum-of-list-elements)
+    - [3.2 Last element of a non-empty list](#32-last-element-of-a-non-empty-list)
+    - [3.3 Get elements with an even index](#33-get-elements-with-an-even-index)
+    - [3.4 Return the list of tails](#34-return-the-list-of-tails)
+    - [4.1 Set union](#41-set-union)
+    - [4.2 Separate list into nonnegative and negative](#42-separate-list-into-nonnegative-and-negative)
+    - [5.2 Selection sort](#52-selection-sort)
+    - [5.3 Bubblesort](#53-bubblesort)
+    - [8.2 Lexicographical ordering](#82-lexicographical-ordering)
+    - [9.5 Lazy list of all lists of zeroes and ones](#95-lazy-list-of-all-lists-of-zeroes-and-ones)
+    - [9.6 Lazy list of all palindromes of 0 and 1](#96-lazy-list-of-all-palindromes-of-0-and-1)
+<!-- /TOC -->
 
-<!-- /TOC -->
-<!-- /TOC -->
+## Past tripos questions
+
+### Permutations of a list (2006Q5)
+
+- For each item in a list, take that item and insert it in all possible positions. This is done in `ins`, which returns a list of lists. 
+- `perms` then recursively inserts an item into every position on the previous permutation, computed recursively, while flattening the result.
+
+```ocaml
+fun cons x xs = x::xs;
+
+fun ins x [] = [[]]
+  | ins x (y::ys) = (x::y::ys) :: map (cons y) (ins x ys);
+  
+fun flatten [[]] = []
+    | flatten ([]::xss) = flatten xss
+    | flatten ((x::xs)::xss) = x :: flatten (xs::xss);
+
+fun perms [] = []
+  | perms [x] = [[x]]
+  | perms (x::xs) = flatten (map (ins x) (perms xs));
+```
+
+### Making a list into a functional array (2015Q1)
+
+Elegant solution is to use `tcons`, which conses an item directly into a functional array.
+
+```ocaml
+fun tcons v Lf = Br(v, Lf, Lf)
+  | tcons v (Br(w, t1, t2)) = Br(w, tcons v t2, t1);
+  
+fun arrayoflist [] = Lf
+  | arrayoflist (x::xs) = tcons x (arrayoflist xs);
+```
+
+### N-ary tree (2016Q1)
+
+```ocaml
+datatype 'a vtree = Lf of 'a
+                  | Br of ('a vtree) list;
+                          
+fun flatten [[]] = []
+  | flatten ([]::xss) = flatten xss
+  | flatten ((x::xs)::xss) = x :: flatten (xs::xss);
+
+fun flat (Lf v) = [v]
+  | flat (Br(ts)) = flatten (map flat ts);
+  
+val t = Br( [Br([Lf 1, Lf 2, Lf 3]), Br([Br([Lf 3])]), Lf 4, Br([Lf 3]) ]);
+
+fun sum [] = 0
+  | sum (x::xs) = x + sum xs;
+  
+fun count x (Lf v) = if v=x then 1 else 0
+  | count x (Br(ts)) = sum (map (count x) ts);
+```
+
+### Sieve of Eratosthenes (2016Q2)
+
+1. Generate a list of integers (`ints`)
+2. Remove all list items that satisfy a `predicate`
+3. Remove all items that are divisible by the head of the list, then move on.
+
+```ocaml
+fun ints i n = if i > n then [] else i :: ints (i+1) n;
+
+fun remove p [] = []
+  | remove p (x::xs) = if (p x) then remove p xs
+                       else x :: (remove p xs);
+fun sieve [] = []
+  | sieve (x::xs) = x :: (sieve (remove (fn y => y mod x = 0) xs));
+  
+fun primes n = sieve (ints 2 n);
+```
 
 ## Sorting
 
@@ -577,7 +655,7 @@ fun sep([], pos, neg) = [pos, neg]
                             else sep(xs, pos, x::neg);
 ```
 
-I'm fairly sure that what I have here is the 'proper' solution, though actually it isn't actually more efficient. 
+I'm fairly sure that what I have here is the 'proper' solution, though it isn't actually more efficient. 
 
 ```ocaml 
 fun sep [] = ([], [])
@@ -661,6 +739,11 @@ fun zo ls = Cons(ls, fn() => zo (next ls));
 
 `zo` just applies the `next` function in sequence. It can be 'started' by calling `zo []`.
 
+Reviewing this problem much later, I am now aware of a nice pattern to generate lazy lists where we want to have all possible items formed by two operations:
+
+```ocaml 
+fun zo x = Cons(x, fn() => interleave(zo 0::x, zo 1::x));
+```
 
 ### 9.6 Lazy list of all palindromes of 0 and 1
 
@@ -674,26 +757,3 @@ fun filterq p Nil = Nil
             
 val palindromes = filterq (fn x => (x = rev x)) (zo []);
 ```
-
-
-## Past tripos questions
-
-### Permuations of a list (2006Q5)
-
-1. For each item in a list, take that item and insert it in all possible positions.
-
-```ocaml
-fun cons x xs = x::xs;
-
-fun ins x [] = [[]]
-  | ins x (y::ys) = (x::y::ys) :: map (cons y) (ins x ys);
-  
-fun flatten [[]] = []
-    | flatten ([]::xss) = flatten xss
-    | flatten ((x::xs)::xss) = x :: flatten (xs::xss);
-
-fun perms [] = []
-  | perms [x] = [[x]]
-  | perms (x::xs) = flatten (map (ins x) (perms xs));
-```
-
