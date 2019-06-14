@@ -106,8 +106,8 @@ p is a **predicate** - a boolean expression that determines which of E1 or E2 is
 e.g efficiently raising a number to a power:
 
 ```ocaml
-fun power(x:real, n) = 
-    if n=1 then x
+fun power (x: real, n) = 
+    if n = 1 then x
     else 
         if (n mod 2 = 0) then power(x*x, n div 2)
         else x * power(x*x, n div 2);
@@ -126,7 +126,7 @@ It is possible to have iteration in a functional paradigm using **tail recursion
 
 ```ocaml
 fun iterateFactorial (n, total) = 
-    if n = 0 then total else iterateFactorial (n - 1, n * total);
+    if n = 0 then total else iterateFactorial(n - 1, n * total);
 ```
 
 We can attempt to analyse the quality of algorithms by considering their time and space complexity as a function of input size *n*. This is usually considered asymptotically using big O notation. We say that:
@@ -180,7 +180,7 @@ We can define functions with separate clauses in order to pattern-match.
 
 ```ocaml
 fun nlength [] = 0
-    | nlength (x::xs) = 1 + nlength xs;
+  | nlength (x::xs) = 1 + nlength xs;
 ```
 
 For list functions, sometimes using cons instead of append leaves the result the wrong way round. The cost of `rev` should be considered.
@@ -190,12 +190,12 @@ We can define functions to take or drop the first `k` elements as follows:
 
 ```ocaml
 fun take ([], _) = []
-    | take (x::xs, k) = 
+  | take (x::xs, k) = 
         if (k > 0) then x::take(xs, k-1) 
         else [];
     
-fun drop([], _) = []
-    | drop (x::xs, k) = 
+fun drop ([], _) = []
+  | drop (x::xs, k) = 
         if (k > 0) then drop(xs, k-1)
         else (x::xs); 
 ```
@@ -204,19 +204,19 @@ Although these functions have the same complexity, drop will be faster (i.e smal
 
 ### Searching 
 
-To find an item in a list, we can loop through items in a linear search with $O(n)$ complexity. If the list is pre-sorted, items can be found in $O(\log n)$. If the list is indexed (as in a hash table), lookup is $O(1)$.
+To find an item in a list, we can loop through items in a linear search with $O(n)$ complexity. If the list is indexed (as in a hash table), lookup is $O(1)$.
 
 ```ocaml
 fun member (x, []) = false
-    | member (x, y::ys) = 
-            (x=y) orelse member (x, ys);
+  | member (x, y::ys) = 
+        (x=y) orelse member (x, ys);
 > val member = fn: ''a * ''a list -> bool
 ```
 
 In the type signature, `''a` means that the function only accepts **equality types**. This includes most types except:
 
 - reals (because of floating point issues)
-- functions, because there is no way of knowing apriori whether the output would be the same for all possible input.
+- functions, because there is no way of knowing *a priori* whether the output would be the same for all possible input.
 - abstract types
 
 ### Zipping and Unzipping
@@ -232,7 +232,7 @@ Because patterns are tested in order, we can write a zip function as follows:
 
 ```ocaml
 fun zip (x::xs, y::ys) = (x, y) :: zip(xs, ys)
-    | zip _            = []
+  | zip _              = []
 ```
 
 If there is a case where one of the lists is empty, the first pattern will not match so the second will just produce an empty list.
@@ -241,7 +241,7 @@ The unzip function is best written with a local declaration:
 
 ```ocaml
 fun unzip [] = ([], [])
-    | unzip ((x,y)::pairs) =
+  | unzip ((x,y)::pairs) =
         let val (xs, ys) = unzip pairs
         in (x::xs, y::ys)
         end;
@@ -258,7 +258,7 @@ The simplest greedy algorithm is straightforward to implement, noting that:
 
 ```ocaml
 fun change (till, 0) = []
-    | change (c::till, amt) =
+  | change (c::till, amt) =
         if amt<c then change(till, amt)
         else c::change(c::till, amt-c);
 ```
@@ -267,8 +267,8 @@ However, this greedy algorithm can fail in simple cases. We can define an exhaus
 
 ```ocaml
 fun change (till, 0, chg, chgs) = (chg::chgs)
-    | change ([], _, chg, chgs) = chgs 
-    | change (c::till, amt, chg, chgs) =
+  | change ([], _, chg, chgs) = chgs 
+  | change (c::till, amt, chg, chgs) =
         let 
             val otherSol = change(till, amt, chg, chgs)
         in 
@@ -293,23 +293,21 @@ We can emulate functioning of a set using lists. We want:
 
 ```ocaml
 fun mem (x, []) = false 
-    | mem (x, y::ys) = (x=y) orelse mem (x, ys);
+  | mem (x, y::ys) = (x=y) orelse mem (x, ys);
     
 fun addmem (x, l) = if mem (x, l) then l else x::l;
 
 fun setof [] = [] 
-    | setof (x::xs) = addmem(x, setof xs);
+  | setof (x::xs) = addmem(x, setof xs);
     
 fun union ([], l) = l
-    | union (x::xs, l) = union(xs, addmem(x, l));
+  | union (x::xs, l) = union(xs, addmem(x, l));
     
 fun intersect ([], l) = []
-    | intersect (x::xs, l) = 
-            if (x mem l) then x::intersect(xs,l) 
-            else intersect(xs, l);
+  | intersect (x::xs, l) = 
+        if (x mem l) then x::intersect(xs,l) 
+        else intersect(xs, l);
 ```
-
-
 
 ## Sorting
 
@@ -326,12 +324,12 @@ Works by recursively inserting elements into sorted lists.
 
 ```ocaml
 fun ins(x, []) = [x]
-    | ins(x, y::ys) = 
+  | ins(x, y::ys) = 
         if (x <= y) then x::y::ys 
                     else y::ins(x, ys);
                     
 fun insort [] = []
-    | insort (x::xs) = ins(x, insort xs);
+  | insort (x::xs) = ins(x, insort xs);
 ```
 
 - `ins` inserts an element into a sorted list, and requires $n/2$ comparisons on average (worst case *n*).

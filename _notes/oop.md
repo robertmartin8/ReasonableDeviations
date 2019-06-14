@@ -621,22 +621,6 @@ Loosely speaking:
 - **Covariance** refers to accepting subtypes in place of supertypes
 - **Contravariance** refers to accepting supertypes in place of subtypes – this is *not supported by Java*, and any method attempting to do this will be overloaded.
 
-Java only supports **covariant return types**, not **covariant parameter types**.
-
-```java
-public class A {
-    Object work(Object o) {...}
-}
-
-public class B extends A {
-    @Override 
-    Person work(Object o) {...} // covariant return = ALLOWED
-    
-    @Override
-    Object work(Person p) {...}  // covariant parameter = NOT ALLOWED
-}
-```
- 
 Java arrays are covariant: an array of type `T[]` can contains elements of type `T` or any subtype `S`. Additionally, `S[]` itself is a subtype of `T[]`.
 
 
