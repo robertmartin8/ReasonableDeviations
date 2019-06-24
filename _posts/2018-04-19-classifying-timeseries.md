@@ -5,8 +5,7 @@ title: Classifying financial time series using Discrete Fourier Transforms
 
 ## Introduction
 
-A financial time series represents the collective decisions of many individual traders; it is fair to hypothesise that the nature of these decisions differs based on the underlying asset. 
-For example, a company with a higher market cap may be more liquid, and subject to larger individual buy/sell orders including institutional investment.  Thus, there is a case to be made that information such as the market cap of a company should be 'encoded' into its price movements. While these characteristics may be difficult to pinpoint on a chart, in principle it may be possible for a machine learning algorithm to find statistical relationships between the time series and the market cap of the company. This post will investigate that claim.
+A financial time series represents the collective decisions of many individual traders; it seems reasonable to me that the nature of these decisions may differ based on the underlying asset. For example, a company with a higher market cap may be more liquid, and subject to larger individual buy/sell orders including institutional investment.  Thus, there is a case to be made that information such as the market cap of a company should be 'encoded' into its price movements. While these characteristics may be difficult to pinpoint on a chart, in principle it may be possible for a machine learning algorithm to find statistical relationships between the time series and the market cap of the company. This post will investigate that claim.
 
 Concretely, a raw dataset will be constructed, consisting of 100-day price charts which belong to companies that are respectively in the top and bottom 1000 tickers in the Russell 3000 ordered by market cap. We will then run feature extraction (which is the core of this post), before applying a standard XGBoost classifier. 
 
@@ -14,7 +13,7 @@ This post thus represents an intuitive (if naive) first approximation for classi
 
 ## A discussion on classifying time series
 
-Because much of real life data is temporal in nature, classifying and clustering time series has widespread importance. Some example applications:
+Because much of real life data is temporal in nature, classifying and clustering time series has widespread importance, with such applications as:
 
 - speech recognition
 - medical data such as ECGs
@@ -24,12 +23,12 @@ Because much of real life data is temporal in nature, classifying and clustering
 
 Some general approaches to classifying time series are as follows (a thorough survey can be found in [Rani & Sikka 2012](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.258.9630&rep=rep1&type=pdf)): 
 
-- directly clustering with an algorithm like k-Nearest Neighbours. What is important here is a relevant distance metric between two different time series. Euclidean distance may not be sufficient as it has trouble dealing with timeseries that have been shifted slightly (either vertically or horizontally).
+- Directly clustering with an algorithm like k-Nearest Neighbours. What is important here is a relevant distance metric between two different time series. Euclidean distance may not be sufficient as it has trouble dealing with timeseries that have been shifted slightly (either vertically or horizontally).
 - Hidden Markov Models, which model the timeseries as a Markov Process, whose transition matrix may be used as input to a classifier.
 - LSTM Neural Networks, which are fed in a time series and contain a sequential 'memory'. The output of a cell can be run through the sigmoid function to convert it into a binary class value. 
 - Extracting summary statistics, then passing these results into a standard classifier.  
 
-This post will explore the last method. On the surface, it seems to be the most straightforward approach, but the magic is in choosing which aspects of the time series should be used. There are existing libraries that can extract a multitude of features, e.g [tsfresh](https://github.com/blue-yonder/tsfresh), but although it is very likely that there is predictive power somewhere in here, it would be nice to find a simpler (and perhaps faster) approach. 
+This post will explore the last method. On the surface, it seems to be the most straightforward approach, but the difficulty is in choosing which aspects of the time series should be used. There are existing libraries that can extract a multitude of features, e.g [tsfresh](https://github.com/blue-yonder/tsfresh), but although it is very likely that there is predictive power somewhere in here, it would be nice to find a simpler (and perhaps faster) approach. 
 
 Thus, I have decided to take the Discrete Fourier Transform (DFT) of the time series, and to use the largest terms as features. Such a method is really under the domain of **spectral analysis**, a well established subfield of time series analysis. However, we will adopt a rather informal approach. It should be noted that the Fourier Transform certainly shouldn't be used to forecast the future of a financial time series because of the strong assumptions of periodicity. But it should be able to extract the main (sinusoidal) signals from a time series, which we can then put into a classifier.
 
@@ -39,7 +38,7 @@ Thus, I have decided to take the Discrete Fourier Transform (DFT) of the time se
 The data used in this project will be:
 
 - `keystats.csv`: parsed yahoo finance key statistics from which the latest market cap of securities will be ascertained. In order to reproduce something like this dataset (though only for the S&P500), please refer to my [repo on GitHub](https://github.com/robertmartin8/MachineLearningStocks)
-- My `stock_prices` database, which contains daily prices for many tickers. For more information about this database, I've written a [post]({{ site.baseurl }}{% post_url 2018-02-01-stock-price-database %}) on how to create your own price database. 
+- My `stock_prices` database, which I discussed in [this post]({{ site.baseurl }}{% post_url 2018-02-01-stock-price-database %}). 
 
 After extracting the data from the csv files and MySQL database, I was left with a pandas dataframe `sorted_tickers_by_mcap`, containing tickers and their market caps, sorted by market cap in ascending order. 
 
@@ -150,7 +149,7 @@ We have now finished preparing the raw data for analysis. However, we still need
 
 ## Methodology
 
-It is a remarkable fact of mathematics that periodic continuous functions (at least the well-behaved ones) can be decomposed into sines and cosines. Although price data probably isn't periodic, if we treat the whole time series as one period, we can apply a Discrete Fourier Transform (DFT) to extract the main 'signals' in a time series. My motivation for using a DFT is that it can be used to de-noise a time series by ignoring the smaller terms, and that the coefficients of the resulting terms can be fed into a classifier. Additionally, there exist very efficient implementations in numpy, such as `np.fft.fft()`. One potential problem is that the results of the DFT are actually complex numbers:
+It is a remarkable fact of mathematics that periodic continuous functions (at least the well-behaved ones) can be decomposed into sines and cosines. Although price data certainly isn't periodic, if we treat the whole time series as one period, we can apply a Discrete Fourier Transform (DFT) to extract the main 'signals' in a time series. My motivation for using a DFT is that it can be used to de-noise a time series by ignoring the smaller terms, and that the coefficients of the resulting terms can be fed into a classifier. Additionally, there exist very efficient implementations in numpy, such as `np.fft.fft()`. One potential problem is that the results of the DFT are actually complex numbers:
 
 ```
 array([ 3.86450001e+02+0.j        , -7.77637336e+00+2.22326054j,
@@ -373,8 +372,8 @@ It is interesting to note that the modulus datasets never beat the benchmark: it
 
 ## Conclusion
 
-In this post, we have seen that 100-day time series of prices can be classified according to market cap, by extracting the main signals from a time series with a Discrete Fourier Transform to use as features in a classifier. The DFT is not only able to outperform the naive solution of using each day's price as a feature, but can also do so with a large speedup. The implication of this is that the benchmark overfits to noise, and thus this is a practical example of how reducing the information available to a classifier can actually improve performance. 
+In this post, we have seen that we can determine whether a given 100-day time series of stock prices belongs to a high market cap or low market cap stock, with more than 65% accuracy. This was done by extracting the main signals from a time series with a Discrete Fourier Transform, which were then used as features in a classifier. The DFT is not only able to outperform the naive solution of using each day's price as a feature, but can also do so with a large speedup. The implication of this is that the benchmark overfits to noise, and thus this is a practical example of how reducing the information available to a classifier can actually improve performance. 
 
-I think this is an important lesson for anyone applying machine learning to a real-world problem: throwing data at a classifier or deep learning model is **not** a solid approach: it is much better to genuinely try to extract important features, and discard those which only add noise. 
+I think this is an important lesson for anyone applying machine learning to a real-world problem: throwing data at a classifier or deep learning model is **not** a solid approach. First try to extract important features or at least discard those that only contribute noise.
 
 Future work on this topic could involve comparing the classification performance of the DFT method to a classifier that uses different summary statistics, or perhaps even a clustering methodology like k-Nearest Neighbours. But for now I am satisfied that this simple and intuitive method is sufficient to do significantly better than random guessing. 
