@@ -11,7 +11,7 @@ But *Complexity* has given me a fascinating new perspective. In Chapter 11, Mitc
 
 The paper is very interesting, but does not come with source code (in their defense, it was written in 1996 and they refer to the internet as the "World Wide Web"). I think that their work deserves a modern recreation and analysis, with the benefit of intuitive code in python and more processing power. 
 
-Because this is quite a large topic, I will split it into parts. Today's post will set up the problem, dealing with notation and terminology, as well as discussing the nature of the CAs considered. We will leave it to a future post to actually apply genetic algorithms to evolve CAs.
+Because this is quite a large topic, I will split it into two parts. Today's post will set up the problem, dealing with notation and terminology, as well as discussing the nature of the CAs considered. We will leave it to a future post to actually apply genetic algorithms to evolve CAs.
 
 
 ## Contents
@@ -272,4 +272,4 @@ In this post, we have laid the framework for using cellular automata to solve a 
  
 We have examined the failings of a 'local' solution that naively treats a cell's immediate neighbourhood as a proxy for the entire universe, and thus see the need for *emergent computation*, in which individual cells somehow learn to appreciate the rest of the universe and come up with a global solution.
 
-In the next post, we will discuss how genetic algorithms can be applied to *evolve* the cellular automata to solve the density classification task, rather than having to supply a hand-crafted rule, or do a brute force search over all possible rulesets (which we have shown to be infeasible). Stay tuned.
+In the [next post]({{ site.baseurl }}{% post_url 2018-06-01-evolving-automata-2 %}), we discuss how genetic algorithms can be applied to *evolve* the cellular automata to solve the density classification task, rather than having to supply a hand-crafted rule, or do a brute force search over all possible rulesets (which we have shown to be infeasible). Stay tuned.
