@@ -3,13 +3,10 @@ layout: post
 title: Graph algorithms and currency arbitrage, part 2
 ---
 
-In the [previous post]({{ site.baseurl }}{% post_url 2019-03-02-currency-arbitrage-graphs %}) we explored how graphs can be used to represent a currency market, and how we might use shortest-path algorithms to discover arbitrage opportunities. Today, we will apply this to real-world data. It should be noted that we are not attempting to build a functional arbitrage bot, but rather emphasise the graph-based methodology. Later on we'll discuss why this is unlikely to result in actionable arbitrage. 
+In the [previous post]({{ site.baseurl }}{% post_url 2019-03-02-currency-arbitrage-graphs %}) (which should definitely be read first!) we explored how graphs can be used to represent a currency market, and how we might use shortest-path algorithms to discover arbitrage opportunities. Today, we will apply this to real-world data. It should be noted that we are not attempting to build a functional arbitrage bot, but rather to explore how graphs could potentially be used to tackle the problem. Later on we'll discuss why this is unlikely to result in actionable arbitrage. 
 
-We will be examining a market of cryptocurrencies. This is because it is much easier to acquire crypto order book data, and crypto markets are less liquid than fiat markets so we are much more likely to actually see arb.
+Rather than using fiat currencies as presented in the previous post, we will examine a market of cryptocurrencies because it is much easier to acquire crypto order book data. We'll narrow down the problem further by making two more simplifications. Firstly, we will focus on arbitrage within a single exchange. That is, we'll look to see if there are pathways between different coins on an exchange which leave us with more of a coin than we started with. Secondly, we will only be considering a single snapshot of data from the exchange. Obviously markets are highly dynamic, with thousands of new bids and asks coming in each second. A proper arbitrage system needs to constantly be scanning for opportunities, but I feel that this is only tangentially related to the core goal of this post.
 
-Implicit in the above is the fact that we will focus on arbitrage within a single exchange. That is, we'll look to see if there are pathways between different coins on an exchange for which we can make money. This is easier than having to scrape data from multiple exchanges, but because it is easier, it is less likely to be profitable. That being said, it serves to illustrate the graph-based approach.
-
-Obviously, markets are highly dynamic, with thousands of new bids and asks coming in each second. A proper arbitrage system needs to constantly be scanning for opportunities. However, this has added complications so we will just consider a single snapshot of data from the exchange.
 
 With all this in mind, the overall implementation strategy was as follows:
 
@@ -28,10 +25,9 @@ With all this in mind, the overall implementation strategy was as follows:
 
 For the raw data, I decided to use the [CryptoCompare API](https://min-api.cryptocompare.com/documentation) which has a load of free data compiled across multiple exchanges. To get started, you'll need to register to get a free API key.
 
-As mentioned previously, we will only look at data from Binance. I chose Binance not because it has a large selection of altcoins, but because these altcoins can trade directly with multiple pairs (normally BTC, ETH, USDT, BNB). Some exchanges have many altcoins but you can only buy them with BTC – this is not well suited for arbitrage.
+As mentioned previously, we will only look at data from Binance. I chose Binance not because it has a large selection of altcoins, but because most altcoins can trade directly with multiple pairs (e.g BTC, ETH, USDT, BNB). Some exchanges have many altcoins but you can only buy them with BTC – this is not well suited for arbitrage.
 
-
-Firstly, we need to find out which pairs Binance offers. This is done with a simple call (where `AUTH` is your API key):
+Firstly, we need to find out which pairs Binance offers. This is done with a simple call (`AUTH` is your API key string):
 
 ```python
 import requests
@@ -47,7 +43,7 @@ def top_exchange_pairs():
         json.dump(r.json(), f)
 ```
 
-This is an excerpt from the resulting JSON file. For each exchange, the `pairs` field lists all other coins that the key coin can be traded with.
+This is an excerpt from the resulting JSON file – for each exchange, the `pairs` field lists all other coins that the key coin can be traded with:
 
 ```json
 "Data":{  
@@ -183,7 +179,7 @@ We will be using the [NetworkX](https://networkx.github.io/documentation/stable/
 
 In particular, we will be using `nx.DiGraph`, which is just a (weighted) directed graph. I was initially concerned that it'd be difficult to get the data in: python libraries often adopt their own weird conventions and you have to modify your data so that is in the correct format. This was not really the case with NetworkX, it turns out that we already did most of the hard work when we put the data into our pandas adjacency matrix.
 
-Firstly, we take negative logs as discussed in the [previous post]({{ site.baseurl }}{% post_url 2019-03-02-currency-arbitrage-graphs %}). Secondly, in our dataframe we currently have `NaN` whenever there is no edge between two vertices. To make a valid `nx.DiGraph`, we need to set these to zero. Lastly, we must transpose the dataframe because NetworkX uses a different row/column convention to me. We then pass this processed dataframe into the `nx.Digraph` constructor. Summarised in one line:
+Firstly, we take negative logs as discussed in the [previous post]({{ site.baseurl }}{% post_url 2019-03-02-currency-arbitrage-graphs %}). Secondly, in our dataframe we currently have `NaN` whenever there is no edge between two vertices. To make a valid `nx.DiGraph`, we need to set these to zero. Lastly, we transpose the dataframe because NetworkX uses a different row/column convention. We then pass this processed dataframe into the `nx.Digraph` constructor. Summarised in one line:
 
 ```python
 g = nx.DiGraph(-np.log(df).fillna(0).T)
@@ -191,9 +187,9 @@ g = nx.DiGraph(-np.log(df).fillna(0).T)
 
 ## Bellman-Ford
 
-To implement Bellman-Ford, we make use of the funky `defaultdict` data structure. As the name suggests, it works exactly like a python dict, except that if you query a key that is not present you get a certain default value back. The first part of our implementation is quite standard, as we are just doing the $n - 1$ relaxations.
+To implement Bellman-Ford, we make use of the funky `defaultdict` data structure. As the name suggests, it works exactly like a python dict, except that if you query a key that is not present you get a certain default value back. The first part of our implementation is quite standard, as we are just doing the $n - 1$ edge-relaxations where *n* is the number of vertices.
 
-But because the 'classic' Bellman-Ford does not actually return negative-weight cycles, the second part of our implementation is a bit more complicated. The idea is that if after $n-1$ relaxations, there is an edge that can be relaxed further, then that edge must be on a negative weight cycle. So to find this cycle we walk back along the predecessors until a cycle is found, then return the cyclic portion of that walk. In order to prevent subsequent redundancy, we mark these vertices as 'seen' via another `defaultdict`. This procedure adds a linear cost to Bellman-Ford since we have to iterate over all the edges, but the asymptotic complexity overall remains $O(VE)$.
+But because the 'classic' Bellman-Ford does not actually return negative-weight cycles, the second part of our implementation is a bit more complicated. The key idea is that if after $n-1$ relaxations, there is an edge that can be relaxed further then that edge must be on a negative weight cycle. So to find this cycle we walk back along the predecessors until a cycle is detected, then return the cyclic portion of that walk. In order to prevent subsequent redundancy, we mark these vertices as 'seen' via another `defaultdict`. This procedure adds a linear cost to Bellman-Ford since we have to iterate over all the edges, but the asymptotic complexity overall remains $O(VE)$.
 
 
 ```python 
@@ -237,7 +233,7 @@ def bellman_ford_return_cycle(g, s):
         return all_cycles
 ```
 
-If the graph doesn't contain any negative-weight cycles, the function returns an empty list. As a reminder, this function returns all negative-weight cycles reachable from a given source vertex. To find all negative-weight cycles, we can simply call the above procedure on every vertex then eliminate duplicates.
+As a reminder, this function returns all negative-weight cycles reachable from a given source vertex (returning the empty list if there are none). To find all negative-weight cycles, we can simply call the above procedure on every vertex then eliminate duplicates.
 
 ```python
 def all_negative_cycles(g):
@@ -250,7 +246,7 @@ def all_negative_cycles(g):
 
 ## Tying it all together 
 
-The last thing we need is a function that calculates the value of an arbitrage given a negative-weight cycle on a graph. This is easy to implement: we just find the total weight along the path then exponentiate the negative total (because we have negative log weights).
+The last thing we need is a function that calculates the value of an arbitrage opportunity given a negative-weight cycle on a graph. This is easy to implement: we just find the total weight along the path then exponentiate the negative total (because our weights are the negative log of the exchange rates).
 
 ```python
 def calculate_arb(cycle, g, verbose=True):
@@ -262,9 +258,8 @@ def calculate_arb(cycle, g, verbose=True):
         print("Path:", cycle)
         print(f"{arb*100:.2g}%\n")
     return arb
-```
 
-```python
+
 def find_arbitrage(filename="snapshot.csv"):
     df = pd.read_csv(filename, header=0, index_col=0)
     g = nx.DiGraph(-np.log(df).fillna(0).T)
@@ -305,13 +300,13 @@ Path: ['USDT', 'BAT', 'BTC', 'XRP', 'USDT']
 
 Notice that we haven't mentioned exchange fees at any point. In fact, Binance charges a standard 0.1% commission on every trade. It is easy to modify our code to incorporate this, we just multiply each rate by 0.999, but we don't need to compute anything to see that we would certainly be losing much more money than gained from the arbitrage. 
 
-Secondly, it is likely that this whole analysis is flawed because of the way the data was collected. The function `download_snapshot` makes a request for each coin in sequence, taking a few seconds in total. But in these few seconds, prices may move - so really the above "arbitrage" may just be a result of our algorithm selecting some of the price movements. This could be fixed by using timestamps provided by the exchange to ensure that we are looking at the order book for each pair at the exact same moment in time.
+Secondly, it is likely that this whole analysis is flawed because of the way the data was collected. The function `download_snapshot` makes a request for each coin in sequence, taking a few seconds in total. But in these few seconds, prices may move – so really the above "arbitrage" may just be a result of our algorithm selecting some of the price movements. This could be fixed by using timestamps provided by the exchange to ensure that we are looking at the order book for each pair at the exact same moment in time.
 
-Thirdly, we have assumed that you can trade an infinite quantity of the bid and ask. An order consists of a price and a quantity, so we will only be able to fill a limited quantity at the ask price. Thus in practice we would have to look at the top few levels.
+Thirdly, we have assumed that you can trade an infinite quantity of the bid and ask. An order consists of a price and a quantity, so we will only be able to fill a limited quantity at the ask price. Thus in practice we would have to look at the top few levels of the order book and consider how much of it we'd eat into.
 
 It is not difficult to extend our methodology to arb between different exchanges. We would just need to aggregate the top of the order book from each exchange, then put the best bid/ask onto the respective edges. Of course, to do run this strategy live would require us to manage our inventory not just on a currency level but per currency per exchange, and factors like the congestion of the bitcoin network would come into play. 
 
-Lastly, this analysis has only been for a single snapshot. A proper arbitrage bot would have to constantly look at all the order books. I think this could be done by having a websocket stream which keeps the graph updated with the latest quotes, and using a more advanced method for finding negative-weight cycles that does not involve recomputing the shortest paths via Bellman-Ford.
+Lastly, this analysis has only been for a single snapshot. A proper arbitrage bot would have to constantly look for opportunities simultaneously across multiple order books. I think this could be done by having a websocket stream which keeps the graph updated with the latest quotes, and using a more advanced method for finding negative-weight cycles that does not involve recomputing the shortest paths via Bellman-Ford.
 
 
 ## Conclusion
