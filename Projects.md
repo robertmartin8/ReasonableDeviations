@@ -39,7 +39,7 @@ I have written about PyPortfolioOpt extensibly elsewhere, so check out the GitHu
 
 - [GitHub repo](https://github.com/robertmartin8/PyPortfolioOpt)
 - [Docs](https://pyportfolioopt.readthedocs.io/)
-- [Post: Portfolio Optimisation Lessons Learnt]({{ site.baseurl }}{% post_url 2018-09-27-lessons-portfolio-opt/ %})
+- [Post: Portfolio Optimisation Lessons Learnt]({{ site.baseurl }}{% post_url 2018-09-27-lessons-portfolio-opt %})
 
 
 
