@@ -1,6 +1,6 @@
 # ReasonableDeviations
 
-[https://reasonabledeviations.science](https://reasonabledeviations.science)
+[https://reasonabledeviations.com](https://reasonabledeviations.com)
 
 ## Contents
 
