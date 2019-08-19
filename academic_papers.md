@@ -41,6 +41,7 @@ For each article, I have hyperlinked the title of the article to the pdf/markdow
 - Kritzman, Page, Turkington (2010). [In Defense of Optimisation: The Fallacy of 1/N]({{ site.url }}/notes/papers/defense_optimisation).
 - Lawrence (1997). [Using Neural Networks to Forecast Stock Market Prices]({{ site.url }}/notes/papers/nn_forecast_stock).
 - Ledoit and Wolf (2004). [Honey, I Shrunk the Sample Covariance Matrix]({{ site.url }}/notes/papers/ledoit_wolf_covariance).
+- Michaud (1989). [The Markowitz Optimization Enigma: Is 'Optimised' Optimal?]({{ site.imageurl }}../notes/is_optimised_optimal).
 
 
 ### Other
