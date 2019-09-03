@@ -38,7 +38,7 @@ For each article, I have hyperlinked the title of the article to the pdf/markdow
 
 - Huang, Nakamori, Wang (2005). [Forecasting stock market movement direction with support vector machine]({{ site.url }}/notes/papers/forecasting_with_svm)
 - Kimoto, Asakawa, Yoda, Takeoka (1990). [Stock market prediction system with modular neural networks]({{ site.imageurl }}../notes/modular_NN.pdf).
-- Kolm, Tütüncü, Fabozzi (2014). [60 Years of portfolio optimization: Practical challenges and current trends]({{ site.imageurl }}/../notes/60_years_portfolio_optimisation.pdf)
+- Kolm, Tütüncü, Fabozzi (2014). [60 Years of portfolio optimization: Practical challenges and current trends]({{ site.imageurl }}../notes/60_years_portfolio_optimisation.pdf)
 - Kritzman, Page, Turkington (2010). [In Defense of Optimisation: The Fallacy of 1/N]({{ site.url }}/notes/papers/defense_optimisation).
 - Lawrence (1997). [Using Neural Networks to Forecast Stock Market Prices]({{ site.url }}/notes/papers/nn_forecast_stock).
 - Ledoit and Wolf (2004). [Honey, I Shrunk the Sample Covariance Matrix]({{ site.url }}/notes/papers/ledoit_wolf_covariance).
