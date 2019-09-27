@@ -39,6 +39,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
     - [The Binomial Theorem](#the-binomial-theorem)
     - [CT1 Financial Mathematics](#ct1-financial-mathematics)
     - [Introduction to Boosted Trees](#introduction-to-boosted-trees)
+    - [The Black Litterman model]({{ site.imageurl }}../notes/BlackLitterman.pdf)
 <!-- /TOC -->
 
 ---
