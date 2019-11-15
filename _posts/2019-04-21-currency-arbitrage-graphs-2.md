@@ -3,10 +3,9 @@ layout: post
 title: Graph algorithms and currency arbitrage, part 2
 ---
 
-In the [previous post]({{ site.baseurl }}{% post_url 2019-03-02-currency-arbitrage-graphs %}) (which should definitely be read first!) we explored how graphs can be used to represent a currency market, and how we might use shortest-path algorithms to discover arbitrage opportunities. Today, we will apply this to real-world data. It should be noted that we are not attempting to build a functional arbitrage bot, but rather to explore how graphs could potentially be used to tackle the problem. Later on we'll discuss why this is unlikely to result in actionable arbitrage. 
+In the [previous post]({{ site.baseurl }}{% post_url 2019-03-02-currency-arbitrage-graphs %}) (which should definitely be read first!) we explored how graphs can be used to represent a currency market, and how we might use shortest-path algorithms to discover arbitrage opportunities. Today, we will apply this to real-world data. It should be noted that we are not attempting to build a functional arbitrage bot, but rather to explore how graphs could potentially be used to tackle the problem. Later on we'll discuss why our methodology is unlikely to result in actionable arbitrage. 
 
-Rather than using fiat currencies as presented in the previous post, we will examine a market of cryptocurrencies because it is much easier to acquire crypto order book data. We'll narrow down the problem further by making two more simplifications. Firstly, we will focus on arbitrage within a single exchange. That is, we'll look to see if there are pathways between different coins on an exchange which leave us with more of a coin than we started with. Secondly, we will only be considering a single snapshot of data from the exchange. Obviously markets are highly dynamic, with thousands of new bids and asks coming in each second. A proper arbitrage system needs to constantly be scanning for opportunities, but I feel that this is only tangentially related to the core goal of this post.
-
+Rather than using fiat currencies as presented in the previous post, we will examine a market of cryptocurrencies because it is much easier to acquire crypto order book data. We'll narrow down the problem further by making two more simplifications. Firstly, we will focus on arbitrage within a single exchange. That is, we'll look to see if there are pathways between different coins on an exchange which leave us with more of a coin than we started with. Secondly, we will only be considering a single snapshot of data from the exchange. Obviously markets are highly dynamic, with thousands of new bids and asks coming in each second. A proper arbitrage system needs to constantly be scanning for opportunities, but that's out of the scope of this post.
 
 With all this in mind, the overall implementation strategy was as follows:
 
@@ -294,11 +293,11 @@ Path: ['USDT', 'BAT', 'BTC', 'XRP', 'USDT']
 0.05%
 ```
 
-0.09% is not exactly a huge money, but it is still risk-free profit, right? 
+0.09% is not exactly a huge amount of money, but it is still risk-free profit, right? 
 
 ## Why wouldn't this work?
 
-Notice that we haven't mentioned exchange fees at any point. In fact, Binance charges a standard 0.1% commission on every trade. It is easy to modify our code to incorporate this, we just multiply each rate by 0.999, but we don't need to compute anything to see that we would certainly be losing much more money than gained from the arbitrage. 
+Notice that we haven't mentioned exchange fees at any point. In fact, Binance charges a standard 0.1% commission on every trade. It is easy to modify our code to incorporate this: we just multiply each exchange rate by 0.999. But we don't need to compute anything to see that we would certainly be losing much more money than gained from the arbitrage. 
 
 Secondly, it is likely that this whole analysis is flawed because of the way the data was collected. The function `download_snapshot` makes a request for each coin in sequence, taking a few seconds in total. But in these few seconds, prices may move – so really the above "arbitrage" may just be a result of our algorithm selecting some of the price movements. This could be fixed by using timestamps provided by the exchange to ensure that we are looking at the order book for each pair at the exact same moment in time.
 
