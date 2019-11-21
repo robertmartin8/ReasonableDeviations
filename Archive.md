@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Archive
+title: Blog posts
 ---
 
 {% for post in site.posts %}

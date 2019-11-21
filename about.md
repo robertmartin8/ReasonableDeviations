@@ -11,6 +11,8 @@ The best and worst thing about computers is that they do exactly what you tell t
 
 ## Get in touch
 
+*If you have a question about PyPortfolioOpt, please [raise an issue on GitHub]*
+
 <form class="wj-contact" action="https://formspree.io/{{ site.author.email }}" method="POST">
     <input type="text" name="name" placeholder="Name">    
     <input type="text" name="email" placeholder="Email Address">
