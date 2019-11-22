@@ -77,6 +77,13 @@ a:focus {
   text-decoration: underline;
 }
 
+figcaption {
+    color: #808080;
+    font-family: Arial;
+    margin-top: -0.3rem;
+    font-size: 0.8rem;
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
