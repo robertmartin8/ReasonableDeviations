@@ -3,6 +3,19 @@ layout: page
 title: Projects
 ---
 
+## PyPortfolioOpt
+
+[PyPortfolioOpt](https://github.com/robertmartin8/PyPortfolioOpt) implements financial portfolio optimisation functionality in python.  The great thing about python is that there is ostensibly a package for everything (with which you can just `import` and get going), but I have generally found that this is *not* the case for quant finance functionality. The few existing implementations out there were unintuitive and poorly documented - this project was born out of my need for a comprehensive plug-and-play portfolio optimisation library (that can also be modified by advanced users). 
+
+I have written about PyPortfolioOpt extensively elsewhere, so check out the GitHub repo for more.
+
+### Relevant links
+
+- [GitHub repo](https://github.com/robertmartin8/PyPortfolioOpt)
+- [Docs](https://pyportfolioopt.readthedocs.io/)
+- [Post: Portfolio Optimisation Lessons Learnt]({{ site.baseurl }}{% post_url 2018-09-27-lessons-portfolio-opt %})
+
+
 ### MLStocks
 
 The goal of MLStocks is to discover relationships between a stock's fundamental data and its annual performance. This, in theory, should allow us to predict whether a stock will outperform the market (S&P500). Machine learning is only a small part of this project. The most time-consuming part regarded scraping the data (rather than buying it) and cleaning it into a suitable form. A brief overview of the steps involved are as follows:
@@ -29,17 +42,15 @@ MLStocks is probably my longest running project: its first iteration began in 20
 
 <hr>
 
-## PyPortfolioOpt
+## HyperVault
 
-[PyPortfolioOpt](https://github.com/robertmartin8/PyPortfolioOpt) implements financial portfolio optimisation functionality in python.  The great thing about python is that there is ostensibly a package for everything (with which you can just `import` and get going), but I have generally found that this is *not* the case for quant finance functionality. The few existing implementations out there were unintuitive and poorly documented - this project was born out of my need for a comprehensive plug-and-play portfolio optimisation library (that can also be modified by advanced users). 
-
-I have written about PyPortfolioOpt extensibly elsewhere, so check out the GitHub repo for more.
+HyperVault is an enterprise blockchain startup dedicated to providing secure access control to sensitive documents. Think google drive, but for secrets. 
 
 ### Relevant links
 
-- [GitHub repo](https://github.com/robertmartin8/PyPortfolioOpt)
-- [Docs](https://pyportfolioopt.readthedocs.io/)
-- [Post: Portfolio Optimisation Lessons Learnt]({{ site.baseurl }}{% post_url 2018-09-27-lessons-portfolio-opt %})
+- [LinkedIn](https://www.linkedin.com/company/hypervault/)
+- [Post: What we learnt building an enterprise blockchain startup]({{ site.baseurl }}{% post_url 2019-09-01-what-we-learnt-enterprise-blockchain %})
+- 
 
 
 

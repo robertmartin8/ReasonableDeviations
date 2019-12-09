@@ -3,6 +3,10 @@ layout: page
 title: About
 ---
 
+<center>
+<img src="{{ site.imageurl }}linkedin_pic.png" style="border-radius: 50%; width: 40%"/>
+</center>
+
 My name is Robert. I am an undergraduate at the University of Cambridge studying Physical Natural Sciences (Physics, Computer Science, Mathematics, Materials Science).
 
 I am interested in finding intuitive quantitative explanations for complex phenomena, even if those intuitive explanations concede a lack of determinism. It is always nice to find order in complexity, but I think we should accept that it may very well be complex all the way down. I'm a logical person who holds rationalism dear. I have traditionally considered physics and mathematics to be my fortes, but I have been actively expanding that to computer science and finance.
@@ -11,7 +15,7 @@ The best and worst thing about computers is that they do exactly what you tell t
 
 ## Get in touch
 
-*If you have a question about PyPortfolioOpt, please [raise an issue on GitHub]*
+*If you have a question about PyPortfolioOpt, please [raise an issue on GitHub](https://github.com/robertmartin8/PyPortfolioOpt/issues)*
 
 <form class="wj-contact" action="https://formspree.io/{{ site.author.email }}" method="POST">
     <input type="text" name="name" placeholder="Name">    
@@ -51,30 +55,13 @@ Below are some of my favourite books (or short stories); I suppose there is an o
 
 ## Timeline
 
-**Right now**   
-
-Enjoying summer, interning at the London office of a large sovereign wealth fund, where I get to build cool things at the intersection of finance and tech. 
-
-**June 2019**
-
-Just finished my first year at Cambridge. What an absolute whirlwind! Lots of ups and downs, but managed to pull through and get a good grade. 
-
-**October 2018**
-
-Started at Cambridge! I spent the previous months trying to learn as much as I could about finance and statistics in the meanwhile, because I knew that I'd probably be mostly occupied with physics and maths at uni.
-
-**May 2018**
-
-Finished national service! 
-
-**January 2017**    
-Passed out from the Medical Response Force conversion course, which was 8 weeks of very tough training. MRF is a unit of specially trained combat medics who deal with chemical, biological and radiological threats. It is part of the Special Operations Taskforce, so we are expected to be operationally ready at all times. I am now a specialist, as well as a trained military driver.
-
-**July 2016**     
-Enlisted into the army. In Singapore, there are two years of compulsory national service (NS) for citizens or permanent residents (that's me). Basic Military Training was until September.
-
-**January 2016**    
-Accepted to study the Physical Natural Sciences at Christ's College Cambridge, with two years deferred entry (entry in October 2018)
-
-**November 2015**    
-Graduated from high school, having completed my International Baccalaureate with my three higher level subjects being maths, chemistry, and physics, and extended essay in maths – I scored 45 points overall.
+- **Right now**: Plodding on with second-year physics at Cambridge. Putting a lot of effort into PyPortfolioOpt and other tech ventures on the side, but time is remarkably finite.
+- **September 2019**: Interning at the London office of a large sovereign wealth fund, where I get to build cool things at the intersection of finance and tech.
+- **July 2019**: Interning at a long-only fund in Singapore. Building an alternative data analytics app in Ruby on Rails 
+- **June 2019**: Just finished my first year at Cambridge. What an absolute whirlwind! Lots of ups and downs, but managed to pull through and get a good grade. 
+- **October 2018**: Started at Cambridge! I spent the previous months trying to learn as much as I could about finance and statistics in the meanwhile, because I knew that I'd probably be mostly occupied with physics and maths at uni.
+- **May 2018**: Finished national service! 
+- **January 2017**: Passed out from the Medical Response Force conversion course, which was 8 weeks of very tough training. MRF is a unit of specially trained combat medics who deal with chemical, biological and radiological threats. It is part of the Special Operations Taskforce, so we are expected to be operationally ready at all times. I am now a specialist, as well as a trained military driver.
+- **July 2016**: Enlisted into the army. In Singapore, there are two years of compulsory national service (NS) for citizens or permanent residents (that's me). Basic Military Training was until September.
+- **January 2016**: Accepted to study the Physical Natural Sciences at Christ's College Cambridge, with two years deferred entry (entry in October 2018)
+- **November 2015**: Graduated from high school, having completed my International Baccalaureate with my three higher level subjects being maths, chemistry, and physics, and extended essay in maths – I scored 45 points overall.
