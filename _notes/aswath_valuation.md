@@ -279,8 +279,8 @@ There are some additional value factors that should be considered
 How do changes in a firm's fundamentals affect the multiple?
 
 <center>
-<caption>Driving variables for multiples</caption>
 <img src="{{ site.imageurl }}relative_valuation.png" style="width:100%;"/>
+<figcaption>Driving variables for multiples</figcaption>
 </center>
 
 **4. Apply**
