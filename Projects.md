@@ -15,6 +15,7 @@ I have written about PyPortfolioOpt extensively elsewhere, so check out the GitH
 - [Docs](https://pyportfolioopt.readthedocs.io/)
 - [Post: Portfolio Optimisation Lessons Learnt]({{ site.baseurl }}{% post_url 2018-09-27-lessons-portfolio-opt %})
 
+<hr>
 
 ### MLStocks
 
@@ -44,13 +45,16 @@ MLStocks is probably my longest running project: its first iteration began in 20
 
 ## HyperVault
 
-HyperVault is an enterprise blockchain startup dedicated to providing secure access control to sensitive documents. Think google drive, but for secrets. 
+HyperVault is an enterprise blockchain startup dedicated to providing secure access control to sensitive documents. Think google drive, but for secrets. I built HyperVault with two team-mates over the course of 6 months, during my first year at Cambridge. I worked on both the business (strategising, pitch decks) and tech aspects. The tech was rather interesting -- we used Hyperledger Fabric for the blockchain stuff and NodeJS/expressJS/nunjucks for the web app. I spent a lot of time on the frontend, which is something I normally avoid. However, our functional proof-of-concept was very well received by both technologists and VCs.
 
 ### Relevant links
 
 - [LinkedIn](https://www.linkedin.com/company/hypervault/)
 - [Post: What we learnt building an enterprise blockchain startup]({{ site.baseurl }}{% post_url 2019-09-01-what-we-learnt-enterprise-blockchain %})
-- 
 
+<hr>
 
+## HireYou
+
+HireYou is an interview preparation app specifically targeted at video interviews (run by vendors such as HireVue and Sonru). I have probably done 30+ interviews over the course of two years of applying for internships in financial services and I have found every single one of them to be quite challenging. They are extremely impersonal and allegedly reject candidates for many rather arbitrary reasons, such as not making sufficiently good eye contact *with the web camera* when talking. After my first round of internship applications, I realised that video interviews are quite a specific skill, so I decided to build a preparation app. Fortunately, this coincided with a hackathon, so I was able to build a proof-of-concept with the help of some friends. I then made significant modifications and managed to deploy it live at <https://hireyou.xyz>. Since then, I have been rebuilding the app in Django. 
 
