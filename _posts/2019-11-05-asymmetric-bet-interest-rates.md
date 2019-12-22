@@ -132,7 +132,3 @@ Unsurprisingly, the Fed decided to cut rates by 25bps, citing weak global growth
 I ended up pitching this idea, together with three other students, to a panel of managing directors at J.P. Morgan as part of an industry insight event. They were sceptical initially, but were quite intrigued once I had made it sufficiently clear that this was really a play on market expectations rather than interest rates directly. On a side note, I ended up receiving a summer internship offer at JPM for trading, so perhaps there was another dimension to this asymmetric bet...
 
 If there's anything you should take away from this post, it is this: I am certainly not claiming to know more than economists about what the Fed is going to do. What I *am* saying is that whenever the market is so sure that something is going to happen (or never going to happen!), there could be an opportunity for an asymmetric return distribution.
-
-*The full jupyter notebook can be found on my [GitHub](https://github.com/robertmartin8/RandomWalks/blob/master/VolatilityBacktesting.ipynb)*
-
-
