@@ -133,6 +133,6 @@ I ended up pitching this idea, together with three other students, to a panel of
 
 If there's anything you should take away from this post, it is this: I am certainly not claiming to know more than economists about what the Fed is going to do. What I *am* saying is that whenever the market is so sure that something is going to happen (or never going to happen!), there could be an opportunity for an asymmetric return distribution.
 
-
+*The full jupyter notebook can be found on my [GitHub](https://github.com/robertmartin8/RandomWalks/blob/master/VolatilityBacktesting.ipynb)*
 
 

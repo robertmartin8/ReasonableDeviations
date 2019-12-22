@@ -520,7 +520,7 @@ Notice how it is quite volatile: many generations have a *lower* maximum $\epsil
 
 ## Conclusion
 
-So there you have it. Using pseudo genetic algorithm, we have managed to find good linear seating arrangments given a friendship network.
+So there you have it. Using pseudo genetic algorithm, we have managed to find good linear seating arrangements given a friendship network.
 
 This problem of optimising seating arrangements actually belongs to the much broader (and actively researched) field of *combinatorial optimisation* – so it is a cousin of the famous Travelling Salesman problem, as we could interpret our investigation as trying to find the optimal route through the social network. Perhaps we could initialise many salesmen and let them evolve! Food for thought.
 
