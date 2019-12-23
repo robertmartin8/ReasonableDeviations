@@ -1,9 +1,11 @@
 ---
 layout: post
 title: Graph algorithms and currency arbitrage, part 1
+category: quant-finance
 ---
 
 Arbitrage is the holy grail for traders and the bedrock of financial academia. Let's say you are in an open marketplace with Alice selling oranges for \\$1 each and Bob buying them for \\$2. As a cunning trader, you realise you can buy an orange from Alice and immediately sell it to Bob for \\$1 of "risk-free" profit. However, as you keep reaping this \\$1 profit by buying up Alice's oranges, she raises her prices. Eventually, Alice would be charging \\$2 per orange and the arbitrage would be shut. In other words, acting on arbitrage opportunities causes the market to become more efficient, with everything as close to its fair price as possible. Because of this, the only way to profit from true arbitrage is to find and execute opportunities faster than everybody else. 
+<!--more-->
 
 Currency exchange is a natural place to search for arbitrage because there are many different pairs that we can trade. For example, assume we are able to convert GBP to USD, then USD to EUR, then EUR to AUD for an effective rate of 1:2 GBP:AUD. If we were then able to directly swap AUD back to GBP in the ratio 2:1.1, this would be an arbitrage opportunity because we end up with more GBP than we started with while taking zero risk.
 

@@ -1,8 +1,10 @@
 # Dependencies
 plugins: [jekyll-paginate]
+excerpt_separator: <!--more-->
+categories: "quant-finance|finance|maths|physics|blockchain|programming|machine-learning"
 
 # Permalinks
-permalink:        pretty
+permalink:        /:year/:month/:day/:title/
 
 
 # Setup
@@ -30,7 +32,7 @@ social:
     linkedin: https://www.linkedin.com/in/robert-a-martin/
 
 # Structure
-paginate:         3
+paginate:         10
 
 collections:
   notes:

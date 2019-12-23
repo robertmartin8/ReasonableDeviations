@@ -1,24 +1,18 @@
 ---
 layout: post
 title: Retrieving historical stock prices from Yahoo Finance with no API 
+category: quant-finance
 ---
 
-***Update as of 10/2/18**: there is now a [library on GitHub](https://github.com/ranaroussi/fix-yahoo-finance) that puts this post to shame, with a direct pandas-datareader interface. I will leave this post up for legacy, but for any serious implementations, I wholeheartedly recommend the aforementioned tool.*
-
-**Update as of 20/5/18**: it seems that `fix-yahoo-finance` is becoming very inconsistent. So I guess this post does have some utility after all!
-<br/>
-
-Yahoo Finance has long been an excellent free financial resource with a wealth of data and a convenient API, allowing open source programming libraries to access stock data. 
-
-But not any more. As of May 2017, they have [discontinued their API](https://forums.yahoo.net/t5/Yahoo-Finance-help/Is-Yahoo-Finance-API-broken/td-p/250503), probably as a result of Yahoo's pending acquisition by Verizon. This means that excellent tools like `pandas-datareader` are now broken, much to the dismay of many amateur algorithmic traders or analysts. 
-
-Of course, you could move to another free data source like Google Finance, but that personally wasn't a very attractive option for me, since Yahoo Finance's adjusted closing prices seem to be more accurate, taking into account dividends as well as stock splits. 
-
-I needed a simple way to download historical daily adjusted closing prices for every ticker in a list of tickers, from Yahoo Finance. The data is definitely there, it's just a question of whether we can acquire it.
+Yahoo Finance has long been an excellent free financial resource with a wealth of data and a convenient API, allowing open source programming libraries to access stock data. But not any more. As of May 2017, they have [discontinued their API](https://forums.yahoo.net/t5/Yahoo-Finance-help/Is-Yahoo-Finance-API-broken/td-p/250503), probably as a result of Yahoo's pending acquisition by Verizon. This means that excellent tools like `pandas-datareader` are now broken, much to the dismay of many amateur algorithmic traders or analysts. Of course, you could move to another free data source like Google Finance, but that personally wasn't a very attractive option for me. I needed a simple way to download historical daily adjusted closing prices for every ticker in a list of tickers, from Yahoo Finance. The data is definitely there, it's just a question of whether we can acquire it.<!--more-->
 
 It turns out that there is a rather hackish workaround which allows us to download the data as CSV (i.e spreadsheet) files, which of course can then be read into excel, pandas dataframes etc. 
 
 Just a legal disclaimer. This method involves making a large number of requests on Yahoo Finance, which may 'look like' a DDOS. Clearly, I am not trying to conduct a DDOS – I am merely trying to parse data for educational purposes. I am not responsible for how you use the methods demonstrated in this post. 
+
+***Update as of 10/2/18**: there is now a [library on GitHub](https://github.com/ranaroussi/fix-yahoo-finance) that puts this post to shame, with a direct pandas-datareader interface. I will leave this post up for legacy, but for any serious implementations, I wholeheartedly recommend the aforementioned tool.*
+
+***Update as of 20/5/18**: it seems that `fix-yahoo-finance` is becoming very inconsistent. So I guess this post does have some utility after all!*
 
 
 ## Overview

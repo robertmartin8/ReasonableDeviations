@@ -1,9 +1,11 @@
 ---
 layout: post
 title: DIY MachineLearningStocks
+category: machine-learning
 ---
 
 I recently released a machine learning stock prediction project [on GitHub](https://github.com/robertmartin8/MachineLearningStocks), unimaginatively named **MachineLearningStocks**. It is a project that I've put quite a lot of time into, and is in fact a simplified version of a system that I've been using to live trade. This post doesn't really offer anything on top of the existing readme, but I figured it would be good to have a copy (with some minor changes) here as well. 
+<!--more-->
 
 MachineLearningStocks is designed to be an intuitive and highly extensible template project applying machine learning to making stock predictions. My hope is that the project will help readers to not only understand the overall workflow of using machine learning to predict stock movements, but also to appreciate some of the many subtleties. I've also provided a long list of possible improvements you could make, or ideas for moving forward, to put some spice into the vanilla project. 
 

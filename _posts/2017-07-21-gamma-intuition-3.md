@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Intuiting the gamma function, part 3
+category: maths
+excerpt: "We now pick up where we left off and fully elucidate the link between the factorial and the gamma function"
 ---
 
 ## The gamma function as a superset of the traditional factorial

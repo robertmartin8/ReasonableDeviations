@@ -1,11 +1,10 @@
 ---
 layout: post
 title: The Leibniz integral rule in electrodynamics
+category: physics
 ---
 
-I have been slowly working through David Griffith's widely-used textbook, *Introduction to Electrodynamics*. It is known for having a large number of reasonably difficult exercises, which are instrumental in conveying some concepts not directly addressed in the main text.
-
-I found an elegant shortcut to one of the questions, which was not noted in the solution manual. The shortcut involves (ab)using a very versatile, if slightly overlooked theorem in calculus – the **Leibniz integral rule**. I will briefly discuss this, before working through the problem. 
+I have been slowly working through David Griffith's widely-used textbook, *Introduction to Electrodynamics*. It is known for having a large number of reasonably difficult exercises, which are instrumental in conveying some concepts not directly addressed in the main text. I found an elegant shortcut to one of the questions, which was not noted in the solution manual. The shortcut involves (ab)using a very versatile, if slightly overlooked theorem in calculus – the **Leibniz integral rule**. I will briefly discuss this, before working through the problem. <!--more-->
 
 ## The Leibniz integral rule
 

@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Classifying financial time series using Discrete Fourier Transforms
+category: quant-finance
 ---
 
-## Introduction
-
 A financial time series represents the collective decisions of many individual traders; it seems reasonable to me that the nature of these decisions may differ based on the underlying asset. For example, a company with a higher market cap may be more liquid, and subject to larger individual buy/sell orders including institutional investment.  Thus, there is a case to be made that information such as the market cap of a company should be 'encoded' into its price movements. While these characteristics may be difficult to pinpoint on a chart, in principle it may be possible for a machine learning algorithm to find statistical relationships between the time series and the market cap of the company. This post will investigate that claim.
+<!--more-->
 
 Concretely, a raw dataset will be constructed, consisting of 100-day price charts which belong to companies that are respectively in the top and bottom 1000 tickers in the Russell 3000 ordered by market cap. We will then run feature extraction (which is the core of this post), before applying a standard XGBoost classifier. 
 

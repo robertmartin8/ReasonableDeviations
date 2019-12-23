@@ -1,9 +1,11 @@
 ---
 layout: post
 title: Evolving cellular automata to solve problems, part 2
+category: programming
 ---
 
 We will be picking up where the [previous post]({{ site.baseurl }}{% post_url 2018-05-25-evolving-cellular-automata %}) left off. As a brief summary, we are attempting to replicate the results of [*Evolving Cellular Automata with Genetic Algorithms*]({{ site.url }}/notes/papers/evolving_cellular_automata) (Mitchell, Crutchfield and Das 1996), dealing with the density classification task for 1D binary cellular automata (CAs). To put it simply, we are trying to design a ruleset such that the final configuration of a cellular automaton after *M* iterations is either all 1s or all 0s depending on which class was more common in the initial state. The caveat is that each cell in the universe can only make its decision based on the three neighbours to the left and right. 
+<!--more-->
 
 We examined the failures of the majority ruleset, an 'obvious' solution in which each cell updates to the local majority among its neighbourhood, and thus see the need for something more sophisticated. At the same time, we saw that the space of possible solutions is in the order of $10^{38}$, meaning that any kind of brute force method will not be feasible. This invites the use of **genetic algorithms** (GAs), with which we could evolve a CA to perform this task without ever explicitly devising a ruleset.
 
