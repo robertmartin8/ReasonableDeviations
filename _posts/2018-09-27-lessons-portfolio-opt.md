@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "Portfolio optimisation: lessons learnt"
+category: quant-finance
 ---
 
 Over the past few months I have been busy doing a mixture of blockchain consulting and quantitative finance work for a couple of companies in South East Asia. In particular, I have had the opportunity to investigate the interesting problem of portfolio management for cryptoassets – it was not my first experience with portfolio optimisation, having implemented efficient frontier portfolios at a roboadvisor startup, but this time I took the opportunity to do a deep dive into the subject.  
+<!--more-->
 
 Though I am not an expert, I do believe I am at the stage where I can do a kind of write-up, recounting some of the things I've learnt along the way. A lot of my experience has been baked into [PyPortfolioOpt](https://github.com/robertmartin8/PyPortfolioOpt), a comprehensive portfolio optimisation package which I recently revamped, but this post will act as an informal guidebook for those interested in pursing the subject.
 

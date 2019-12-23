@@ -1,11 +1,10 @@
 ---
 layout: post
 title: Intuiting the gamma function, part 2
+category: maths
 ---
 
-## (Repeated) Integration by parts
-
-In [Part 1]({{ site.baseurl }}{% post_url 2017-07-11-gamma-function-intuition %}), we showed that repeated differentiation gives rise to a factorial. In this second post of *Intuiting the gamma function*, we are going to show that integration by parts can also produce a factorial – an instrumental step in generalising the idea of a factorial to non-integers.
+In [Part 1]({{ site.baseurl }}{% post_url 2017-07-11-gamma-function-intuition %}), we showed that repeated differentiation gives rise to a factorial. In this second post of *Intuiting the gamma function*, we are going to show that integration by parts can also produce a factorial – an instrumental step in generalising the idea of a factorial to non-integers.<!--more-->
 
 Just a couple of minor points regarding the presentation of this post. I will abbreviate 'integration by parts' to IBP, since we will be mentioning it rather often. I will also consistently exclude the constant of integration, because it is just clutter.
 

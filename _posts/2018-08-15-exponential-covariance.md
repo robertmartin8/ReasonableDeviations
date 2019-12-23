@@ -1,13 +1,12 @@
 ---
 layout: post
 title: Exponential Covariance
+category: quant-finance
 ---
 
-For the past few months, I have been doing a lot of research into portfolio optimisation, whose main task can be summarised as follows:
+For the past few months, I have been doing a lot of research into portfolio optimisation, whose main task can be summarised as follows: is there a way of combining a set of risky assets to produce superior risk-adjusted returns compared to a market-cap weighted benchmark?
+The answer of Markowitz (1952) is in the affirmative, with some major caveats. Given the expected returns and the covariance matrix (which encodes asset volatilities and correlations), one can find the combination of asset weights which maximises the Sharpe ratio. But because we don't know the expected returns or future covariance matrix a priori, we commonly replace these with the mean historical return and sample covariance matrix. The problem is that these are very noisy estimators (especially the mean return), so much so that a significant body of research suggests that a naive diversification strategy (giving each asset equal weight) outperforms most weighting schemes. However, work by [Kritzman, Page and Turkington (2010)]({{ site.url }}/notes/papers/defense_optimisation) affirms the intuition that there must be some information in the sample covariance matrix; accordingly, they observe that minimum variance portfolios can beat 1/N diversification. <!--more-->
 
-**Is there a way of combining a set of risky assets to produce superior risk-adjusted returns compared to a market-cap weighted benchmark?**
- 
-The answer of Markowitz (1952) is in the affirmative, with some major caveats. Given the expected returns and the covariance matrix (which encodes asset volatilities and correlations), one can find the combination of asset weights which maximises the Sharpe ratio. But because we don't know the expected returns or future covariance matrix a priori, we commonly replace these with the mean historical return and sample covariance matrix. The problem is that these are very noisy estimators (especially the mean return), so much so that a significant body of research suggests that a naive diversification strategy (giving each asset equal weight) outperforms most weighting schemes. However, work by [Kritzman, Page and Turkington (2010)]({{ site.url }}/notes/papers/defense_optimisation) affirms the intuition that there must be some information in the sample covariance matrix; accordingly, they observe that minimum variance portfolios can beat 1/N diversification.
 
 In my own research, I have found this to be true. Minimum variance optimisation and its variants (no pun intended) can significantly outperform both 1/N diversification and a market-cap weighted benchmark. The nice thing about minimum variance optimisation is that success largely depends on how well you can estimate the covariance matrix, which is easier than estimating future returns. The most common methods are
 

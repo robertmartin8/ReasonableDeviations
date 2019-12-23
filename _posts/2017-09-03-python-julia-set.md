@@ -1,10 +1,11 @@
 ---
 layout: post
 title: 8-bit Julia set art in python
+category: programming
 ---
 
 You may have heard a mathematician or physicist (or more likely your maths teacher) describe mathematics as *beautiful*. What could they mean by this? There is just something mysteriously attractive about the purity, complexity, interconnectedness, and underlying truth of it all ("Beauty is truth, 
-truth beauty" - Keats). I can't really say more than that, so I will leave you with a quote from the 'man who loved only numbers':
+truth beauty" - Keats). <!--more-->I can't really say more than that, so I will leave you with a quote from the 'man who loved only numbers':
 
 > It’s like asking why is Ludwig van Beethoven’s Ninth Symphony beautiful. If you don't see why, someone can't tell you. I know numbers are beautiful. If they aren't beautiful, nothing is. - Paul &#69;&#114;&#100;&#337;&#115;
 

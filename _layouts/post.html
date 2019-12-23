@@ -5,18 +5,41 @@ layout: default
 <div class="post">
   <h1 align="center" class="post-title">{{ page.title }}</h1>
   
- {% include post_date_read_time.html %}
-
+  <div>
+      {% include post_date_read_time.html %}
+      &emsp;
+       <span style="display:inline">[
+           {% capture category_name %}{{ page.category }}{% endcapture %}
+           <a href="/category/{{ category_name }}">{{ category_name }}</a>
+       ]</span>
+  </div>
+  <br>
   {{ content }}
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
+
+    {% assign nSameTag = site.categories[page.category].size | minus: 1 %}
+    {% assign nRelated = 3 | minus: nSameTag %}
+    {% for post in site.categories[page.category] limit:4 %}
+        {% unless post.url == page.url %}
+            <li>
+              <h3>
+                <a href="{{ post.url }}">
+                  {{ post.title }}
+                  <small>{{ post.date | date_to_string }}</small>
+                </a>
+              </h3>
+            </li>
+        {% endunless %}
+    {% endfor %}
+    
+    {% for post in site.related_posts limit:nRelated %}
       <li>
         <h3>
-          <a href="{{ site.baseurl | truncate: 21, ""}}{{ post.url }}">
+          <a href="{{ post.url }}">
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>

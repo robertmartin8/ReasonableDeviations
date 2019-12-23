@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Creating a stock price database with MariaDB and python
+category: quant-finance
 ---
 
-## Introduction
-
-For those of you who have seen some of my other posts, you will know that I am very interested in machine learning and its application to predicting stock movements. As part of this hobby, I've spent many more hours parsing and processing data than I have actually applying machine learning. I've worked broadly with two datasets in particular: historical financial statistics (e.g P/E ratio, price/book) make up the features that my algorithms learn from, but the actual backbone of any strategy is historical price data. 
+For those of you who have seen some of my other posts, you will know that I am very interested in machine learning and its application to predicting stock movements. As part of this hobby, I've spent many more hours parsing and processing data than I have actually applying machine learning. I've worked broadly with two datasets in particular: historical financial statistics (e.g P/E ratio, price/book) make up the features that my algorithms learn from, but the actual backbone of any strategy is historical price data.
+<!--more--> 
 
 My main data source has been Yahoo Finance. Although they've deprecated their official API, they do still have the same data on their website, meaning that it can be scraped if you can be bothered. I discovered a crude but functional way of doing this (detailed in this [post]({{ site.baseurl }}{% post_url 2017-07-30-yahoo-historical-prices %})), but then discovered an extremely convenient [python library](https://github.com/ranaroussi/fix-yahoo-finance) that does the same thing much more efficiently, with a direct pandas-datareader interface. 
 

@@ -1,11 +1,13 @@
 ---
 layout: post
 title: Gradient tree boosting and XGBoost
+category: machine-learning
 ---
 
 Decision trees make for pretty vanilla classifiers: they do an unspectacular job with most machine learning tasks, and you'd be forgiven for overlooking them when deciding on a classification algorithm. 
 
 But decision trees happen to be the cornerstone of a powerful class of learning algorithms: *gradient tree boosting* methods. I will try to elucidate the (short) history of gradient tree boosting, starting with the pioneering implementation of boosted trees and ending with the state-of-the-art. I'm afraid there will be a hearty amount of mathematics, but it is really a very intuitive topic at its core.
+<!--more-->
 
 Note that I will *not* be covering the actual functioning of decision trees; for that, you may either refer to [my notes]({{ site.url }}/notes/papers/induction_decision_trees) on the original paper, or to the excellent [Wikipedia page](https://en.wikipedia.org/wiki/Decision_tree_learning). 
 

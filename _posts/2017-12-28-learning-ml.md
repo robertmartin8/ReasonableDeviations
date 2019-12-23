@@ -1,9 +1,10 @@
 ---
 layout: post
 title: Learning Machine Learning
+category: machine-learning
 ---
 
-Two years ago I was an absolute novice at machine learning: I had read around the subject a little bit, could probably rattle off a few of the buzzwords, and had some appreciation of the general idea, but there was no way I could have developed a predictive model beyond linear regression. I was somewhere near the peak of Mount Stupid (from a great chart by [SMBC](https://www.smbc-comics.com/?id=2475)):
+Two years ago I was an absolute novice at machine learning: I had read around the subject a little bit, could probably rattle off a few of the buzzwords, and had some appreciation of the general idea, but there was no way I could have developed a predictive model beyond linear regression.<!--more--> I was somewhere near the peak of Mount Stupid (from a great chart by [SMBC](https://www.smbc-comics.com/?id=2475)):
 
 <center>
 <img src="{{ site.imageurl }}/mt_stupid.png" style="width:400px;"/>

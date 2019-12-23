@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "Implementing k-means clustering from scratch in C++"
+category: programming
 ---
 
 I have a somewhat complicated history when it comes to C++. When I was 15 and teaching myself to code, I couldn't decide between python and C++ and as a result tried to learn both at the same time. One of my first non-trivial projects was a C++ program to compute orbits -- looking back on it now, I can see that what I was actually doing was a (horrifically inefficient) implementation of Euler's method. I just couldn't wrap my head around fixed-size arrays (not to mention pointers!). In any case, I soon realised that juggling C++ and python was untenable -- not only was I new to the concepts (such as type systems and OOP), I was having to learn two sets of syntax in addition to two flavours of these concepts. I decided to commit to python and haven't really looked back since.
+<!--more-->
 
 Now, almost 6 years later (tempus fugit!), having completed the first-year computer science course at Cambridge, I feel like I am in a much better place to have a proper go at C++. My motivation is helped by the fact that all of the second-year computational practicals for physics are done in C++, not to mention that C++ is incredibly useful in quantitative finance (which I am deeply interested in). 
 

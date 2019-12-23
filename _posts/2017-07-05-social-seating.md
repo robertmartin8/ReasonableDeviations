@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Combinatorial optimisation with a pseudo-genetic algorithm
+category: programming
 ---
 
-## or XKCD's Social Seating problem: a python approach
+**a python approach to XKCD's Social Seating problem**
 
 <center>
 <img src="{{ site.imageurl }}movie_seating.png" style="width:400px;"/>
 </center>
+<!--more-->
 
 Social groups are remarkably complex affairs, and on many occasions this complexity can lead to awkward situations. Randall Munroe humorously portrays one such example in XKCD #173. This comic naturally begs the question – how *do* we find the optimal linear seating arrangement for a given social group?
 

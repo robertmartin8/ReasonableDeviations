@@ -1,11 +1,10 @@
 ---
 layout: post
 title: The Cambridge Natural Sciences Interview
+category: physics
 ---
 
-In December 2015, just after finishing my IB exams, I went to Cambridge for my (Physical) Natural Sciences Interview. The interview has a reputation for being incredibly demanding and intense, and you've probably seen on the internet some of the 'crazy' questions that people get asked. 
-
-Although it is definitely stressful, the Cambridge interview is almost purely academic (and quite reasonable). So without further ado, these are the questions I was asked, along with my thoughts at the time and the interviewer's reactions. 
+In December 2015, just after finishing my IB exams, I went to Cambridge for my (Physical) Natural Sciences Interview. The interview has a reputation for being incredibly demanding and intense, and you've probably seen on the internet some of the 'crazy' questions that people get asked. Although it is definitely stressful, the Cambridge interview is almost purely academic (and quite reasonable). So without further ado, these are the questions I was asked, along with my thoughts at the time and the interviewer's reactions. <!--more-->
 
 
 ## Interview 1 -- physics and chemistry

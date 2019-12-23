@@ -1,9 +1,11 @@
 ---
 layout: post
 title: Graph algorithms and currency arbitrage, part 2
+category: quant-finance
 ---
 
 In the [previous post]({{ site.baseurl }}{% post_url 2019-03-02-currency-arbitrage-graphs %}) (which should definitely be read first!) we explored how graphs can be used to represent a currency market, and how we might use shortest-path algorithms to discover arbitrage opportunities. Today, we will apply this to real-world data. It should be noted that we are not attempting to build a functional arbitrage bot, but rather to explore how graphs could potentially be used to tackle the problem. Later on we'll discuss why our methodology is unlikely to result in actionable arbitrage. 
+<!--more-->
 
 Rather than using fiat currencies as presented in the previous post, we will examine a market of cryptocurrencies because it is much easier to acquire crypto order book data. We'll narrow down the problem further by making two more simplifications. Firstly, we will focus on arbitrage within a single exchange. That is, we'll look to see if there are pathways between different coins on an exchange which leave us with more of a coin than we started with. Secondly, we will only be considering a single snapshot of data from the exchange. Obviously markets are highly dynamic, with thousands of new bids and asks coming in each second. A proper arbitrage system needs to constantly be scanning for opportunities, but that's out of the scope of this post.
 

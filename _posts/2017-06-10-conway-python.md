@@ -1,9 +1,11 @@
 ---
 layout: post
 title: Conway's Game of Life in python
+category: programming
 ---
 
 In this short post, I explain how to implement Conway's Game of Life in python, using numpy arrays and matplotlib animations. I emphasise intuitive code than performance, so it could be a useful starting point for somebody to understand the logic before implementing a more efficient version.
+<!--more-->
 
 
 ## Cellular automata

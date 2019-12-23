@@ -4,20 +4,31 @@ title: Home
 ---
 
 <div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 align="center" class="post-title">
-      <a href="{{ site.baseurl | truncate: 21, "" }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-    <span align="right" class="post-date" title="Estimated read time">
-        {{ post.date | date_to_string }} &middot; 
-         {% assign words = post.content | number_of_words %}{{ words | divided_by:200 }} min read</span>
-    {{ post.content }}
-  </div>
-<hr />
-  {% endfor %}
+    {% for post in paginator.posts %}
+    <div class="post">
+      <h1 align="center" class="post-title">
+        <a href="{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h1>
+      <!-- Metadata -->
+      <div>
+          <span style="display: inline" class="post-date" title="Estimated read time">
+              {{ post.date | date_to_string }} &middot; 
+               {% assign words = post.content | number_of_words %}{{ words | divided_by:200 }} min read
+           </span>
+           &emsp;
+           <span style="display:inline">[
+               {% capture category_name %}{{ post.category }}{% endcapture %}
+               <a href="/category/{{ category_name }}">{{ category_name}}</a>
+           ]</span>
+      </div>
+      <br>
+      {{ post.excerpt }} 
+      
+      <a href="{{ post.url }}">Read more...</a>
+    </div>
+    {% endfor %}
 </div>
 
 <div class="pagination">
