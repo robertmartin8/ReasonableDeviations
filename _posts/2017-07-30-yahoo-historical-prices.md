@@ -4,9 +4,8 @@ title: Retrieving historical stock prices from Yahoo Finance with no API
 category: quant-finance
 ---
 
-Yahoo Finance has long been an excellent free financial resource with a wealth of data and a convenient API, allowing open source programming libraries to access stock data. But not any more. As of May 2017, they have [discontinued their API](https://forums.yahoo.net/t5/Yahoo-Finance-help/Is-Yahoo-Finance-API-broken/td-p/250503), probably as a result of Yahoo's pending acquisition by Verizon. This means that excellent tools like `pandas-datareader` are now broken, much to the dismay of many amateur algorithmic traders or analysts. Of course, you could move to another free data source like Google Finance, but that personally wasn't a very attractive option for me. I needed a simple way to download historical daily adjusted closing prices for every ticker in a list of tickers, from Yahoo Finance. The data is definitely there, it's just a question of whether we can acquire it.<!--more-->
-
-It turns out that there is a rather hackish workaround which allows us to download the data as CSV (i.e spreadsheet) files, which of course can then be read into excel, pandas dataframes etc. 
+Yahoo Finance has long been an excellent free financial resource with a wealth of data and a convenient API, allowing open source programming libraries to access stock data. But not any more. As of May 2017, they have [discontinued their API](https://forums.yahoo.net/t5/Yahoo-Finance-help/Is-Yahoo-Finance-API-broken/td-p/250503), probably as a result of Yahoo's pending acquisition by Verizon. This means that excellent tools like `pandas-datareader` are now broken, much to the dismay of many amateur algorithmic traders or analysts. It turns out that there is a rather hackish workaround which allows us to download the data as CSV (i.e spreadsheet) files, which of course can then be read into excel, pandas dataframes etc.
+<!--more-->
 
 Just a legal disclaimer. This method involves making a large number of requests on Yahoo Finance, which may 'look like' a DDOS. Clearly, I am not trying to conduct a DDOS – I am merely trying to parse data for educational purposes. I am not responsible for how you use the methods demonstrated in this post. 
 
@@ -14,6 +13,7 @@ Just a legal disclaimer. This method involves making a large number of requests 
 
 ***Update as of 20/5/18**: it seems that `fix-yahoo-finance` is becoming very inconsistent. So I guess this post does have some utility after all!*
 
+***Update as of 9/1/20**: looking back on this post, I don't think my solution is very good. A much better way would be to use `requests` directly and parse the csv bytes, instead of physically downloading files moving them.*
 
 ## Overview
 

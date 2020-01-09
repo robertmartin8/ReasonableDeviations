@@ -55,7 +55,7 @@ Once all transaction costs have been included, you may find that it can be diffi
 
 ## 5. Overfitting
 
-One thing that I respect a lot about machine learning education is that they are fundamentally honest about one of the major issues in the subject: overfitting. Essentially, it is possible to encourage most classifiers to wiggle their decision boundary to accommodate all of the training examples at the cost of generalisation ability. This is done by adjusting the hyperparameters (which do things like specify learning rates) and seeing which ones perform better. Hyperparameter tuning is not a bad thing, but it must be done responsibly lest we simply choose the best parameters that fit the particular train/test setup.
+One thing that I respect a lot about machine learning educators is that they are fundamentally honest about one of the major issues in the subject: overfitting. Essentially, it is possible to encourage most classifiers to wiggle their decision boundary to accommodate all of the training examples at the cost of generalisation ability. This is done by adjusting the hyperparameters (which do things like specify learning rates) and seeing which ones perform better. Hyperparameter tuning is not a bad thing, but it must be done responsibly lest we simply choose the best parameters that fit the particular train/test setup.
 
 When it comes to standard portfolio optimisation, one doesn't really have to worry about this because there aren't any hyperparameters. However, once you start adding different terms to the cost function (each scaled by some parameter), things get a little bit more complicated. For example, let us consider the simple example of minimum variance optimsiation with an L2 regularisation term. 
 

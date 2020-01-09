@@ -17,6 +17,8 @@ If you're not a fan of people trying to logically dissect non-mathematical thing
 
 The precise problem here is that the nonlinear 'social graph' has to be compressed onto a linear arrangement, which, as the comic points out, is computationally hard. Nevertheless, we will attempt to find a good arrangement (not necessarily the optimal one) by using a genetic algorithm of sorts. But before that, we must firstly quantify the various parameters in this problem.
 
+*Edit as of Jan 2020: reading back on some of my old posts, I typically realise that many of my solutions are excessively convoluted or poorly-explained. This post is no exception. One particular highlight is my rediscovery of adjacency matrices!*
+
 ## Contents
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
@@ -181,6 +183,7 @@ Let's calculate the $\epsilon_\text{total}$ of a random arrangement. I'll choose
 
 ```python
 def random_arrangement():
+	# please note that this is a joke
     return [3, 2, 8, 5, 4, 6, 1, 7]
 ```
 

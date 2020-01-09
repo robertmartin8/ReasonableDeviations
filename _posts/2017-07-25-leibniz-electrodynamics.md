@@ -12,7 +12,7 @@ The Leibniz rule concerns derivatives of integrals; the most basic form is as fo
 
 $$\frac{d}{dx} \left( \int_a^b f(x,t) dt  \right) = \int_a^b \frac{\partial}{\partial x} f(x,t) dt$$
 
-This can be proven by letting $I(x) = \int_a^b f(x,t) dt$, then using the definition of the derivative to evaluate $I'(x)$, which will be left as an exercise for the reader (ha).  However I hope you can get an intuitive feel for this: the integral measures the total variation with respect to $t$, whereas the derivative measures the rate of change with respect to $x$, so it makes sense that the order of operation doesn't really matter. 
+This can be proven by letting $I(x) = \int_a^b f(x,t) dt$, then using the definition of the derivative to evaluate $I'(x)$, which will be left as an exercise for the reader.  However I hope you can get an intuitive feel for this: the integral measures the total variation with respect to $t$, whereas the derivative measures the rate of change with respect to $x$, so it makes sense that the order of operation doesn't really matter. 
 
 A slightly more general version concerns the case where the limits of the integral are variable:
 
@@ -141,7 +141,7 @@ $$\begin{align*}
 \end{align*}$$
 
 Intuitively, there is some kind of 'cancellation' between the differentiation and integration, so we simply 
-substitute the limits into the integrand (and multiply by the derivative of the limit since it is not constant), then subtract. In this case it is even simpler because the derivatives of the limits are one:
+substitute the limits into the integrand (and multiply by the derivative of the limit since it is not constant), then subtract. In this case it is even simpler because the derivatives of the limits are unity:
 
 $$\mathbf{E} = \frac{\rho}{2\epsilon_0} \left[L + \sqrt{R^2 + (z-L/2)^2} - \sqrt{R^2 + 
 (z+L/2)^2} \right] \mathbf{\hat{z}} $$

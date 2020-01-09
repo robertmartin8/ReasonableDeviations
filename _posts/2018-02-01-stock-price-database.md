@@ -2,6 +2,7 @@
 layout: post
 title: Creating a stock price database with MariaDB and python
 category: quant-finance
+excerpt: "In this post, I describe my thought process in designing a simple relational database to store historical OHLCV for equities, including why I chose MariaDB and code for populating the database."
 ---
 
 For those of you who have seen some of my other posts, you will know that I am very interested in machine learning and its application to predicting stock movements. As part of this hobby, I've spent many more hours parsing and processing data than I have actually applying machine learning. I've worked broadly with two datasets in particular: historical financial statistics (e.g P/E ratio, price/book) make up the features that my algorithms learn from, but the actual backbone of any strategy is historical price data.

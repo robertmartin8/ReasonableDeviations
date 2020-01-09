@@ -38,7 +38,7 @@ where $c$ and $z$ are complex numbers. To get from this equation to an image, we
 Perhaps I have botched the explanation, but in essence, we count how many iterations of the above 
 formula are required to increase $|z|$ beyond a certain bound, and colour accordingly. This is a remarkably simple procedure, and is rather easy to implement in python. 
 
-## Python produces art!
+## Python produces art
 
 We will start by importing the necessary libraries. We need `numpy` for array manipulations, and `matplotlib` to produce our graphs (or art, if you prefer). 
 
@@ -148,7 +148,7 @@ def julia_set(c):
 
 Running the code for $c = -0.1 - 0.65i$ gives the image at the top of this post. 
 
-## Te toca a ti
+## Your turn
 
 It is rather fun to play around with the different $c$ values. Here is a quick animation I made, using an adaptation of the above code:
 

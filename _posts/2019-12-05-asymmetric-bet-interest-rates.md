@@ -2,10 +2,11 @@
 layout: post
 title: An asymmetric bet on interest rates
 category: finance 
+excerpt: "In this post, we discuss how asymmetric bets can be evaluated with the expected value. Following this, I argue that the market was overestimating the probability of a rate cut in July 2019 and examine how the inherent asymmetry of the situation can set the stage for a profitable macro bet."
 ---
 
 In a classic scene of *No Country For Old Men*, Javier Bardem's character ominously asks a shopkeeper: "what's the most you ever lost on a coin toss?". The shopkeeper says that he doesn't know -- this is probably quite a reasonable response given that for a fair coin, one has little reason to make a bet since your expected value (EV) is zero. Yet retail investors seem to make coin-toss bets all the time: they conclude that based on their analysis, a certain stock is a buy (i.e it has positive expected value). But they often forget to account for *model risk* -- the risk that their analysis itself is faulty. 
-<!--more-->
+
 
 There is plenty of research to show that in actual fact, the buy/sell decisions of (retail) investors may as well be coin flips. Steve Cohen, the legendary hedge-fund manager, points out that his best portfolio managers get the direction of stock movement right only 56% of the time. However, the key to their success is the **asymmetric payoff** (technically speaking, the *skew*). Namely, when they are right, they ride the stock up to significant gains, but when they are wrong they are quick to cut losses. Let's assume that whenever they are right, the stock goes up 30%, but if the stock is going down they will cut their losses at 5%. The EV is then calculated as follows:
 
