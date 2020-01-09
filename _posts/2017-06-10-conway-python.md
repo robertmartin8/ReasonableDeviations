@@ -193,9 +193,7 @@ In principle, we are done. Now it is up to you to experiment with different seed
 <img src="{{ site.imageurl }}conway/Rpentomino.png" style="width:300px;"/>
 </center>
 
-Perhaps you’d expect its behaviour to be vaguely similar to that of the beacon. But the wonderful thing about Life is that…
-
-See for yourself.
+Perhaps you’d expect its behaviour to be vaguely similar to that of the beacon. But the wonderful thing about Life is the dazzling complexity that can result from a simple seed. See for yourself:
 
 <center>
 <img src="{{ site.imageurl }}conway/rpentomino.gif" style="width:400px;"/>

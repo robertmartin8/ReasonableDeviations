@@ -2,6 +2,7 @@
 layout: post
 title: Learning Machine Learning
 category: machine-learning
+excerpt: "In this post, I present my opinion to a question I frequently get asked: how do I get started with machine learning?"
 ---
 
 Two years ago I was an absolute novice at machine learning: I had read around the subject a little bit, could probably rattle off a few of the buzzwords, and had some appreciation of the general idea, but there was no way I could have developed a predictive model beyond linear regression.<!--more--> I was somewhere near the peak of Mount Stupid (from a great chart by [SMBC](https://www.smbc-comics.com/?id=2475)):
@@ -10,7 +11,7 @@ Two years ago I was an absolute novice at machine learning: I had read around th
 <img src="{{ site.imageurl }}/mt_stupid.png" style="width:400px;"/>
 </center>
 
-Fast forward to the present day -- I'm just about escaping the local minimum on the other side. Although I definitely wouldn't claim anything close to mastery of the subject, a few months ago I took a step back to look at my progress and realised that I was definitely not a beginner any longer: I had built a couple of extensive projects, created some educational resources, and even written a journal article (unpublished as of now) applying ML. I therefore think that I am in a reasonable place to share the mistakes I made when learning ML, so that other people don't have to make them!
+Fast forward to the present day -- I'm just about escaping the local minimum on the other side. Although I definitely wouldn't claim anything close to mastery of the subject, a few months ago I took a step back to look at my progress and realised that I was definitely not a beginner any longer: I had built a couple of extensive projects, created some educational resources, and started applying machine learning models to my professional work. I therefore think that I am in a reasonable place to share the mistakes I made when learning ML, so that other people don't have to make them!
 
 It is worth noting that two years is a very long time; I was far too occupied (with the army, among other things) to commit fully to machine learning, but I think that most people could achieve near-mastery in 6 months if they so pleased. 
 
