@@ -6,8 +6,6 @@ title: Revision notes
 Over the course of my studies, I have amassed a large quantity of notes and summaries. Over time, I will try to upload as many as possible – it'd be nice if they were all in one place.
 
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:0 orderedList:0 -->
-
 - **Cambridge Natural Sciences**
 	- [IA Materials Science]({{ site.url }}/notes/IA_materials_science)
 	- [IA Physics]({{ site.url }}/notes/IA_physics)
@@ -19,6 +17,12 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 		- [Data Structures]({{ site.url }}/notes/DataStructures)
 		- [Numerical Analysis]({{ site.imageurl }}../notes/1A_numanalys.pdf)
 	- [IA Maths]({{ site.imageurl }}../notes/1A_maths.pdf)
+- **Online courses**
+	- [Bitcoin and Cryptocurrencies – Princeton]({{ site.url }}/notes/princeton_bitcoin) 
+	- [Quantopian Lecture Series on Quantitative Finance]({{ site.url }}/notes/quantopian_lectures).
+	- [Valuation – Aswath Damodaran]({{ site.url }}/notes/aswath_valuation)
+	- [Game Theory – Yale (Econ 159)]({{ site.url }}/notes/game_theory)
+- [**Notes on academic papers**]({{ site.url }}/academic_papers)
 - [**Textbook notes**](#textbook-notes)
 	- [QED: The Strange Theory – Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
 	- [The Feynman Lectures on Physics – Richard Feynman](#the-feynman-lectures-on-physics)
@@ -26,21 +30,16 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Introduction to Statistical Learning – James, Witten, Hastie, Tibshirani]({{ site.url }}/notes/intro_stat_learn)
 	- [Elements of Statistical learning – Hastie, Tibshirani, Friedman]({{ site.url }}/notes/el_stat_learn)
 	- [Advances in Financial Machine Learning – Marcos Lopez de Prado]({{ site.url }}/notes/adv_fin_ml)
-- [**Notes on academic papers**]({{ site.url }}/academic_papers)
-- **IB notes**
-	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
-	- [Physics (higher level)]({{ site.url }}/notes/hl_physics)
-	- [Chemistry (higher level)]({{ site.url }}/notes/hl_chemistry)
-- **Online courses**
-	- [Bitcoin and Cryptocurrencies – Princeton]({{ site.url }}/notes/princeton_bitcoin) 
-	- [Quantopian Lecture Series on Quantitative Finance]({{ site.url }}/notes/quantopian_lectures).
-	- [Valuation – Aswath Damodaran]({{ site.url }}/notes/aswath_valuation)
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
     - [CT1 Financial Mathematics](#ct1-financial-mathematics)
     - [Introduction to Boosted Trees](#introduction-to-boosted-trees)
-    - [The Black Litterman model]({{ site.imageurl }}../notes/BlackLitterman.pdf)
-<!-- /TOC -->
+    - [The Black-Litterman model]({{ site.imageurl }}../notes/BlackLitterman.pdf)
+    - [Equity Investing Checklist]({{ site.url }}/notes/investing_checklist)
+- **IB notes**
+	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
+	- [Physics (higher level)]({{ site.url }}/notes/hl_physics)
+	- [Chemistry (higher level)]({{ site.url }}/notes/hl_chemistry)
 
 ---
 
