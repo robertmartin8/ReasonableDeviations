@@ -231,7 +231,7 @@ $$(1-\epsilon) u(\hat{s}, \hat{s}) + \epsilon u(\hat{s}, s') > (1-\epsilon)u(s',
 
 *I sat the midterm closed-book and under timed conditions. In reality I probably would have tried to give a bit more detail – hence the current marking may be a bit generous, because if I got the right numerical answer I assumed that my method was correct and gave myself all the marks.*
 
-[Completed Midterm]({{ site.imageurl }}/note_img/econ159_midterm.pdf)
+[Completed Midterm]({{ site.imageurl }}/note_img/game_theory/econ159_midterm.pdf)
 
 
 ## Backward induction
