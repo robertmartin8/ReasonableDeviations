@@ -82,9 +82,9 @@ To model how COVID-19 affects the value of the index, we can think about how it 
 
 Damodaran argues that any effects on the discount rate are minimal because the decrease in the risk-free rate is offset by the increase in equity risk premiums. Also, as we will later verify, the fraction of cash returned is nowhere near as important as the first two variables (because regardless of the initial fraction, by the end of year 5 it converges to a stable value). Thus, we can make the approximation that price depends on two variables: the drop in FY20 earnings and the fraction of earnings recouped. 
 
-Here we have a minor problem: the model requires us to specify the earnings *growth* in FY21-24 -- while this is indeed related to the fraction of earnings recouped, converting between the two is not trivial. It is intuitively clear that if you think a high fraction of earnings will be recouped, subsequent growth will have to be greater to make up for the lost earnings. But to quantify this, you essentially have to project out the cash flows under the pre-coronavirus consensus growth estimates ($g_0 = 5.52\%$ in FY20 and $g = 3.36\%$ in FY21-24), with $1-f$ of the FY20 earnings lost permanently. The resulting formula is as follows, where $\tilde{g_0}$ denotes our estimate of the FY20 earnings growth (negative since we are expecting a drop):
+Here we have a minor problem: the model requires us to specify the earnings *growth* in FY21-24 -- while this is indeed related to the fraction of earnings recouped, converting between the two is not trivial. It is intuitively clear that if you think a high fraction of earnings will be recouped, subsequent growth will have to be greater to make up for the lost earnings. But to quantify this, you essentially have to project out the cash flows under the pre-coronavirus consensus growth estimates ($g_0' = 5.52\%$ in FY20 and $g' = 3.36\%$ in FY21-24), with $1-f$ of the FY20 earnings lost permanently. The resulting formula is as follows, where $g_0$ (no dash) denotes our estimate of the FY20 earnings growth (negative since we are expecting a drop):
 
-$$\hat{g} = \left[\left(1+f \cdot \frac{g_0 - \tilde{g_0}}{1 + \tilde{g_0}}\right)\cdot (1+g)^4\right]^{1/4} -1$$
+$$\hat{g} = \left[\left(1+f \cdot \frac{g_0' - g_0}{1 + g_0}\right)\cdot (1+g')^4\right]^{1/4} -1$$
 
 EDIT: thanks to Ryan Kho for pointing out that I had transcribed the formula incorrectly. The formula is not at all intuitive, so I have uploaded a [spreadsheet](https://github.com/robertmartin8/RandomWalks/blob/master/valuations/EarningsRecoupment.xlsx) to demonstrate where it comes from.
 
@@ -129,6 +129,7 @@ def valuation(
     
 # Function to convert a recoupment fraction to growth rate
 def recoup_to_growth(f, drop, g0=0.0552, g=0.0336):
+    # confusingly, I have relabelled g0' as g0.
     return ((1+f*(g0-drop)/(1+drop))*(1+g)**4)**0.25-1
 
 # Function to value the S&P given drop and recoupment fraction.
