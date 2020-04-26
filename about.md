@@ -20,7 +20,7 @@ The best and worst thing about computers is that they do exactly what you tell t
 <form class="wj-contact" action="https://formspree.io/{{ site.author.email }}" method="POST">
     <input type="text" name="name" placeholder="Name">    
     <input type="text" name="email" placeholder="Email Address">
-    <textarea type="text" name="content" rows="10" placeholder="Message"></textarea>
+    <textarea type="text" name="content" rows="10" placeholder="Message – please use GitHub issues instead if it is a question about PyPortfolioOpt"></textarea>
     <input type="hidden" name="_next" value="{{ site.url }}/thanks.html">
     <input type="hidden" name="_subject" value="New Contact Form Submission">
     <input type="text" name="_gotcha" style="display:none">
@@ -57,11 +57,12 @@ Below are some of my favourite books (or short stories); I suppose there is an o
 
 - **Right now**: Plodding on with second-year physics at Cambridge. Putting a lot of effort into PyPortfolioOpt and other tech ventures on the side, but time is remarkably finite.
 - **September 2019**: Interning at the London office of a large sovereign wealth fund, where I get to build cool things at the intersection of finance and tech.
-- **July 2019**: Interning at a long-only fund in Singapore. Building an alternative data analytics app in Ruby on Rails 
-- **June 2019**: Just finished my first year at Cambridge. What an absolute whirlwind! Lots of ups and downs, but managed to pull through and get a good grade. 
-- **October 2018**: Started at Cambridge! I spent the previous months trying to learn as much as I could about finance and statistics in the meanwhile, because I knew that I'd probably be mostly occupied with physics and maths at uni.
-- **May 2018**: Finished national service! 
-- **January 2017**: Passed out from the Medical Response Force conversion course, which was 8 weeks of very tough training. MRF is a unit of specially trained combat medics who deal with chemical, biological and radiological threats. It is part of the Special Operations Taskforce, so we are expected to be operationally ready at all times. I am now a specialist, as well as a trained military driver.
+- **July 2019**: Interning at a long-only fund in Singapore. Learning about discretionary investments, meeting company executives, building an alternative data analytics app in Ruby on Rails.
+- **June 2019**: Just finished my first year at Cambridge. What an absolute whirlwind! Lots of ups and downs, but managed to pull through and get a first. 
+- **October 2018**: Started studying Natural Sciences at Cambridge. I spent the previous months trying to learn as much as I could about finance and statistics in the meanwhile, because I knew that I'd probably be mostly occupied with physics and maths at uni.
+- **June 2018**: Splitting my time between a quantitative finance internship and blockchain consulting.
+- **May 2018**: Finished national service! ORD loh
+- **January 2017**: Passed out from the Medical Response Force conversion course, which was 8 weeks of very tough training. MRF is a unit of specially trained combat medics who deal with chemical, biological and radiological threats. It is part of the Special Operations Taskforce, so we are expected to be operationally ready at all times. Military driving (March 2017), Sergeant school (Dec 2017), MRF section leader and Instructor (Jan 2018).
 - **July 2016**: Enlisted into the army. In Singapore, there are two years of compulsory national service (NS) for citizens or permanent residents (that's me). Basic Military Training was until September.
-- **January 2016**: Accepted to study the Physical Natural Sciences at Christ's College Cambridge, with two years deferred entry (entry in October 2018)
-- **November 2015**: Graduated from high school, having completed my International Baccalaureate with my three higher level subjects being maths, chemistry, and physics, and extended essay in maths – I scored 45 points overall.
+- **January 2016**: Accepted to study Physical Natural Sciences at Christ's College Cambridge, with two years deferred entry (October 2018 matriculation)
+- **November 2015**: Graduated from high school, having completed my International Baccalaureate with my three higher level subjects being maths, chemistry, and physics, and extended essay in maths, scoring 45 points overall.
