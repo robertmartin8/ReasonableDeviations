@@ -64,7 +64,7 @@ Now for some maths. Let's say the cost of carry is $s$ per year (expressed as a 
 
 $$F = S_0 (1+s)$$
 
-This is called a no-arbitrage argument because if it *weren't* true, you could make a risk-free arbitrage profit. Note that I am ignoring the interest rate because it is so low (money printer go brrrr). With the above formula, we see that the implied storage cost (in dollars) between any two months is the price difference of their futures contracts. For example, as of 24/4/20, the June contract is trading at \\$16.48 and the July contract is trading at \\$21.80. Hence, a reasonable estimate for the storage cost in June is $\\$21.80 - \\$16.48 = \\$5.32$. I was also interested in calculating the annualised cost, so derived the formula below, but it's not relevant to our discussion.
+This is called a no-arbitrage argument because if it *weren't* true, you could make a risk-free arbitrage profit. Note that I am ignoring the interest rate because it is so low (money printer go brrrr). With the above formula, we see that the implied storage cost (in dollars) between any two months is the price difference of their futures contracts. For example, as of 24/4/20, the June contract is trading at \\$16.48 and the July contract is trading at \\$21.80. Hence, a reasonable estimate for the storage cost in June is $\\$21.80 - \\$16.48 = \\$5.32$. I was also interested in calculating the annualised cost of storage for a given month, so derived the formula below, but it's not relevant to our discussion.
 
 $$\begin{align*} 
 F_1 &= S_0 e^{sT_1} \\
