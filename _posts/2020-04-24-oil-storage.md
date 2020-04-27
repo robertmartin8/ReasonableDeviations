@@ -4,7 +4,7 @@ title: A Tanker Trade
 category: finance
 ---
 
-April 2020 has been a crazy month for oil. Last week, the May WTI contract traded at a low of *minus* \\$40 a barrel. In a desperate search for storage space, people have been chartering oil tankers to use as floating storage units, leading to a price surge in shares of tanker companies like Nordic American Tanker (46%), Teekay (30%), and Scorpio Tankers (59%). In this post, we aim to build a framework for forecasting the revenue of a tanker company, using DHT Holdings (NYSE:DHT) as an example.
+April 2020 has been a volatile month for oil. Last week, the May WTI contract traded at a low of *minus* \\$40 a barrel. In a desperate search for storage space, people have been chartering oil tankers to use as floating storage units, leading to a price surge in shares of tanker companies like Nordic American Tanker (46%), Teekay (30%), and Scorpio Tankers (59%). In this post, we aim to build a framework for forecasting the revenue of DHT Holdings (NYSE:DHT), a tanker company.
 <!--more-->
 
 *The Excel models and accompanying python code are [here](https://github.com/robertmartin8/pValuation/tree/master/OilTankers). Please use them responsibly!*
@@ -18,11 +18,11 @@ I am certainly not an expert on energy markets, but over the past couple of week
 - Futures contracts are thus more expensive the further out you go because they bake in the storage cost. This situation is known as **contango**, or in this case **super contango** owing to the magnitude of the effect.
 - NYMEX WTI futures are physically settled, so when it comes to expiry, owning a long contract obligates you to receive delivery of 1000 barrels of oil. When the storage tanks are full, the piece of paper that gives you the right (and obligation) to receive oil becomes a liability -- you are willing to give it away, or even pay someone to take it off your hands. Hence "negative oil prices".
   
-All this leads to the surprising fact that if you buy oil at \\$5 a barrel and it trades at \\$20 a barrel two months later, you have not quadrupled your investment. You might have actually *lost* money on this trade -- it's impossible to say with just the information I have given you since you need to factor in the cost of rolling your contract to the next month. When the futures curve is in super contango, this roll can be incredibly costly. We will later revisit this concept, as we try to infer the storage cost from the futures curve.
+All this leads to the surprising fact that if you buy oil at \\$5 a barrel and it trades at \\$20 a barrel two months later, you have not quadrupled your investment. You might have actually *lost* money on this trade -- it's impossible to say with just the information I have given you since you need to factor in the cost of rolling your contract to the next month. When the futures curve is in super contango, this roll can be incredibly costly. We will later revisit this concept when we try to infer the storage cost from the futures curve.
 
 ## Modelling revenue for DHT Holdings
 
-The main goal of this post is to build a framework for forecasting the revenue of a tanker company. Though I don't intend for this post to be a stock pitch, our discussion will be much more tangible in the context of a particular listed company. I decided on DHT Holdings because it is a pure-play on tankers: DHT owns 27 VLCCs (Very Large Crude Carriers -- yes, that is their technical name) and their business does nothing but rent these out. In 2019, they had \\$535m in revenue, all of which was from shipping. Of their expenses, less than 4% were administrative; everything else was related directly to the tankers. This makes the revenues rather easy to forecast in principle. If you know how much DHT charges you to charter a tanker for a year, you can multiply this by the number of tankers to ballpark their annual revenue. Conversely, you can come up with a rough estimate of their daily charter rate from their full-year revenue (divide by 27 tankers then divide by 365 days). 
+The main goal of this post is to build a framework for forecasting the revenue of a tanker company. Though I don't intend for this post to be a stock pitch, our discussion will be much more tangible in the context of a particular listed company. I decided on DHT Holdings because it is a pure-play on tankers: DHT owns 27 VLCCs (Very Large Crude Carriers -- yes, that is their technical name) and their business does nothing but rent these out. In 2019, they had \\$535m in revenue, all of which was from shipping. Of their expenses, less than 4% were administrative; everything else was related directly to the tankers. This makes the revenues rather easy to forecast in principle. If you know how much the daily rate that DHT charges you to charter a tanker you can multiply this by 365 days then by the number of tankers to ballpark their annual revenue.
 
 The model essentially consists of an Excel spreadsheet containing estimates of the annual revenue contributions from each of the 27 tankers. The main complexity we will be accounting for in this simple model is that you can either time-charter a tanker, paying a fixed price to rent it for a longer period of time (6 months to a few years), or you can do a spot charter, renting the boat for a short period on short notice. As always, we turn to DHT's most recent [annual report](https://www.sec.gov/Archives/edgar/data/1331284/000114036120006806/form20f.htm) (in particular, the notes to the financial statements therein), which provide a wealth of information regarding how DHT's vessels were used in 2019.
 
@@ -34,7 +34,7 @@ On April 1 2020, DHT [announced](https://www.dhtankers.com/dht-holdings-inc-anno
 
 ### Spot charters
 
-Unfortunately, once we have dealt with the time charters, things become a lot more difficult. This is because the spot charter rate depends on supply and demand -- if everybody wants to charter a ship, DHT can raise the daily rates. We will model the situation as follows. Because of the WTI supply glut, there will be a certain number of **high-demand days** for which people will be willing to pay the **high-demand daily rate**. For the rest of the year, we use the **low-demand daily rate**. 
+Sadly, once we have dealt with the time charters, things become a lot more difficult. This is because the spot charter rate depends on supply and demand -- if everybody wants to charter a ship, DHT can raise the daily rates. We will model the situation as follows. Because of the WTI supply glut, there will be a certain number of **high-demand days** for which people will be willing to pay the **high-demand daily rate**. For the rest of the year, we use the **low-demand daily rate**. 
 
 We may further assume that the low-demand daily rate will be similar to what it was last year. We are told that in 2019 there was \\$478m in revenue from spot chartering (between 22 ships), i.e an average daily rate of \\$60,000. Hence the two key variables are the number of high-demand days and the high-demand daily spot rate. This is where the estimates start getting pretty subjective, but we will later do a sensitivity analysis that somewhat mitigates this.
 
@@ -64,7 +64,7 @@ Now for some maths. Let's say the cost of carry is $s$ per year (expressed as a 
 
 $$F = S_0 (1+s)$$
 
-This is called a no-arbitrage argument because if it *weren't* true, you could make a risk-free arbitrage profit. Note that I am ignoring the interest rate because it is so low (money printer go brrrr). With the above formula, we see that the implied storage cost (in dollars) between any two months is the price difference of their futures contracts. For example, as of 24/4/20, the June contract is trading at \\$16.48 and the July contract is trading at \\$21.80. Hence, a reasonable estimate for the storage cost in June is $\\$21.80 - \\$16.48 = \\$5.32$. It's a little more involved to find the annualised storage costs (derived below), but it's not entirely relevant to our discussion.
+This is called a no-arbitrage argument because if it *weren't* true, you could make a risk-free arbitrage profit. Note that I am ignoring the interest rate because it is so low (money printer go brrrr). With the above formula, we see that the implied storage cost (in dollars) between any two months is the price difference of their futures contracts. For example, as of 24/4/20, the June contract is trading at \\$16.48 and the July contract is trading at \\$21.80. Hence, a reasonable estimate for the storage cost in June is $\\$21.80 - \\$16.48 = \\$5.32$. I was also interested in calculating the annualised cost, so derived the formula below, but it's not relevant to our discussion.
 
 $$\begin{align*} 
 F_1 &= S_0 e^{sT_1} \\
@@ -80,9 +80,7 @@ Below is a plot that shows the implied cost of carry for different months, overl
 <img src="{{ site.imageurl }}oil_tankers/futures_cost_of_carry.png" style="width:100%;"/>
 </center>
 
-Using the June cost of \\$5.32 a barrel, we can put an upper bound on the high-demand spot charter rate. It can be calculated, using the density of oil and the deadweight tonnage, that a VLCC can carry about 2 million barrels of oil. Thus, a cost of carry of \\$5.32 per barrel for a month is equivalent to a daily rate of $\\$5.32 \times 2 \times 10^6 ~/~ 30 = \\$355,000$. This is only an upper bound because in reality there will be a nontrivial cost of freight, so it is not fair to allocate all of the \\$5.32 to the cost of the VLCC since some of that represents transport costs. We will thus adjust our estimate of the high-demand spot rate up from \\$200k a day to about \\$250k. If it seems like I'm trying to pump up the spot rate (maybe confirmation bias), note that this is *still* a conservative estimate because we are using the month of June rather than May. If we calculate the May storage cost based on the settlement price of -\\$40, we get the ludicrous spot charter rate of \\$3.8m *a day*. I'm not saying that this is anywhere close to the true May storage cost, but it's just to illustrate that \\$250k is very much on the low end. 
-
-In any case, moving forward with the conservative estimate of \\$250k a day, we forecast the revenue to be \\$761m, an 18% surprise over the CapIQ estimate.
+Using the June cost of \\$5.32 a barrel, we can put an upper bound on the high-demand spot charter rate. It can be calculated, using the density of oil and the deadweight tonnage, that a VLCC can carry about 2 million barrels of oil. Thus, a cost of carry of \\$5.32 per barrel for a month is equivalent to a daily rate of $\\$5.32 \times 2 \times 10^6 ~/~ 30 = \\$355,000$. This is only an upper bound because in reality there will be a nontrivial cost of freight, so it is not fair to allocate all of the \\$5.32 to the cost of the VLCC. In any case, it is nice to see that our initial estimate of \\$200k a day lies between our supposed lower and higher bounds. In fact, \\$200k seems like quite a conservative estimate for the high-demand rate, because it is the June storage cost. If we calculate the *May* storage cost based on the settlement price of -\\$40, we get the ludicrous spot charter rate of \\$3.8m *a day*. I'm not saying that this is anywhere close to the true May storage cost, but it's just to illustrate that \\$200k is very much on the low end. 
 
 The astute reader will note that we could just use each month's market-implied spot charter rates directly, rather than our unsophisticated "high-demand low-demand" model. However, I think that the current procedure of reverting to the 2019 cost for the low-demand spot rate is more robust and has significantly less model risk, so we'll stick with that.
 
@@ -100,9 +98,9 @@ I've applied special formatting (dark red with white text) to represent the reve
 
 ## Encore
 
-*This section was added a few days after the original post to build on the feedback I received from Reddit*.
+*This section was added a few days after the original post, building on the feedback I received from Reddit*.
 
-I posted my initial analysis on Reddit and it generated some nice discussion. Someone pointed out that you can actually find spot charter rates online. In particular, there is a Twitter user that posts nothing but charter details:
+I posted my initial analysis on Reddit and it generated some nice discussion. Someone pointed out that you can actually find spot charter rates online; in particular, there is a Twitter user that posts nothing but charter details:
 
 <center>
 <img src="{{ site.imageurl }}oil_tankers/tankers_twitter.png" style="width:80%;"/>
@@ -111,9 +109,9 @@ I posted my initial analysis on Reddit and it generated some nice discussion. So
 This is very useful because it removes a lot of the subjectivity in our estimation of spot charter rates. To that end, I wrote a python script that does the following:
 
 1. Downloads and parses the tweets using `tweepy`
-2. Extract the ship name, daily charter rate, the number of days chartered, and start date.
+2. Extract the ship name, daily charter rate, the number of days chartered, and start date
 3. Combine this with the charter data from their annual report and press releases (which I had to input manually)
-4. Build a pandas dataframe with 365 columns (one for each day) and 27 columns (one for each ship).
+4. Build a pandas dataframe with 365 columns (one for each day) and 27 columns (one for each ship)
 5. Fill in the data for the days we know
 6. Output to excel
 
@@ -123,7 +121,7 @@ A section of the spreadsheet is shown below:
 <img src="{{ site.imageurl }}oil_tankers/v2_spreadsheet.png" style="width:100%;"/>
 </center>
 
-All of the zeros correspond to days for which we don't have any explicit information. We can then fill these in with whatever estimation model we see fit. rather than using the two-stage model from before, I'm going to do something much simpler and replace the zeros with the mean charter rate of non-missing entries:
+All of the zeros correspond to days for which we don't have any explicit information. We can then fill these in with whatever estimation model we see fit. Rather than using the two-stage model from before, I'm going to do something much simpler and replace the zeros with the mean charter rate of non-missing entries:
 
 <center>
 <img src="{{ site.imageurl }}oil_tankers/v2_revenue_forecast.png" style="width:80%;"/>
@@ -140,9 +138,6 @@ There are many variables that I have conveniently chosen to ignore. For example:
 - Freight, which we mentioned but didn't quantify, may be quite expensive. Rail freight costs about \\$5 a barrel, which would constitute the lion's share of the \\$5.23 June cost of carry.
 - It takes a couple of weeks to get a VLCC from the Suez to the Texan coast. There may be complications with space at the ports (which may not have enough space to park a huge number of VLCCs).
 - There may be secular headwinds, such as the new 2020 International Maritime Organisation regulations regarding fuel sulphur content, which may lower the low-demand spot rate.
+- We have deliberately tried to minimise the number of explicit assumptions regarding the direction of the oil market, because it is not an area that I have any edge in.
 
-However, I think that the Excel model provides a reasonable starting point for people to input their own estimates, perhaps factoring in the nuances. Besides, the sensitivity analysis is a nice tool to show you how varying your inputs affects the model output, and in this particular case, shows a reasonable margin of safety. I want to emphasise that this post is not a stock pitch; at best, it is a *component* of a stock pitch. Ultimately, I suggest you put in the time to come up with your own estimates of the different inputs, and in so doing, tell your own story about the company.
-
-
-
-
+However, I think that the Excel model nevertheless provides a reasonable starting point for people to input their own estimates, perhaps factoring in the nuances. Besides, the sensitivity analysis is a nice tool to show you how varying your inputs affects the model output, and in this particular case, shows a reasonable margin of safety. I want to emphasise that this post is not a stock pitch; at best, it is a *component* of a stock pitch. Ultimately, I suggest you put in the time to come up with your own estimates of the different inputs, and in so doing, tell your own story about the company.
