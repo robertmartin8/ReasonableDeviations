@@ -7,7 +7,7 @@ category: finance
 April 2020 has been a crazy month for oil. Last week, the May WTI contract traded at a low of *minus* \\$40 a barrel. In a desperate search for storage space, people have been chartering oil tankers to use as floating storage units, leading to a price surge in shares of tanker companies like Nordic American Tanker (46%), Teekay (30%), and Scorpio Tankers (59%). In this post, we aim to build a framework for forecasting the revenue of a tanker company, using DHT Holdings (NYSE:DHT) as an example.
 <!--more-->
 
-*The excel model is [here](https://github.com/robertmartin8/RandomWalks/blob/master/valuations/DHT_tankers.xlsx). Please use it responsibly.*
+*The Excel models and accompanying python code are [here](https://github.com/robertmartin8/pValuation/tree/master/OilTankers). Please use them responsibly!*
 
 ## It takes two to contango 
 
@@ -76,7 +76,6 @@ $$\implies s = \frac{1}{T_2- T_1} \ln \left(\frac{F_2}{F_1} \right)$$
 
 Below is a plot that shows the implied cost of carry for different months, overlayed on the futures curve.
 
-
 <center>
 <img src="{{ site.imageurl }}oil_tankers/futures_cost_of_carry.png" style="width:100%;"/>
 </center>
@@ -97,13 +96,44 @@ Because one of the objectives of this exercise is to understand the downside, I 
 <img src="{{ site.imageurl }}oil_tankers/sensitivity.png" style="width:100%;"/>
 </center>
 
-
 I've applied special formatting (dark red with white text) to represent the revenue forecasts that are below the CapIQ estimate. You'll notice that these are in the top-left as expected, corresponding to a lower spot rate and a shorter period of high demand. However, under a broad range of other assumptions, the model is forecasting positive earnings surprises relative to the CapIQ estimate. 
 
+## Encore
+
+*This section was added a few days after the original post to build on the feedback I received from Reddit*.
+
+I posted my initial analysis on Reddit and it generated some nice discussion. Someone pointed out that you can actually find spot charter rates online. In particular, there is a Twitter user that posts nothing but charter details:
+
+<center>
+<img src="{{ site.imageurl }}oil_tankers/tankers_twitter.png" style="width:80%;"/>
+</center>
+
+This is very useful because it removes a lot of the subjectivity in our estimation of spot charter rates. To that end, I wrote a python script that does the following:
+
+1. Downloads and parses the tweets using `tweepy`
+2. Extract the ship name, daily charter rate, the number of days chartered, and start date.
+3. Combine this with the charter data from their annual report and press releases (which I had to input manually)
+4. Build a pandas dataframe with 365 columns (one for each day) and 27 columns (one for each ship).
+5. Fill in the data for the days we know
+6. Output to excel
+
+A section of the spreadsheet is shown below:
+
+<center>
+<img src="{{ site.imageurl }}oil_tankers/v2_spreadsheet.png" style="width:100%;"/>
+</center>
+
+All of the zeros correspond to days for which we don't have any explicit information. We can then fill these in with whatever estimation model we see fit. rather than using the two-stage model from before, I'm going to do something much simpler and replace the zeros with the mean charter rate of non-missing entries:
+
+<center>
+<img src="{{ site.imageurl }}oil_tankers/v2_revenue_forecast.png" style="width:80%;"/>
+</center>
+
+This results in a forecasted 2020 revenue of \\$652m, very close to CapIQ's estimate. I think the true revenue will lie somewhere between this value and the more optimistic forecast from the first model.
 
 ## Conclusion
 
-In this post, we have built a very simple model for DHT Holdings' 2020 revenue by combining their fixed time charter rates with our estimates of the spot charter rate, in light of the recent supply glut. Under fairly conservative estimates, I am forecasting a 10% revenue beat on the upside.
+In this post, we have built a very simple model for DHT Holdings' 2020 revenue by combining their fixed time charter rates with our estimates of the spot charter rate, in light of the recent supply glut. Under fairly conservative estimates, I initially forecasted a 10% revenue beat on the upside. However, with more refined data based on actual spot charter rates this year, the CapIQ consensus estimate seems fair.
 
 There are many variables that I have conveniently chosen to ignore. For example:
 
