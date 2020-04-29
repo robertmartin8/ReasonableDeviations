@@ -44,16 +44,28 @@
               </a> -->
           </p>
       </div>
-
-      <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}">
-          GitHub <i class="fa fa-github" aria-hidden="true"></i>
+      
+      <a class="sidebar-nav-item" id="open-popup" href="#">
+            Subscribe
       </a>
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}">
-          LinkedIn <i class="fa fa-github" aria-hidden="true"></i>
-      </a> -->
-      <!-- <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
+          <!-- <button class="sidebar-nav-item" id="open-popup">Subscribe</button> -->
+
+
     </nav>
 
     <p>&copy Robert Andrew Martin {{ site.time | date: '%Y' }}. All rights reserved. <a style="color: rgba(255,255,255,.5);" href="{{ site.url }}/Disclaimer">Disclaimer.</a></p>
   </div>
 </div>
+
+<!-- Mailchimp -->
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+
+<script type="text/javascript">
+function showMailingPopUp() {
+    console.log("showing popup");
+    window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us8.list-manage.com","uuid":"31c71a4d79bd53ab3c537a59e","lid":"2416515c90","uniqueMethods":true}) })
+    document.cookie = "MCPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+};
+
+document.getElementById("open-popup").onclick = function() {showMailingPopUp()};
+</script>
