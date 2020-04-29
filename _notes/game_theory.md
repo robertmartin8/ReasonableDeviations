@@ -457,7 +457,7 @@ $$\text{temptation to cheat today} \leq \delta \left(\text{value of rewards tomo
 - However, in a first-price auction, bidding your value is weakly dominated by shaving down your bid.
 - For *any* kind of private auction in which equilibrium results in the person with the highest value winning the good, the expected revenue is identical. This is the **revenue equivalence theorem**. 
 
-## Final exam
+<!-- ## Final exam -->
 
 
 
