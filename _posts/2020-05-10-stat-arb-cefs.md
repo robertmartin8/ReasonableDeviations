@@ -9,7 +9,7 @@ Sometimes, it is cheaper to buy a basket of assets than it is to buy the assets 
 
 ## Closed-End Funds vs ETFs
 
-Most of you are probably familiar with exchange-traded funds (ETFs) -- baskets of securities where the basket itself is tradable. The ETF industry has grown rapidly over the past few decades because ETFs provide a low-cost way to get exposure to a certain market, sector, or strategy.
+Most of us are probably familiar with exchange-traded funds (ETFs) -- baskets of securities where the basket itself is tradable. The ETF industry has grown rapidly over the past few decades because ETFs provide a low-cost way to get exposure to a certain market, sector, or strategy.
 
 In this post, we will instead be discussing **closed-end funds (CEFs)**. On the surface, these may seem similar to ETFs: CEFs are also baskets of securities, and they can also be listed and traded on an exchange. A pedant might point out that by definition, a CEF is an ETF since it is a fund that trades on an exchange -- this is unfortunately not correct, as there is a true conceptual distinction. 
 
