@@ -71,6 +71,4 @@ We published most of our code on GitHub a few months ago and have already had so
 
 In any case, rather than inserting some banal Edison quote about failure, we’d like to end this post simply by saying that we are extremely grateful for the friendships we made, the people we met, and the chance to tell ourselves that we built something from nothing.
 
----
-
-*This post has been cross-posted on [medium](https://medium.com/hackbridge/what-we-learnt-building-an-enterprise-blockchain-startup-58ea1aaf9521). Check out our website at [hypervault.tech](https://hypervault.tech/) to learn more!*
+*This post has been cross-posted on [medium](https://medium.com/hackbridge/what-we-learnt-building-an-enterprise-blockchain-startup-58ea1aaf9521)*
