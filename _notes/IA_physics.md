@@ -5,7 +5,7 @@ title: IA Physics Notes
 
 # IA Physics 
 
-These are my notes for Cambridge's Part IA Physics course.
+These are my notes for Cambridge's Part IA Physics course (first-year).
 
 - [Mechanics]({{ site.imageurl }}../notes/1A_Mechanics.pdf)
 - [Circuits]({{ site.imageurl }}../notes/1A_Circuits.pdf)

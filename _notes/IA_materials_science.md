@@ -5,7 +5,7 @@ title: Materials Science Notes
 
 # IA Materials Science
 
-These are my notes for Cambridge's IA Materials Science course. They are basically a hand-written and condensed version of the course notes, with some minor additions. They were written on yellow paper, which unfortunately hasn't scanned very well.
+These are my notes for Cambridge's IA Materials Science course (first-year). They are basically a hand-written and condensed version of the course notes, with some minor additions. They were written on yellow paper, which unfortunately hasn't scanned very well.
 
 
 - [Course A: Atomic Structure of Materials]({{ site.imageurl }}../notes/1A_crsA.pdf)

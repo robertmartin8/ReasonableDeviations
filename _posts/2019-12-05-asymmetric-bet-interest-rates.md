@@ -23,7 +23,7 @@ It was July 2019: the height of the trade war, Brexit uncertainties alive as eve
 
 This statement provides an interesting opportunity to make a positive EV bet because of the asymmetry it presents. I fundamentally do not believe that zero probability events exist, apart from in maths textbooks. For example, thanks to quantum theory, there is a nonzero probability that a tennis ball thrown at the wall will travel through it due to quantum tunnelling. Humans (and markets) are incredibly unpredictable, hence it made no sense to me that markets can be certain about anything.
 
-My proposal was to make a hawkish bet (i.e betting that interest rates will either stay the same or go up). Because the market thinks that there is a 100% chance of a cut, if the rates are indeed cut, then I wouldn't pay much for being wrong. However, on the off chance I'm right, my payoff could be huge.
+My proposal was to make a hawkish bet, i.e betting that interest rates will either stay the same or go up. Because the market thinks that there is an "100% chance" of a cut, if the rates are indeed cut, then I wouldn't pay much for being wrong. However, on the off chance I'm right, my payoff could be huge.
 
 In the rest of the post, we will discuss how to actually bet on interest rates, how the market-implied probability of a rate cut is calculated, and a post-mortem of my pitch.
 
@@ -109,7 +109,7 @@ Having seen what the market expects, we can now begin to think about some reason
 </center>
 
 
-I haven't gone into too much detail for the above points because *it doesn't really matter*. The fundamental argument in the post is that as long as there exists a nonzero probability of a rate-hold (or rate hike), we are essentially able to make a positive EV bet. To elucidate this, let's say that based on my analysis above I'm willing to say that there's just a 2% chance of a rate cut.
+I haven't gone into too much detail for the above points because *it doesn't really matter*. The fundamental argument in the post is that as long as there exists a nonzero probability of a rate-hold (or rate hike), we are able to make a positive EV bet. To elucidate this, let's say that based on my analysis above I'm willing to say that there's just a 2% chance of a rate cut.
 
 | **Interest rate**        | **Market-implied probability**          | **My estimated probability**  |
 | ------------- |:-------------:| :-----:|
@@ -125,13 +125,13 @@ Using my estimated odds (different from the market's!), the fair price of the Fe
 
 $$\text{fair price} = 100 - (0.02 \times 237.5\text{bps} + 0.96 \times 212.5 \text{bps} + 0.02 \times 187.5 \text{bps}) = 97.875$$
 
-Hence my hawkish bet (shorting the future) would result in a profit of about \\$33 per contract (according to the contract spec, each contract settles for \\$4167 times the price index). You might think that 0.08% profit sounds paltry, but it should be remembered that the beauty of futures is *leverage*. For this particular contract, you would only have to put up about \\$400 of maintenance margin, so the actual percentage profit would be about 8%. This isn't bad at all, considering the time horizon of this bet is a few weeks. 
+Hence my hawkish bet (shorting the futures contract) would result in a profit of about \\$33 per contract (according to the contract spec, each contract settles for \\$4167 times the price index). You might think that 0.08% profit sounds paltry, but it should be remembered that the beauty of futures is *leverage*. For this particular contract, you would only have to put up about \\$400 of maintenance margin, so the actual percentage profit would be about 8%. This isn't bad at all, considering the time horizon of this bet is a few weeks. 
 
 
 ## Conclusion
 
 Unsurprisingly, the Fed decided to cut rates by 25bps, citing weak global growth and trade tensions. However, I don't think this pitch was incorrect. The point is not that I thought rates would be held steady, but that I was willing to assign this outcome a higher probability than the market was. 
 
-I ended up pitching this idea, together with three other students, to a panel of managing directors at J.P. Morgan as part of an industry insight event. They were sceptical initially, but were quite intrigued once I had made it sufficiently clear that this was really a play on market expectations rather than interest rates directly. On a side note, I ended up receiving a summer internship offer at JPM for trading, so perhaps there was another dimension to this asymmetric bet...
+I ended up pitching this idea, together with three other students, to a panel of managing directors at J.P. Morgan as part of an industry insight event. They were sceptical initially, but were quite intrigued once I had made it sufficiently clear that this was really a play on market expectations rather than interest rates directly. On a side note, I knew that a successful pitch here could result in a front-office summer internship offer at JPM so perhaps there was another dimension to this asymmetric bet... (unlike the Fed funds rate, this one paid off).
 
-If there's anything you should take away from this post, it is this: I am certainly not claiming to know more than economists about what the Fed is going to do. What I *am* saying is that whenever the market is so sure that something is going to happen (or never going to happen!), there could be an opportunity for an asymmetric return distribution.
+If there's anything you should take away from this post, it is this: I am certainly not claiming to know more than economists about what the Fed is going to do. What I *am* saying is that whenever the market is so sure that something is going to happen (or never going to happen!), there could be a good opportunity for a highly asymmetric bet.

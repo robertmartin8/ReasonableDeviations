@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rebuilding PyPortfolioOpt: an Open Source Adventure"
+title: "Rebuilding PyPortfolioOpt: an open source adventure"
 category: programming
 ---
 

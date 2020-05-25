@@ -7,6 +7,8 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 
 
 - **Cambridge Natural Sciences**
+	- [IB Physics]({{ site.url }}/notes/IB_physics)
+	- [IB Maths]({{ site.url }}/notes/IB_maths)
 	- [IA Materials Science]({{ site.url }}/notes/IA_materials_science)
 	- [IA Physics]({{ site.url }}/notes/IA_physics)
 	- IA Computer Science
@@ -22,6 +24,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Quantopian Lecture Series on Quantitative Finance]({{ site.url }}/notes/quantopian_lectures).
 	- [Valuation – Aswath Damodaran]({{ site.url }}/notes/aswath_valuation)
 	- [Game Theory – Yale (Econ 159)]({{ site.url }}/notes/game_theory)
+	<!-- - [Corporate Finance – Aswath Damodaran]({{ site.url }}/notes/aswath_corpfin) -->
 - [**Notes on academic papers**]({{ site.url }}/academic_papers)
 - [**Textbook notes**](#textbook-notes)
 	- [QED: The Strange Theory – Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
@@ -30,12 +33,14 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Introduction to Statistical Learning – James, Witten, Hastie, Tibshirani]({{ site.url }}/notes/intro_stat_learn)
 	- [Elements of Statistical learning – Hastie, Tibshirani, Friedman]({{ site.url }}/notes/el_stat_learn)
 	- [Advances in Financial Machine Learning – Marcos Lopez de Prado]({{ site.url }}/notes/adv_fin_ml)
+	<!-- - [Bayesian Methods for Hackers – Cameron Davidson-Pilon]({{ site.url }}/notes/bayesian_methods_for_hackers) -->
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
     - [CT1 Financial Mathematics](#ct1-financial-mathematics)
     - [Introduction to Boosted Trees](#introduction-to-boosted-trees)
     - [The Black-Litterman model]({{ site.imageurl }}../notes/BlackLitterman.pdf)
     - [Equity Investing Checklist]({{ site.url }}/notes/investing_checklist)
+    - [Kelly Criterion one-pager]({{ site.url }}../notes/kelly_betting.pdf)
 - **IB notes**
 	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
 	- [Physics (higher level)]({{ site.url }}/notes/hl_physics)

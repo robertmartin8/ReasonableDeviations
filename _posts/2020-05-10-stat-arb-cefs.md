@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Statistical Arbitrage in Closed-End Funds
+title: Statistical arbitrage in closed-end funds
 category: quant-finance
 ---
 
