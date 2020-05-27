@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Big Shorts: investigating short positions of UK hedge funds"
+title: "The Big Shorts: what is the smart money betting against?"
 category: finance
 ---
 
