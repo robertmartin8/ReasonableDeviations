@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The short end of the stick
+title: "The Big Shorts: investigating short positions of UK hedge funds"
 category: finance
 ---
 
