@@ -33,7 +33,7 @@ With this in mind, the main hypothesis that this post will be investigating is a
 
 One problem with the FCA dataset is that it gives the company names and International Securities Identification Number (ISIN) rather than symbols like AAPL or TSLA. ISINs are "better" in the sense that they uniquely identify securities (symbols are not unique across different exchanges), but the difficulty is that most of the free data providers only let you query historical data by symbol. I had to write a web scraper to convert the ISINs to tickers, which was a real pain, but it allowed me to download historical prices for most of the present securities.
 
-Having done the dirty work, I was able to start exploring various aspects of the data. I started by looking for the most active investment, which turned out to be Marshall Wace's position in Sainsbury's (at one point, the net short position was 2% of the float, more than £100 million). The plot below shows the net percentage short position (blue) against the rescaled price (green).
+Having done the dirty work, I was able to start exploring various aspects of the data. I started by looking for the most active investment, which turned out to be Marshall Wace's position in Sainsbury's (at one point, the net short position was 2% of the float, more than £100 million). The plot below shows the net percentage short position (green) against the rescaled price (blue).
 
 <center>
 <img src="{{ site.imageurl }}short_selling/sbry_short.png" style="width:100%;"/>
