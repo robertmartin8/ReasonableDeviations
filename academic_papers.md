@@ -12,7 +12,7 @@ div {
 
 ## Paper summaries
 
-These are notes/summaries I have made of various journal articles or scientific papers over the course of my research. My typical workflow is to make handwritten notes, then at a later date, rewrite the notes in markdown to refresh my knowledge. That being said, in some cases I have uploaded scans of the handwritten notes instead.
+These are notes/summaries I have made of various journal articles or scientific papers over the course of my research. 
 
 For each article, I have hyperlinked the title of the article to the pdf/markdown version of my notes. Within each topic, they are arranged by author. If you are looking for a specific article, I suggest you cmd/ctrl-f, as there are a decent number of them.
 
@@ -33,6 +33,7 @@ For each article, I have hyperlinked the title of the article to the pdf/markdow
 ### Finance and economics
 
 - Akerlof (1970). [The Market for “Lemons”: Quality Uncertainty and the Market Mechanism]({{ site.imageurl }}../notes/market_for_lemons.pdf)
+- Guo, Leung, Ward (2018). [How to Mine Gold Without Digging]({{ site.url }}/notes/papers/mine_gold_without_digging)
 
 ### Quantitative Finance
 
