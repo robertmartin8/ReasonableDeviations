@@ -3,17 +3,13 @@ layout: default
 title: Corporate Finance
 ---
 
-# Corporate Finance – Aswath Damodaran
-
+# Corporate Finance – Aswath Damodaran (unfinished)
 This course can be found in full on [YouTube](https://www.youtube.com/playlist?list=PLUkh9m2BorqnDenjSLZ2DHIXrdxoN4Bn_). It consists of 36 videos, each around 20 minutes in length. The notes herein are a summarised version of Damodaran's course, for my personal reference. 
-
-## Contents
-
-corpfin 
 
 ## Introduction
 
 We can view a company from the perspective of an accounting balance sheet (backwards looking), or a financial balance sheet.
+
   - Assets consist of assets in place, the existing investments that currently generate cash flow, and growth assets.
   - Liabilities consist of debt (first claim on cash flows), and equity. 
 
