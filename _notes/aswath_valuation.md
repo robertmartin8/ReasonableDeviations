@@ -5,7 +5,7 @@ title: Valuation
 
 # Valuation – Aswath Damodaran
 
-This course can be found in full on [youtube](https://www.youtube.com/playlist?list=PLUkh9m2BorqnKWu0g5ZUps_CbQ-JGtbI9). It consists of 25 videos, each around 15 minutes in length. 
+This course can be found in full on [YouYube](https://www.youtube.com/playlist?list=PLUkh9m2BorqnKWu0g5ZUps_CbQ-JGtbI9). It consists of 25 videos, each around 15 minutes in length. 
 
 ## Contents
 
@@ -142,10 +142,11 @@ $$\text{cost of debt} = R_f + k \times (\text{country default spread}) + \text{c
 
 - Once we have the cost of debt, we must combine it with the cost of equity to get the **cost of capital**
 - The weights should be based on market values, because this is what it would cost you to buy the company regardless of the true value.
-- There is a tax benefit on debt, taxed at the **marginal tax rate**.
 - The market value of debt can be estimated using the cost of debt and the average maturity, treating all debt as one fixed-income security.
-- Hybrids (e.g convertibles) can be split into equity/debt.
-- Preferred stock should be kept separate.
+  - There is a tax benefit on debt, taxed at the **marginal tax rate**.
+  - Operating lease commitments should be discounted at the pre-tax cost of debt.
+- Hybrids (e.g convertibles) can be split into equity/debt. Preferred stock should be kept separate.
+
 
 ### Estimating cash flows
 
