@@ -4,6 +4,7 @@ title: Corporate Finance
 ---
 
 # Corporate Finance – Aswath Damodaran (unfinished)
+
 This course can be found in full on [YouTube](https://www.youtube.com/playlist?list=PLUkh9m2BorqnDenjSLZ2DHIXrdxoN4Bn_). It consists of 36 videos, each around 20 minutes in length. The notes herein are a summarised version of Damodaran's course, for my personal reference. 
 
 ## Introduction
@@ -47,8 +48,6 @@ In practice, because the "value of a firm" is unobservable, stock price is used 
   - often it is fair to use the growing perpetuity formula for long term projects 
   - the NPV calculation assumes that earlier cash flows are reinvested at the cost of capital, whereas the IRR assumes that earlier cash flows are reinvested at the IRR. 
 - a project might have multiple IRRs if the cash flow profile is nonstandard (i.e some negative cash flows in later years). 
-
-
 
 
 ## Valuation
