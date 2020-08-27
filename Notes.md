@@ -25,7 +25,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Valuation – Aswath Damodaran]({{ site.url }}/notes/aswath_valuation)
 	- [Game Theory – Yale (Econ 159)]({{ site.url }}/notes/game_theory)
 	- [Introduction to Complexity – Santa Fe Institute]({{ site.url }}/notes/introduction_to_complexity)
-	<!-- - [Corporate Finance – Aswath Damodaran]({{ site.url }}/notes/aswath_corpfin) -->
+	- [Corporate Finance – Aswath Damodaran (Unfinished)]({{ site.url }}/notes/aswath_corpfin)
 - [**Notes on academic papers**]({{ site.url }}/academic_papers)
 - [**Textbook notes**](#textbook-notes)
 	- [QED: The Strange Theory – Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
