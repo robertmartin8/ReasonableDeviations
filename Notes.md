@@ -24,6 +24,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Quantopian Lecture Series on Quantitative Finance]({{ site.url }}/notes/quantopian_lectures).
 	- [Valuation – Aswath Damodaran]({{ site.url }}/notes/aswath_valuation)
 	- [Game Theory – Yale (Econ 159)]({{ site.url }}/notes/game_theory)
+	- [Introduction to Complexity – Santa Fe Institute]({{ site.url }}/notes/introduction_to_complexity)
 	<!-- - [Corporate Finance – Aswath Damodaran]({{ site.url }}/notes/aswath_corpfin) -->
 - [**Notes on academic papers**]({{ site.url }}/academic_papers)
 - [**Textbook notes**](#textbook-notes)
@@ -40,7 +41,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
     - [Introduction to Boosted Trees](#introduction-to-boosted-trees)
     - [The Black-Litterman model]({{ site.imageurl }}../notes/BlackLitterman.pdf)
     - [Equity Investing Checklist]({{ site.url }}/notes/investing_checklist)
-    - [Kelly Criterion one-pager]({{ site.url }}../notes/kelly_betting.pdf)
+    - [Kelly Criterion one-pager]({{ site.imageurl }}../notes/kelly_betting.pdf)
 - **International Baccalaureate (IB) notes**
 	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
 	- [Physics (higher level)]({{ site.url }}/notes/hl_physics)
