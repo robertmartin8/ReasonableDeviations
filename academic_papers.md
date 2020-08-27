@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Academic papers
 ---
 
@@ -8,9 +8,6 @@ div {
     text-align: left;
 }
 </style>
-
-
-## Paper summaries
 
 These are notes/summaries I have made of various journal articles or scientific papers over the course of my research. 
 
