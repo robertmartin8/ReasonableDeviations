@@ -21,11 +21,12 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [IA Maths]({{ site.imageurl }}../notes/1A_maths.pdf)
 - **Online courses**
 	- [Bitcoin and Cryptocurrencies – Princeton]({{ site.url }}/notes/princeton_bitcoin) 
-	- [Quantopian Lecture Series on Quantitative Finance]({{ site.url }}/notes/quantopian_lectures).
+	- [Quantopian Lecture Series on Quantitative Finance]({{ site.url }}/notes/quantopian_lectures)
 	- [Valuation – Aswath Damodaran]({{ site.url }}/notes/aswath_valuation)
 	- [Game Theory – Yale (Econ 159)]({{ site.url }}/notes/game_theory)
 	- [Introduction to Complexity – Santa Fe Institute]({{ site.url }}/notes/introduction_to_complexity)
 	- [Corporate Finance – Aswath Damodaran (Unfinished)]({{ site.url }}/notes/aswath_corpfin)
+	- [CBOE Options]({{ site.url }}/notes/cboe_options)
 - [**Notes on academic papers**]({{ site.url }}/academic_papers)
 - [**Textbook notes**](#textbook-notes)
 	- [QED: The Strange Theory – Richard Feynman](#qed-the-strange-theory-by-richard-feynman)
@@ -46,7 +47,10 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
 	- [Physics (higher level)]({{ site.url }}/notes/hl_physics)
 	- [Chemistry (higher level)]({{ site.url }}/notes/hl_chemistry)
-
+- **IGCSE (Cambridge 2013 syllabus) notes**
+	- [Biology](https://drive.google.com/file/d/11dTvlSmN_20vo6O6bUb7DSY4b_GtVHj-/view?usp=sharing)
+	- [Chemistry](https://drive.google.com/file/d/1pKZJXmB5axAYLYxaWSfnclcSSpZIzK2X/view?usp=sharing)
+	- [Physics](https://drive.google.com/file/d/1IV7VfZfZKI6tkFpLj1EPYvO1FXBAcii8/view?usp=sharing)
 ---
 
 ## Textbook notes
