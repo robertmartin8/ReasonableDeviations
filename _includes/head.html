@@ -32,10 +32,34 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
     <!-- JS -->
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } }, tex2jax: { inlineMath: [ ['$','$'],], displayMath: [ ['$$','$$'] ], processEscapes: true, } });
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [["$$","$$"]]
+        },
+        // See https://chrisyeh96.github.io/2020/03/29/mathjax3.html
+        options: {
+          renderActions: {
+            findScript: [9, function (doc) {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+              }
+              doc.findMath();
+            }, '']
+          }
+        }
+      };
     </script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/javascript" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113861696-1"></script>
