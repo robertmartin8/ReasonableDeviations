@@ -5,6 +5,12 @@ category: finance
 excerpt: "The goal of this two-part series is to understand what option prices can tell us about the implied probability distribution of future asset prices. Part 1 lays the groundwork and examines an intuitive approach using butterfly spreads."
 ---
 
+And you are done! These three lines will do three things. It will allow you to use equations through the entire site, everywhere you want. The second thing is, that you can use equations with auto numbering using two dollar signs. For example, this equation <code>$$ E = m\cdot c^2 \label{eq:mc2}$$</code> will look like the equation below and you can refer to it as
+
+$$ E = M\cdot c^2$$
+
+But you can use inline equations too (this is the third thing), with one dollar sign, like this: <code>$ J(x) = \int{L(t, x, \dot{x}) dt} \$</code>. The equation above will render to this: $ J(x) = \int{L(t, x, \dot{x}) dt} $.
+
 The key idea in *Expectations Investing*, a well-known book by Alfred Rappaport and Michael Mauboussin, is that to profitably invest in stocks one needs to find situations in which your view is variant to consensus expectations -- a difficult task when you don't know what consensus expectations are. There are several ways to figure out what the Street is thinking, the most common of which is to read sell-side research reports and get on the phone with analysts. However, earlier this year I wrote a [post]({% post_url 2020-03-25-coronavirus-equity-expectations %}) investigating how the current *price* of an asset can be used to infer implied expectations of future performance. In Part 1 of a two-part series, we look to extend this concept by examining what the pricing of option butterfly spreads can tell us about the implied expectations of the *probability distribution* of returns. Part 2 will consider a more advanced approach, closer to what is used by industry practitioners.
 
 In writing this post, I have had to make a difficult decision regarding the level of background knowledge to assume; there is no escaping the fact that the subject of derivatives is highly mathematical. Therefore, in each section, I aim to present the intuition first and the mathematics second so the reader may decide how much of the mathematics they follow.
