@@ -55,7 +55,7 @@ $$p \Delta K = X \implies p = \frac{X}{\Delta K}$$
 Let's apply this to a real-life example. I downloaded some SPY option price data from my broker (about 3 weeks to expiration):
 
 <center>
-<img src="{{ site.imageurl }}options/spy_option_prices.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}options/SPY_option_prices.png" style="width:80%;"/>
 </center>
 
 The probability that the SPY closes at \\$340 on expiry (at the time of the snapshot, it was trading at \\$332) will be approximated by considering the price of the 339/340/341 butterfly. For this structure, we have $\Delta K = 1$ and
@@ -80,13 +80,13 @@ This problem arises because of the illiquidity of some of the options contracts.
 The plot below shows the butterfly-implied probabilities vary with the central strike price. Notice how noisy the data seems to be; there are even *negative* probabilities!
 
 <center>
-<img src="{{ site.imageurl }}options/spy_raw_bfly_prob.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}options/SPY_raw_bfly_prob.png" style="width:80%;"/>
 </center>
 
 We need to clean this data up somehow. One approach would be to filter out the options with low volume, but that might result in us losing a lot of valuable data. Instead, I have decided to smooth the signal using a Gaussian filter. This works by convolving the noisy signal (in this case, butterfly-implied probabilities) with a Gaussian kernel -- intuitively, each noisy data point is replaced with a weighted average of surrounding points (with weights determined by the Gaussian), resulting in a "blurring". The result is clearly a major improvement:
 
 <center>
-<img src="{{ site.imageurl }}options/spy_smooth_bfly_prob.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}options/SPY_smooth_bfly_prob.png" style="width:80%;"/>
 </center>
 
 We are not quite done yet, because all we have is a set of discrete points. We want a continuous PDF, so we need to interpolate between the points. To do so, we shall use a **cubic spline**, which fits piecewise cubic functions to the discrete points. This results in a relatively smooth PDF (indeed, by changing a parameter, we can decide exactly how smooth we want it to be):
