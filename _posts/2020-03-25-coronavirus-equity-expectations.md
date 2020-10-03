@@ -14,7 +14,7 @@ For an investment to be successful, it is not enough that you make a correct pre
 
 The mechanism for this is as follows: assuming an *efficient* market (we will comment on this assumption later), if market participants expect a company's earnings to go up next year, they will buy the stock in advance. So once all market participants have formulated and traded on their views, the market price of the asset encodes future expectations for earnings (or to be precise, cash flows).
 
-It is my view that to make a successful investment, it really helps to have some idea of what these expectations are so that you can understand whether or not your perspectives deviate from consensus. Only then will you be able to profit (if your deviant perspective is correct).
+To make a successful investment, it really helps to have some idea of what these expectations are so that you can understand whether or not your perspectives deviate from consensus. Only then will you be able to profit -- if your deviant perspective is correct.
 
 ## Price-implied expectations
 
