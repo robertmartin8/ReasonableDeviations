@@ -137,7 +137,7 @@ If we wanted to represent a datapoint in *p*-dimensions, we could replace the `x
 
 ### Reading in data from a file
 
-Having decided how we are going to store datapoints within our C++ script, we must then read in the data from a CSV file. This is rather unexciting, but actually took me a long time to figure out. Essentially, we loop over all the lines in the CSV file and break the down based on the commas.
+Having decided how we are going to store datapoints within our C++ script, we must then read in the data from a CSV file. This is rather unexciting, but actually took me a long time to figure out. Essentially, we loop over all the lines in the CSV file and break them down based on the commas.
 
 ```cpp
 vector<Point> readcsv() {
