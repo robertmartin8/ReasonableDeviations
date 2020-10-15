@@ -140,7 +140,7 @@ There are some problems around the \\$365-strike contracts, but after applying a
 We can then apply the same cubic spline that we used with the butterfly probabilities to create a smooth function -- a cross-section of the **volatility surface**. 
 
 <center>
-<img src="{{ site.imageurl }}options/spy_smile.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}options/SPY_smile.png" style="width:80%;"/>
 </center>
 
 With a moment's reflection, this plot is rather unintuitive. Rather than having a constant IV, we observe the characteristic **volatility smile**. This does not make much sense if we think of IV as the "expected wiggliness" of returns in the underling between now and expiry -- the future volatility should be independent of the strike -- and is in clear contradiction to the Black-Scholes assumption that volatility is constant.
