@@ -16,6 +16,12 @@ For those of you who just want to see the (interactive!) result, here it is. Cli
 </div>
 <br/>
 
+*EDIT: It seems plotly limits plots to 1000 daily views. For now, the static image is below. My apologies!*
+
+<center>
+<img src="{{ site.imageurl }}covid_beta/CovidBeta.png" style="width:100%;"/>
+</center>
+
 If you would like to generate this plot for yourself, perhaps using a different basket of stocks, the Jupyter notebook is [here](https://github.com/robertmartin8/RandomWalks/blob/master/COvidBeta/CovidBeta.ipynb).
 
 *Note: most of this post was written before November 9th 2020, the day on which Pfizer announced incredibly encouraging results regarding their vaccine.*
