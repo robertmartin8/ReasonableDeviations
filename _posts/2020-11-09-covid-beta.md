@@ -9,18 +9,9 @@ In this short post, we compute and visualise "COVID-19 betas" for stocks in the 
 <!--more-->
 For those of you who just want to see the (interactive!) result, here it is. Click on any sector to zoom in on its constituents:
 
-<div>
-  <div style="position:relative;padding-top:56.25%;">
-  <iframe id="igraph" scrolling="no" allowfullscreen seamless="seamless" src="https://chart-studio.plotly.com/~robertmartin8/5.embed?showlink=false" height="100%" width="100%" style="border:none;position:absolute;top:0;left:0"></iframe>
-  </div> 
-</div>
+{% include html_assets/covid_heatmap.html %}
+
 <br/>
-
-*EDIT: It seems plotly limits plots to 1000 daily views. For now, the static image is below. My apologies!*
-
-<center>
-<img src="{{ site.imageurl }}covid_beta/CovidBeta.png" style="width:100%;"/>
-</center>
 
 If you would like to generate this plot for yourself, perhaps using a different basket of stocks, the Jupyter notebook is [here](https://github.com/robertmartin8/RandomWalks/blob/master/COvidBeta/CovidBeta.ipynb).
 
