@@ -67,8 +67,6 @@ To summarise the betas in one clear diagram, I drew inspiration from the Bloombe
 <img src="{{ site.imageurl }}covid_beta/CovidBeta.png" style="width:100%;"/>
 </center>
 
-<br/>
-
 (Note: we don't see a large blue rectangle corresponding to Zoom because Zoom isn't yet in the S&P500 index)
 
 At a first glance, this graphic seems to accurately describe much of our intuition regarding what COVID has benefitted/harmed. Tech is largely blue (benefitting), as are healthcare and consumer staples. Energy has been particularly hard hit, with financials having a tough time also. But the effect of COVID on other sectors may not be as obvious, and it is here where the visualisation becomes especially helpful.
