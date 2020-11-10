@@ -63,11 +63,9 @@ A higher COVID beta means that a stock's returns were *positively* correlated wi
 
 To summarise the betas in one clear diagram, I drew inspiration from the Bloomberg terminal heatmap, which gives an instant "pulse" of the market with respect to one key variable (with the size of a rectangle representing market caps):
 
-<div>
-  <div style="position:relative;padding-top:56.25%;">
-  <iframe id="igraph" scrolling="no" allowfullscreen seamless="seamless" src="https://chart-studio.plotly.com/~robertmartin8/5.embed?showlink=false" height="100%" width="100%" style="border:none;position:absolute;top:0;left:0"></iframe>
-  </div> 
-</div>
+{% include html_assets/covid_heatmap.html %}
+
+<br/>
 
 (Note: we don't see a large blue rectangle corresponding to Zoom because Zoom isn't yet in the S&P500 index)
 
