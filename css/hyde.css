@@ -35,6 +35,7 @@
 html {
   font-family: "Crimson Text", Times, serif;
   text-align: justify;
+  font-display: swap;
 }
 @media (min-width: 48em) {
   html {
