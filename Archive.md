@@ -10,7 +10,7 @@ title: Post archive
     &raquo;
     [ {{ post.title }} ]({{ site.url }}{{ post.url }}) &raquo; {% assign words = post.content | number_of_words %}{% if words < 360 %}
     1 min {% else %}
-    {{ words | divided_by:210 }} mins
+    {{ words | divided_by:200 | at_most:25 }} mins
   {% endif %} 
 {% endfor %}
 
