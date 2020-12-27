@@ -36,9 +36,9 @@ However, it remained a concern for me that one day the winds would change and Ya
 
 When it comes to choosing a database system, there are a somewhat distressing number of decisions that you have to make. Do you want a relational database or NoSQL? If you choose relational, which system are you going to go with? Within that system, what storage engine should you use? 
 
-I think this chart from [nuodb](https://www.nuodb.com/product/database-comparison) sums up the various options quite well:
+I think this chart from [nuodb](https://nuodb.com/products/database-comparison) sums up the various options quite well:
 
-![](https://www.nuodb.com/sites/default/files/graphics/conceptual-diagrams/database-decision-tree_text_FINAL.jpg)
+![](https://nuodb.com/sites/default/files/styles/nuodb_extra_large/public/2020-05/database-comparison.jpg)
 
 It was quite clear to me that a SQL relational database was what I wanted, after all, price data is highly structured and I need very quick read speed. But even after narrowing it down to a traditional RDBMS, you still have to choose the exact system. A quick look cut my options down to SQLite, MySQL, or PostgreSQL. 
 
