@@ -36,6 +36,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Elements of Statistical learning – Hastie, Tibshirani, Friedman]({{ site.url }}/notes/el_stat_learn)
 	- [Advances in Financial Machine Learning – Marcos Lopez de Prado]({{ site.url }}/notes/adv_fin_ml)
 	<!-- - [Bayesian Methods for Hackers – Cameron Davidson-Pilon]({{ site.url }}/notes/bayesian_methods_for_hackers) -->
+	- [Options, Futures, and other Derivatives – John C. Hull]({{ site.url }}/notes/hull_options)
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
     - [CT1 Financial Mathematics](#ct1-financial-mathematics)
@@ -107,3 +108,9 @@ These notes were made following the free [Warwick notes](https://bcgts.wordpress
 Link: [Introduction to Boosted trees]({{ site.imageurl }}../notes/intro_boosted_trees.pdf).
 
 As I have mentioned elsewhere, for a period I became very interested in gradient tree boosting, particularly XGBoost – a review can be found in [this post]({{ site.baseurl }}{% post_url 2017-10-10-gradient-tree-boosting %}). One of the best expositions of XGBoost was some informal [slides](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf), made by its creator, Tianqi Chen. I think it's well worth a little bit of effort to understand XGBoost, because it is a very powerful algorithm.
+
+### Valuation Workshop
+
+Link: [CUFIS Valuation Workshop]({{ site.imageurl }}../notes/cufis_valuation_workshop.pdf)
+
+In January 2021, I gave a workshop on Investment Valuation to the Cambridge University student investment fund.
