@@ -17,7 +17,10 @@ The best and worst thing about computers is that they do exactly what you tell t
 
 *If you have a question about PyPortfolioOpt, please [raise an issue on GitHub](https://github.com/robertmartin8/PyPortfolioOpt/issues)*
 
-<form class="wj-contact" action="https://formspree.io/{{ site.author.email }}" method="POST">
+<center>
+<img src="{{ site.imageurl }}contact.png" style="width:75%;"/>
+</center>
+<!-- <form class="wj-contact" action="https://formspree.io/{{ site.author.email }}" method="POST">
     <input type="text" name="name" placeholder="Name">    
     <input type="text" name="email" placeholder="Email Address">
     <textarea type="text" name="content" rows="10" placeholder="Message – please use GitHub issues instead if it is a question about PyPortfolioOpt"></textarea>
@@ -25,7 +28,7 @@ The best and worst thing about computers is that they do exactly what you tell t
     <input type="hidden" name="_subject" value="New Contact Form Submission">
     <input type="text" name="_gotcha" style="display:none">
     <input type="submit" value="Submit">
-</form>
+</form> -->
 
 
 ## Programming
