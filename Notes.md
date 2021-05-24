@@ -36,7 +36,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
 	- [Elements of Statistical learning – Hastie, Tibshirani, Friedman]({{ site.url }}/notes/el_stat_learn)
 	- [Advances in Financial Machine Learning – Marcos Lopez de Prado]({{ site.url }}/notes/adv_fin_ml)
 	<!-- - [Bayesian Methods for Hackers – Cameron Davidson-Pilon]({{ site.url }}/notes/bayesian_methods_for_hackers) -->
-	- [Options, Futures, and other Derivatives – John C. Hull]({{ site.url }}/notes/hull_options)
+	<!-- - [Options, Futures, and other Derivatives – John C. Hull]({{ site.url }}/notes/hull_options) -->
 - [**Miscellaneous notes**](#miscellaneous-notes)
     - [The Binomial Theorem](#the-binomial-theorem)
     - [CT1 Financial Mathematics](#ct1-financial-mathematics)
