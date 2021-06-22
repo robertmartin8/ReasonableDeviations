@@ -8,7 +8,7 @@ excerpt: "In this post, we discuss how asymmetric bets can be evaluated with the
 In a classic scene of *No Country For Old Men*, Javier Bardem's character ominously asks a shopkeeper: "what's the most you ever lost on a coin toss?". The shopkeeper says that he doesn't know -- this is probably quite a reasonable response given that for a fair coin, one has little reason to make a bet since your expected value (EV) is zero. Yet retail investors seem to make coin-toss bets all the time: they conclude that based on their analysis, a certain stock is a buy (i.e it has positive expected value). But they often forget to account for *model risk* -- the risk that their analysis itself is faulty. 
 
 
-There is plenty of research to show that in actual fact, the buy/sell decisions of (retail) investors may as well be coin flips. Steve Cohen, the legendary hedge-fund manager, points out that his best portfolio managers get the direction of stock movement right only 56% of the time. However, the key to their success is the **asymmetric payoff** (technically speaking, the *skew*). Namely, when they are right, they ride the stock up to significant gains, but when they are wrong they are quick to cut losses. Let's assume that whenever they are right, the stock goes up 30%, but if the stock is going down they will cut their losses at 5%. The EV is then calculated as follows:
+There is plenty of research to show that in actual fact, the buy/sell decisions of (retail) investors may as well be coin flips. Steve Cohen, the legendary hedge-fund manager, points out that his best portfolio managers get the direction of stock movement right only 56% of the time. However, the key to their success is the **asymmetric payoff**. When they are right, they ride the stock up to significant gains, but when they are wrong they are quick to cut losses. Let's assume that whenever they are right, the stock goes up 30%, but if the stock is going down they will cut their losses at 5%. The EV is then calculated as follows:
 
 $$\text{EV} = 0.56 \times 30\% + (1-0.56) \times (-5\%) \approx 17\%$$
 
@@ -21,9 +21,9 @@ It was July 2019: the height of the trade war, Brexit uncertainties alive as eve
 
  > the market is pricing in an 100% probability of a rate cut of 25bps or more 
 
-This statement provides an interesting opportunity to make a positive EV bet because of the asymmetry it presents. I fundamentally do not believe that zero probability events exist, apart from in maths textbooks. For example, thanks to quantum theory, there is a nonzero probability that a tennis ball thrown at the wall will travel through it due to quantum tunnelling. Humans (and markets) are incredibly unpredictable, hence it made no sense to me that markets can be certain about anything.
+This statement provides an interesting opportunity to make a positive EV bet because of the asymmetry it presents. When the market is so confident that interest rates will be cut, you are getting excellent odds to make a bet on the opposite outcome (i.e rates held constant or increasing), even if you think that's quite unlikely.
 
-My proposal was to make a hawkish bet, i.e betting that interest rates will either stay the same or go up. Because the market thinks that there is an "100% chance" of a cut, if the rates are indeed cut, then I wouldn't pay much for being wrong. However, on the off chance I'm right, my payoff could be huge.
+Concretely, my proposal was to make a hawkish bet, i.e betting that interest rates will either stay the same or go up. Because the market thinks that there is an "100% chance" of a cut, if the rates are indeed cut, then I wouldn't pay much for being wrong. However, on the off chance I'm right, my payoff could be large.
 
 In the rest of the post, we will discuss how to actually bet on interest rates, how the market-implied probability of a rate cut is calculated, and a post-mortem of my pitch.
 
@@ -132,6 +132,6 @@ Hence my hawkish bet (shorting the futures contract) would result in a profit of
 
 Unsurprisingly, the Fed decided to cut rates by 25bps, citing weak global growth and trade tensions. However, I don't think this pitch was incorrect. The point is not that I thought rates would be held steady, but that I was willing to assign this outcome a higher probability than the market was. 
 
-I ended up pitching this idea, together with three other students, to a panel of managing directors at J.P. Morgan as part of an industry insight event. They were sceptical initially, but were quite intrigued once I had made it sufficiently clear that this was really a play on market expectations rather than interest rates directly. On a side note, I knew that a successful pitch here could result in a front-office summer internship offer at JPM so perhaps there was another dimension to this asymmetric bet... (unlike the Fed funds rate, this one paid off).
+I ended up pitching this idea, together with three other students, to a panel of managing directors at J.P. Morgan as part of an industry insight event. They were sceptical initially, but were quite intrigued once I had made it sufficiently clear that this was really a play on market expectations rather than interest rates directly. On a side note, I knew that a successful pitch here could result in a front-office summer internship offer at JPM so perhaps there was another dimension to this asymmetric bet...
 
 If there's anything you should take away from this post, it is this: I am certainly not claiming to know more than economists about what the Fed is going to do. What I *am* saying is that whenever the market is so sure that something is going to happen (or never going to happen!), there could be a good opportunity for a highly asymmetric bet.
