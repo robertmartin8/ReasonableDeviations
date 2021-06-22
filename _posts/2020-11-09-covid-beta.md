@@ -13,7 +13,7 @@ For those of you who just want to see the (interactive!) result, here it is. Cli
 
 <br/>
 
-If you would like to generate this plot for yourself, perhaps using a different basket of stocks, the Jupyter notebook is [here](https://github.com/robertmartin8/RandomWalks/blob/master/COvidBeta/CovidBeta.ipynb).
+If you would like to generate this plot for yourself, perhaps using a different basket of stocks, the Jupyter notebook is [here](https://github.com/robertmartin8/RandomWalks/blob/master/CovidBeta/CovidBeta.ipynb).
 
 *Note: most of this post was written before November 9th 2020, the day on which Pfizer announced incredibly encouraging results regarding their vaccine.*
 
