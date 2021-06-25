@@ -6,7 +6,8 @@ title: Revision notes
 Over the course of my studies, I have amassed a large quantity of notes and summaries. Over time, I will try to upload as many as possible – it'd be nice if they were all in one place.
 
 
-- **Cambridge Natural Sciences**
+- **Cambridge Natural Sciences**	
+	- [II Astrophysics]({{ site.url }}/notes/II_astro)
 	- [IB Physics]({{ site.url }}/notes/IB_physics)
 	- [IB Maths]({{ site.url }}/notes/IB_maths)
 	- [IA Materials Science]({{ site.url }}/notes/IA_materials_science)
