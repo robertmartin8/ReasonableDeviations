@@ -45,6 +45,7 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
     - [The Black-Litterman model]({{ site.imageurl }}../notes/BlackLitterman.pdf)
     - [Equity Investing Checklist]({{ site.url }}/notes/investing_checklist)
     - [Kelly Criterion one-pager]({{ site.imageurl }}../notes/kelly_betting.pdf)
+    - [CUFIS Valuation Workshop](#valuation-workshop)
 - **International Baccalaureate (IB) notes**
 	- [Mathematics (higher level)]({{ site.url }}/notes/hl_maths)
 	- [Physics (higher level)]({{ site.url }}/notes/hl_physics)
