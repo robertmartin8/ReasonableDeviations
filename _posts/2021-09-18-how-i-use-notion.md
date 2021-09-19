@@ -29,7 +29,6 @@ With all this out of the way, let's begin!
 ## Contents
 
 <!-- TOC -->
-
 - [Prelude: intro to my Notion workspace](#prelude-intro-to-my-notion-workspace)
 - [How I use Notion for projects](#how-i-use-notion-for-projects)
     - [PyPortfolioOpt](#pyportfolioopt)
@@ -47,7 +46,6 @@ With all this out of the way, let's begin!
     - [Tracking themes](#tracking-themes)
     - [Investment research](#investment-research)
     - [Investment pitches](#investment-pitches)
-- [How I use Notion for careers stuff](#how-i-use-notion-for-careers-stuff)
 - [How I use Notion to track my learning](#how-i-use-notion-to-track-my-learning)
 - [Conclusion](#conclusion)
 
