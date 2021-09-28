@@ -10,10 +10,12 @@ This page describes some of the projects I've worked on (several are still ongoi
 - [ReasonableDeviations](#reasonabledeviations)
 - [PyPortfolioOpt](#pyportfolioopt)
 - [BinancePremiums](#binancepremiums)
+- [Crypto market-making in Julia](#crypto-market-making-in-julia)
 - [MLStocks](#mlstocks)
 - [HyperVault](#hypervault)
 - [HireYou](#hireyou)
 - [KindleClippings](#kindleclippings)
+- [pValuation](#pvaluation)
 
 <!-- /TOC -->
 
@@ -48,6 +50,8 @@ Relevant links:
 - [Website](https://binancepremiums.com/)
 - [Twitter launch](https://twitter.com/robertmartin88/status/1390332874285535232?s=20)
 
+<hr>
+
 ## Crypto market-making in Julia
 
 Towards the end of my undergrad degree, I became very interested in the Julia programming language. With python-like syntax, ridiculous performance, and some really cool metaprogramming, it seems like a great language to use for finance. 
@@ -57,6 +61,8 @@ To that end, I built a simple market-making bot in Julia. The goal was to make s
 The bot was nowhere close to being profitable, but it was a wonderful dev experience -- Julia will now be my go-to for any performance-critical applications.
 
 I will probably open-source this code at some point, but no promises! 
+
+<hr>
 
 ## MLStocks
 
@@ -98,6 +104,8 @@ After my first round of internship applications, I realised that video interview
 <img src="{{ site.imageurl }}/projects/hireyou_screenshot.png" style="width:80%;"/>
 </center>
 
+<hr>
+
 ## KindleClippings
 
 KindleClippings is a small script I use to pull all the highlights from my Kindle onto my computer, rearranging them into clean text files. In addition to being a great beginner python project, this script is a critical part of my reading workflow.
@@ -106,6 +114,8 @@ Relevant links:
 
 - [GitHub repo](https://github.com/robertmartin8/kindleclippings)
 - [My reading workflow](https://reasonabledeviations.com/2021/09/18/how-i-use-notion/#how-i-use-notion-to-track-books)
+
+<hr>
 
 ## pValuation
 
