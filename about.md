@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+order: 4
 ---
 
 <center>

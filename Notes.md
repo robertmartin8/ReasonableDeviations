@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Revision notes
+order: 3
 ---
 
 Over the course of my studies, I have amassed a large quantity of notes and summaries. Over time, I will try to upload as many as possible – it'd be nice if they were all in one place.

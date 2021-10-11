@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Post archive
+order: 1
 ---
 
 {% for post in site.posts %}

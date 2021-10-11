@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Projects
+order: 2
 ---
 
 This page describes some of the projects I've worked on (several are still ongoing). The projects are in approximately decreasing order of "importance" (whatever that means).
