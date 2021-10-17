@@ -28,8 +28,10 @@ There was a time when I wanted to be a physicist, but "messy" systems like finan
 - [Finance](#finance)
 - [Crypto](#crypto)
 - [Books](#books)
+- [Information diet](#information-diet)
+    - [Podcasts](#podcasts)
+    - [Newsletters](#newsletters)
 - [Timeline](#timeline)
-
 <!-- /TOC -->
 
 ## Programming
