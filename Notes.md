@@ -44,7 +44,6 @@ Over the course of my studies, I have amassed a large quantity of notes and summ
     - [CT1 Financial Mathematics](#ct1-financial-mathematics)
     - [Introduction to Boosted Trees](#introduction-to-boosted-trees)
     - [The Black-Litterman model]({{ site.imageurl }}../notes/BlackLitterman.pdf)
-    - [Equity Investing Checklist]({{ site.url }}/notes/investing_checklist)
     - [Kelly Criterion one-pager]({{ site.imageurl }}../notes/kelly_betting.pdf)
     - [CUFIS Valuation Workshop](#valuation-workshop)
 - **International Baccalaureate (IB) notes**

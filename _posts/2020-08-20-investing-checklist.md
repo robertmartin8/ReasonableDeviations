@@ -1,15 +1,14 @@
 ---
-layout: default
-title: Investing Checklist
+layout: post
+title: Equity Investing Checklist
+category: finance
 ---
-
-# Equity Investing Checklist
 
 This page represents a work-in-progress checklist for equity investing. It is continuously being refined based on my reading, as well as my actual experience in researching and investing. The hope is that this provides transparency and accountability (for myself), to better understand my cognitive biases and weak spots.
 
-An important idea underlying this checklist is that time is finite, and there are thousands of public companies that we could analyse. Hence it's ok to be trigger-happy with your vetos, and to stop researching a company if there's a minor red flag. In the checklist below, I write `veto` whenever the point is a sufficient reason to stop researching the company.
+<!--more-->
 
-<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+An important idea underlying this checklist is that time is finite, and there are thousands of public companies that we could analyse. Hence it’s ok to be trigger-happy with your vetos, and to stop researching a company if there’s a minor red flag. In the checklist below, I write "veto" whenever the point is a sufficient reason to stop researching the company.
 
 - [Investment universe](#investment-universe)
 - [Preliminary research](#preliminary-research)
@@ -24,7 +23,6 @@ An important idea underlying this checklist is that time is finite, and there ar
 - [Third-party research](#third-party-research)
 - [Pull the trigger](#pull-the-trigger)
 
-<!-- /TOC -->
 ---
 
 ## Investment universe
@@ -176,3 +174,4 @@ This is really for accountability and self-improvement, so that 6 months from no
 - For posterity, it is good to note down the date and price of your fill (although this is tracked by your broker).
 - It is inevitable that we will continue to learn new things about the stock once we own it -- many investors say that this is the best time to learn about your company because you now have skin in the game. It is very possible that you may come across new information that invalidates your thesis, or affects your entry/exit conditions. This is fine, as long as you note it down very clearly. Hence 6 months from now, you will be able to retrospectively diagnose whether you were constructing a narrative to justify your beliefs, or the new information truly did affect your thesis.
 - When we eventually close the position, again, we should write down the date and the fill. This is important so that in future we can analyse what happened to all the stocks that we sold -- did we sell too early?
+
