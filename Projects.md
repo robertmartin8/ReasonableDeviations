@@ -120,6 +120,8 @@ Relevant links:
 
 ## pValuation
 
-[pValuation](https://github.com/robertmartin8/pValuation) is one of my semi-failed projects. The idea was for it to be a collection of investigations into different aspects of quantamental finance (or rather, supporting code for writeups on this blog). While I had several investigations planned (technically still in the pipeline), there are several more interesting posts I want to publish before revisiting this.
+[pValuation](https://github.com/robertmartin8/pValuation) is a project for which I had grand but unfulfilled ambitions. The idea was for it to be a collection of investigations into different aspects of quantamental finance (or rather, supporting code for writeups on this blog). While I had several investigations planned (technically still in the pipeline), these have been shelved for the time being. Some of the stuff that I did manage to get done:
 
-
+- [Understanding the market's expectations of COVID-19]({{ site.baseurl }}{% post_url 2020-03-25-coronavirus-equity-expectations %}) and [code](https://github.com/robertmartin8/pValuation/blob/master/MarketImpliedSurfaces/MarketImpliedSurfaces2.ipynb). 
+- [A Tanker Trade]({{ site.baseurl }}{% post_url 2020-04-24-oil-storage %}) and [code](https://github.com/robertmartin8/pValuation/tree/master/OilTankers).
+- [Option-implied probability distributions]({{ site.baseurl }}{% post_url 2020-10-01-option-implied-pdfs %}) and [code](https://github.com/robertmartin8/pValuation/tree/master/ProbabilisticValuation)
