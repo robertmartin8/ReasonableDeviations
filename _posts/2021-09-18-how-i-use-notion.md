@@ -383,7 +383,7 @@ Each subpage contains links to resources, as well as my thoughts on the investme
 <img src="{{ site.imageurl }}notion/uranium.png" style="width:80%;"/>
 </center>
 
-For equities, I use the structure discussed in my [Equity Investing Checklist]({{ site.url }}/notes/investing_checklist).
+For equities, I use the structure discussed in my [Equity Investing Checklist]({% post_url 2020-08-20-investing-checklist %}).
 
 
 ### Investment pitches
