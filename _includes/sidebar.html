@@ -21,7 +21,7 @@
 
       {% assign pages_list = site.pages | sort:"order" %}
       {% for node in pages_list %}
-        {% if node.title == "Legal Disclaimer" %}
+        {% if node.title == "Legal Disclaimer" or node.title == "About"%}
             {% continue %}
         {% endif %}
         {% if node.title != null %}
@@ -31,17 +31,30 @@
         {% endif %}
       {% endfor %}
 
+
+            
+      <a class="sidebar-nav-item" href="https://robertreads.notion.site/">
+            Book reviews <i class="fa fa-books"></i>
+     </a>
+     <a class="sidebar-nav-item {% if page.url == '/about/' %} active {% endif %}" href="/about/">About</a>
+
+        <a class="sidebar-nav-item {% if page.url == node.url %} active {% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+      <a class="sidebar-nav-item" id="open-popup" href="#">
+            Subscribe <i class="fa fa-envelope"></i>
+     </a>
       <div class="sidebar-nav-item">
           <p>
+        
               <a href="{{ site.github.repo }}">
-              Github <i class="fa fa-github" aria-hidden="true"></i></a>
+              <i class="fa fa-github" aria-hidden="true"></i></a>
               &nbsp;
               <a href="{{ site.social.linkedin }}">
-                  LinkedIn <i class="fa fa-linkedin-square"></i>
+                  <i class="fa fa-linkedin-square"></i>
               </a>&nbsp;
-              <a class="sidebar-nav-item" id="open-popup" href="#">
-                    Subscribe <i class="fa fa-envelope"></i>
-             </a>
+              <a href="{{ site.social.twitter }}">
+                  <i class="fa fa-twitter-square"></i>
+              </a>&nbsp;
+
           </p>
       </div>
     </nav>

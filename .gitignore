@@ -1,6 +1,10 @@
 # Project specifics
 assets/images/img_creation_docs
 _drafts/
+.DS_Store
+.jekyll-cache/
+vendor/
+.bundle/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

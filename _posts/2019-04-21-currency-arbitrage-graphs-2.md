@@ -305,7 +305,7 @@ Secondly, it is likely that this whole analysis is flawed because of the way the
 
 Thirdly, we have assumed that you can trade an infinite quantity of the bid and ask. An order consists of a price and a quantity, so we will only be able to fill a limited quantity at the ask price. Thus in practice we would have to look at the top few levels of the order book and consider how much of it we'd eat into.
 
-It is not difficult to extend our methodology to arb between different exchanges. We would just need to aggregate the top of the order book from each exchange, then put the best bid/ask onto the respective edges. Of course, to do run this strategy live would require us to manage our inventory not just on a currency level but per currency per exchange, and factors like the congestion of the bitcoin network would come into play. 
+It is not difficult to extend our methodology to arb between different exchanges. We would just need to aggregate the top of the order book from each exchange, then put the best bid/ask onto the respective edges. Of course, to run this strategy live would require us to manage our inventory not just on a currency level but per currency per exchange, and factors like the congestion of the bitcoin network would come into play. 
 
 Lastly, this analysis has only been for a single snapshot. A proper arbitrage bot would have to constantly look for opportunities simultaneously across multiple order books. I think this could be done by having a websocket stream which keeps the graph updated with the latest quotes, and using a more advanced method for finding negative-weight cycles that does not involve recomputing the shortest paths via Bellman-Ford.
 

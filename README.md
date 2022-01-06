@@ -24,6 +24,9 @@ I do like writing in markdown – I currently have a better-than-sublime (no pun
 [Atom text editor](https://atom.io/) which makes writing a pleasure. As such, I wanted a web platform
 that allows you to write posts in markdown. Github pages with Jekyll seemed to be the right choice. I had no prior experience in HTML/CSS, but it wasn't too hard to pick up the small bits necessary.
 
+## Installation
+
+I followed [this guide](https://github.com/BillRaymond/install-jekyll-apple-silicon/blob/main/README.md) to set up.
 
 ## Theme and style
 
@@ -103,4 +106,6 @@ Namecheap offers a very useful [guide](https://www.namecheap.com/support/knowled
 
 ## License
 
-Code can be reproduced with attribution and without warranty, under the [MIT license](LICENSE.md).
+Code for the website can be reproduced with attribution and without warranty, under the [MIT license](LICENSE.md).
+
+Content is licensed under the Creative Commons. 
