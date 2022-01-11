@@ -1,11 +1,13 @@
 # Dependencies
 plugins: [jekyll-paginate]
+
+# Features
 excerpt_separator: <!--more-->
-categories: "quant-finance|finance|maths|physics|blockchain|programming|machine-learning"
+categories: "quant-finance|finance|maths|physics|crypto|programming|machine-learning"
+
 
 # Permalinks
 permalink:        /:year/:month/:day/:title/
-
 
 # Setup
 title:            Reasonable Deviations
@@ -20,9 +22,8 @@ author:
   email:        'martin.robertandrew@gmail.com'
 
 
-
-
 # Custom vars
+future: TRUE
 version:          2.1.0
 
 github:

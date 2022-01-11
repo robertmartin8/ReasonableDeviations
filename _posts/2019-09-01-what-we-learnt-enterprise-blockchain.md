@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What we learnt building an enterprise-blockchain startup"
-category: blockchain
+category: crypto
 ---
 
 It has been almost a year since the idea of HyperVault was first conceived. In that time, we built HyperVault up from a single sentence, gained and lost team members along the way, developed a functional proof-of-concept over the short winter holidays, crashed out of a few competitions (also won a couple of prizes), and finally decided to open source. This post aims to be an honest reflection on the journey -- highlighting both the good bits and the times we wanted to give up.
