@@ -113,10 +113,11 @@ I've split up the podcasts I consume loosely based on subject (though there's a 
 
 ## Timeline
 
-- **Sep 2020 -- Present**: Interning at BlueCrest Capital Management (trading)
-- **July 2020**: Interning at the D.E. Shaw Group (prop trading)
-- **June 2020**: Graduated from Cambridge with a first class degree in Astrophysics. It was a strange three years and I still don't think I've had a chance to properly reflect on it.
-- **April 2020**: Back to Cambridge one last time! It's hard to find a balance between socialising and exam revision.
+- **Dec 2021 -- Present**: Taking a break for a few months before I start full-time work!
+- **Sep 2021 -- Dec 2021**: Interning at BlueCrest Capital Management (trading)
+- **July 2021**: Interning at the D.E. Shaw Group (prop trading)
+- **June 2021**: Graduated from Cambridge with a first class degree in Astrophysics. It was a strange three years and I still don't think I've had a chance to properly reflect on it.
+- **April 2021**: Back to Cambridge one last time! It's hard to find a balance between socialising and exam revision.
 - **December 2020**: COVID-19 round 2 -- I am studying remotely from Singapore. Sadly it won't be like last year where exams are cancelled, so I don't have as much time as I'd like to pursue side projects.
 - **October 2020**: Started 3rd year at Cambridge. I swapped from physics to astrophysics, looking for something slightly more computational.
 - **June 2020**: Interning at Point72 Asset Management, doing long/short equity investment. It's tough working remotely, but the learning rate is insanely high.
