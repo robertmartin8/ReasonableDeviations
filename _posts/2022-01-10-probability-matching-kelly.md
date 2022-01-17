@@ -26,7 +26,7 @@ Let the coin have a known $P(\text{heads}) \equiv p > 0.5$ and consider a strate
 In the "optimal" case $f=1$ (i.e we always guess H provided $P(\text{heads}) > 0.5$), we gets $EV = 2p-1$. Probability matching, in which we set $f=p$, yields $(2p-1)^2$.
 
 <center>
-<img src="{{ site.imageurl }}prob_matching/strat_comparison.png" style="width:100%;"/>
+<img src="{{ site.imageurl }}prob_matching/strat_comparison.png" style="width:80%;"/>
 </center>
 
 Hence probability matching is a cognitive bias to the extent that it is a mathematically suboptimal strategy that results in a lower expected value.

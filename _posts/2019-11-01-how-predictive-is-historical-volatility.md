@@ -112,7 +112,7 @@ Having collected and processed the data, we are now ready to conduct an analysis
 Firstly, let's plot all of the rolling volatilities that we calculated.
 
 <center>
-<img src="{{ site.imageurl }}historical_vol_all_std.png" style="width:100%;"/>
+<img src="{{ site.imageurl }}histvol/historical_vol_all_std.png" style="width:100%;"/>
 <figcaption>The historical volatility of the S&P500 using different rolling windows</figcaption>
 </center>
 
@@ -151,7 +151,7 @@ mae = np.abs(std_df.subtract(realised_vol, axis=0)).mean()
 For the 1y data, historical volatility had a MAE of about 4.3%, which is quite large! However, looking through the data I saw that it was a few far-off predictions that caused such awful results. This is corroborated by a histogram of the realised volatilities, for which we can observe a fat right tail:
 
 <center>
-<img src="{{ site.imageurl }}realised_vol_hist.png" style="width:100%;"/>
+<img src="{{ site.imageurl }}histvol/realised_vol_hist.png" style="width:100%;"/>
 <figcaption>The distribution of realised volatilities for the SPY benchmark using data from 1950-2019</figcaption>
 </center>
 
@@ -162,7 +162,7 @@ All of these findings notwithstanding, it is reassuring to see that the errors b
 ```
 
 <center>
-<img src="{{ site.imageurl }}vol_errors_hist.png" style="width:100%;"/>
+<img src="{{ site.imageurl }}histvol/vol_errors_hist.png" style="width:100%;"/>
 <figcaption>The error of the 1y historical volatility predictions</figcaption>
 </center>
 

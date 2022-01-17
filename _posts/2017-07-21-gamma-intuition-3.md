@@ -36,7 +36,7 @@ $$\Gamma(2) = \int_0^\infty te^{-t}$$
 We can use standard integration by parts (IBP) to evaluate this:
 
 <center>
-<img src="{{ site.imageurl }}ttable.png" style="width:150px;"/>
+<img src="{{ site.imageurl }}gamma/ttable.png" style="width:150px;"/>
 </center>
 
 

@@ -61,7 +61,7 @@ These two facts aren't just coincidences, they are a direct result of the IBP fo
 In fact, we can derive a useful shortcut from this. Let us now try to evaluate $\int t^4 e^t dt$. This would normally be very tedious, as we would have to apply IBP four times! But let's be clever about it. The integrand has two parts, $t^4$ and $e^t$. As we saw, the former will always be differentiated while the latter will always be integrated. Not forgetting the alternating signs, we can set up a small table:
 
 <center>
-<img src="{{ site.imageurl }}t4table.png" style="width:150px;"/>
+<img src="{{ site.imageurl }}gamma/t4table.png" style="width:150px;"/>
 </center>
 
 The *D* denotes the part of the integrand which we will always differentiate, i.e the *f* that we choose for the IBP formula. Every term in the *D* column is the derivative of the term above it.
@@ -84,7 +84,7 @@ Due to the alternating signs in the first column of our table, we will not be ab
 To show this clearly, consider the table to evaluate $\int t^n e^{-t}dt$:
 
 <center>
-<img src="{{ site.imageurl }}tntable.png" style="width:300px;"/>
+<img src="{{ site.imageurl }}gamma/tntable.png" style="width:300px;"/>
 </center>
 
 Lattice multiplying the first few terms gives
@@ -101,7 +101,7 @@ Every term has a negative sign, because we have two sets of alternating signs th
 We will now evaluate $\int t^ne^{-t}dt$:
 
 <center>
-<img src="{{ site.imageurl }}tncomplete.png" style="width:300px;"/>
+<img src="{{ site.imageurl }}gamma/tncomplete.png" style="width:300px;"/>
 </center>
 
 Thus we see that:

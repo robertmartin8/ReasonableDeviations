@@ -68,7 +68,7 @@ $$f(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n + R(x)$$
 This is a reasonable assumption, because you've probably seen that polynomials can often be made to look like other functions. Here is a graph on which I've plotted $y = \sin x$ as well as $y = x - \frac{x^3}{3!} + \frac{x^5}{5!}$, which are the first three terms of the Maclaurin series for $\sin x$.
 
 <center>
-<img src="{{ site.imageurl }}maclaurin.png" style="width:400px;"/>
+<img src="{{ site.imageurl }}gamma/maclaurin.png" style="width:400px;"/>
 </center>
 
 

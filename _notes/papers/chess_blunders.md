@@ -36,7 +36,7 @@ The features investigated are as follows:
 - Empirically, it was found that the blunder rate increases monotonically in $b(P)$. Thus we can define the **blunder potential** of a position as $\beta(P) = b(P)/n(P)$ -- this is not to be confused with the empirical blunder rate. 
 
 <center>
-<img src="{{ site.imageurl }}empirical_blunders.png" style="width:300px;"/>
+<img src="{{ site.imageurl }}note_img/empirical_blunders.png" style="width:300px;"/>
 </center>
 
 - A simple model that fits the results suggests that players are $c$ times more likely not to blunder (where $c > 1$). Then, the empirical blunder rate $\gamma_c(P)$ is defined as

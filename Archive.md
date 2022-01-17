@@ -14,10 +14,3 @@ order: 1
     {{ words | divided_by:200 | at_most:25 }} mins
   {% endif %} 
 {% endfor %}
-
-<!-- <center>
-    <figure>   
-    <img src="{{ site.imageurl }}blog_wordcloud.png" style="width:800px;"/>
-    <figcaption>Wordcloud based on all posts and pages</figcaption>
-    </figure>
-</center> -->

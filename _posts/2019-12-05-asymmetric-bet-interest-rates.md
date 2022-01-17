@@ -62,7 +62,7 @@ The first thing to note is that Fed Funds futures contracts can be bought with e
 
 
 <center>
-<img src="{{ site.imageurl }}fed_funds_contracts.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}fedfunds/fed_funds_contracts.png" style="width:80%;"/>
 <figcaption>Data from the CME group</figcaption>
 </center>
 
@@ -86,7 +86,7 @@ Of course, there is added complexity in that the above analysis has only dealt w
 Now that we understand how these probabilities are calculated, we can look at the data. This chart shows all of the market-implied probabilities leading up to the 31/7/2019 FOMC meeting. For context, I was pitching this idea at the start of July 2019 and the Fed's target rate was 225-250bps:
 
 <center>
-<img src="{{ site.imageurl }}cme_fed_prob.png" style="width:100%;"/>
+<img src="{{ site.imageurl }}fedfunds/cme_fed_prob.png" style="width:100%;"/>
 <figcaption>Chart from the CME FedWatch Tool</figcaption>
 </center>
 
@@ -104,7 +104,7 @@ Having seen what the market expects, we can now begin to think about some reason
  
  
 <center>
-<img src="{{ site.imageurl }}trump_tweet.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}fedfunds/trump_tweet.png" style="width:80%;"/>
 <figcaption>Very classy.</figcaption>
 </center>
 

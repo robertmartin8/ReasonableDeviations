@@ -245,7 +245,7 @@ classify(modulus_5, y)
 Running the above resulted in a cross-validated accuracy of 58%. Given balanced classes, this is clearly a significant difference, so in principle the experiment could be stopped here and we can conclude that **classifying stock charts based on market cap is a learnable problem**. This result was especially surprising to me because this particular example is just using the moduli of the first 5 terms of the Fourier Transform, which really ignores a lot of the price chart. To see what I'm talking about, this is what a time series made of the absolute values of the first 5 Fourier terms looks like:
 
 <center>
-<img src="{{ site.imageurl }}5_fourier_terms.png" style="width:70%"/>
+<img src="{{ site.imageurl }}fourier/5_fourier_terms.png" style="width:70%"/>
 </center>
 
 Although you can see that some of the main trends are captured, it is clearly a crude approximation that ignores a lot of variation.
@@ -365,7 +365,7 @@ for i in range(0, 100, 5):
 Doing the same for the complex datasets and plotting the results yields:
 
 <center>
-<img src="{{ site.imageurl }}fourier_accuracy.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}fourier/fourier_accuracy.png" style="width:80%;"/>
 </center>
 
 It is interesting to note that the modulus datasets never beat the benchmark: it seems that taking the modulus of the complex terms throws away too much information. The complex datasets are most predictive at around 40 terms, but the plateau and  gradual decrease after that is a clear sign that overfitting occurs. 

@@ -12,7 +12,7 @@ It has been almost a year since the idea of HyperVault was first conceived. In t
 At a high level, the idea behind HyperVault is to use distributed ledger technology (we preferred to avoid the B-word) to provide a secure access layer to sensitive digital resources. If your company has some super-secret documents, what’s the best way of sharing them with other people? From our market research, we found that most people would just chuck it into an email as an attachment. This is terrible from a security standpoint: system administrators can see everything that goes through and you have absolutely no access record or control whatsoever once the email goes into your ‘sent’ mailbox. HyperVault provides a provably tamper-proof system with smart sharing features, such as scheduled or location-based access.
 
 <center>
-<img src="{{ site.imageurl }}hypervault_summary.png" style="width:100%;"/>
+<img src="{{ site.imageurl }}fob/hypervault_summary.png" style="width:100%;"/>
 </center>
 
 ## The Beginning: October-November 2018
@@ -44,7 +44,7 @@ The first competition we entered did not go so well -- we failed to convince the
 The main competition in March, however, was much more engaging and challenging (more than 100 teams participated). Due to a last-minute change of competition dates, Li Xi cut short his travel plans and flew back from Geneva for the Finals -- luckily, he made it back just in time for the pitch with only a few hours to spare and the pitch went quite smoothly. The judges were intrigued by the idea and asked us some particularly challenging technical questions regarding encryption, which Li Xi dealt with deftly. Coming out of it, we won the £2000 Future of Blockchain Nucypher prize, which was a strong vote of confidence.
 
 <center>
-<img src="{{ site.imageurl }}fob_pitch.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}fob/fob_pitch.png" style="width:80%;"/>
 <figcaption>Q&A at the Future of Blockchain Finals</figcaption>
 <br>
 </center>
@@ -56,7 +56,7 @@ The last competition we attended was the R3 Global Pitch Competition. R3 is an e
 With this opportunity in mind, we were talking to VCs about the idea of scaling up. In particular, we had good chemistry with the folks at Stakezero and Wilbe Ventures, and they gave us a lot of very thoughtful advice, emphasising the importance of not just identifying a vertical, but also targeting the size of the customer and the key stakeholders in a company that could make things happen. We hadn’t put too much thought into this before; I guess we were implicitly making the naïve assumption that if we built a cool product, it would sell itself. Up until that point, in our team meetings, we had just said that we’d target “SMEs” (small and medium-sized enterprises). But after a lot more research and discussion, we came to the troubling realisation that our ideal customer was, in fact, an “elephant” -- an organisation that would spend more than $100,000 a year on our product (see this excellent short [blog post](http://christophjanz.blogspot.com/2014/10/five-ways-to-build-100-million-business.html) for more) -- they are the only ones who have 1) enough secure documents and 2) a need to share these documents with scalability.
 
 <center>
-<img src="{{ site.imageurl }}five_ways_business.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}fob/five_ways_business.png" style="width:80%;"/>
 <figcaption>Image from Christopher Janz's blog</figcaption>
 <br>
 </center>

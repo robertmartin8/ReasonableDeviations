@@ -70,7 +70,7 @@ We then repeatedly recompute centroids and reassign points to the nearest centro
 Our goal today is to implement a C++ version of the *k*-means algorithm that successfully clusters a two-dimensional subset of the famous mall customers dataset (available [here](https://github.com/robertmartin8/udemyML/blob/master/06_clustering/Mall_Customers.csv)). It should be noted that the *k*-means algorithm certainly works in more than two dimensions (the Euclidean distance metric easily generalises to higher dimensional space), but for the purposes of visualisation, this post will only implement *k*-means to cluster 2D data. A plot of the raw data is shown below:
 
 <center>
-<img src="{{ site.imageurl }}kmeans-unclustered.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}kmeans/kmeans-unclustered.png" style="width:80%;"/>
 </center>
 
 By eye, it seems that there are five different clusters. The question is whether our *k*-means algorithm can successfully figure this out. We are actually going to cheat a little bit and tell the algorithm that there will be five clusters (i.e $k=5$). There are methods to avoid this, but they essentially involve testing different values of *k* and finding the best fit, so they don't add much value to this post.
@@ -335,7 +335,7 @@ plt.show()
 The result is quite pretty and it shows that -- bar a few contentious points around the centre cluster -- the clustering has worked as expected.
 
 <center>
-<img src="{{ site.imageurl }}kmeans-clustered.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}kmeans/kmeans-clustered.png" style="width:80%;"/>
 </center>
 
 

@@ -7,7 +7,7 @@ category: programming
 **a python approach to XKCD's Social Seating problem**
 
 <center>
-<img src="{{ site.imageurl }}movie_seating.png" style="width:400px;"/>
+<img src="{{ site.imageurl }}socialseating/movie_seating.png" style="width:400px;"/>
 </center>
 <!--more-->
 
@@ -52,7 +52,7 @@ What does it mean for a seating arrangement to be optimal? I am going to take a 
 Following the XKCD comic, each individual be denoted by a circular node. We will consider four types of relationships between individuals: friends, one-way 'crushes', romantic relationships, and acquaintances. I'm going to slightly modify the notation of the comic though:
 
 <center>
-<img src="{{ site.imageurl }}relationship_types.png" style="width:400px;"/>
+<img src="{{ site.imageurl }}socialseating/relationship_types.png" style="width:400px;"/>
 </center>
 
 The major advantage of this notation is that it encourages us to only consider the *outgoing* connections from a particular individual, which will be a big simplification when we come to considering an individual's enjoyment. But it is far from perfect. For example, this notation implies that a romantic relationship is the same as a mutual crush, i.e. that an individual would get as much enjoyment from sitting next to their crush as they would with their partner.
@@ -73,7 +73,7 @@ Now that we can *describe* a social network, let's try to calculate the total en
 We may as well use the network given in the comic. Here it is reproduced with our new notation (labelling each individual with a letter of the alphabet):
 
 <center>
-<img src="{{ site.imageurl }}xkcdgraphletters.png" style="width:400px;"/>
+<img src="{{ site.imageurl }}socialseating/xkcdgraphletters.png" style="width:400px;"/>
 </center>
 
 
@@ -85,7 +85,7 @@ the right of *B*, *G* to the right of *F*, etc. For each of the
 by $\epsilon_{\text{total}}$, which is done as follows. Consider the arrangement $ABCDEFGH$:
 
 <center>
-<img src="{{ site.imageurl }}xkcdline.png" style="width:400px;"/>
+<img src="{{ site.imageurl }}socialseating/xkcdline.png" style="width:400px;"/>
 </center>
 
 Assuming that an individual can only be affected by the individuals immediately to their left or right, each individual can have up to two outgoing connections,  which can assume values of 2, 1, 0.5, or 0 depending on the relationship. For each individual, we add up these values, then to find $\epsilon_\text{total}$ we just sum over all the individuals.
@@ -108,7 +108,7 @@ We will define the system as follows:
 That is a lot to take in, but hopefully this notation will become clearer with an example. Here is the XKCD network, with the letter labels replaced by numerals.
 
 <center>
-<img src="{{ site.imageurl }}xkcdgraphnumbers.png" style="width:400px;"/>
+<img src="{{ site.imageurl }}socialseating/xkcdgraphnumbers.png" style="width:400px;"/>
 </center>
 
 
@@ -509,13 +509,13 @@ with an etotal of: 17
 ```
 
 <center>
-<img src="{{ site.imageurl }}etotal_ev.png" style="width:400px;"/>
+<img src="{{ site.imageurl }}socialseating/etotal_ev.png" style="width:400px;"/>
 </center>
 
 I ran this a number of times on my system, and plotted all the results at once.
 
 <center>
-<img src="{{ site.imageurl }}many_etotal.png" style="width:400px;"/>
+<img src="{{ site.imageurl }}socialseating/many_etotal.png" style="width:400px;"/>
 </center>
 
 

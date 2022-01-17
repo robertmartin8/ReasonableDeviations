@@ -10,7 +10,7 @@ A few weeks ago, a user raised an issue on the GitHub repository for [PyPortfoli
 The actual bug that was reported is not particularly important, but it is quite easy to explain. PyPortfolioOpt offers a piece of functionality to construct a portfolio with minimum volatility (i.e minimal risk) -- aptly called `min_volatility`. The problem was that *it wasn't working*. One of my users, going by the name edgetrader, had provided a sample dataset and some code, which he claimed was producing incorrect output. I hate to say it, but issues like these are often caused by the user not formatting the data correctly or using the wrong value for a parameter. However, edgetrader's code looked fine, and running it on my machine did nothing but confirm the issue -- `min_volatility` was failing to produce the minimum volatility portfolio (for a painfully simple dataset too!). 
 
 <center>
-<img src="{{ site.imageurl }}pypfopt_bugreport.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}rebuilding_os/pypfopt_bugreport.png" style="width:80%;"/>
 </center>
 
 
@@ -127,7 +127,7 @@ Secondly, at the risk of saying "eat your vegetables", having a comprehensive su
 One thing that I want readers to take from this post is that software design, as with many things in life, is a game of tradeoffs. 
 
 <center>
-<img src="{{ site.imageurl }}software_tradeoffs.png" style="width:80%;"/>
+<img src="{{ site.imageurl }}rebuilding_os/software_tradeoffs.png" style="width:80%;"/>
 </center>
 
 You have to make a multitude of decisions (some small, some critical) about the frontend API, the set of features, backend design, etc. Doing this correctly results in a package that people actually enjoy using, leading to organic growth by referrals. Otherwise, you end up putting a lot of effort into something that nobody will use.
