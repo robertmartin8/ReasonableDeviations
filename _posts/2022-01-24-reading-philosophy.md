@@ -157,7 +157,7 @@ These little things gamify the process, providing a little dopamine hit.  Rememb
 
 At this point, I have a book review and categorised highlights (see my [book reviews site](https://robertreads.notion.site/) for examples). To maximise the value I get from the book as per my reading triplet, I then try to integrate the book with my second brain.
 
-A second brain is a network of concepts and ideas that are relevant to your life and interests. I run my second brain in [Obsidian](https://obsidian.md/). To fully describe my system would require a separate blog post, but it is loosely based on the Zettelkasten method, best described in Sonke Ahrens' book *How to Take Smart Notes* (my review [here](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=73d4990369204dabb865543214980788)).
+A second brain is a network of concepts and ideas that are relevant to your life and interests. I run my second brain in [Obsidian](https://obsidian.md/). To fully describe my system would require a separate blog post (to come!), but it is loosely based on the Zettelkasten method, best described in Sonke Ahrens' book *How to Take Smart Notes* (my review [here](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=73d4990369204dabb865543214980788)).
 
 Concretely, my process for integrating the book with my second brain is as follows:
 
@@ -178,9 +178,9 @@ Below is an example of my summary for *Adaptive Markets* (my review [here](https
 
 ### Extract atomic concepts
 
-My mental model is that a non-fiction book is made of concepts, examples, and commentary. The concepts can either be original to the author, or well-established. Examples are provided by the author to illustrate the concepts. In the discussion, the author describes how those particular concepts relate to other concepts.
+My mental model is that a non-fiction book is made of concepts, examples, and commentary. The concepts can either be original to the author, or well-established. Examples are provided by the author to illustrate the concepts. In the commentary, the author discusses how those particular concepts relate to other ideas, or provides a critical perspective on those concepts.
 
-I try to extract the concepts into individual notes. This avoids unnecessary duplication because often several books reference the same concept. In the *Adaptive Markets* screenshot above, the purple text denotes a link to an individual note I've made. For example, the efficient markets hypothesis is discussed in several books, so I created an atomic note for it. The bottom-right of the screen shows all the books that point to this concept. 
+My note-taking approach reflects this model. For example, I try to extract the concepts and examples into individual notes. This avoids unnecessary duplication because they often show up in other books. In the *Adaptive Markets* screenshot above, the purple text denotes a link to an individual note I've made. The *efficient markets hypothesis* is a concept discussed in several books, so I created an atomic note for it; the bottom-right of the screen shows all the books that point to this concept. Likewise, the *Gazzaniga split-brain experiment* is frequently used as an example in books on decision-making to illustrate our powers of rationalisation, so it deserves its own note. 
 
 <center>
 <img src="{{ site.imageurl }}reading/emh.png" style="width:100%;"/>
