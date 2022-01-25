@@ -9,8 +9,6 @@ order: 1
         <a style="white-space: nowrap" href="/category/{{ category_name }}">{{ category_name }}</a>
     ]
     &raquo;
-    [ {{ post.title }} ]({{ site.url }}{{ post.url }}) &raquo; {% assign words = post.content | number_of_words %}{% if words < 360 %}
-    1 min {% else %}
+    [ {{ post.title }} ]({{ site.url }}{{ post.url }}) &raquo; {% assign words = post.content | strip_html | number_of_words %}
     {{ words | divided_by:200 | at_most:25 }} mins
-  {% endif %} 
 {% endfor %}
