@@ -207,7 +207,7 @@ A key part of growth is discussion! Nothing sharpens your understanding of a boo
 
 There are several reasons to read fiction. 
 
-Firstly, for "culture". A cynical take is that the only purpose of reading the classics is to tell people you’ve read them. To be fully honest this used to be a source of motivation for me, but I tend to have a more mature approach: it's important to read classic/popular books so that you can understand references, and so that you can richen conversations by pointing out a parallel to a well-known tale. 
+Firstly, for "culture". A cynical take is that the only purpose of reading the classics is to tell people you’ve read them. To be fully honest this used to be a source of motivation for me, but I tend to have a more mature approach: it's important to read classic/popular books so that you can understand references, and so that you can enrich conversations by pointing out a parallel to a well-known tale. 
 
 Secondly, fiction books often do a good job of illustrating philosophical concepts. Rather than reading a political philosophy textbook to learn the definition of an authoritarian state, you could instead read a dystopian classic. *1984*, *Brave New World*, and *Fahrenheit 451* give three completely different perspectives on an authoritarian state; having read all three allows you to make intelligent commentary on what characteristics the real world shares with each of them, and perhaps even gain insight into where we may be headed.
 
