@@ -1,5 +1,5 @@
 ---
 layout: category
 title: "Category: Quant Finance"
-category: quant-finance
+category: quant
 ---

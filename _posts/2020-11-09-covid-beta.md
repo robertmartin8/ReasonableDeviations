@@ -1,7 +1,7 @@
 ---
 layout: post
 title: COVID-19 Beta
-category: quant-finance
+category: quant
 ---
 
 In this short post, we compute and visualise "COVID-19 betas" for stocks in the S&P500 index, to quantitatively and visually understand which companies were most affected (positively and negatively) by COVID-19.

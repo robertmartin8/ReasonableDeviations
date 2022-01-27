@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Exponential Covariance
-category: quant-finance
+category: quant
 excerpt: "In this post, I describe a method of computing covariance matrices that gives additional weight to recent observations. This is particularly important in the field of financial portfolio optimisation, wherein a better estimate of future covariance can create significant value."
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A critical look at Greenblatt's Magic Formula
-category: quant-finance
+category: quant
 ---
 
 As the saying goes, when something sounds too good to be true, it probably is -- all the more so when it comes to investing. In this short post, we look at the Magic Formula of Joel Greenblatt, as described in *The Little Book That Still Beats the Market*, critically examining the strategy and attempting to quantify its alpha. 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Black-Litterman allocation in algorithmic trading
-category: quant-finance
+category: quant
 ---
 
 In December 2019, I released a major update to [PyPortfolioOpt](https://github.com/robertmartin8/PyPortfolioOpt), my python portfolio optimisation package. The most significant addition was an implementation of the Black-Litterman (BL) method. Although BL optimisation is commonly used as part of a pipeline to optimise a multiasset/equity portfolio, in this post I argue that BL is particularly well suited to the problem of optimally weighting signals in an algorithmic trading context.

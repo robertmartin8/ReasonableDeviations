@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Retrieving historical stock prices from Yahoo Finance with no API 
-category: quant-finance
+category: quant
 ---
 
 Yahoo Finance has long been an excellent free financial resource with a wealth of data and a convenient API, allowing open source programming libraries to access stock data. But not any more. As of May 2017, they have [discontinued their API](https://forums.yahoo.net/t5/Yahoo-Finance-help/Is-Yahoo-Finance-API-broken/td-p/250503), probably as a result of Yahoo's pending acquisition by Verizon. This means that excellent tools like `pandas-datareader` are now broken, much to the dismay of many amateur algorithmic traders or analysts. It turns out that there is a rather hackish workaround which allows us to download the data as CSV (i.e spreadsheet) files, which of course can then be read into excel, pandas dataframes etc.

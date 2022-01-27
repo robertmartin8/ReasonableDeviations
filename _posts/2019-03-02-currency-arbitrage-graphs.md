@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Graph algorithms and currency arbitrage, part 1
-category: quant-finance
+category: quant
 excerpt: "In this post we briefly outline how graph theory can be used to systematically find arbitrage opportunities in foreign exchange markets."
 ---
 

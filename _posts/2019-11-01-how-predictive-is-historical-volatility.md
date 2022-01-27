@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How predictive is the historical volatility?
-category: quant-finance
+category: quant
 ---
 
 One of the things that makes markets exciting (or frightening) is that prices move around a lot. It is important to be able to describe and predict the range of possible price movements over a given time horizon since some investors might desire assets whose prices don't move up and down too much. We can quantify this by computing the **volatility**, which is commonly defined to be the standard deviation of the asset's (log) returns. This post examines how well we can predict future volatility and why that matters.<!--more-->

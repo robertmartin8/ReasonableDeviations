@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Graph algorithms and currency arbitrage, part 2
-category: quant-finance
+category: quant
 ---
 
 In the [previous post]({{ site.baseurl }}{% post_url 2019-03-02-currency-arbitrage-graphs %}) (which should definitely be read first!) we explored how graphs can be used to represent a currency market, and how we might use shortest-path algorithms to discover arbitrage opportunities. Today, we will apply this to real-world data. It should be noted that we are not attempting to build a functional arbitrage bot, but rather to explore how graphs could potentially be used to tackle the problem. Later on we'll discuss why our methodology is unlikely to result in actionable arbitrage. 

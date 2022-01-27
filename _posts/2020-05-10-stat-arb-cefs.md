@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Statistical arbitrage in closed-end funds
-category: quant-finance
+category: quant
 ---
 
 Sometimes, it is cheaper to buy a basket of assets than it is to buy the assets in the basket. In this post, we discuss closed-end funds and why they often trade at a discount to their net asset value. Furthermore, we explore whether this could be the basis for an algorithmic trading strategy.

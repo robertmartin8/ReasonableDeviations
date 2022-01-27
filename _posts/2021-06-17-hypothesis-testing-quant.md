@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hypothesis testing in quant finance
-category: quant-finance
+category: quant
 ---
 
 At its core, science is about making falsifiable hypotheses about the world (Popper), testing them experimentally, then using the experiment outcomes to refute or refine the hypotheses. The scientific method is an integral part of quantitative finance; it provides a framework we can use to identify and analyse trading signals or anomalies. 
