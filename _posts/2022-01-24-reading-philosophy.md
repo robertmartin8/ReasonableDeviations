@@ -77,7 +77,7 @@ When I'm ready to start a new book, I look at the reading list and consider some
 - Is the book being referenced by other books I've enjoyed? This was why I reluctantly read Taleb's books. 
 - I keep a rough mental list of topics I'm interested in (e.g finance, decision making, science fiction). Any classics in these areas are always fair game. 
 - If I've read a couple of books on the same topic in a row, I'll try to rotate to something else.
-- It's important to sprinkle in some "rogue" books, completely unrelated to my interests. For example, I recently picked up a book on Danish interior design called *The Book of Hygge*.
+- It's important to sprinkle in some "rogue" books, completely unrelated to my interests. For example, I recently picked up a book on Danish interior design called *The Book of Hygge* (my review [here](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=a904e1e1348843e3be343ac2a1a8bc4a))
 
 Ultimately, I'm not as deliberate as I could be with book selection. I think it's fine to be somewhat organic because it allows your minds to explore "threads" and build connections. Perhaps more importantly, it ensures that reading remains an enjoyable activity. If you have a predefined list of books that you are making yourself read, it becomes a chore -- the most dangerous thing one could do in building a reading workflow is to become sick of reading. 
 
@@ -193,7 +193,7 @@ This approach also allows me to better understand how the concept fits in with t
 
 Now that the book is in the second brain, the process doesn’t finish. It instead becomes a “seed” in the garden, whose nourishment is derived from linking it to other concepts.
 
-Using the graph tool, I look through related notes -- book reviews, summaries of different web articles, ideas I've had -- to try and find links. For example, after reading *Ask Your Developer*, a book about managing software firms written by Twilio CEO Jeff Lawson, I noticed that there were some interesting links to the design of decentralised systems, and therefore a link to German military strategy (*auftragstaktik*). I add these ideas to the summary page, or if they are meaningful enough, create a separate note for them. 
+Using the graph tool, I look through related notes -- book reviews, summaries of different web articles, ideas I've had -- to try and find links. For example, after reading *Ask Your Developer*, a book about managing software firms written by Twilio CEO Jeff Lawson (my review [here](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=a96677f597174b958a43d9db477787e2)), I noticed that there were some interesting links to the design of decentralised systems, and therefore a link to German military strategy (*auftragstaktik*). I add these ideas to the summary page, or if they are meaningful enough, create a separate note for them. 
 
 <center>
 <img src="{{ site.imageurl }}reading/askyourdev.png" style="width:60%;"/>
