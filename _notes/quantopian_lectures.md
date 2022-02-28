@@ -5,8 +5,7 @@ title: Quantopian Lecture Series
 
 # Quantopian Lecture Series
 
-This lecture series can be found on the Quantopian [website](https://www.quantopian.com/lectures), and is free for anyone to follow (though you may have to sign up). The lectures are in the form of jupyter notebooks, but most are accompanied by youtube videos. I think it's a great introduction to quant finance – it puts a lot of emphasis on common pitfalls that must be avoided.
-
+The lecture series can be found [here](https://gist.github.com/ih2502mk/50d8f7feb614c8676383431b056f4291) (thank goodness somebody saved it before Quantopian went under). The lectures are in the form of Jupyter notebooks, but most are accompanied by youtube videos. I think it's a great introduction to quant finance – it puts a lot of emphasis on common pitfalls that must be avoided.
 
 
 ## Contents
