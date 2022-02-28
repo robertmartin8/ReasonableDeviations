@@ -182,7 +182,7 @@ But my personal favourite is the image I showed you at the start of this post. T
 
 ---
 
-*I hoped you like seeing that maths and python can sometimes make beautiful children. Fork me on [GitHub](https://github.com/robertmartin8/RandomWalks/blob/master/julia_set.py) to experiment some more. The code therein is very similar to what I've shown in this post, except I've also included the code to generate the animations and test different colourmaps*.
+*Play around with the code on [GitHub](https://github.com/robertmartin8/RandomWalks/blob/master/julia_set.py) to experiment some more. The code therein is very similar to what I've shown in this post, except I've also included the code to generate the animations and test different colourmaps*.
 
 
 

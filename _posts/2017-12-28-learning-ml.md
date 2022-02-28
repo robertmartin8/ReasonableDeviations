@@ -13,6 +13,8 @@ Two years ago I was an absolute novice at machine learning: I had read around th
 
 Fast forward to the present day -- I'm just about escaping the local minimum on the other side. Although I definitely wouldn't claim anything close to mastery of the subject, a few months ago I took a step back to look at my progress and realised that I was definitely not a beginner any longer: I had built a couple of extensive projects, created some educational resources, and started applying machine learning models to my professional work. I therefore think that I am in a reasonable place to share the mistakes I made when learning ML, so that other people don't have to make them!
 
+***Edit as of Jan 2022**: in retrospect, this post was probably written near the Dunning-Kruger peak. I will happily say that I am in one of the valleys, though I'm not sure which one. That said, I still stand by the advice in this post!*
+
 It is worth noting that two years is a very long time; I was far too occupied (with the army, among other things) to commit fully to machine learning, but I think that most people could achieve near-mastery in 6 months if they so pleased. 
 
 In any case, from the perspective of a fellow learner who has had a small head start, and without any guarantees of it being the most efficient way to learn the subject, I'm going to present some advice. The rough overview is as follows:
@@ -25,26 +27,26 @@ In any case, from the perspective of a fellow learner who has had a small head s
 
 For each subsection, I'll try to provide some resource recommendations, and some tips.
 
-### Learn to code
+## Learn to code
 
-For better or worse, programming is basically a prerequisite for machine learning. It is true that there are some GUI environments, most notably [Weka](https://www.cs.waikato.ac.nz/ml/weka/) and the [Azure ML studio](https://studio.azureml.net/), but users of these tools are definitely in the minority. Programming gives you far more control over the whole machine learning process. I know from experience that 'control' is often the last think a beginner wants, because with great power comes the responsibility to actually write functional code, but it's honestly hard to appreciate ML without programming. The one exception I would cautiously make is if you have experience with statistical analysis (e.g in Excel), in which case Azure might not be a bad place to start. 
+For better or worse, programming is basically a prerequisite for machine learning. It is true that there are some GUI environments, most notably [Weka](https://www.cs.waikato.ac.nz/ml/weka/) and the [Azure ML studio](https://studio.azureml.net/), but users of these tools are definitely in the minority. Programming gives you far more control over the whole machine learning process. I know from experience that 'control' is often the last thing a beginner wants, because with great power comes the responsibility to actually write functional code, but it's honestly hard to appreciate ML without programming. The one exception I would cautiously make is if you have experience with statistical analysis (e.g in Excel), in which case Azure might not be a bad place to start. 
 
 For those new to programming, a natural question is what language to use. This is a big decision, but spending too long deciding will hold you back. I really recommend just picking [python 3](https://www.python.org/) and sticking with it: it has a very mature environment for machine learning, with simple syntax and an abundance of tutorials online. It has the added benefit of being a general-purpose language, so you can really do anything you want with it. 
 
-I can't remember exactly how I learnt python (it was a long time ago): I recall it being a dark and uncomfortable time, probably because I tried to navigate my own way through. I suggest you choose one of the many tutorials available. Here are two suggestions
+I can't remember exactly how I learnt python (it was a long time ago): I recall it being a dark and uncomfortable time, probably because I tried to navigate my own way through. I suggest you choose one of the many tutorials available. Here are three suggestions:
 
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/), by Al Sweigart. Very highly regarded, although it doesn't directly address data science. It teaches the syntax, and just how useful python can be. Even if you know for a fact that you're only interested in data science, the first 12 chapters are critical.
 - [A Byte of Python](https://python.swaroopch.com/). A great online book which teachers you quite a lot of the language. I used this a lot while I was learning.
 - [Python course from Rice University](https://www.coursera.org/learn/interactive-python-1). Comprehensive and beginner-friendly, but perhaps with an excessive focus on GUI programming.
 
 Some tips:
-- You don't need to know all that much about writing classes in python, at least for ML. I think one of the most important things is list comprehensions. 
+- You don't need to know all that much about writing classes in python, at least for ML. Understanding the basic language features, along with pandas dataframes, is probably sufficient.
 - Please use python 3.
 - I'd recommend against trying to learn about ML and learning the python language at the same time.
 
-### Learn the basics of ML
+## Learn the basics of ML
 
-Machine learning is a very mathematical subject, and though it's better if you can learn it rigorously (with all the maths), it's not necessary at this stage. But be aware that you will need a firm grasp of your high school maths if you want to progress further.
+Machine learning is a very mathematical subject, and though it's better if you can learn it rigorously (with all the maths), it's not necessary. But be aware that you will need a firm grasp of your high school maths if you want to progress further.
 
 One of the seemingly unanimous recommendations is Andrew Ng's [Coursera course](https://www.coursera.org/learn/machine-learning). My honest opinion is that this is likely to put you off ML unless you are a very quick learner (and good at maths). I didn't finish the course, and after giving up, I avoided ML for a long time. One of the problems is that he uses Octave/Matlab as a programming language, which nobody uses. That being said, the course does give amazing insight (provided you can follow the maths), and he covers many relevant algorithms. If you feel up to it, it may be worth following along with the videos but doing all of the assignments in python. Then you can compare your work with other people's [solutions on GitHub](https://github.com/JWarmenhoven/Coursera-Machine-Learning). 
 
@@ -58,7 +60,7 @@ Tips:
 - Ensure that you pick up the necessary skills with `numpy`, `pandas` and `sklearn`. These libraries are fast, and knowing the common usage patterns will save you from reinventing the wheel.
 - Keep a folder with lots of different python files, each containing an example application of a particular machine learning algorithm to a dataset (dummy or real). 
 
-### Pick a subject you are interested in
+## Pick a subject you are interested in
 
 After acquiring the basic skills, it is critical to find a subject that you are interested in and to build a project. Machine learning is a widely applicable tool, and I'd wager that there's an application of ML in whatever field you're interested in.
 
@@ -71,7 +73,7 @@ Tips:
 - Don't spend too long trying to figure out what project to do: indecision is the worst form of procrastination when it comes to learning new subjects. If you're really struggling to think of something, try [kaggle.com](https://www.kaggle.com/competitions). Don't be put off by the fact that it's a 'competition' -- it's also a good place to learn, and lots of people share notebooks showing what they've tried. Seeing all these different approaches is useful for beginners, as you can quickly try experimenting with existing solutions to see what works and what doesn't. 
 
 
-### Pick an interesting algorithm, and dive deep
+## Pick an interesting algorithm, and dive deep
 
 If you've followed the steps thus far, you should have a crude, but functional, project in a field that you are interested in. Now is the time to ascend to the next level, by really trying to understand what you are doing and improving your machine learning performance. 
 
@@ -88,10 +90,10 @@ In my case, SVMs and neural networks were common in the literature on stock pred
 
 Once you understand the algorithm, you should be able to go back to your original project with fresh eyes, applying your new knowledge to increase performance. But even if your performance won't increase, you'll have a much better idea as to why. 
 
-### Review your achievements
+## Review your achievements
 
-Although it is true that there is always more to learn about a subject, sometimes you do need to take a step back and acknowledge that you've come a long way. Look over your projects, your notes, and take some pride in what you have learnt.
+Although it is true that there is always more to learn about a subject, sometimes you do need to take a step back and acknowledge that you've come a long way. Look over your projects, your notes, and take some pride in what you have learnt. I'm most proud of an extensive tutorial I made, [MachineLearningStocks](https://github.com/robertmartin8/MachineLearningStocks), which is meant to help beginners get started with applying ML to stock prediction. 
 
-After researching a lot into stock prediction and boosted decision trees, I noticed a gap in the literature -- nobody had tried to apply gradient boosting to the markets. I ended up writing a paper, and was looking to publish it in *Expert Systems with Applications* before I became occupied with other things. But actually what I'm most proud of is an extensive tutorial I made, [MachineLearningStocks](https://github.com/robertmartin8/MachineLearningStocks), which is meant to help beginners get started with applying ML to stock prediction. I guess releasing the tutorial 'completed the circle' -- after you learn enough about a topic, it starts being your job to propagate that knowledge to the next iteration of learners.
+## Conclusion
 
-With that, I'll conclude this post. Machine Learning is a subject that is not hard to pick up, but has a learning curve that steepens the further you get into it. Just being able to *apply* machine learning puts you ahead of most of the world. It is constantly evolving, with a startling amount of research released daily. But don't let this put you off: with concerted effort and the right resources, it's definitely feasible for you to start contributing to that expanding corpus in less than a year. I really think it would be worth the effort, but perhaps I'm biased. 
+Machine Learning is a subject that is not hard to pick up, but has a learning curve that steepens the further you get into it. Just being able to *apply* machine learning puts you ahead of most of the world. It is constantly evolving, with a startling amount of research released daily. But don't let this put you off: with concerted effort and the right resources, it's definitely feasible for you to contribute to that ever-expanding corpus. 

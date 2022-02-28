@@ -5,12 +5,14 @@ category: quant
 excerpt: "In this post, I describe my thought process in designing a simple relational database to store historical OHLCV for equities, including why I chose MariaDB and code for populating the database."
 ---
 
-For those of you who have seen some of my other posts, you will know that I am very interested in machine learning and its application to predicting stock movements. As part of this hobby, I've spent many more hours parsing and processing data than I have actually applying machine learning. I've worked broadly with two datasets in particular: historical financial statistics (e.g P/E ratio, price/book) make up the features that my algorithms learn from, but the actual backbone of any strategy is historical price data.
-<!--more--> 
+One of my interests is exploring the applications of machine learning to financial markets. As part of this hobby, I've spent many more hours parsing and processing data than I have actually applying machine learning. I've worked broadly with two datasets in particular: historical financial statistics (e.g P/E ratio, price/book) make up the features that my algorithms learn from, but the actual backbone of any strategy is historical price data.
 
-My main data source has been Yahoo Finance. Although they've deprecated their official API, they do still have the same data on their website, meaning that it can be scraped if you can be bothered. I discovered a crude but functional way of doing this (detailed in this [post]({{ site.baseurl }}{% post_url 2017-07-30-yahoo-historical-prices %})), but then discovered an extremely convenient [python library](https://github.com/ranaroussi/fix-yahoo-finance) that does the same thing much more efficiently, with a direct pandas-datareader interface. 
+My main data source has been Yahoo Finance. Although they've deprecated their official API, they still have the same data on their website, meaning that it can be scraped if you can be bothered. I discovered a crude but functional way of doing this (detailed in this [post]({{ site.baseurl }}{% post_url 2017-07-30-yahoo-historical-prices %})), but then discovered an extremely convenient [python library](https://github.com/ranaroussi/fix-yahoo-finance) that does the same thing much more efficiently, with a direct pandas-datareader interface. 
 
 However, it remained a concern for me that one day the winds would change and Yahoo Finance would deprecate this hidden API permanently. So I decided to make a hoard of this data, in the form of a stock price database. I think creating your own securities database is an important step for anyone looking to get into algorithmic investing more seriously, so I've decided to share how I've done so. As this is my first financial database, there may be inefficiencies in the schema, but overall I believe that the solution presented here is relatively robust, and definitely sufficient for my purposes. 
+
+
+*Edit as of Feb 2022: I probably wouldn't recommend following the steps in this post -- there are better resources elsewhere. Nevertheless, I'm leaving this post up for personal nostalgia.*
 
 
 ## Contents

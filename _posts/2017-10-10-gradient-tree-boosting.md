@@ -9,7 +9,7 @@ Decision trees make for pretty vanilla classifiers: they do an unspectacular job
 
 Note that I will *not* be covering the actual functioning of decision trees; for that, you may either refer to [my notes]({{ site.url }}/notes/papers/induction_decision_trees) on the original paper, or to the excellent [Wikipedia page](https://en.wikipedia.org/wiki/Decision_tree_learning). 
 
-### Weak learners and boosting
+## Weak learners and boosting
 
 As I have mentioned, I don't think decision trees on their own are especially useful. You might even say that they are 'weak classifiers', or generally, 'weak learners'. This, in fact, is a technical term which refers to predictive models which only do a little bit better than random guessing.
 
@@ -17,9 +17,9 @@ However, Robert Schapire (currently a Princeton professor) discovered in his cla
 
 I won't go into the details of AdaBoost, because it is slightly tangential to the goal of this post, but Chris McCormick has an excellent exposition of the algorithm [here](http://mccormickml.com/2013/12/13/adaboost-tutorial/).  
 
-### Additive models
+## Additive models
 
-Around the same time, a lot of research was going on into **additive expansions**, which are linear combinations with coefficients $\beta$ of **basis functions** $b(x;\gamma)$:
+Around the same time, a lot of research was going on into **additive expansions**, which are linear combinations of **basis functions** $b(x;\gamma)$ with coefficients $\beta$:
 
  $$f(x) = \sum_{m=0}^{M} \beta_m b(x;\gamma_m)$$
  
@@ -105,7 +105,7 @@ I think it is definitely worth reading over the last few paragraphs again; it is
 > **Return** $~f_M(x)$
 
 
-### Regularisation
+## Regularisation
 
 A popular method of regularising boosted tree models, proposed in the original paper by Friedman, is *shrinkage*, wherein additional trees are multiplied by a small shrinkage parameter $\nu$ before being added to the existing model. This would change the update step in the gradient tree boosting algorithm to: 
 
@@ -196,18 +196,17 @@ Apart from the inbuilt complexity penalty, XGBoost offers shrinkage and row subs
 
 ## Conclusion
 
-This has been quite an unexpectedly detailed post on the development of XGBoost, and I fear that I have failed in my goal of presenting the subject intuitively. While the logic behind the mathematics is not hard to follow, I will agree that the notation is often quite arcane: there are many different indexing values to keep track of. However, it is very rewarding to be able to understand just how clever XGBoost is, even more so because with it, you can achieve amazing performance on many learning tasks. 
+This post turned out to be more detailed than I originally intended. While the logic behind the mathematics is not hard to follow, I concede that the notation is often quite arcane: there are many different indexing values to keep track of. However, it's very rewarding to be able to understand just how clever XGBoost is, even more so because with it, you can achieve amazing performance on many learning tasks. 
 
-I did a fair bit of research into the theory of gradient tree boosting while writing a paper about using XGBoost to classify potentially outperforming stocks (more on that another time, perhaps). For me, the biggest issue was synthesising a clear and consistent notation from all the conflicting sources (if you think the notation in this post is confusing, wait until you compare three different sets of notation). Nevertheless, some resources I found useful are as follows:
+I did a fair bit of research into the theory of gradient tree boosting while writing a paper about using XGBoost to classify potentially outperforming stocks (more on that another time, perhaps). For me, the biggest issue was synthesising a clear and consistent notation from all the conflicting sources (if you think the notation in this post is confusing, try three different sets of notation!). Nevertheless, some resources I found useful are as follows:
 
-- The Elements of Statistical Learning, which is often the gold-standard reference for machine learning theory. I made notes on the relevant chapters, which I have put up [here]({{ site.url }}/notes/el_stat_learn). 
-- If ESL is too rigorous for your liking, there is a slightly easier (though obviously less in-depth) version by the same authors, called Introduction to Statistical Learning. I also have [notes]({{ site.url }}/notes/intro_stat_learn) on the Tree-Based methods chapter. 
+- The *Elements of Statistical Learning*, which is often the gold-standard reference for machine learning theory. I made notes on the relevant chapters, which I have put up [here]({{ site.url }}/notes/el_stat_learn). 
+- If ESL is too rigorous for your liking, there is a slightly easier (though obviously less in-depth) version by the same authors, called *Introduction to Statistical Learning*. I also have [notes]({{ site.url }}/notes/intro_stat_learn) on the Tree-Based methods chapter. 
 - The original XGBoost paper, detailing the theory and implementation. My notes on the paper are here: [XGBoost: A Scalable Tree Boosting System]({{ site.imageurl }}../notes/xgboost.pdf)
 - The [XGBoost docs](https://xgboost.readthedocs.io/en/latest/model.html) offer a nice high-level overview of the theory, and are definitely a must-read when it comes to implementations and APIs. 
 -  There is a great [youtube video](https://www.youtube.com/watch?v=Vly8xGnNiWs) by Tianqi Chen explaining his algorithm. 
 
- I personally can never go back to the 'standard' Machine Learning algorithms such as SVM, kNN etc, because in my experience they are just crushed by XGBoost on every possible metric. However, even XGBoost may no longer be the state-of-the-art. Competing software packages such as [LightGBM](https://github.com/Microsoft/LightGBM) and [CatBoost](https://github.com/catboost/catboost) seem to give XGBoost a run for its money; after playing with those libraries, *XGBoost* seems slow.  All said, gradient tree boosting is an exciting field within machine learning, and is very much an active topic of research. For my part, I believe that boosting methods are likely to become the de facto machine learning algorithms, and any data science practitioner would do well to keep themselves in the loop. 
- 
+ I personally can never go back to the 'standard' Machine Learning algorithms such as SVM, kNN etc, because in my experience they are just crushed by XGBoost. However, even XGBoost may no longer be the state-of-the-art. Competing software packages such as [LightGBM](https://github.com/Microsoft/LightGBM) and [CatBoost](https://github.com/catboost/catboost); after playing with those libraries, even XGBoost seems slow.
  
 
 

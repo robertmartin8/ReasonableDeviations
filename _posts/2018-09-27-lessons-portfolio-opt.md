@@ -4,10 +4,10 @@ title: "Portfolio optimisation: lessons learnt"
 category: quant
 ---
 
-Over the past few months I have been busy doing a mixture of blockchain consulting and quantitative finance work for a couple of companies in South East Asia. In particular, I have had the opportunity to investigate the interesting problem of portfolio management for cryptoassets – it was not my first experience with portfolio optimisation, having implemented efficient frontier portfolios at a roboadvisor startup, but this time I took the opportunity to do a deep dive into the subject.  
+Over the past few months I have been busy doing a mixture of blockchain consulting and quantitative finance research. In particular, I have had the opportunity to investigate the interesting problem of portfolio management for cryptoassets – it was not my first experience with portfolio optimisation, having implemented efficient frontier portfolios at a roboadvisor startup, but this time I took the opportunity to do a deep dive into the subject.  
 <!--more-->
 
-Though I am not an expert, I do believe I am at the stage where I can do a kind of write-up, recounting some of the things I've learnt along the way. A lot of my experience has been baked into [PyPortfolioOpt](https://github.com/robertmartin8/PyPortfolioOpt), a comprehensive portfolio optimisation package which I recently revamped, but this post will act as an informal guidebook for those interested in pursing the subject.
+I'm nowhere close to being an expert on the subject of portfolio optimisation -- I'm just recounting some of the things I've learnt along the way.
 
 ## 1. Be careful with in-sample vs out-of- testing
 
@@ -18,13 +18,13 @@ The standard way (in textbooks or pedagogical materials) to estimate the expecte
 To be fair, this is often quite an obvious mistake to diagnose, because your portfolios will outperform the benchmark by a ridiculous margin and you will realise that something is wrong. But there are also more subtle ways that you can include future data (e.g survivorship bias), in which case it may not be so clear. 
 
 
-## 2. Forget about expected returns 
+## 2. Be extra careful about expected returns
 
 Despite their strong theoretical guarantees, efficient frontier portfolios often have poor real-life performance owing to estimation errors in the inputs.  
 
 Anyone who has ever tried to pick stocks will know how absurd it is to expect that a stock's mean return over the past few years will be a good indicator of its future returns. Such simple relationships have almost certainly been arbitraged away – I therefore contend that mean historical returns are almost pure noise. The problem with this is that MVO has no way of distinguishing noise and signal, so often what happens is that the optimiser highlights the noise in the input. This is why there is a 'running joke' in the portfolio optimisation literature that a mean-variance optimiser is really just an "error maximiser"[^michaud].
 
-In practice, I have found that standard MVO can perform at least in line with the benchmark for equities, but for other asset classes (particularly those which are primarily driven by speculation, like cryptocurrency), the mean historical return is a useless estimator of future return. However, in the next section we will see a simple way round this. 
+In practice, I have found that standard MVO can perform at least in line with the benchmark for equities, but for other asset classes (particularly those which are primarily driven by speculation, like cryptocurrency), the mean historical return is a poor estimator of future return (at least for medium-long term time horizons). However, in the next section we will see a simple way round this. 
 
 ## 3. You can do better than 1/N
 
@@ -67,14 +67,8 @@ Remember that ceteris paribus, a simpler model should be preferred. Black-Litter
     
 ## Conclusion 
 
-I still have a lot to learn about portfolio optimisation, particularly with respect to optimisation of higher moments (skew and kurtosis) and things like copula, but the lessons highlighted in this post definitely still apply. If you found this interesting, check out:
+I still have a lot to learn about portfolio optimisation, particularly with respect to optimisation of higher moments (skew and kurtosis) and things like copula, but the lessons highlighted in this post definitely still apply. If you found this interesting, check out PyPortfolioOpt on [GitHub](https://github.com/robertmartin8/). 
 
-<div> 
-<a href="https://github.com/robertmartin8/PyPortfolioOpt"> <h5> PyPortfolioOpt &nbsp; <a class="github-button" href="https://github.com/robertmartin8/PyPortfolioOpt" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star robertmartin8/PyPortfolioOpt on GitHub">Star</a></h5></a>
-</div>
-
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 ## References
 

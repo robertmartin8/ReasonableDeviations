@@ -203,7 +203,7 @@ def random_ruleset2(n_rules):
     return hex_id, dict(zip(rule_keys(n_rules), rule_values))
 ```
 
-A brief interjection: because it seemed that I would have to test multiple parameters, I refactored the GA script into a function:
+Because it seemed that I would have to test multiple parameters, I also refactored the GA script into a function:
 
 ```python
 evolve_automata(59, n_crossover_points=1, n_mutations=6,       
@@ -248,7 +248,7 @@ Additionally, the evolution of CAs with genetic algorithms is a very slow proces
 
 Nevertheless, I am happy to have attempted to replicate the results, because it has been a while since I've played around with genetic algorithms. It was also some extra practice with python's standard language features, of which I make extensive use. Perhaps some time in future I may realise that my implementation had a flaw and author a part 3, but for now I'm content to stay in this local optimum.
 
-*The code for this post, along with plots and data, is available as a [jupyter notebook](https://github.com/robertmartin8/RandomWalks/blob/master/EvolvingCellularAutomata.ipynb) on GitHub.*
+*The code for this post, along with plots and data, is available as a [Jupyter notebook](https://github.com/robertmartin8/RandomWalks/blob/master/EvolvingCellularAutomata.ipynb) on GitHub.*
 
 
 

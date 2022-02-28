@@ -17,7 +17,7 @@ With all this in mind, the overall implementation strategy was as follows:
 4. Using Bellman-Ford, find and return negative-weight cycles if they exist. 
 5. Calculate the arbitrage that these negative-weight cycles correspond to.
 
-*The full code for this project can be found in this [GitHub repo](https://github.com/robertmartin8/CryptoGraphArb/tree/master). If you find this post interesting, don't forget to leave a star!*
+*The full code for this project can be found in this [GitHub repo](https://github.com/robertmartin8/CryptoGraphArb/tree/master).s*
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <a class="github-button" href="https://github.com/robertmartin8/CryptoGraphArb" data-icon="octicon-star" data-size="large" aria-label="Star robertmartin8/MachineLearningStocks on GitHub">Star</a>

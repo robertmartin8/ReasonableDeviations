@@ -17,8 +17,6 @@ This project has quite a lot of personal significance for me. It was my first pr
 
 *As a disclaimer, this is a purely educational project. Be aware that backtested performance may often be deceptive – trade at your own risk!*
 
-*By the way, if you find the repository or this post interesting/useful in any way, don't forget to leave a star!*
-
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <a class="github-button" href="https://github.com/robertmartin8/MachineLearningStocks" data-icon="octicon-star" data-size="large" aria-label="Star robertmartin8/MachineLearningStocks on GitHub">Star</a>
 

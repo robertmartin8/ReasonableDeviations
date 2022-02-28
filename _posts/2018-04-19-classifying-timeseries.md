@@ -9,7 +9,7 @@ A financial time series represents the collective decisions of many individual t
 
 Concretely, a raw dataset will be constructed, consisting of 100-day price charts which belong to companies that are respectively in the top and bottom 1000 tickers in the Russell 3000 ordered by market cap. We will then run feature extraction (which is the core of this post), before applying a standard XGBoost classifier. 
 
-This post thus represents an intuitive (if naive) first approximation for classifying whether a given price chart belongs to a stock with high or low market cap. The hypothesis is that this problem is learnable, so the goal is to show that a machine learning model can classify a time series with **greater than 50% accuracy**. Though accuracy often has flaws as a metric, in this case it is sufficient because the classes will be almost perfectly balanced. But as a matter of good practice, we will also present precision.
+This post thus represents an intuitive (if naive) first approximation for classifying whether a given price chart belongs to a stock with high or low market cap. The hypothesis is that this problem is learnable, so the goal is to show that a machine learning model can classify a time series with **greater than 50% accuracy**. Though accuracy often has flaws as a metric, in this case it is sufficient because the classes will be almost perfectly balanced.
 
 ## A discussion on classifying time series
 
@@ -149,7 +149,7 @@ We have now finished preparing the raw data for analysis. However, we still need
 
 ## Methodology
 
-It is a remarkable fact of mathematics that periodic continuous functions (at least the well-behaved ones) can be decomposed into sines and cosines. Although price data certainly isn't periodic, if we treat the whole time series as one period, we can apply a Discrete Fourier Transform (DFT) to extract the main 'signals' in a time series. My motivation for using a DFT is that it can be used to de-noise a time series by ignoring the smaller terms, and that the coefficients of the resulting terms can be fed into a classifier. Additionally, there exist very efficient implementations in numpy, such as `np.fft.fft()`. One potential problem is that the results of the DFT are actually complex numbers:
+It is a remarkable fact of mathematics that periodic functions (at least the well-behaved ones) can be decomposed into sines and cosines. Although price data certainly isn't periodic, if we treat the whole time series as one period, we can apply a Discrete Fourier Transform (DFT) to extract the main 'signals' in a time series. My motivation for using a DFT is that it can be used to de-noise a time series by ignoring the smaller terms, and that the coefficients of the resulting terms can be fed into a classifier. Additionally, there exist very efficient implementations in numpy, such as `np.fft.fft()`. One potential problem is that the results of the DFT are actually complex numbers:
 
 ```
 array([ 3.86450001e+02+0.j        , -7.77637336e+00+2.22326054j,
@@ -213,7 +213,7 @@ complex_30 = generate_complex_dataset(X_scaled, 30)
 
 ## Machine Learning
 
-We are finally ready to apply machine learning using python's wonderfully intuitive `sklearn`. I have chosen to use an XGBoost classifier - it trains quickly and normally produces good results with the default parameters. It should be noted that no hyperparameter optimisation will be done: the point of this experiment is to see if this problem is learnable (rather than trying to achieve excellent results). I have written the classification script as a function which can be easily applied to each of the datasets.
+We are finally ready to apply machine learning using python's wonderfully intuitive `sklearn`. I have chosen to use an XGBoost classifier -- it trains quickly and normally produces good results with the default parameters. It should be noted that no hyperparameter optimisation will be done: the point of this experiment is to see if this problem is learnable (rather than trying to achieve excellent results). I have written the classification script as a function which can be easily applied to each of the datasets.
 
 ```python
 from sklearn.model_selection import train_test_split

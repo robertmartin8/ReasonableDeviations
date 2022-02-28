@@ -175,7 +175,7 @@ When it comes to the topic of portfolio optimisation, these findings should be a
 
 It should be noted that not everyone agrees that the volatility is a number worth paying attention to in the first place. A famous critic is Warren Buffet, who rightly points out that a good company whose stock price suddenly drops due to temporary factors (e.g a media scandal) could be a bargain purchase -- in which case it is actually *less* risky than it was before, although its volatility will be higher as a result of the drop. Perhaps this post lends some evidence to this point of view. Given the distribution of realised volatilities, it seems that the converse may also be true: even if everything looks calm and you predict low volatility, a right-tail event could make things go horribly wrong. As is always the case in finance, caveat emptor applies!
 
-*The full jupyter notebook can be found on my [GitHub](https://github.com/robertmartin8/RandomWalks/blob/master/VolatilityBacktesting.ipynb)*
+*The full Jupyter notebook can be found on my [GitHub](https://github.com/robertmartin8/RandomWalks/blob/master/VolatilityBacktesting.ipynb)*
 
 
 
