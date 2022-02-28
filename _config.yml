@@ -3,7 +3,7 @@ plugins: [jekyll-paginate]
 
 # Features
 excerpt_separator: <!--more-->
-categories: "quant-finance|finance|maths|physics|crypto|programming|machine-learning"
+categories: "quant|finance|maths|physics|crypto|programming|machine-learning"
 
 
 # Permalinks
