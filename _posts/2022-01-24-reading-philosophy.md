@@ -45,7 +45,7 @@ I truly believe that reading books, when done properly, can be a competitive adv
 
 Before continuing, I will take a slight detour to discuss spaced repetition, a key component underlying my reading philosophy. If you are already familiar with the concept, feel free to skip this section.
 
-After learning something new, we tend to forget it over time. In the late 19th century, psychologist Hermann Ebbinghaus tried to quantify this experimentally (rare for psychologists at the time!). One of the results of his research was the **Ebbinghaus forgetting curve**, which plots how retention changes as a function of time (it goes as roughly $e^{-kt}$). 
+After learning something new, we tend to forget it over time. In the late 19th century, psychologist Hermann Ebbinghaus tried to quantify this experimentally (rare for psychologists at the time!). One of the results of his research was the **Ebbinghaus forgetting curve**, which plots how retention changes as a function of time (it is roughly $e^{-kt}$). 
 
 More importantly, Ebbinghaus figured out that active recall of the content (testing yourself) not only refreshes the forgetting curve but makes it decay more slowly subsequently.
 
@@ -77,7 +77,7 @@ When I'm ready to start a new book, I look at the reading list and consider some
 - Is the book being referenced by other books I've enjoyed? This was why I reluctantly read Taleb's books. 
 - I keep a rough mental list of topics I'm interested in (e.g finance, decision making, science fiction). Any classics in these areas are always fair game. 
 - If I've read a couple of books on the same topic in a row, I'll try to rotate to something else.
-- It's important to sprinkle in some "rogue" books, completely unrelated to my interests. For example, I recently picked up a book on Danish interior design called *The Book of Hygge* (my review [here](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=a904e1e1348843e3be343ac2a1a8bc4a))
+- It's important to sprinkle in some "rogue" books, completely unrelated to my interests. For example, I recently picked up a book on Danish interior design called *The Book of Hygge* (my review [here](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=a904e1e1348843e3be343ac2a1a8bc4a)).
 
 Ultimately, I'm not as deliberate as I could be with book selection. I think it's fine to be somewhat organic because it allows your minds to explore "threads" and build connections. Perhaps more importantly, it ensures that reading remains an enjoyable activity. If you have a predefined list of books that you are making yourself read, it becomes a chore -- the most dangerous thing one could do in building a reading workflow is to become sick of reading. 
 
@@ -89,7 +89,7 @@ Once I've decided what to read, I create a blank Notion page for the book (liter
 
 ## Reading the book
 
-As much as I love physical books, I read most of my books on Kindle. Even if I had a physical book, I would probably prefer to read it on Kindle (though I will sometimes get the physical copy to adorn my shelf!). The reason for this is the highlighting feature – I can’t understate how much of a game-changer this has been.
+As much as I love physical books, I read most of my books on Kindle. Even if I had a physical book, I would probably prefer to read it on Kindle (though I will sometimes get the physical copy to adorn my shelf!). The reason for this is the highlighting feature – I can’t understate how much of a game-changer this has been for me.
 
 My guiding philosophy when making highlights is the “funnel”. I highlight very liberally when I’m reading the book:
 
@@ -209,9 +209,7 @@ There are several reasons to read fiction.
 
 Firstly, for "culture". A cynical take is that the only purpose of reading the classics is to tell people you’ve read them. To be fully honest this used to be a source of motivation for me, but I tend to have a more mature approach: it's important to read classic/popular books so that you can understand references, and so that you can enrich conversations by pointing out a parallel to a well-known tale. 
 
-Secondly, fiction books often do a good job of illustrating philosophical concepts. Rather than reading a political philosophy textbook to learn the definition of an authoritarian state, you could instead read a dystopian classic. *1984*, *Brave New World*, and *Fahrenheit 451* give three completely different perspectives on an authoritarian state; having read all three allows you to make intelligent commentary on what characteristics the real world shares with each of them, and perhaps even gain insight into where we may be headed.
-
-I have learnt more about Japanese history from reading fiction (e.g the work of [Yukio Mishima](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=72aa32e8aa054352a145b732e7cf5b97)) than I have from non-fiction history books. Many of my perspectives on AI, technology, and the metaverse have been influenced by science fiction. 
+Secondly, fiction books often do a good job of illustrating philosophical concepts. Rather than reading a political philosophy textbook to learn the definition of an authoritarian state, you could instead read a dystopian classic. *1984*, *Brave New World*, and *Fahrenheit 451* give three completely different perspectives on an authoritarian state; having read all three allows you to make intelligent commentary on what characteristics the real world shares with each of them, and perhaps even gain insight into where we may be headed. I have learnt more about Japanese history from reading fiction (e.g the work of [Yukio Mishima](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=72aa32e8aa054352a145b732e7cf5b97)), more about Russian history from reading Dostoevsky, than I would have learnt from non-fiction history books. My perspectives on AI, technology, and the long term future of humanity have been influenced by science fiction. 
 
 The last reason, of course, is for the entertainment value. This is purely subjective, but I think reading fiction books provides a different kind of entertainment to watching TV. It requires more effort but can provide deeper appreciation. In any case, it's not a binary decision: one should read fiction books and watch TV!
 
@@ -219,4 +217,4 @@ The last reason, of course, is for the entertainment value. This is purely subje
 
 My processes are in "perpetual beta" (a concept from [Superforecasting](https://robertreads.notion.site/Superforecasting-7e68c63d4aa94ba4a0748ec0a1a78952) by Philip Tetlock) -- I'm constantly trying to improve my system for reading books. For example, I'm terrible at giving up books; I feel a kind of petty competition where I refuse to let the author "defeat me", so once I start a book I feel obliged to finish it. This is clearly suboptimal -- there are poorly written books out there and I could unlock a lot of value by giving up and starting a better one. To improve on this, as part of my 2022 reading goals, I have resolved to give up a certain number of books.
 
-The last thing I’ll say is that (to paraphrase Orwell) you should ignore all of this advice sooner than do something barbarous (i.e not read). Even reading books without making highlights or taking notes is valuable – I didn’t really make highlights or take notes for the first couple of hundred books I read, and while I certainly would have gotten far more out of them had I applied my current workflow, I don’t regret reading those books. 
+The last thing I’ll say is that (to paraphrase Orwell) you should ignore all of this advice sooner than do something barbarous -- not reading! Even reading books without making highlights or taking notes is valuable; I didn’t really make highlights or take notes for the first couple of hundred books I read, and while I certainly would have gotten far more out of them had I applied my current workflow, I don’t regret reading those books. 
