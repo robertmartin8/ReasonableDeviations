@@ -114,14 +114,14 @@ I've split up the podcasts I consume loosely based on subject (though there's a 
 ## Timeline
 
 - **Dec 2021 -- Present**: Taking a break for a few months before I start full-time work!
-- **Sep 2021 -- Dec 2021**: Interning at BlueCrest Capital Management (trading)
+- **Sep 2021**: Interning at BlueCrest Capital Management (trading)
 - **July 2021**: Interning at the D.E. Shaw Group (prop trading)
 - **June 2021**: Graduated from Cambridge with a first class degree in Astrophysics. It was a strange three years and I still don't think I've had a chance to properly reflect on it.
 - **April 2021**: Back to Cambridge one last time! It's hard to find a balance between socialising and exam revision.
 - **December 2020**: COVID-19 round 2 -- I am studying remotely from Singapore. Sadly it won't be like last year where exams are cancelled, so I don't have as much time as I'd like to pursue side projects.
 - **October 2020**: Started 3rd year at Cambridge. I swapped from physics to astrophysics, looking for something slightly more computational.
 - **June 2020**: Interning at Point72 Asset Management, doing long/short equity investment. It's tough working remotely, but the learning rate is insanely high.
-- **March 2020**: pandemic times! Easter term at Cambridge is "cancelled" (i.e informal exams only). On the bright side, I've got plenty of time to work on my own projects and have been fairly active in blogging.
+- **March 2020**: Pandemic times! Easter term at Cambridge is "cancelled" (i.e informal exams only). On the bright side, I've got plenty of time to work on my own projects and have been fairly active in blogging.
 - **October 2019**: Started my second year at Cambridge, where I'm studying physics and maths. I'm involved with several societies, including: college tennis, Hackbridge (a tech entrepreneurship society), CUFIS (the finance soc).
 - **September 2019**: Interning at the London office of a team within GIC, Singapore's Soveign Wealth Fund, where I get to build cool things at the intersection of finance and tech.
 - **July 2019**: Interning at a long-only fund called Albizia. Learning about discretionary investments, meeting company executives, building an alternative data analytics app in Ruby on Rails.
@@ -130,7 +130,7 @@ I've split up the podcasts I consume loosely based on subject (though there's a 
 - **June 2018**: Splitting my time between a quantitative finance internship and blockchain consulting.
 - **May 2018**: Finished national service! ORD loh
 - **January 2017**: Completed the Medical Response Force conversion course, which was 8 weeks of very tough training. Military driving (March 2017), Sergeant school (Dec 2017), MRF section leader and Instructor (Jan 2018).
-- **December 2017**: Finished combat medic training and started the Medical Response Force conversion course. MRF is a unit of specially trained combat medics who deal with chemical, biological and radiological threats. It is part of the Special Operations Taskforce, so we are expected to be operationally ready at all times.
+- **December 2017**: Finished combat medic training and started the Medical Response Force conversion course. MRF is a Special Operations unit that deals with chemical, biological and radiological threats.
 - **September 2017**: Finished basic training and started combat medic training.
 - **July 2016**: Enlisted into the army. In Singapore, there are two years of compulsory national service (NS) for citizens or permanent residents (that's me).
 - **January 2016**: Accepted to study Physical Natural Sciences at Christ's College Cambridge, with two years deferred entry (October 2018 matriculation)
