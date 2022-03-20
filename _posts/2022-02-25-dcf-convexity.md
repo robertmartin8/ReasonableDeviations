@@ -136,6 +136,8 @@ For Bco, the two equally likely outcomes are:
 
 This is equivalent to saying that we flip a coin whose outcome determines whether we are in a universe where cash flows grow at 35% every year for 10y, or a universe where cash flows grow at 25% every year for 10y. Critically, once the universe has been chosen, there is *zero* volatility in the cash flow growth rate. 
 
+Now consider a modified puzzle, where we choose between:
+
 - Aco: as before, cash flows grow 30% every year for 10y before entering perpetuity growth.
 - Cco: cash flows grow at $30\% \pm 20\%$, i.e. every year we draw the growth rate from a normal distribution $N(30\%, 10\%^2)$. 
 
