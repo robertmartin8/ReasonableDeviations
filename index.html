@@ -24,8 +24,8 @@ title: Home
            ]</span>
       </div>
       <br>
-      {{ post.excerpt | newline_to_br | newline_to_br | strip_newlines | replace: '<br />', ' ' | strip_html | strip | append: "<br /> <br />" }} 
-      <a href="{{ post.url }}">Read more...</a>
+      {{ post.excerpt | newline_to_br | newline_to_br | strip_newlines | replace: '<br />', ' ' | strip_html | strip | append: "  <a href='" | append: post.url | append: "'>Read more...</a>"| append: "<br /> <br />" }} 
+     
     </div>
     {% endfor %}
 </div>
