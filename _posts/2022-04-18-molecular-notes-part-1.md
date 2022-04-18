@@ -22,7 +22,6 @@ This will be a detailed post; I spend a fair bit of time introducing the subject
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Contents](#contents)
 - [What is a Second Brain](#what-is-a-second-brain)
 - [Objectives](#objectives)
     - [1. Rapidly learning complex topics from mixed media forms](#1-rapidly-learning-complex-topics-from-mixed-media-forms)
