@@ -67,7 +67,7 @@ A bar chart showing the fraction of up-months is shown below:
 
 81% of April months showed positive returns. There is a discrepancy with respect to Mitchell's results of 89%, likely because I used more data and a slightly different methodology for calculating returns. However, I think it is fair to say that we have replicated the anomaly. 
 
-With this in mind, a suitable null hypothesis might be "there is no seasonality in EWS returns". To estimate a p-value, we need to do generate many alternate EWS price series assuming there is no seasonality, then count the number of runs in which we nevertheless see an 81% seasonality. It is worth taking a moment here to convince yourself that this procedure does indeed give you the p-value.
+With this in mind, a suitable null hypothesis might be "there is no seasonality in EWS returns". To estimate a p-value, we need to generate many alternate EWS price series assuming there is no seasonality, then count the number of runs in which we nevertheless see an 81% seasonality. It is worth taking a moment here to convince yourself that this procedure does indeed give you the p-value.
 
 The hard part here is simulating new EWS price series under the null hypothesis that there is no seasonality. How can we do this without assuming a distribution of returns? How can we create alternative realities in which everything is the same about EWS, *except* that it has no seasonality?
 
