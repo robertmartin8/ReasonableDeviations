@@ -19,8 +19,7 @@ Part 1 introduces the concept of Second Brains and the principles of Molecular N
 
 This will be a detailed post; I spend a fair bit of time introducing the subject, as well as laying the groundwork. Use the table of contents to navigate!
 
-Thanks to Niamh Q and Shiv G for reading the drafts!
-
+Thanks to Niamh Q and Shiv G for reading the drafts. 
 
 ## Contents
 
@@ -127,16 +126,20 @@ Note: it is neither possible nor desirable to have true $O(N^2)$ growth – some
 
 Figuring out how a machine works is important. Better still is to be able to propose modifications and improvements to a system, to invent and innovate.
 
-My Second Brain should not only enable me to get to grips with a complex topic but to have novel perspectives on the topic and to identify new directions to expand into. 
+My Second Brain should not only enable me to get to grips with a complex topic but to have novel perspectives on the topic and to identify new directions to expand into. In the language of educational psychology, creation is at the top of Bloom's taxonomy.
 
+<center>
+<img src="{{ site.imageurl }}secondbrain1/blooms_taxonomy.png" style="width:80%;"/>
+</center>
+ 
 
-To be sure, this is not entirely within the purview of the Second Brain system itself – it depends on the creativity of the user’s actual brain, so I don’t treat this as a *sine qua non* for a Second Brain system. 
+To be sure, synthesis is not entirely within the purview of the Second Brain system itself – it depends on the creativity of the user’s actual brain, so I don’t treat this as a *sine qua non* for a Second Brain system. 
 
 ### 5. Encouraging positive learning habits
 
 Simply put, the system should spark joy. This largely comes down to the choice of tool: it should be a tool that is customisable and that I enjoy using. 
 
-However, there are valuable insights deriving from the literature on addictive technologies (e.g. Nir Eyal’s Hook model, described in his book *Hooked*). Habit-forming technology requires:
+However, there are valuable insights deriving from the literature on addictive technologies. Consider Nir Eyal’s **Hook model**, described in his book *Hooked*. Eyal posits that Habit-forming technology requires:
 
 - Trigger: either external (e.g. notification) or internal (e.g. routinely checking the news when you wake up)
 - Action: behaviour done in anticipation of reward
