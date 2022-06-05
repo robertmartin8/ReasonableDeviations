@@ -76,22 +76,25 @@ This section details some of the newsletters and podcasts I consume on a regular
 I've split up the podcasts I consume loosely based on subject (though there's a lot of overlap). Within each section, the podcasts are in approximate descending order of how often I listen to their episodes etc.
 
 - **Business**
-  - *Masters in Business* by Barry Ritholtz -- Ritholtz manages to get top tier guests and I'm consistently impressed by the quality and pacing of the interviews. Plus, in each episode the guests recommend their favourite books/content -- super valuable.
   - *Invest Like the Best* and *Founders Field Guide* by Patrick O'Shaughnessy -- Patrick O'Shag is one of the OG podcasters. There's a tonne of truly excellent content here, though the podcast has definitely pivoted more to VC rather than public market investing.
+  - *Masters in Business* by Barry Ritholtz -- Ritholtz manages to get interesting guests and I'm consistently impressed by the quality and pacing of the interviews. Plus, in each episode the guests recommend their favourite books/content -- super valuable.
 - **Investing and finance**
   - *Flirting with Models* by Corey Hoffstein -- if you're at all interested in quant finance, this is a must-listen. Corey does an amazing job of guiding the conversation through deep technicals as well as the big-picture view. Guests are surprisingly open in discussing their approaches and techniques -- very rare in quant finance.
-  - *Macro Voices* -- good coverage on macro news and occasional interesting guests, though as I've learnt more about finance I am noticing a fair amount of Gell-Mann amnesia.
-  - *Motley Fool Money* -- many people love to hate the Motley Fool, but I enjoy the weekly radio show. There is typically a deep dive of a business, plus a bunch of stock pitching. The hosts are entertaining and I genuinely think there are useful lessons for amateur investors.
-  - *Motley Fool Industry Focus* -- as with above, accessible overviews of many different industries. I've gotten a couple of nice investment ideas from these.
+  - *Uncommon Core* by Su Zhu and Hasu -- a nice crypto pod by two industry veterans. 
   - *Superinvestors* by Jesse Felder -- some overlap with Macro Voices and episodes are very infrequent, but episodes are usually worthwhile.
-- News/world affairs:
+- **History and philosophy**  
+  - *The History of Rome* by Mike Duncan -- yes, I went down that rabbithole. Full of nerdy humour and incredibly informative. 
+  - *History of Philosophy* -- high level summaries of the work of philosophers going back to the Greeks.
+- **News/world affairs**:
   - *All-In* -- the pod, for better or worse, is starting to shape the narrative. They frame themselves as the counter-revolutionaries, fighting the good fight against the "Woke Mob" and cancel culture. Regardless of one's views on the hosts, All-In is hilarious and provides largely sensible takes on the biggest headlines (with a skew to California).
   - *FT News Briefing* -- I tend to listen to this every morning while I'm getting ready for my day.
   - *Economist* (audio) -- I try and listen to the Economist on commutes, but I probably only listen to 20% of the content: the World this Week, Leaders, Letters, Briefing, Business, Finance & Economics.
+  - *Macro Voices* by Eric Townsend and Patrick Ceresna -- good coverage on macro news and occasional interesting guests, though as I've learnt more about finance I am noticing a fair amount of Gell-Mann amnesia.
  - **Misc**:
    - *Huberman Lab* -- a recent find, and something I'm now addicted to (cheers to Hamza for the rec). Huberman Lab is all about developing a better understanding of our neurobiology -- think of it as evidence-based "bio-hacking". The host, Dr Andrew Huberman, is a Stanford neuroscientist who really seems to weigh the evidence behind his claims.
    - *Anatomy of Next* by Mike Solana -- a podcast on futurism and venture capital (cheers to Adi for the rec), hosted by Mike Solana from the Founders Fund. They've got a cool series exploring the nuts and bolts of a journey to Mars
  - **Retired** (pods I used to listen to frequently but now rarely do)
+   - *Motley Fool Money / Industry Focus* -- many people love to hate the Motley Fool, but I enjoy the weekly radio show. There is typically a deep dive of a business, plus a bunch of stock pitching. The hosts are entertaining and I genuinely think there are useful lessons for amateur investors. I've stopped listening mostly because my focus has shifted away from equity investing to other strategies / asset classes.
    - *Exchanges at Goldman Sachs* -- good for interview prep but I think Macro Voices has more original takes
    - *How I Built This* by Guy Raz
    - *We Study Billionaires* -- a decent starting point for young investors but it's gone downhill (lots of ads, a host who became a bitcoin maxi)
@@ -99,16 +102,14 @@ I've split up the podcasts I consume loosely based on subject (though there's a 
 
 ### Newsletters
 
-- [*Money Stuff*](https://www.bloomberg.com/account/newsletters/money-stuff) by Matt Levine. If you know, you know.
+- [*Money Stuff*](https://www.bloomberg.com/account/newsletters/money-stuff) by Matt Levine. IYKYK.
+- [*Commoncog*](https://commoncog.com/blog/) by Cedric Chin. My interests overlap heavily with Cedric's, and I can always count on his newsletter to deliver top tier content. 
 - [*Byrne Hobart from The Diff*](https://diff.substack.com/) -- thoughtful and offbeat takes on business, startups, and finance.
 - [*Front Month*](https://frontmonth.substack.com/) -- substack newsletter about market structure, financial exchanges etc.
 - [*Points of Return*](https://www.bloomberg.com/account/newsletters/points-of-return) by John Authers on Bloomberg opinion -- well written takes on daily financial news, with many thoughtful charts.
 - [*Billion Dollar Startup Ideas*](https://www.billiondollarstartupideas.com/) -- a startup idea every day. This newsletter helps keep the creative juices flowing!
 - JuliaLang forums -- weekly updates on what's new in Julia.
 - Streamlit forums -- weekly updates on what's new in Streamlit (a wonderful python library)
-- *eFinancialCareers* -- embarrassing but true. Gotta keep up with the finance gossip :/
-- [*Finimize*](https://www.finimize.com/) -- digestible financial news that is very useful when interviewing for jobs, but less useful for me nowadays.
-- [*The Felder Report*](https://thefelderreport.com/) -- Jesse Felder often seems like a permabear, which makes his bullish calls all the more interesting.
 - [*Grainstone Lee Insights*](https://blog.grainstonelee.com/insight) -- monthly newsletter on the quant jobs market or miscellaneous takes on finance. Surprisingly good.
 
 ## Timeline
