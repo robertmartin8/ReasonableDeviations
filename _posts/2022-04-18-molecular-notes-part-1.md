@@ -45,11 +45,13 @@ Thanks to Niamh Q and Shiv G for reading the drafts.
         - [Summary – Molecules](#summary--molecules)
     - [Topics](#topics)
         - [Summary – Topics](#summary--topics)
+- [Why Molecular Notes matters to me](#why-molecular-notes-matters-to-me)
 - [Who is Molecular Notes for?](#who-is-molecular-notes-for)
 - [Lay of the land – other note-taking systems](#lay-of-the-land--other-note-taking-systems)
     - [Zettelkasten](#zettelkasten)
     - [Evergreen Notes](#evergreen-notes)
     - [Summary – Molecular Notes in context](#summary--molecular-notes-in-context)
+- [Failure modes](#failure-modes)
 - [Conclusion](#conclusion)
 
 <!-- /TOC -->
@@ -396,6 +398,16 @@ In Part 2, I will go into more detail about how exactly I organise my Second Bra
 
 **Topics** are a simple and flexible way of introducing structure to my Second Brain. They make it easier to search my Second Brain and to find possible links.
 
+## Why Molecular Notes matters to me
+
+Generally I’m quite critical of “productivity YouTube”. The classic archetype is a YouTuber explaining some productivity tool when it’s clear that that they are mostly using the tool to administrate their YouTube videos – something that is presumably not applicable to the majority of viewers. Or a Zettelkasten video where the YouTuber’s three zettels are “Niklas Luhmann”, “Zettelkasten”, and “Linked thinking” – i.e they are using the zettelkasten system as a prop in a video rather than an actual note-taking system. Andy Matuschak puts it thus: “people who write extensively about note-writing rarely have a serious context of use”. Cedric C brings up a similar point regarding mental models ([link](https://commoncog.com/blog/the-mental-model-fallacy/)): there are far more people who write about mental models than people who effectively apply mental models.
+
+These concerns were a real barrier when it came to writing this blog post – the prospect of becoming a “productivity YouTuber” terrified me. Even as I write this, I realise that I’m still unable to clearly articulate what Molecular Notes enables me to do, though I unequivocally maintain that I’ve derived immense value from it. 
+
+I guess it comes down to this: to the extent that you think I’ve got interesting ideas or a thought-provoking blog, or you like the way I think about things, all of that has been significantly enabled by my Second Brain. Perhaps not *originated* by the Second Brain, but at least *amplified*. Subjectively, I was a keen learner even before using Second Brain and I was decent at spotting connections between different things I had read. But codifying my workflows into Molecular Notes has dramatically accelerated up my pace of learning, even given the constraints of adulthood. I’ll admit this is a weak explanation. I’m essentially saying that I like using my Second Brain because I think it makes me more productive – a highly subjective and vaguely circular argument. 
+
+To be slightly more concrete, Molecular Notes gave me a tangible benefit during my internship at a hedge fund (as it continues to do in my full-time job at the same hedge fund) because it allowed me to learn about highly technical areas quickly, while spotting the manifold links to related fields – trading is surprisingly interdisciplinary at the end of the day, drawing on mathematics, computation, psychology, statistics, and economics (among others). I would love to be more specific, but unfortunately the constraints of discretion prevent me from doing so. Nevertheless, the key point I’m trying to convey is that I believe Molecular Notes has helped me in practice. It isn’t just “blog material” – in fact, I only wrote this post after several people independently asked for it.
+
 
 ## Who is Molecular Notes for?
 
@@ -460,6 +472,27 @@ The main additions of Molecular Notes that I feel aren’t well-captured by the 
 - Good workflows for taking linear notes from some resource (Sources)
 - Primitives for established concepts (Atoms)
 - A top-down structure, albeit a flexible one (Topics)
+
+## Failure modes
+
+A recurring theme of this post is that you should modify Molecular Notes to work for you. But before wrapping up, I want to I want to outline some failure modes that you should take care to avoid!
+
+- Categorisation hell:
+    - Don’t spend too much time trying to come up with a fancy categorisation scheme.
+    - Pick something simple and flexible – something that you can build on top of as you get a better understanding of your particular needs
+- Completionism:
+    - Don’t add irrelevant things to your Second Brain.
+    - It can be tempting to try and be comprehensive but this leads to notes that are harder to review
+    - Not every concept deserves its own note!
+- Complicated metadata:
+    - Don’t try to overcomplicate the metadata – when I create a new note I only need to put three fields: “Topics”, “Reference” and “Type”.
+    - Anything complicated starts to be a barrier to creating notes.
+- Copy-pasting content:
+    - Copy-pasting is a no-go: it defeats the purpose of a Second Brain.
+    - Further, it dramatically reduces retention while simultaneously encouraging completionism
+- Not being intentional about note-taking:
+    - Don’t slip into autopilot and make traditional notes!
+    - Molecular Notes requires you to actively engage with the content, restructure old Sources even as you’re consuming a new Source, and constantly be on the lookout for opportunities to link ideas.
 
 ## Conclusion
 
