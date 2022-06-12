@@ -48,7 +48,7 @@ After reading this post, if you would like to clone my setup, head over to the M
 
 ## Choosing software
 
-I split the post into [Part 1]({% post_url 2022-04-18-molecular-notes-part-1 %}) and Part 2 to emphasise the difference between philosophy and implementation. Molecular Notes (as a note-taking philosophy) is not tied to any particular software tool. In fact, the only non-negotiable constraint is strong support for bidirectional links – inline links to other notes which can also be traversed backwards (such that you can easily see which notes link to the current note).
+I split the post into [Part 1]({% post_url 2022-04-18-molecular-notes-part-1 %}) and Part 2 to emphasise the difference between philosophy and implementation. Molecular Notes (as a note-taking philosophy) is not tied to any particular software tool. The only non-negotiable constraint is strong support for bidirectional links – inline links to other notes which can also be traversed backwards (such that you can easily see which notes link to the current note).
 
 Depending on your workflows, you may have other requirements for an app. For me, some other minimum requirements are:
 
@@ -58,7 +58,7 @@ Depending on your workflows, you may have other requirements for an app. For me,
 - Graph view: a convenient visual representation of a Second Brain.
 - Sparks joy! This is completely subjective – I want a tool whose interface gels with me. In my case, this means something more lightweight and hackable.
 
-I use Obsidian, which nails all of these requirements and offers many other great features. Obsidian is built for linked notes and is naturally suited to Second Brains. It is hackable, offering deep customisation and flexibility. Since it is essentially just a wrapper around simple text files, I don’t have to worry about being “locked in” to Obsidian (in fact, I often interact with my notes from other apps). Obsidian works perfectly well offline, while still providing benefits like cloud-syncing. 
+I use Obsidian, which nails all of these requirements and offers many other great features. Obsidian is built for linked notes and is naturally suited to Second Brains. It is hackable, offering deep customisation and flexibility. Since it is essentially just a wrapper around simple text files, I don’t have to worry about being “locked-in” to Obsidian (in fact, I often interact with my notes from other apps). Obsidian works perfectly well offline, while still providing benefits like cloud-syncing. 
 
 That said, I can completely understand that Obsidian may not be the right app for everyone. It has the same vibe as a programming environment / IDE, which is great for me, but perhaps annoying for non-programmers. In the rest of this section, I briefly comment on several other options for software (I’ve tried most of them). For readers who are already sold on Obsidian, feel free to skip ahead.
 
@@ -69,14 +69,14 @@ I have written extensively about Notion [elsewhere]({% post_url 2021-09-18-how-i
 
 Notion is an extremely powerful tool – it’s certainly possible to implement Molecular Notes in Notion and I know several people who happily use it for their Second Brain. I am a heavy user of Notion for PKM (personal knowledge management), but I moved my Second Brain away from Notion for several reasons:
 
-- Notion is a swiss-army knife, not a precision tool. It offers a tonne of functionality, but does each individual thing less well than a pure-play app. For example, Notion’s Kanban boards are great but probably not as good as Trello’s. Likewise, unlike Obsidian, Notion is clearly not designed specifically for linked note-taking.
-- Following on from the above, there are many nice-to-have Second Brain features like graph view that are absent from Notion. This is not Notion’s fault: it is a general purpose PKM tool, not a Second Brain tool!
+- Notion is a swiss-army knife, not a precision tool. It offers a tonne of functionality but does each thing less well than a pure-play app. For example, Notion’s Kanban boards are great but probably not as good as Trello’s. Likewise, unlike Obsidian, Notion is clearly not designed specifically for linked note-taking.
+- Following on from the above, there are many nice-to-have Second Brain features like graph view that are absent from Notion. This is not Notion’s fault: it is a general-purpose PKM tool, not a Second Brain tool!
 - Historically Notion has had pretty poor offline support – a constant reminder that all of your notes are stored on Notion’s servers!
-- Slow: Notion feels slow for the purpose of Second Brains. For example, if you start trying to create a backlink using “[[some note “, there is a noticeable delay before that note pops up. In Obsidian, it feels instantaneous.
+- Slow: Notion feels slow for Second Brains. For example, if you start trying to create a backlink using “[[some note “, there is a noticeable delay before that note pops up. In Obsidian, it feels instantaneous.
 
 ### RemNote
 
-RemNote is a note-taking app that treats spaced-repetition as a first-class citizen, while also providing strong support for bidirectional linking. I used RemNote religiously during university and the spaced-repetition functionality was a game changer – it allowed me to memorise content in the most efficient way possible.
+RemNote is a note-taking app that treats spaced-repetition as a first-class citizen, while also providing strong support for bidirectional linking. I used RemNote religiously during university and the spaced-repetition functionality was a game-changer – it allowed me to memorise content in the most efficient way possible.
 
 The main reason why I shifted to Obsidian for my Second Brain is that Obsidian is more hackable and extensible. With RemNote, there’s not much you can do to customise the interface and all the notes are stored on RemNote’s servers. Additionally, for my Second Brain, spaced repetition (at least in the way RemNote does it) isn’t terribly important.
 
@@ -86,7 +86,7 @@ Roam has a credible claim to being the app that sparked the renaissance in Secon
 
 My main criticisms:
 
-- It is not as flexible as Obsidian and feels a bit more prescriptive. For example, in Roam every note consists of bullet points.
+- It is not as flexible as Obsidian and feels a bit more prescriptive. For example, in Roam, every note consists of bullet points.
 - It is primarily web-based. I think this makes it harder to have a clean and focused note-taking experience. (EDIT: there is now a desktop app, which possibly nullifies this point).
 - All the notes are files on Roam’s servers. 
 - There is no free plan. I have no qualms with paying for something as valuable as a Second Brain, but there are many excellent free options out there.
@@ -95,7 +95,7 @@ That said, there are several great things about Roam:
 
 - Arguably because it’s paid, you can have more faith that the company will stay around for a while and implement new features (though Obsidian’s team has proven to be highly capable in that respect).
 - Excellent graph view.
-- Links to blocks rather than just to notes. In Molecular Notes this doesn’t matter much, but for other systems it’s very useful that you can link to specific paragraphs.
+- Links to blocks rather than just to notes. In Molecular Notes, this doesn’t matter much, but for other systems it’s very useful to be able to link to specific paragraphs.
 - Unlinked references: Roam probably beats Obsidian on this particular point – with one click you can turn all unlinked references into proper backlinks.
 
 ### VSCode
@@ -104,7 +104,7 @@ VSCode is an IDE (interactive development environment) that I use for most of my
 
 However, it turns out that there are VSCode extensions (like [Foam](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode) and [Dendron](https://marketplace.visualstudio.com/items?itemName=dendron.dendron)) that essentially turn VSCode into an Obsidian clone. I use Dendron at work because I don’t have access to Obsidian behind the company firewall.
 
-These apps are quite similar to Obsidian but the UX is slightly less polished because of the IDE’s constraints. The learning curve was a lot steeper, since the target audience for these apps are software developers (not many “normies” have VSCode installed!). Unless you are obsessed with VSCode (not unreasonable!), I think Obsidian offers a better note-taking experience.
+These apps are quite similar to Obsidian but the UX is slightly less polished because of the IDE’s constraints. The learning curve was a lot steeper since the target audience for these apps are software developers (not many “normies” have VSCode installed!). Unless you are obsessed with VSCode (not unreasonable!), I think Obsidian offers a better note-taking experience.
 
 ### OneNote/Evernote
 
@@ -145,11 +145,11 @@ Here is a list of my most commonly used tags:
 <img src="{{ site.imageurl }}secondbrain2/taglist.png" style="width:45%;"/>
 </center>
 
-Obviously we have the main Molecular Notes primitives: Atom, Molecule, Topic, and Sources.
+Obviously, we have the main Molecular Notes primitives: Atom, Molecule, Topic, and Sources.
 
 All of my Source notes have an additional tag denoting what type of Source it is, e.g a book or an article. Most of my Atoms have an additional tag denoting the type of Atom, for example it could be a tool, historical event, formula, etc. In the list above you may be surprised to see “cognitive-bias” as a tag – arguably this should be a Topic instead. But so many of my Atoms are cognitive biases that I think it is a suitable tag. I bring this up to remind the reader that “practicality beats purity” – feel free to modify the system to suit your needs! 
 
-Tags make it very easy to search through notes. For example I can quickly find all books that mention Kelly Betting using ⌘⇧F.
+Tags make it very easy to search through notes. For example, I can quickly find all books that mention Kelly Betting using ⌘⇧F.
 
 <center>
 <img src="{{ site.imageurl }}secondbrain2/tagsearch.png" style="width:80%;"/>
@@ -173,7 +173,7 @@ The folders with an underscore in front of them are “system” folders that ar
 
 All Atoms go in the root directory, not in folders. This decision was based on the observation that opening Atoms is probably the action I do most often, so I should reduce the number of clicks as much as possible. 
 
-I use folders to house specific types of notes: Authors, Molecules, Sources, Topics. A reasonable question: doesn’t this create duplication between folders and tags? Why bother creating a folder where everything inside it is tagged a certain way? The answer is that folders speed up navigation: they are great for “skimming” your Second Brain. For example, I often want to skim through a list of my Molecules. While I could do this using a search for “tag:#molecule”, this is such a common task that it’s more efficient to be able to simply click “Molecules” in Obsidian’s file explorer and be able to quickly look through:
+I use folders to house specific types of notes: Authors, Molecules, Sources, and Topics. A reasonable question: doesn’t this create duplication between folders and tags? Why bother creating a folder where everything inside it is tagged a certain way? The answer is that folders speed up navigation: they are great for “skimming” your Second Brain. For example, I often want to skim through a list of my Molecules. While I could do this using a search for “tag:#molecule”, this is such a common task that it’s more efficient to be able to simply click “Molecules” in Obsidian’s file explorer and be able to quickly look through:
 
 <center>
 <img src="{{ site.imageurl }}secondbrain2/molecule_explorer.png" style="width:80%;"/>
@@ -189,11 +189,11 @@ Topics are the main “semantic” source of structure (tags and folders are mor
 <img src="{{ site.imageurl }}secondbrain2/graph_topic.png" style="width:80%;"/>
 </center>
 
-I don’t have a set procedure to decide when something should be given an explicit Topic. As a very rough rule of thumb, I make something a Topic if I think more than ~5-10 notes will link to it. Some of my biggest topics are: Finance, Statistics, Philosophy, Volatility (in the financial sense), and Management.
+I don’t have a set procedure to decide when something should be given an explicit Topic. As a very rough rule of thumb, I make something a Topic if I think more than ~5-10 notes will link to it. Some of my most-used Topics are Finance, Statistics, Philosophy, Volatility (in the financial sense), and Management.
 
 Volatility is an interesting example because it is actually a *Subtopic* of Finance, in the sense that any note related to the Volatility Topic should also be related to the Finance Topic conceptually. But in these cases, I will only link to the Subtopic. Hence if I am writing a new Atom about volatility (e.g some new options concept), even though it is indeed related to Finance, given that it is only related to Finance via its relation to Volatility, I will only link it to the Volatility Subtopic. This results in a clearer graph structure. 
 
-Don’t worry too much about deciding the best Topics. I often restructure and rename the Topics – this iterative procedure really helps me remain abreast of the contents of my Second Brain. 
+Don’t worry too much about deciding the best Topics. I often restructure and rename the Topics – this iterative procedure helps me remain abreast of the contents of my Second Brain. 
 
 ### Authors
 
@@ -202,7 +202,7 @@ At the top of all my Source notes, I write down the author. But rather than doin
 The advantages of this approach are threefold:
 
 - The Authors show up on the graph.
-- Because the Authors are notes tagged `#author` , I can give them a different colour on the graph.
+- Because the Authors are notes tagged `#author`, I can give them a different colour on the graph.
 - If I ever need to note down information about the author, I can easily do so on the Author page.
     
     <center>
@@ -216,22 +216,22 @@ One downside of making placeholder Author notes is that one ends up having to cr
 
 ## Learning from different sources
 
-As I explained in [Part 1]({% post_url 2022-04-18-molecular-notes-part-1 %}), a key goal of Molecular Notes is to help me learn from a variety of resources: books, textbooks, podcasts, YouTube videos etc. In this section, I explain how I make Source notes for different types of medium.
+As I explained in [Part 1]({% post_url 2022-04-18-molecular-notes-part-1 %}), a key goal of Molecular Notes is to help me learn from a variety of resources: books, textbooks, podcasts, YouTube videos etc. In this section, I explain how I make Source notes for different media types.
 
 Before that, let me review some key principles:
 
 - Avoid duplication:
     - If two Sources are explaining the same concept, that concept should be extracted into an Atom and linked to by both Sources.
-    - But if each Source is providing different *commentary* on the same concept, I can and should make a note of both.
-    - Before making notes on a Source, I first pull up similar Sources so I can get a better grip of what’s already in my Second Brain. Often, I end up restructuring my old notes at the same time as making new notes!
+    - But if each Source provides different *commentary* on the same concept, I can and should make a note of both.
+    - Before making notes on a Source, I first pull up similar Sources so I can get a better grip on what’s already in my Second Brain. Often, I end up restructuring my old notes at the same time as making new notes!
 - Review-oriented structure:
     - Notes should be hard to write but easy to review – put in the effort to rearrange things until the structure makes sense!
-    - I’m a big fan of using nested bullets because they let me to look at my content on different levels of abstraction, allowing for efficient review.  When I’m looking over my Source notes later, I can scan the headings and the top level bullets to find what I’m looking for (or maybe I’m just browsing), before diving into a particular point in more detail if needed.
+    - I’m a big fan of using nested bullets because they let me look at my content on different levels of abstraction, allowing for efficient review.  When I’m looking over my Source notes later, I can scan the headings and the top-level bullets to find what I’m looking for (or maybe I’m just browsing), before diving into a particular point in more detail if needed.
     - Contrast this with a paragraph of text, where I essentially have to read the whole paragraph to figure out what the paragraph is discussing. Converting textbook prose to nested bullets isn’t always easy, but having to re-arrange concepts helps me internalise the material.
 - Naming conventions:
-    - I’m not at all consistent with how I name Source notes – sometimes I use the original title, sometimes I append the author e.g `Complexity, Mitchell`. For journal articles I will either use the title or the reference, e.g `Avellaneda and Stoikov (2008)`. 
+    - I’m not at all consistent with how I name Source notes – sometimes I use the original title, sometimes I append the author e.g `Complexity, Mitchell`. For journal articles, I will either use the title or the reference, e.g `Avellaneda and Stoikov (2008)`. 
     - How do I decide? I name the note whatever I would like to reference it as. This is *my* Second Brain, so I let the note name reflect whatever symbol I have in my mind.
-    - I generally avoid abbreviations because the marginal effort of linking a long name is tiny due to autocomplete. Again, there are some exceptions to this – if the abbreviation is strongly embedded in my mind (e.g `GEB` for `Godel, Escher, Bach: an Eternal Golden Braid`: , I will just use the acronym!
+    - I generally avoid abbreviations because the marginal effort of linking a long name is tiny due to autocomplete. Again, there are some exceptions to this – if the abbreviation is strongly embedded in my mind (e.g `GEB` for `Godel, Escher, Bach: an Eternal Golden Braid`), I will just use the acronym!
     
 
 ### Books
@@ -241,7 +241,7 @@ I have discussed at length how I consume books in a [previous post]({% post_url 
 - My book review and highlights are contained in Notion (they can be viewed [here](https://robertreads.notion.site/)).
 - I then copy the key highlights into a Source note.
 - I extract “known” concepts into Atoms and crystallised pieces of insight into Molecules.
-- I look through other notes of the same Topic (using the local graph) to find potential connections.
+- I look through other notes from the same Topic (using the local graph) to find potential connections.
 
 ### Textbooks and online courses
 
@@ -253,8 +253,8 @@ Here are some guidelines when making notes on textbooks:
     - I normally read over a textbook (or watch lecture videos) once on 2x speed just to get an idea of what ideas it contains, before making proper notes on a second pass.
     - This helps me have a sense of what’s important – or indeed if the textbook is worth reading!
 - Mimic structure:
-    - I generally follow the structure of the textbook because it makes it much easier refer back to the original textbook when I need additional details.
-    - Obsidian lets you link to headings, so in other notes I could refer to *Volatility Trading Chapter 2* as a proper backlink (see the Obsidian [docs](https://help.obsidian.md/How+to/Internal+link) for an explanation)
+    - I generally follow the structure of the textbook because it makes it much easier to refer back to the original textbook when I need additional details.
+    - Obsidian lets you link to headings, so in other notes, I could refer to *Volatility Trading Chapter 2* with a proper backlink (see the Obsidian [docs](https://help.obsidian.md/How+to/Internal+link) for an explanation)
     - But one must be careful not to fall into the trap of completionism: just because we are following the textbook’s structure *does not* mean that we need to take detailed notes on every chapter! I sometimes leave chapters as just a heading if the ideas aren’t immediately relevant to me.
         
         <center>
@@ -263,9 +263,9 @@ Here are some guidelines when making notes on textbooks:
         
 - Utility over comprehensiveness: 
   - We don’t need to re-explain everything in the book! In fact, we should think of Source notes as a collection of pointers. The note should just tell you what is in the Source. 
-  - Unless you expect a concept or idea to be particularly important for your thinking (in which case you should extract it into an Atom or Molecule), feel free to write nothing more than minimal phrase to remind you of its existence.
+  - Unless you expect a concept or idea to be particularly important for your thinking (in which case you should extract it into an Atom or Molecule), feel free to write nothing more than a minimal phrase to remind you of its existence.
 
-Probably the most differentiated aspect of my textbook workflow is that only 70% of the time spent making textbook notes is spent on that particular textbook. The other 30% is spent extracting relevant Atoms from other textbooks. For example, I was recently making notes on Ben Lambert’s excellent course on undergraduate econometrics. I had previously read a textbook called *Forecasting – Principles and Practice* that had a lot of overlap especially on the subject of time series. So I kept this open in the right pane, and whenever there was a concept that was discussed both by Lambert and *Forecasting*, I would extract it into an Atom.
+Probably the most differentiated aspect of my textbook workflow is that only 70% of the time spent making textbook notes is spent on that particular textbook. The other 30% is spent extracting relevant Atoms from other textbooks. For example, I was recently making notes on Ben Lambert’s excellent course on undergraduate econometrics. I had previously read a textbook called *Forecasting – Principles and Practice* that had a lot of overlap, especially on the subject of time series. So I kept this open in the right pane, and whenever there was a concept that was discussed both by Lambert and *Forecasting*, I would extract it into an Atom.
 
 
 Previously my notes on *Chapter 9 – ARIMA models* looked quite similar to Chapter 10: lots of text with few links. While making notes on Lambert’s course, I progressively extracted Atoms like “AR model”, “MA model”, “ARMA model” – though note that there is still some Source-specific commentary under “Stationary time series”.  
@@ -278,7 +278,7 @@ This process leaves me with a far better understanding of the concepts because I
 
 ### Information media
 
-I generalise blog posts, YouTube videos, twitter threads etc to “information media” (infomedia).
+I generalise blog posts, YouTube videos, Twitter threads etc to “information media” (infomedia).
 
 The main difference between these types of infomedia and books/textbooks is that they typically focus on a much narrower range of concepts: often just one! 
 
@@ -292,12 +292,12 @@ In these cases, I will often directly create an Atom to explain the concept (in 
 
 Podcasts have been an incredibly important learning vector for me. They are an excellent way to add incremental learning to my day – as a rule of thumb, I listen to podcasts any time my body is in use but my brain is not: when I’m at the gym, walking from A to B during a commute, cooking and cleaning, etc. 
 
-There are several types of podcast, each of which I treat differently (a list of the podcasts I consume can be found [here](https://reasonabledeviations.com/about/#information-diet)). 
+There are several types of podcasts, each of which I treat differently (a list of the podcasts I consume can be found [here](https://reasonabledeviations.com/about/#information-diet)). 
 
 - General news and current affairs (e.g *All-In*): I don’t make notes on these – I listen to them in the gym and they are primarily for entertainment.
 - General interviews, e.g *Invest Like the Best*, *Masters in Business*: I occasionally take notes if there is an insight that strongly resonates with me.
 - Evergreen interviews, e.g *Flirting With Models*: these are podcasts that have been carefully designed to be dense in evergreen information. I make notes on these as if they are online courses (i.e textbook-equivalent).
-- “Long form”, e.g the *History of Rome, Huberman Lab*: as above, I treat these as online courses.
+- “Long-form”, e.g the *History of Rome, Huberman Lab*: as above, I treat these as online courses.
 
 I use an app called Airr that allows me to make audio highlights: when I hear something interesting, I press a button to record an AirrQuote and if convenient I make a text note (these are optional).
 
@@ -309,7 +309,7 @@ At certain intervals (e.g every few episodes, or every season if I’ve gotten l
 
 ### Journal articles
 
-I first want to caveat by saying that I am not an academic, so my workflow for journal articles is primarily from the perspective of a “keen amateur” – I generally care more about learning techniques from the articles, as opposed to citing them and building on top of them. 
+I first want to caveat by saying that I am not an academic, so my workflow for journal articles is primarily from the perspective of a “keen amateur” – I generally care more about learning techniques from the articles, as opposed to citing and building on top of them. 
 
 My Source notes for journal articles are most similar to my Source notes for books: they are often very short, highlighting just the key ideas that are relevant to my thinking.
 
@@ -317,15 +317,15 @@ My Source notes for journal articles are most similar to my Source notes for boo
 <img src="{{ site.imageurl }}secondbrain2/journal_article.png" style="width:80%;"/>
 </center>
 
-I name the note whatever feels right – sometimes that’s the formal citation, sometimes it’s the name of the paper (if it’s particularly memorable). In the frontmatter for the note, I give the formal citation as a link to Zotero, which I use to store and arrange the PDFs of the papers. 
+I name the note whatever feels right – sometimes that’s the formal citation, sometimes it’s the name of the paper (if it’s particularly memorable). In the front matter for the note, I give the formal citation as a link to Zotero, which I use to store and arrange the PDFs of the papers. 
 
 ## Synthesis
 
 Synthesis is one of the important parts of a Second Brain, but it is also the aspect I am least able to convey in a blog post. While I’ve built a system that aids synthesis, the truth is that it’s a process that must occur in one’s (primary) brain. 
 
-My approach isn’t to sit down and say “right, it’s time to be creative”. Most often, the process starts while I’m making notes on a particular Source: perhaps the author discusses a concept that feels vaguely familiar, or has a similar flavour to something I’ve come across before. I then gently poke around my Second Brain to try and see if there’s a deeper link. 
+My approach isn’t to sit down and say “right, it’s time to be creative”. Most often, the process starts while I’m making notes on a particular Source: perhaps the author discusses a concept that feels vaguely familiar or has a similar flavour to something I’ve come across before. I then gently poke around my Second Brain to try and see if there’s a deeper link. 
 
-The local graph is useful here because I have configured it to show both first degree and second degree neighbours. The second degree neighbours are often a fertile hunting ground for connections. In the example below, the “Goal preservation” Atom links to the AI Topic. The local graph shows not just the neighbours of “Goal preservation”, but the neighbours of “AI” too. I can then skim these to see if there are additional links to “Goal preservation”
+The local graph is useful here because I have configured it to show both first-degree and second-degree neighbours. The second-degree neighbours are often a fertile hunting ground for connections. In the example below, the “Goal preservation” Atom links to the AI Topic. The local graph shows not just the neighbours of “Goal preservation”, but the neighbours of “AI” too. I can then skim these to see if there are additional links to “Goal preservation”
 
 <center>
 <img src="{{ site.imageurl }}secondbrain2/goal_preservation.png" style="width:100%;"/>
@@ -349,7 +349,7 @@ There are a tonne of third-party extensions available for Obsidian which require
 
 ### Viewing notes from a text editor
 
-Notes are just plain text in folders, which means you can interact with them via your file system. For example, on macOS this means that your Obsidian notes show up in Spotlight search, which can be quite useful. It also means that you can reorganise your notes in Finder or File Explorer. 
+Notes are just plain text in folders, which means you can interact with them via your file system. For example, on macOS, this means that your Obsidian notes show up in Spotlight search, which can be quite useful. It also means that you can reorganise your notes in Finder or File Explorer. 
 
 Slightly more advanced: I often interact with my Obsidian vault via VSCode, a programming environment. 
 
@@ -432,4 +432,4 @@ One of my exploration areas:  can we design a system that combines linear event 
 
 Having published these posts on Molecular Notes, along with my two previous posts on [*How I Use Notion*]({% post_url 2021-09-18-how-i-use-notion %}) and [*How I Read Books*]({% post_url 2022-01-24-reading-philosophy %}), I think I’ve said all that I want to say about productivity tools for the time being. Writing about personal productivity always feels somewhat self-indulgent: it inevitably comes down to “this is how I do things – you should do it too!”.
 
-Thanks to Niamh Q, Callum M , Shiv G, Lyra G, Cedric C, Joseph C for the discussions and inspiration. Writing these excuses has given me a great excuse to nerd out about productivity tools and human-computer interaction with you clever people!
+Thanks to Niamh Q, Callum M, Shiv G, Lyra G, Cedric C, Joseph C for the discussions and inspiration. Writing these posts has given me a great excuse to nerd out about productivity tools and human-computer interaction with you clever people!
