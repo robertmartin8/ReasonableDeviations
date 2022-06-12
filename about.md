@@ -80,8 +80,8 @@ I've split up the podcasts I consume loosely based on subject (though there's a 
   - *Masters in Business* by Barry Ritholtz -- Ritholtz manages to get interesting guests and I'm consistently impressed by the quality and pacing of the interviews. Plus, in each episode the guests recommend their favourite books/content -- super valuable.
 - **Investing and finance**
   - *Flirting with Models* by Corey Hoffstein -- if you're at all interested in quant finance, this is a must-listen. Corey does an amazing job of guiding the conversation through deep technicals as well as the big-picture view. Guests are surprisingly open in discussing their approaches and techniques -- very rare in quant finance.
-  - *Uncommon Core* by Su Zhu and Hasu -- a nice crypto pod by two industry veterans. 
-  - *Superinvestors* by Jesse Felder -- some overlap with Macro Voices and episodes are very infrequent, but episodes are usually worthwhile.
+  - *Uncommon Core* by Su Zhu and Hasu -- a nice crypto pod with two industry veterans. 
+  - *Superinvestors* by Jesse Felder -- inconsistent release schedule, but episodes are usually worthwhile.
 - **History and philosophy**  
   - *The History of Rome* by Mike Duncan -- yes, I went down that rabbithole. Full of nerdy humour and incredibly informative. 
   - *History of Philosophy* -- high level summaries of the work of philosophers going back to the Greeks.
