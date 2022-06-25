@@ -4,7 +4,7 @@ title: "Molecular Notes: Principles"
 category: productivity
 ---
 
-In this post I present my Molecular Notes, a note-taking system I created to help me learn from diverse sources (books, textbooks, articles, courses), distil insights, and synthesise new ideas. Molecular Notes is how I approach my **Second Brain** – the body of concepts and ideas that are relevant to my understanding of the world, both personally and professionally.  
+In this post I present Molecular Notes, a note-taking system I created to help me learn from diverse sources (books, textbooks, articles, courses), distil insights, and synthesise new ideas. Molecular Notes is how I approach my **Second Brain** – the body of concepts and ideas that are relevant to my understanding of the world, both personally and professionally.  
 
 <!--more-->
 
