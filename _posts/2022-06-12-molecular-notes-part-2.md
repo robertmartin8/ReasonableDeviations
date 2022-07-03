@@ -100,7 +100,7 @@ That said, there are several great things about Roam:
 
 ### VSCode
 
-VSCode is an IDE (interactive development environment) that I use for most of my software development. I often use VSCode to interact with my Obsidian notes (e.g. when I want to do special find-and-replace operations across the entire database).
+VSCode is an IDE (integrated development environment) that I use for most of my software development. I often use VSCode to interact with my Obsidian notes (e.g. when I want to do special find-and-replace operations across the entire database).
 
 However, it turns out that there are VSCode extensions (like [Foam](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode) and [Dendron](https://marketplace.visualstudio.com/items?itemName=dendron.dendron)) that essentially turn VSCode into an Obsidian clone. I use Dendron at work because I don’t have access to Obsidian behind the company firewall.
 
