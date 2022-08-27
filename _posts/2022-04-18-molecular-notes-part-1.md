@@ -475,7 +475,7 @@ The main additions of Molecular Notes that I feel aren’t well-captured by the 
 
 ## Failure modes
 
-A recurring theme of this post is that you should modify Molecular Notes to work for you. But before wrapping up, I want to I want to outline some failure modes that you should take care to avoid!
+A recurring theme of this post is that you should modify Molecular Notes to work for you. But before wrapping up, I want to outline some failure modes that you should take care to avoid!
 
 - Categorisation hell:
     - Don’t spend too much time trying to come up with a fancy categorisation scheme.
