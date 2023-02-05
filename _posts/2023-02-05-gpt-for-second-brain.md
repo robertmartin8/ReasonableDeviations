@@ -193,10 +193,6 @@ Best of all, with `click.launch(link)` one can actually launch Obsidian, though 
 
 Firstly, I installed the Advanced URI extension in Obsidian, which allows you to link to text blocks within notes rather than just the note itself. I then reverse-engineered the format of the URI string, allowing me to convert my `(note_title, chapter_title)` pairs (which also keys the dataframe of embeddings vectors) into a proper URI. In the CLI, when I enter the note index and <enter>, the URI is built and passed to `click.launch` which opens Obsidian.
 
-Check out the demo below:
-
-[INSERT VIDEO].
-
 ## Next steps
 
 There are several other ways I think GPT-3 can be used to augment my second brain experience. Here are some ideas, in descending order of importance.
