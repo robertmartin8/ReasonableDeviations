@@ -187,7 +187,7 @@ Finally, I sorted the resulting notes by similarity and returned them.
 
 ### User interface
 
-I built a CLI using python’s [click](https://click.palletsprojects.com/en/8.1.x/) library. This allows for easy creation of user confirmation prompts, progress bars, and styling.
+I built a CLI (command-line interface) using python’s [click](https://click.palletsprojects.com/en/8.1.x/) library. This allows for easy creation of user confirmation prompts, progress bars, and styling.
 
 Best of all, with `click.launch(link)` one can actually launch Obsidian, though it took some effort to get the link in the right format.
 
