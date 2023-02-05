@@ -59,7 +59,7 @@ We mostly want to do this because once text has some spatial location, we can de
 
 Also, vectors are easier to mathematically manipulate than blocks of text: adding and subtracting vectors is just a matter of following arrows. So once we’ve represented words as vectors, we can more rigorously say things like:
 
-- king = queen + woman
+- king = queen + man
 - tiger = cat + stripes
 - slower - slow + fast = faster
 
