@@ -191,7 +191,7 @@ I built a CLI (command-line interface) using python’s [click](https://click.pa
 
 Best of all, with `click.launch(link)` one can actually launch Obsidian, though it took some effort to get the link in the right format.
 
-Firstly, I installed the Advanced URI extension in Obsidian, which allows you to link to text blocks within notes rather than just the note itself. I then reverse-engineered the format of the URI string, allowing me to convert my `(note_title, chapter_title)` pairs (which also keys the dataframe of embeddings vectors) into a proper URI. In the CLI, when I enter the note index and <enter>, the URI is built and passed to `click.launch` which opens Obsidian.
+Firstly, I installed the Advanced URI extension in Obsidian, which allows you to link to text blocks within notes rather than just the note itself (a URI is like a URL but can link to things other than web pages). I then reverse-engineered the format of the URI string, allowing me to convert my `(note_title, chapter_title)` pairs (which also keys the dataframe of embeddings vectors) into a proper URI. In the CLI, when I enter the note index, the URI is built and passed to `click.launch` which opens Obsidian.
 
 ## Next steps
 
