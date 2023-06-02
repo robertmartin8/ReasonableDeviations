@@ -86,8 +86,6 @@ HyperVault was an enterprise blockchain startup dedicated to providing secure ac
 
 All said, our functional proof-of-concept was very well received by both technologists and VCs and we won the £2000 prize at the Future of Blockchain competition.
 
-<iframe src="{{ site.imageurl }}projects/hypervault_demo.mp4" frameborder="0" allowfullscreen content-type="text/html"></iframe>
-
 Relevant links:
 
 - [LinkedIn page](https://www.linkedin.com/company/hypervault/)
