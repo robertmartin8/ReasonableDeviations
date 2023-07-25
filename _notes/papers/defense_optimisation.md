@@ -36,7 +36,7 @@ title: In Defense of Optimisation
 
 ### Further possible improvements
 
-- In reality, there is a big difference between the latent volatility and the price shifts in response to significant events (e.g 2008).
+- In reality, there is a big difference between the latent volatility and the price shifts in response to significant events (e.g. 2008).
 - Thus the covariance matrix is an unreliable measure of diversification performance in turbulent markets, because it does not not distinguish between these two kinds of volatility.
 - This can be improved by splitting the series of returns into two subsamples, one for normal noise and one for event-driven movement, then calculating the covariance matrix for each. The final covariance matrix will be the weighted average, overweighting the turbulent.
 - **Full-scale optimisation** can be used instead of mean-variance optimisation to achieve better out-of-sample performance and increased flexibility.

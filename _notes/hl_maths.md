@@ -56,7 +56,7 @@ If you take the statistics option, here are some example 'trick' questions that 
 
 ## About the notes
 
-*   The notes are organised mostly according to the syllabus, but I've reordered some things (e.g putting complex numbers at the end).
+*   The notes are organised mostly according to the syllabus, but I've reordered some things (e.g. putting complex numbers at the end).
 *   **These notes were made specially for the statistics option. **You'll notice that Chapter 5 is quite big; this is because I felt it was better to put all the stats stuff together – both the core and the option. For students of other options, you may have to avoid chapter 5 all together because of the way I've linked it together. However, I think it would be productive for you to read it anyway, and just be clear on which topics are core and which are option.
 *   I do not claim that these are comprehensive, because I've left out some facts that either seem obvious to me or are ingrained in my memory. That being said, I have made them fairly detailed and there has been a generally positive response among those who have used the notes.
 *   Not that you care, but I actually spent a lot of time on these making them aesthetically pleasing, by typing them in $\LaTeX$.

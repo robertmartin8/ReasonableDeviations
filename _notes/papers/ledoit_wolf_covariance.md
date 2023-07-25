@@ -38,7 +38,7 @@ The constraints on this optimisation are respectively interpreted as follows:
 - The active returns must be more than some target gain $g$, so $x^T\alpha \geq g$
 - The active weights must sum to zero (in order for $w_P$ and $w_B$ to both sum to one).
 - The portfolio is long only, so $w_P \geq 0 \implies x \geq -w_B$
-- The maximum position size is *c* (e.g we can't have more than 10% of a given stock), so $w_P \leq c\mathbf{1}$.
+- The maximum position size is *c* (e.g. we can't have more than 10% of a given stock), so $w_P \leq c\mathbf{1}$.
 
 ### Shrinkage estimation of the sample covariance matrix
 

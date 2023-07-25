@@ -73,7 +73,7 @@ At a first glance, this graphic seems to accurately describe much of our intuiti
 
 *Note regarding the Pfizer news of November 9th 2020*
 
-On 9 November, while I was halfway through writing this post, Pfizer announced very promising results from their vaccine. I found the heatmap to be a very useful reference -- the red companies/sectors posted stunning returns, while many of the blue companies (e.g big tech) had a lacklustre day -- and actually ended up using the heatmap to help identify some stocks to trade. Based on my qualitative judgment post-hoc, the betas on the heatmap do seem to properly reflect the economic link between COVID-19 and the companies.
+On 9 November, while I was halfway through writing this post, Pfizer announced very promising results from their vaccine. I found the heatmap to be a very useful reference -- the red companies/sectors posted stunning returns, while many of the blue companies (e.g. big tech) had a lacklustre day -- and actually ended up using the heatmap to help identify some stocks to trade. Based on my qualitative judgment post-hoc, the betas on the heatmap do seem to properly reflect the economic link between COVID-19 and the companies.
 
 ## Conclusion
 

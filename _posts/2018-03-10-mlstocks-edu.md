@@ -9,7 +9,7 @@ I recently released a machine learning stock prediction project [on GitHub](http
 
 MachineLearningStocks is designed to be an intuitive and highly extensible template project applying machine learning to making stock predictions. My hope is that the project will help readers to not only understand the overall workflow of using machine learning to predict stock movements, but also to appreciate some of the many subtleties. I've also provided a long list of possible improvements you could make, or ideas for moving forward, to put some spice into the vanilla project. 
 
-Concretely, we will be cleaning and preparing a dataset of historical stock prices and fundamentals using `pandas`, after which we will apply a `scikit-learn` classifier to discover the relationship between stock fundamentals (e.g PE ratio, debt/equity, float, etc) and the subsequent annual price change (compared with the an index). We then conduct a simple backtest, before generating predictions on current data.
+Concretely, we will be cleaning and preparing a dataset of historical stock prices and fundamentals using `pandas`, after which we will apply a `scikit-learn` classifier to discover the relationship between stock fundamentals (e.g. PE ratio, debt/equity, float, etc) and the subsequent annual price change (compared with the an index). We then conduct a simple backtest, before generating predictions on current data.
 
 While I would not live trade based off of the predictions from this exact code, I do believe that you can use this project as starting point for a profitable trading system – I have actually used code based on this project to live trade, with pretty decent results (around 20% returns on backtest and 10-15% on live trading).
 
@@ -202,7 +202,7 @@ This is the exact regex used:
 r'>' + re.escape(variable) + r'.*?(\-?\d+\.*\d*K?M?B?|N/A[\\n|\s]*|>0|NaN)%?(</td>|</span>)'
 ```
 
-While it looks pretty arcane, all it is doing is searching for the first occurence of the feature (e.g "Market Cap"), then it looks forward until it finds a number immediately followed by a `</td>` or `</span>` (signifying the end of a table entry). The complexity of the expression above accounts for some subtleties in the parsing:
+While it looks pretty arcane, all it is doing is searching for the first occurence of the feature (e.g. "Market Cap"), then it looks forward until it finds a number immediately followed by a `</td>` or `</span>` (signifying the end of a table entry). The complexity of the expression above accounts for some subtleties in the parsing:
 
 - the numbers could be preceeded by a minus sign
 - Yahoo Finance sometimes uses K, M, and B as abbreviations for thousand, million and billion respectively.
@@ -267,7 +267,7 @@ Run the following in terminal:
 python current_data.py
 ```
 
-The script will then begin downloading the HTML into the `forward/` folder within your working directory, before parsing this data and outputting the file `forward_sample.csv`. You might see a few miscellaneous errors for certain tickers (e.g 'Exceeded 30 redirects.'), but this is to be expected.
+The script will then begin downloading the HTML into the `forward/` folder within your working directory, before parsing this data and outputting the file `forward_sample.csv`. You might see a few miscellaneous errors for certain tickers (e.g. 'Exceeded 30 redirects.'), but this is to be expected.
 
 ## Stock prediction
 

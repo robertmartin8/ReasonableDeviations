@@ -22,7 +22,7 @@ $$P(A | X ) = \frac{P(X|A)P(A)}{P(X)}$$
 
 ## PyMC3
 
-The `Model` object defines the parameters and the distribution. e.g if we are trying to estimate the mean of a Poissonian random variable:
+The `Model` object defines the parameters and the distribution. e.g. if we are trying to estimate the mean of a Poissonian random variable:
 
 ```python
 import pymc3 as pm 
@@ -34,7 +34,7 @@ with pm.Model() as model:
 ```
 
 - PyMC3 variables can either be stochastic or deterministic. Deterministic variables can be made up from stochastic variables, because if you knew the values of the stochastic variable, there would be no randomness to get to the deterministic variable.
-- We ca make multi-dimensional stochastic variables using the `shape` parameter, e.g `betas = pm.Uniform("betas", 0, 1, shape=N)`
+- We ca make multi-dimensional stochastic variables using the `shape` parameter, e.g. `betas = pm.Uniform("betas", 0, 1, shape=N)`
 - Any expressions on PyMC3 variables must be compatible with `theano` tensors (on which PyMC3 is built). 
 
 ## MCMC

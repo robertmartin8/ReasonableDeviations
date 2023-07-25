@@ -61,7 +61,7 @@ The course can be found [on Coursera](https://www.coursera.org/learn/cryptocurre
 
 ### Hash functions
 
-- A **hash function** takes any string as an input, and maps it to a finite output, e.g 256 bytes. Essential properties:
+- A **hash function** takes any string as an input, and maps it to a finite output, e.g. 256 bytes. Essential properties:
     - Collision free – nobody can find *x* and *y* such that $H(x) = H(y)$$. This property has never been proven, but is probabilistic. 
     - Hiding property – cannot recover *x* from $H(x)$. In practice, we concatenate a random string *r* to *x* before hashing.
 - Bitcoin uses the SHA-256 hashing algorithm. 
@@ -137,7 +137,7 @@ Bitcoin uses a scripting language:
 - limits on time/memory
 - no looping
 
-e.g ``<sig><pubkey> OP_DUP OP_HASH <pubkeyHash> OP_EQUALVERIFY OP_CHECKSIG``
+e.g. ``<sig><pubkey> OP_DUP OP_HASH <pubkeyHash> OP_EQUALVERIFY OP_CHECKSIG``
 
 1. Pushes signautre and public key onto stack
 2. Duplicates public key
@@ -206,7 +206,7 @@ t43|42 -> B | 58 -> A
 
 Let *P* be a large prime number (not necessarily secret). Let *S* be a secret key, $S \in [0,P)$. We want to split this key into *N* pieces such that *K* pieces are sufficient to reconstruct *S*. Let *R* be a secret random number such that $R \in [0,P)$. 
 
-e.g $K=2$. 
+e.g. $K=2$. 
 We will imagine *S* to be a point on the *y*-axis. Finding the coordinates of this point is equivalent to finding *S*. Now we imagine a line with gradient *R*, running through *P*. Any two points on this line are enough to find *S*, thus $K=2$. *N* can be anything, because we can supply arbitrarily many points on this line as ‘pieces’ of the key. 
 
 $K = 3$ 
@@ -222,7 +222,7 @@ And you can supply as many sets of $(R_1, R_2, \ldots, R_k)$ as you like.
 
 ### Storing bitcoins
 
-* To spend a bitcoin, you need some info from the blockchain e.g coin ID and value (publicly available) and your secret key to sign a transfer. So storing bitcoins is equivalent to storing your secret key. 
+* To spend a bitcoin, you need some info from the blockchain e.g. coin ID and value (publicly available) and your secret key to sign a transfer. So storing bitcoins is equivalent to storing your secret key. 
 * The simplest way is to store the key as a file locally. This is convenient, but if your device is lost/wiped/compromised your bitcoins are gone. 
 * An alternative is a **bitcoin wallet**. These often have nice UIs, and give your coins different addresses to benefit anonymity. They can turn your public key into a text string or QR code so it is easy for people to send you money They are convenient, and can work on multiple devices. The only issue is security concerns. 
 * The **hot/cold storage** technique is often used (just like how we keep some money in our wallet but most in our bank). 
@@ -383,12 +383,12 @@ Highly parallelised with high-throughput, can be optimised for SHA256.
 
 ### Bitcoin and governments
 
-* Bitcoin contravenes **capital control** (untraceable cash flows), allowing people to move wealth without the government’s knowledge or control e.g China has tried to make it difficult to exchange 
+* Bitcoin contravenes **capital control** (untraceable cash flows), allowing people to move wealth without the government’s knowledge or control e.g. China has tried to make it difficult to exchange 
 * Bitcoin can facilitate illegal activities when combined with Tor. 
 * However, it is very difficult to separate the virtual with the real world and stay anonymous for a long time – the creator of the Silk Road had 174000 BTC, but as soon as he tried to convert these to cash he’d be caught.
 * Governments are very serious about anti money laundering – they search for structure in bitcoin transactions. 
 * When markets fail, regulation can help to address the failure.
-*  e.g the lemons market:
+*  e.g. the lemons market:
     * if consumers can’t tell the difference between a high quality (HQ) and low quality (LQ) good, they won’t pay extra for the HQ because they can’t trust the seller
     * then sellers won’t sell the HQ because it costs them more to manufacture 
     * this can be fixed with regulations, such as quality standards, required warranties, and required disclosure, all with enforcement. 
@@ -412,7 +412,7 @@ The blockchain is an **append-only log** – we cannot take stuff off the blockc
 * Because the bitcoin blockchain allows us to write timestamped data into the blockchain, we can build a new currency on top of it. 
 * All the relevant currency data can be written on top the blockchain
 * Of course, the bitcoin miners aren’t validating any of this – so the currency needs its own rules.  
-* e.g Mastercoin:
+* e.g. Mastercoin:
     * smart property and smart contracts, all on top of the blockchain
     * this versatility exists because the miners don’t have to understand it, they can just validate anything with out it affecting them. It is user-defined.
 * However, this can be a lot more inefficient.
@@ -466,12 +466,12 @@ Requirements for a mining puzzle:
 
 * We might want ASIC resistant mining puzzles, in order to reduce oligopolies etc. 
 * One strategy is to use **memory-hard puzzles**. Computer memory (RAM) has grown exponentially, but not as fast as processor speed. Therefore it levels the playing field.
-* e.g **scrypt**:
+* e.g. **scrypt**:
     * constant time/memory tradeoff, meaning that it can be computed with a smaller amount of memory at the cost of time. 
     * scrypt is used in Litecoin. 
     * scrypt starts by filling a large block of memory with random value, where each memory entry is the hash of the previous one. Then, we read the values in a pseudorandom order, XORing and hashing as we go. The output is the result after N iterations. 
     * the problem is that checking also requires N steps and N memory. 
-* e.g **cuckoo hash cycles**:
+* e.g. **cuckoo hash cycles**:
     * we have N nodes, and draw a line between two nodes cased on hashing an input X plus some i. We then ask if there is a cycle of size K, which is memory-hard. 
 
 **Proof of useful work**
@@ -520,7 +520,7 @@ Requirements for a mining puzzle:
 ### Interaction between bitcoin and altcoins
 
 * A small mining pool on a large network can use their hash power to demolish an altcoin. 
-    * e.g CoiledCoin was killed by a mining pool – they mined blocks that reversed transactions, or blocks that were blank. 
+    * e.g. CoiledCoin was killed by a mining pool – they mined blocks that reversed transactions, or blocks that were blank. 
 * **Merge mining** is when computations for one coin are also valid attempts for another coin. This is typically done by putting altcoin data into the bitcoin scriptSig field. 
 * **Atomic cross chain swaps**:
     * at the start, A and B sign refunds
@@ -533,14 +533,14 @@ Requirements for a mining puzzle:
 
 ### The blockchain as a vehicle for decentralisation
 
-- **Smart property**, e.g car ownership
+- **Smart property**, e.g. car ownership
     * A car is controlled by a cryptographic key pair. It has the public key hard coded, and can be activated by sending a message to it that is signed by the private key. 
     * We can improve this by saying that the public key of the car is not just any public key, but the public key that is the receiving address of some bitcoin transaction. This means that you can sign ownership of the car over to someone else. 
     * **Representation** and **atomicity** are the two major considerations regarding decentralisation – can we represent an arbitrary statement/transaction, and can we ‘couple’ each party to guarantee security. 
 
 ### Ways that you can use the blockchain
 
-* Use it directly, e.g with multisigs etc
+* Use it directly, e.g. with multisigs etc
     * easy to deploy
     * limited representation and atomicity, or at least tedious atomicity.  
 * Using a block’s history (coloured coins). 
@@ -562,7 +562,7 @@ Requirements for a mining puzzle:
     * real world currency
     * stocks
 * Complex contracts:
-    * e.g interesting financial derivatives
+    * e.g. interesting financial derivatives
 
 ### Is decentralisation a good idea?
 

@@ -28,7 +28,7 @@ Individual army ants are very unsophisticated and remain so even in groups of 10
     - during colony migrations, the submajors carry other ants.
     - submajors often initiate the transport of prey, before other workers join.
     - enough workers join such that the speed of transport is always the same, to avoid congestion
-- Groups of workers can carry disproportionately large loads (e.g three ants can carry something together when a single ant couldn't carry a third of that weight).
+- Groups of workers can carry disproportionately large loads (e.g. three ants can carry something together when a single ant couldn't carry a third of that weight).
 - **Majors** are the largest caste, existing for defence of the colony. Their mandibles cannot be released once they bite; they hold until their death.
 - **Minims** are tiny workers who stay in the nest and look after the larvae
 - The remaining caste is the medium workers, who help with everything and make up the bulk of the force.

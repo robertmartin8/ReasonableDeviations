@@ -22,7 +22,7 @@ Unfortunately, although we have just argued that the current price incorporates 
 
 Obviously, there isn't a (unique) answer to this question because I haven't given you enough information. There are two unknowns (*A* and *B*), but only one equation relating them, $A + B = 5$.
 
-This silly analogy goes quite far in explaining the difficulty of working out the price-implied expectations. There are many variables that determine a stock price, e.g future sales growth, profit margins, reinvestment rates, interest rates -- and for each of these variables, market expectations matter. In the same way that knowing the total quantity of fruit was insufficient to calculate the number of apples, the price is insufficient to calculate the expectation for a particular variable, like the future sales growth. 
+This silly analogy goes quite far in explaining the difficulty of working out the price-implied expectations. There are many variables that determine a stock price, e.g. future sales growth, profit margins, reinvestment rates, interest rates -- and for each of these variables, market expectations matter. In the same way that knowing the total quantity of fruit was insufficient to calculate the number of apples, the price is insufficient to calculate the expectation for a particular variable, like the future sales growth. 
 
 However, although in the fruit example we weren't able to calculate a *unique* value of *A* or *B*, we were able to restrict the possibilities to those values of *A* and *B* that satisfy $A+ B = 5$. This relationship can be visualised as a straight line in "fruit space":
 

@@ -73,7 +73,7 @@ fun gcd (m,n) =
 
 All ML functions only operate on one argument. The type signature `real * int` specifies that this argument is a `(real, int)` tuple.
 
-Operators are overloaded between different types: e.g multiplication is a different operator for reals and integers but in both cases it uses `*`. Some operators are different, for example `/` is not defined for integers (`div` must be used instead). All the operators (infix or not) are treated as functions, and therefore as values.
+Operators are overloaded between different types: e.g. multiplication is a different operator for reals and integers but in both cases it uses `*`. Some operators are different, for example `/` is not defined for integers (`div` must be used instead). All the operators (infix or not) are treated as functions, and therefore as values.
 
 ```ocaml
 ~;
@@ -101,9 +101,9 @@ Conditional expressions take the form:
 if p then E1 else E2
 ```
 
-p is a **predicate** - a boolean expression that determines which of E1 or E2 is evaluated. The boolean operators are `not`, `andalso`, `orelse`. The latter two are not functions because they only evaluate the second expression if needed. They are just shorthand, e.g `p andalso q` $\equiv$ `if p then q else false`.
+p is a **predicate** - a boolean expression that determines which of E1 or E2 is evaluated. The boolean operators are `not`, `andalso`, `orelse`. The latter two are not functions because they only evaluate the second expression if needed. They are just shorthand, e.g. `p andalso q` $\equiv$ `if p then q else false`.
 
-e.g efficiently raising a number to a power:
+e.g. efficiently raising a number to a power:
 
 ```ocaml
 fun power (x: real, n) = 
@@ -279,7 +279,7 @@ fun change (till, 0, chg, chgs) = (chg::chgs)
 
 - In the base case, we cons the current `chg` to a list of all possible `chgs` and return it.
 - At any point, if `amt` is zero, we stop and return `chgs`.
-- Otherwise, we deduct the coin at the top of the till from `amt` and continue (same as in greedy). At the same time we recursively explore other possibilities (e.g ignore the biggest coin even if we can use it).
+- Otherwise, we deduct the coin at the top of the till from `amt` and continue (same as in greedy). At the same time we recursively explore other possibilities (e.g. ignore the biggest coin even if we can use it).
 
 ### Defining a set
 
@@ -691,7 +691,7 @@ fun inter (xs, ys) = filter (fn x => mem (x, ys)) xs;
 
 ## Lazy lists
 
-**Sequential programs** accept an input problem, processes it, then terminates. **Reactive programs** interact with the environment, and are event-triggered, e.g in the following **pipeline**
+**Sequential programs** accept an input problem, processes it, then terminates. **Reactive programs** interact with the environment, and are event-triggered, e.g. in the following **pipeline**
 
 ```
 producer -> filter -> ... -> filter -> consumer 
@@ -749,13 +749,13 @@ fun iterates f x = Cons(x, fn() => iterates f (f x));
 Programming involves finding **data representations** for abstract concepts. For example, we may try to implement finite sets:
 
 - We will represent the abstract concept with concrete objects - repetition-free lists. 
-- The abstract object will be represented by at least one concrete object e.g `{3,4,5} -> [3,4,5]`.
-- There may be concrete objects that do not represent an abstract object, e.g `[3,3,5]`.
+- The abstract object will be represented by at least one concrete object e.g. `{3,4,5} -> [3,4,5]`.
+- There may be concrete objects that do not represent an abstract object, e.g. `[3,3,5]`.
 - Operations on the abstract data must preserve the representation.
 
 We will represent the polynomial $a_n x^n + \cdots + a_1x + a_0$ as a sparse `(int*real)list`, with real (nonzero) coefficients and decreasing exponents. 
 
-e.g $~x^{500} - 2x + 3 \rightarrow$ `[(500, 1.0), (1, ~2.0), (0, 3.0)]`.
+e.g. $~x^{500} - 2x + 3 \rightarrow$ `[(500, 1.0), (1, ~2.0), (0, 3.0)]`.
 
 The polynomial sum is easy to implement but we must be careful to check all cases to preserve the representation. 
 
@@ -857,7 +857,7 @@ ML arrays can be thought of as references that contain several elements. The arr
 - `Array.sub(A,i)` returns the contents of `A[i]`
 - `Array.update(A,i,E)` updates `A[i]` to the value of *E*.
 
-These arrays are safer than C arrays because they are still abstracted (i.e you can't edit the machine's memory). However, they are less flexible (e.g for 2D arrays).
+These arrays are safer than C arrays because they are still abstracted (i.e you can't edit the machine's memory). However, they are less flexible (e.g. for 2D arrays).
 
 ### Example: mutable linked lists
 

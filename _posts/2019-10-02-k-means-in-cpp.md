@@ -119,7 +119,7 @@ struct Point {
 };
 ```
 
-The first few lines are self-explanatory: we define the coordinates of a point, as well as the cluster it belongs to and the distance to that cluster. Annoyingly, you can't directly set the default value in the struct (e.g `double x = 0`) -- you need to do this via **initialisation lists**. Initially the point belongs to no cluster, so we arbitrarily set that to -1. Accordingly, we must set `minDist` to infinity (or the next best thing, `__DBL_MAX__`).
+The first few lines are self-explanatory: we define the coordinates of a point, as well as the cluster it belongs to and the distance to that cluster. Annoyingly, you can't directly set the default value in the struct (e.g. `double x = 0`) -- you need to do this via **initialisation lists**. Initially the point belongs to no cluster, so we arbitrarily set that to -1. Accordingly, we must set `minDist` to infinity (or the next best thing, `__DBL_MAX__`).
 
 We also define a `distance` function, which computes the (square) euclidean distance between this point and another. Our `Point` struct can be used as follows:
 

@@ -16,7 +16,7 @@ Chess is an ideal system to analyse:
 
 In order to use chess as a model system, there are three obvious possible approaches (each with fatal flaws):
 
-1. Construct problems with a well-defined ground truth (e.g tactics puzzles). However, it is difficult to amass a sufficient dataset.
+1. Construct problems with a well-defined ground truth (e.g. tactics puzzles). However, it is difficult to amass a sufficient dataset.
 2. Use chess databases and chess engines to evaluate where people's decisions have differed from those of the engines. However, it is still difficult to find a mapping between the engine's move choice and a determination of human error.
 3. Calculating the minimax value of every position: any move that decreases the minimax value more than a certain amount can be called a blunder. However, this is computationally intractable. 
 

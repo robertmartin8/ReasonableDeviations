@@ -22,7 +22,7 @@ Wikipedia defines the p-value as:
 
 With a definition like this, it's no surprise that p-values are so widely misinterpreted. We can try and understand the intuition behind p-values by considering an example.
 
-Let's imagine that we want to find out whether some new teaching method X (e.g forcing students to make flashcards) improves test scores versus the default method Y. A simple approach is to split the cohort of 100 students into two groups, making 50 of them do X and the other 50 do Y. We can then compare the average score between the two cohorts. 
+Let's imagine that we want to find out whether some new teaching method X (e.g. forcing students to make flashcards) improves test scores versus the default method Y. A simple approach is to split the cohort of 100 students into two groups, making 50 of them do X and the other 50 do Y. We can then compare the average score between the two cohorts. 
 
 The problem arises when we try to interpret the results. If the X students had an average grade of 70%, while the control group had an average of 60%, did X really improve test results or was it a random fluke? How about if it was 60.1% vs 60.0%? Or 80% vs 50%?
 

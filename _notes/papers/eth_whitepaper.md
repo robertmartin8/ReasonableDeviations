@@ -112,7 +112,7 @@ The block validation algorithm:
 - Financial derivatives, which require a data feed contract that can be pinged when needed
 - 'Decentralised dropbox': split the file and have your contract pay hosts as long as they can prove that they have the file
 - **Decentralised Autonomous Organisations/Corporations/Communities** (DAO/DAC):
-    - e.g only a 67% majority of members can move funds / modify code
+    - e.g. only a 67% majority of members can move funds / modify code
     - there can be dividend-receiving shareholders and tradable shares
     - voting and liquid vote-delegation
 - **Decentralised data feeds**: N parties input a datum, and anyone between the 25th-75th percentile gets a reward.

@@ -13,7 +13,7 @@ In these notes, I have frequently borrowed images from [Daniels Trading](https:/
 
 -   An **option class** is the set of all options on a security, usually represented by an options chain. 
     -   within a class, the _type_ can be a put or call
-    -   a **series** specifies the options with a given strike and expiry, e.g SPY Apr 300 calls.
+    -   a **series** specifies the options with a given strike and expiry, e.g. SPY Apr 300 calls.
 -   Every stock is assigned one of three expiration cycles:
     -   Jan cycle: Jan, Apr, Jul, Oct
     -   Feb cycle: Feb, May, Aug, Nov
@@ -46,11 +46,11 @@ In these notes, I have frequently borrowed images from [Daniels Trading](https:/
 ## Index options
 
 -   A stock index is a statistic that measures the value of a group of stocks, based on some formula.
--   Indices are typically either cap-weighted (e.g SPX) or price-weighted (e.g DIJA).
+-   Indices are typically either cap-weighted (e.g. SPX) or price-weighted (e.g. DIJA).
 -   Index options tend to be European, so would trade slightly lower than an American option because they have less optionality. However, both are automatically exercised on settlement day.
 -   Index options are cash-settled, with a \\$100 multiplier over the index value. The settlement value depends on the style: American options are PM settled, using the closing value of the index on the day of exercise, while European options are AM settled, using the Friday opening price.
 -   On settlement, the exerciser receives a cash payment (which may or may not be greater than what they paid for the option).
--   Because indices often have large price levels, options sometimes use a different underlying index. e.g the DJX is 1/100 of the DIJA.
+-   Because indices often have large price levels, options sometimes use a different underlying index. e.g. the DJX is 1/100 of the DIJA.
 -   Index expiries typically follow the March cycle  
 
 -   IV for index options typically moves faster compared to IV for equity options. 
@@ -116,7 +116,7 @@ In these notes, I have frequently borrowed images from [Daniels Trading](https:/
     -   however, they also carry the risk of early assignment which "brings forward" the loss. 
 -   How to choose strikes:
 
-    -   degree of conviction -- The long call/put with the higher/lower strike will be more bullish/bearish, e.g 50/55 bull call spread is more bearish than 40/45. 
+    -   degree of conviction -- The long call/put with the higher/lower strike will be more bullish/bearish, e.g. 50/55 bull call spread is more bearish than 40/45. 
     -   strike price intervals -- the wider the strike interval, the more convicted
     -   set the short option equal to the target price
 
@@ -125,8 +125,8 @@ In these notes, I have frequently borrowed images from [Daniels Trading](https:/
 ### Backspreads and ratio spreads
 
 -   **Backspreads** are variants of vertical credit spreads that involve buying more of the high strike calls, or low strike puts (i.e buying more of the "hedge").
--   **Ratio spreads** (a.k.a _frontspreads_) are variants of vertical debit spreads, e.g a call ratio spread is a bull call spread with more short calls than long while a put ratio spread is a bear put spread with more short put spreads. Ratio spreads include one more more naked short options by definition.
--   Backspreads and ratio spreads are referred to in terms of the smallest ratios, e.g a 1-2 bull call spread.
+-   **Ratio spreads** (a.k.a _frontspreads_) are variants of vertical debit spreads, e.g. a call ratio spread is a bull call spread with more short calls than long while a put ratio spread is a bear put spread with more short put spreads. Ratio spreads include one more more naked short options by definition.
+-   Backspreads and ratio spreads are referred to in terms of the smallest ratios, e.g. a 1-2 bull call spread.
 -   A **call backspread** can be used to express a mostly bullish long-volatility view. 
     -   it has a higher breakeven and lower profit potential than a long call, but will profit if the underlying falls significantly.
     -   maximum loss occurs if the stock closes at the high strike

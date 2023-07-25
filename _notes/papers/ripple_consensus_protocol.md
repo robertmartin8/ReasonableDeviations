@@ -17,11 +17,11 @@ title: The Ripple Protocol Consensus Algorithm
     - this is necessary to avoid the **Double-Spend Problem**
 - **Utility**:
     - this is the most abstract and poorly defined of the three categories. It relates to what the network is like for users.
-    - e.g latency, computing power required for correctness, the technical proficiency required by users
+    - e.g. latency, computing power required for correctness, the technical proficiency required by users
 
 ### Consensus
 
-- **Nonfaulty** nodes behave honestly and without error, whereas **faulty nodes** may be honest (e.g suffering from data corruption) or malicious (*Byzantine* errors). 
+- **Nonfaulty** nodes behave honestly and without error, whereas **faulty nodes** may be honest (e.g. suffering from data corruption) or malicious (*Byzantine* errors). 
 - Consensus is defined according to three axioms:
     - **C1.** Every nonfaulty node makes a decision in finite time
     - **C2.** All nonfaulty nodes decide on the same value

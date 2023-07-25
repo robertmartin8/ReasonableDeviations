@@ -128,8 +128,8 @@ ADT PriorityQueue {
 
 ## Disjoint Set ADT
 
-- Used to keep track of a dynamic collection of items in disjoint sets (e.g Kruskal)
-- Each set is referred to by a handle, e.g a representative element from the set, or a hash ID. It doesn't matter as long as it is stable.
+- Used to keep track of a dynamic collection of items in disjoint sets (e.g. Kruskal)
+- Each set is referred to by a handle, e.g. a representative element from the set, or a hash ID. It doesn't matter as long as it is stable.
 
 ```java
 ADT DisjointSet {

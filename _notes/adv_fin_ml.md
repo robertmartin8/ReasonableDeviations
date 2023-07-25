@@ -74,7 +74,7 @@ title: Advances in Financial Machine Learning
 - This data can be used to identify different market participants. For example, human traders often buy in large rounded quantities. 
 - Because FIX data is not trivial to process there is likely a greater signal.
 - Analytics refer to secondary signals that have usually been purchased from a provider. Though valuable, they are costly and opaque.
-- Alternative data is unique primary data that may be difficult to process, but is also the most promising (e.g satellite images).
+- Alternative data is unique primary data that may be difficult to process, but is also the most promising (e.g. satellite images).
 
 ### 2.1 Bars
 
@@ -166,7 +166,7 @@ $$y =\left\{\begin{aligned}
 
 ## 4. Sample weights
 
-- Labels in finance are not IID, e.g because different labels may look at the same set of returns (so they are hardly independent).
+- Labels in finance are not IID, e.g. because different labels may look at the same set of returns (so they are hardly independent).
 - It is important to calculate label uniqueness. This can be done as follows
     - count the number of concurrent labels at each time
     - find the average uniqueness of the label over its lifespan (requires lookahead on the training set)
@@ -174,7 +174,7 @@ $$y =\left\{\begin{aligned}
 
 - An alternative is **sequential bootstrapping**, which continually modifies the probability distribution so that overlaps/repetition are increasingly unlikely. 
 - Weight should be a function of uniqueness and the size of the returns. 
-- We can apply a time-decay to weight, though "time" does not have to be chronological – e.g it can be cumulative uniqueness.
+- We can apply a time-decay to weight, though "time" does not have to be chronological – e.g. it can be cumulative uniqueness.
 
 
 ## 5. Fractionally differentiated features
@@ -232,7 +232,7 @@ $$y =\left\{\begin{aligned}
 
 ## 9. Hyperparameter tuning
 
-- Tuning must be done with proper CV, e.g gridsearch with purged K-fold CV + bagging
+- Tuning must be done with proper CV, e.g. gridsearch with purged K-fold CV + bagging
 - F1 scores should be used
 - For optimisation over many parameters, random search CV can be used:
     - fixed computational budget
@@ -255,7 +255,7 @@ A backtest is *not* an experiment. It is a sanity check for behaviour under real
 2. Lookahead
 3. Storytelling (explaining a historical event post-hoc)
 4. Data snooping
-5. Ignoring transaction costs (e.g slippage)
+5. Ignoring transaction costs (e.g. slippage)
 6. Succeeding based on outliers, which may not ever happen again
 7. Shorting without considering the costs and consequences.
 

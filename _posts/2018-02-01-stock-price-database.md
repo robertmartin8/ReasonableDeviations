@@ -5,7 +5,7 @@ category: quant
 excerpt: "In this post, I describe my thought process in designing a simple relational database to store historical OHLCV for equities, including why I chose MariaDB and code for populating the database."
 ---
 
-One of my interests is exploring the applications of machine learning to financial markets. As part of this hobby, I've spent many more hours parsing and processing data than I have actually applying machine learning. I've worked broadly with two datasets in particular: historical financial statistics (e.g P/E ratio, price/book) make up the features that my algorithms learn from, but the actual backbone of any strategy is historical price data.
+One of my interests is exploring the applications of machine learning to financial markets. As part of this hobby, I've spent many more hours parsing and processing data than I have actually applying machine learning. I've worked broadly with two datasets in particular: historical financial statistics (e.g. P/E ratio, price/book) make up the features that my algorithms learn from, but the actual backbone of any strategy is historical price data.
 
 My main data source has been Yahoo Finance. Although they've deprecated their official API, they still have the same data on their website, meaning that it can be scraped if you can be bothered. I discovered a crude but functional way of doing this (detailed in this [post]({{ site.baseurl }}{% post_url 2017-07-30-yahoo-historical-prices %})), but then discovered an extremely convenient [python library](https://github.com/ranaroussi/fix-yahoo-finance) that does the same thing much more efficiently, with a direct pandas-datareader interface. 
 
@@ -245,7 +245,7 @@ cursor.execute(sql)
 conn.commit()
 ```
 
-As a rule of thumb, after every set of like database operations (e.g after you've added/deleted a few things), you should throw in a `conn.commit()` which makes the changes permanent. 
+As a rule of thumb, after every set of like database operations (e.g. after you've added/deleted a few things), you should throw in a `conn.commit()` which makes the changes permanent. 
 
 After adding the exchange, we need to give it some children (i.e securities). Luckily, there are [official lists](https://www.nasdaq.com/screening/company-list.aspx) in csv format containing all of the tickers in the NYSE, NASDAQ and AMEX. Head to that link and download the NYSE list. Within my project directory, I put this in a subfolder called `data`, and named it `nyse_tickers.csv`. Parsing these tickers is not very difficult:
 

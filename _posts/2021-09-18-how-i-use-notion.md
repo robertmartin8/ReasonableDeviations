@@ -57,7 +57,7 @@ Before diving into specific use cases, I will briefly explain how Notion works a
 
 The fundamental unit in Notion is a **content block**. Notion has a huge list of possible content blocks. Here is a small subset of them:
 
-- text and text derivatives, e.g headings, bulleted lists, toggle-able bulleted lists
+- text and text derivatives, e.g. headings, bulleted lists, toggle-able bulleted lists
 - all kinds of media (embedded images, videos, audio etc)
 - code and equations (typed in LaTeX)
 - tables and Kanban boards (popularised by Trello)
@@ -79,7 +79,7 @@ Each page can be given an emoji and cover photo. I initially thought this was gi
 
 I also have an Inbox page, which is essentially where I dump stuff that I may want to revisit later. This includes:
 
-- Media to process e.g URLs, papers, podcasts episodes etc.
+- Media to process e.g. URLs, papers, podcasts episodes etc.
 - Useful web tools
 - Cool projects/startups I've come across
 - Random thoughts or ideas  
@@ -143,7 +143,7 @@ Earlier this year I was exploring a business opportunity with some colleagues (r
 <img src="{{ site.imageurl }}notion/collab.png" style="width:100%;"/>
 </center>
 
-I also used Notion to build a resource library for the project. Each row represents a piece of content (e.g a book or journal article). Once read, you add your name to the "read by" column. We can then perform complicated filtering on the database. In the example below, I filtered to find the resources that nobody had yet read and saved this as an "unread" view -- allowing us to track our collective blind spots.
+I also used Notion to build a resource library for the project. Each row represents a piece of content (e.g. a book or journal article). Once read, you add your name to the "read by" column. We can then perform complicated filtering on the database. In the example below, I filtered to find the resources that nobody had yet read and saved this as an "unread" view -- allowing us to track our collective blind spots.
 
 <center>
 <img src="{{ site.imageurl }}notion/collab2.png" style="width:100%;"/>
@@ -228,13 +228,13 @@ These daily intentions link with my **daily plans**. Every evening, I reflect on
 
 I mentally break out long term goals into three categories: 
 
-1. Specific things I want to do (e.g preparing for an internship, planning a holiday). I view this as a project management exercise, so use the structure described [above](#how-i-use-notion-for-projects).
-2. General long term goals e.g New Years resolutions. I use simple text pages for this (could also be done in any other software).
-2. Blocks of time that I want to fill productively (e.g term holidays, lockdowns etc). This merits some further discussion.
+1. Specific things I want to do (e.g. preparing for an internship, planning a holiday). I view this as a project management exercise, so use the structure described [above](#how-i-use-notion-for-projects).
+2. General long term goals e.g. New Years resolutions. I use simple text pages for this (could also be done in any other software).
+2. Blocks of time that I want to fill productively (e.g. term holidays, lockdowns etc). This merits some further discussion.
 
 The below table is a list of things I wanted to get done during the "Rona holiday" -- the period in May-July 2020 when Easter term at Cambridge was "cancelled" due to Covid. 
 
-- Tasks were tagged by "purpose" – what long term area of my life do they contribute to? This encouraged me to stay balanced and approach personal development from a more holistic perspective (rather than solely focusing on e.g careers).
+- Tasks were tagged by "purpose" – what long term area of my life do they contribute to? This encouraged me to stay balanced and approach personal development from a more holistic perspective (rather than solely focusing on e.g. careers).
 - I gave each task a deliverable. Instead of passively watching an online course or leafing through a textbook, I challenged myself to transmute that content into a blog post, set of public notes, or code.
 
 <center>
@@ -279,7 +279,7 @@ For each lecture course, I used Notion to track how many lectures I had watched,
 
 Each lecture course had its own page, which I used to track:
 
-- Areas that I wanted to revisit, e.g concepts/techniques from lectures that I didn't understand the first time around.
+- Areas that I wanted to revisit, e.g. concepts/techniques from lectures that I didn't understand the first time around.
 - Important derivations that I'd need to be able to reproduce in an exam.
 - Which subtopics within the course I would "bin" (i.e not answer an exam question on), and which subtopics I was weak at (would only choose that exam question if there was nothing better).
 
@@ -338,7 +338,7 @@ Another example: after completing the first couple of exams, I wanted to find al
 <img src="{{ site.imageurl }}notion/sdsg_filter.png" style="width:80%;"/>
 </center>
 
-The unfortunate truth is that anytime an exam format gives you discretion (e.g about which questions you can answer), exam strategy becomes just as important as knowing the content. Notion is a fantastic tool for refining this strategy and making data-driven decisions.
+The unfortunate truth is that anytime an exam format gives you discretion (e.g. about which questions you can answer), exam strategy becomes just as important as knowing the content. Notion is a fantastic tool for refining this strategy and making data-driven decisions.
 
 ## How I use Notion as a second brain
 
@@ -352,7 +352,7 @@ Full disclosure: I have since migrated my zettelkasten to Obsidian. Perhaps I'll
 
 Notion helps me manage several aspects of investing/trading:
 
-1. Tracking ideas related to specific themes/styles (e.g covid, spinoffs), as well as reflect on my trading performance. 
+1. Tracking ideas related to specific themes/styles (e.g. covid, spinoffs), as well as reflect on my trading performance. 
 2. Conducting investment research
 3. Storing investment pitches for posterity, so I can better understand my strengths/weaknesses as a trader.
 
@@ -407,7 +407,7 @@ I keep all of these pitches in a table partitioned into open and closed position
 
 ## How I use Notion to track my learning
 
-I use Notion to track things I want to self-study (e.g using online courses or textbooks). There is nothing special here: I use a Kanban board, and each page contains links to various learning resources (not notes though -- those would go in Notability, RemNote, or Obsidian).
+I use Notion to track things I want to self-study (e.g. using online courses or textbooks). There is nothing special here: I use a Kanban board, and each page contains links to various learning resources (not notes though -- those would go in Notability, RemNote, or Obsidian).
 
 <center>
 <img src="{{ site.imageurl }}notion/learning.png" style="width:80%;"/>

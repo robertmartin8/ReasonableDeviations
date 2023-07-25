@@ -23,7 +23,7 @@ Around the same time, a lot of research was going on into **additive expansions*
 
  $$f(x) = \sum_{m=0}^{M} \beta_m b(x;\gamma_m)$$
  
- Here, $x$ is an input vector (e.g training data), and $\gamma_m$ denotes the parameters of the *m*th basis function. 
+ Here, $x$ is an input vector (e.g. training data), and $\gamma_m$ denotes the parameters of the *m*th basis function. 
 
 What is interesting is that additive expansions are fundamentally equivalent to boosting methods, as shown by [Friedman, Hastie and Tibshirani (2000)](https://web.stanford.edu/~hastie/Papers/AdditiveLogisticRegression/alr.pdf). If you take $b(x; \gamma)$ to be a weak learner, then it is clear that $f(x)$ presents a weighted vote of the weak learners, just as in AdaBoost. So now instead of dealing with the somewhat vague concept of boosting, all we have to do is figure out how to fit an additive expansion $f(x)$ to some training data, denoted by $\\{(y_i, x_i)\\}_1^N$. 
 

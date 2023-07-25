@@ -19,7 +19,7 @@ Formally, we define a graph as a set of vertices (also called nodes) and edges. 
 <img src="{{ site.imageurl }}grapharb/weighted_digraph.png" style="width:70%;"/>
 </center>
 
-It is useful to formulate real-world problems in terms of graphs because we have about three centuries worth of relevant theory – they were first investigated by Euler in 1736. In particular, there exist many efficient algorithms related to finding the shortest path along a graph, which have widespread applications e.g in mapping.
+It is useful to formulate real-world problems in terms of graphs because we have about three centuries worth of relevant theory – they were first investigated by Euler in 1736. In particular, there exist many efficient algorithms related to finding the shortest path along a graph, which have widespread applications e.g. in mapping.
 
 The [Bellman-Ford algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm) finds the minimum weight path from a single source vertex to all other vertices on a weighted directed graph. For the purposes of this post, we don't need to know anything other than the fact that once the algorithm terminates, each vertex is labelled with the total weight of the minimum weight path from the source to that vertex. 
 

@@ -57,7 +57,7 @@ Game theory investigates how we can choose between different strategies:
   - classic Prisoners' Dilemmas 
   - price competition in a duopoly – each incentivised to undercut even though this will lead to collectively lower margins
   - common resources – incentive to overfish.
-- Prisoners' are not just a failure of communication. You would need to change the payoffs, e.g by having contracts, or by playing repeated games. 
+- Prisoners' are not just a failure of communication. You would need to change the payoffs, e.g. by having contracts, or by playing repeated games. 
 
 An important meta-parameter is how skilled your opponents are at playing games (i.e their rationality)
 
@@ -244,18 +244,18 @@ $$(1-\epsilon) u(\hat{s}, \hat{s}) + \epsilon u(\hat{s}, s') > (1-\epsilon)u(s',
 - This is a sequential game because player 2 could observe player 1's choice (and player 1 knows this is going to be the case).
 - These games can be represented as trees and can then be solved with **backward induction** - starting at leafs then moving towards the root, picking the maximum payoff at each node. 
 - These games often feature **moral hazard** - agents are incentivised to do things that lead to overall lower payoff. Hence **incentive design** is very important in real life. 
-  - e.g collateral on loans is not meant to give a better payoff to the lender - it is meant to add a penalty to the borrower so they choose the mutually better response
+  - e.g. collateral on loans is not meant to give a better payoff to the lender - it is meant to add a penalty to the borrower so they choose the mutually better response
   - hence the collateral makes the borrower better off overall
-- Removing choices (as long as other players know you removed choices) can lead to better payoffs because it changes their behaviour, e.g William the Conqueror burning his ships. The Saxons now knew he would have to fight, so they were incentivised to run.
+- Removing choices (as long as other players know you removed choices) can lead to better payoffs because it changes their behaviour, e.g. William the Conqueror burning his ships. The Saxons now knew he would have to fight, so they were incentivised to run.
 - The temporal aspect of sequential games is not as important as the informational aspect.
 
 ### First movers
 
-- In the two-firm identical-goods competition model (e.g Cournout), there is a first-mover advantage. The first mover can maximise their profits by maximising the quantity supplied. 
+- In the two-firm identical-goods competition model (e.g. Cournout), there is a first-mover advantage. The first mover can maximise their profits by maximising the quantity supplied. 
 - This **first-mover advantage** only exists if the first mover makes a tangible commitment -- sunk costs can help demonstrate commitment to opponents.
 - Corporate espionage can therefore backfire, because if they discover you have a spy, you essentially become the second mover. 
 - More generally, having more information (when your opponent knows you have the information) can lead your opponents to choose actions that hurt you.
-- But the existence of a first-mover advantage depends entirely on the game (e.g obviously rock-paper-scissors it is better to move second)
+- But the existence of a first-mover advantage depends entirely on the game (e.g. obviously rock-paper-scissors it is better to move second)
 - **Zermelo's theorem** states that for a two-player **perfect information** game with a finite number of nodes that results in either Win, Loss (or Tie), then either:
   - player 1 can force a win
   - player 1 can force a tie
@@ -386,7 +386,7 @@ $$(1-\epsilon) u(\hat{s}, \hat{s}) + \epsilon u(\hat{s}, s') > (1-\epsilon)u(s',
   - in the last round, the dominant strategy is to defect
   - by backward induction, at every stage you should defect
   - hence repetition does not always improve outcomes
-  - e.g the **lame duck effect** in politics, where politicians find it hard to get things done at the end of their term
+  - e.g. the **lame duck effect** in politics, where politicians find it hard to get things done at the end of their term
 - However, there are finite games in which repetition improves payoffs:
 
 |   |   ***A***  |   ***B***  | ***C*** |
@@ -400,7 +400,7 @@ $$(1-\epsilon) u(\hat{s}, \hat{s}) + \epsilon u(\hat{s}, s') > (1-\epsilon)u(s',
   - $(A,A)$ will not be played in period 2, since it is not a NE.
   - but the strategy "play A in period 1, then play C if opponent played A, B otherwise" is a SPE 
   - this strategy works because it makes the value of the reward (less punishments) tomorrow greater than the temptation to defect today.
-- Hence in multi-period games with more than one NE (with different payoffs), we can use the prospect of playing different NEs tomorrow to provide incentives today -- e.g play one NE as a punishment and another as a reward.
+- Hence in multi-period games with more than one NE (with different payoffs), we can use the prospect of playing different NEs tomorrow to provide incentives today -- e.g. play one NE as a punishment and another as a reward.
 - However, **renegotiation** can undermine the equilibrium. For example, in the second period of the above game, even if one of the players cheats in the first period, it is mutually beneficial to choose *C* in the second period (rather than *B* as the SPE prescribes).
   - may be valid if the game is truly finite-period
   - but if the other player knows you are open to renegotiation, their incentives change
@@ -432,7 +432,7 @@ $$\text{temptation to cheat today} \leq \delta \left(\text{value of rewards tomo
   - if your costs are lower, you would want to reveal because *B* would produce less (good for you)
   - but you should also reveal middle cost items because otherwise *B* will assume you have high costs
   - hence there is **information unravelling** because you can't hide high costs. Silence speaks volumes.
-- When it comes to careers, people are trying to convince interviewers that they will be good employees. You may turn to **signalling** (e.g education or certification) -- it has to be something that is much more costly for bad workers. In this case the "cost" is not financial (since that is the same for good and bad workers), but rather the difficulty of the work.
+- When it comes to careers, people are trying to convince interviewers that they will be good employees. You may turn to **signalling** (e.g. education or certification) -- it has to be something that is much more costly for bad workers. In this case the "cost" is not financial (since that is the same for good and bad workers), but rather the difficulty of the work.
   - this is Spence's job-market signalling model
   - pessimistic model of education because it only considers the "pain" rather than the value of learning
   - education increases inequality

@@ -49,7 +49,7 @@ More informally, we can define other asymptotic notation as follows:
 <img src="{{ site.imageurl }}note_img/asymptotic_notation.png" style="width:80%;"/>
 </center>
 
-In the analysis of algorithms, many assumptions about hardware and basic operations must be made, e.g array access is constant time. 
+In the analysis of algorithms, many assumptions about hardware and basic operations must be made, e.g. array access is constant time. 
 
 ## Sorting Algorithms
 
@@ -337,8 +337,8 @@ Dynamic programming tends to be useful when problems have the following features
 
 ## Other solution strategies
 
-- Recognise a variant of a known problem, e.g Graham's scan efficiently utilises a subroutine to compare the positions of two vectors.
-- Divide and conquer (e.g mergesort):
+- Recognise a variant of a known problem, e.g. Graham's scan efficiently utilises a subroutine to compare the positions of two vectors.
+- Divide and conquer (e.g. mergesort):
     - If the problem instance is small enough, solve it by brute force.
     - Otherwise, divide the problem into two parts.
     - Recursively solve the smaller problems

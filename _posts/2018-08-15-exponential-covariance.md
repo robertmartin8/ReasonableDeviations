@@ -43,7 +43,7 @@ Please note that in practice you would always use the **sample covariance** inst
 
 ## Covariance of asset returns
 
-One would think that the easiest approach is to take two price series (e.g stock prices for AAPL and GOOG), then compute the daily percentage change or log returns, before feeding these into a covariance calculation. This does work, and is the standard approach. But in my view, this is carelessly throwing away a good deal of information, because:
+One would think that the easiest approach is to take two price series (e.g. stock prices for AAPL and GOOG), then compute the daily percentage change or log returns, before feeding these into a covariance calculation. This does work, and is the standard approach. But in my view, this is carelessly throwing away a good deal of information, because:
 
 **Covariance does not preserve the order of observations.**
 

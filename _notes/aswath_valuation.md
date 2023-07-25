@@ -53,7 +53,7 @@ There are three main approaches to valuation:
 
 - **Intrinsic valuation**  values an asset as the present value (PV) of expected cashflows. **Discounted Cash Flow** (DCF) valuation is one of the main techniques used, and requires the cash flows, a discount rate and a life span. Intrinsic valuation needs a long time horizon to be profitable.
 - **Relative valuation** looks at similar assets (using multiples like P/B, EV/EBITDA) and controls for differences. This assumes that the market prices assets correctly on average.
-- Option pricing in the context of valuation can be used when assets have option-like characteristics, e.g a contingent payoff.
+- Option pricing in the context of valuation can be used when assets have option-like characteristics, e.g. a contingent payoff.
 
 
 ## Intrinsic Valuation
@@ -145,7 +145,7 @@ $$\text{cost of debt} = R_f + k \times (\text{country default spread}) + \text{c
 - The market value of debt can be estimated using the cost of debt and the average maturity, treating all debt as one fixed-income security.
   - There is a tax benefit on debt, taxed at the **marginal tax rate**.
   - Operating lease commitments should be discounted at the pre-tax cost of debt.
-- Hybrids (e.g convertibles) can be split into equity/debt. Preferred stock should be kept separate.
+- Hybrids (e.g. convertibles) can be split into equity/debt. Preferred stock should be kept separate.
 
 
 ### Estimating cash flows
@@ -160,7 +160,7 @@ $$\text{cost of debt} = R_f + k \times (\text{country default spread}) + \text{c
     - leases should go under debt, which can be done by calculating the PV of the lease obligations
     - though treating leases as cap ex will lower the cost of capital and increase operating income, it can decrease the ROIC because the lease becomes an asset.
     - R&D should be moved, but this adds complexity because it has to be capitalised for previous years, then amortised/appreciated
-        - find the average amortisable life span, e.g 5 years.
+        - find the average amortisable life span, e.g. 5 years.
         - calculate expenses for each amortisable years
         - write off R&D
 - For the first few years, you can use the effective tax rate, but in the end it should be the marginal rate.
@@ -221,8 +221,8 @@ There are some additional value factors that should be considered
         - For majority active holdings, financial statements are consolidated.
     - we can use the market value of the holdings as a compromise
     - alternatively, we can use the P/B ratio
-- Remaining assets, e.g un-utilised assets.
-- Remaining debt, e.g the expected cost of lawsuits
+- Remaining assets, e.g. un-utilised assets.
+- Remaining debt, e.g. the expected cost of lawsuits
 
 ### Synergy, control, and complexity
 
@@ -232,7 +232,7 @@ There are some additional value factors that should be considered
         - cost savings
         - new investments
     - **Financial synergy**:
-        - tax benefits (e.g higher depreciation)
+        - tax benefits (e.g. higher depreciation)
         - more borrowing power
         - diversification if they are private
     - Calculating the value of synergy requires 3 valuations: acquirer only, target only, then acquirer + target together.
@@ -256,7 +256,7 @@ There are some additional value factors that should be considered
 
 - Assets are valued by looking at similar assets. This requires:
     - finding comparable assets
-    - standardising prices (e.g using a multiple)
+    - standardising prices (e.g. using a multiple)
     - controlling for differences
 - Popular because:
     - much easier to sell, and you can choose a story
@@ -313,7 +313,7 @@ How do changes in a firm's fundamentals affect the multiple?
 - EV is the sum of the market value of equity and the market value of debt less the cash.
     - cash is subtracted out for consistency, because it is not part of EBITDA
     - this means that the market value of cross holdings should also be removed
-- There are many rules of thumb, e.g EV/EBITDA < 6 is good, but it is important to consider the distribution.
+- There are many rules of thumb, e.g. EV/EBITDA < 6 is good, but it is important to consider the distribution.
 - Relationship between EV/EBITDA and fundamentals
     - higher tax = lower EV/EBITDA
     - higher growth = higher EV/EBITDA

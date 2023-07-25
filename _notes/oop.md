@@ -55,7 +55,7 @@ title: Object Oriented Programming
 
 ## Introduction 
 
-- **Declarative languages** specify what to do, not how to do it. Functional languages like ML are a subset of declarative languages: the compiler may replace your implementation with something else (e.g tail optimisation).
+- **Declarative languages** specify what to do, not how to do it. Functional languages like ML are a subset of declarative languages: the compiler may replace your implementation with something else (e.g. tail optimisation).
 - **Imperative languages** require you to specify exactly how a computation should be done. 
 - **Procedural programming** is a paradigm within declarative programming in which statements are grouped into procedures that manipulate state.
 - **Object oriented programming** is an extension to procedural programming which also groups certain aspects of the state with the procedures. 
@@ -107,13 +107,13 @@ Vector2d v1 = new Vector2d(3.0, 4.0);
 ```
 - The constructor has the same name as the class, and has no return type. 
 - In general, we should minimise the work done by the constructor.
-- If no constructor is defined, Java generates a blank **default constructor** with no arguments. The fields all get set to the 'zero' value for the type, e.g 0 for int, "" for string.
+- If no constructor is defined, Java generates a blank **default constructor** with no arguments. The fields all get set to the 'zero' value for the type, e.g. 0 for int, "" for string.
 
 The **prototype** of a function refers to the function name, arguments, and return types. Functions can be be **overloaded** to support different arguments (possibly with a different return type) – this also applies to the constructor. However, choosing between overloaded functions is static, i.e it happens at compile time. The JVM chooses the most specific method when resolving overloads.
 
 When state is more logically associated with a class than an object, we can make a **static field** (same as class variable in python). These are most suited to class-related constants. 
 
-We can also have **static methods**, which do not require any instance-specific state. These can be called without instantiating the class, e.g `Math.sqrt()`. Static methods tend to be easier to debug.
+We can also have **static methods**, which do not require any instance-specific state. These can be called without instantiating the class, e.g. `Math.sqrt()`. Static methods tend to be easier to debug.
 
 ## 2. Designing classes
 
@@ -212,7 +212,7 @@ Only primitive types can be stored on the stack: everything else goes on the hea
 
 Inheritance is the mechanism by which new classes can take on the properties of existing classes – we can create a **base class** such that new classes **inherit** state, behaviour, and type. This reduces code duplication and allows us to represent conceptual hierarchies. 
 
-Java is a **nominitive type language** - things must have the right name. By contrast, **structural typing** (e.g in Haskell) examines whether the internal structure is the same, so the below code would compile. **Duck typing** (e.g in python) is a subset of structural typing but only checks at runtime.  
+Java is a **nominitive type language** - things must have the right name. By contrast, **structural typing** (e.g. in Haskell) examines whether the internal structure is the same, so the below code would compile. **Duck typing** (e.g. in python) is a subset of structural typing but only checks at runtime.  
 
 ```java
 class Foo {
@@ -346,7 +346,7 @@ Parent fields initialised first, then parent constructor, then child fields, the
 
 ### Object Destruction 
 
-**Deterministic destruction** involves objects being deleted at predictable times, e.g manual deletion or automatic deletion when out of scope. Objected oriented languages sometimes have a **destructor**, which frees resources when an object is destroyed. This supports **RAII** (resource acquisition is initialisation), in which access to a resource follows an object's lifecycle. 
+**Deterministic destruction** involves objects being deleted at predictable times, e.g. manual deletion or automatic deletion when out of scope. Objected oriented languages sometimes have a **destructor**, which frees resources when an object is destroyed. This supports **RAII** (resource acquisition is initialisation), in which access to a resource follows an object's lifecycle. 
 
 Java does not do this. Java instead uses **garbage collection** to automatically delete objects. Though there are **finalisers** (deprecated), these are not guaranteed to run and are very unreliable. As an alternative to RAII, Java offers **try-with-resources**:
 
@@ -384,7 +384,7 @@ A potential improvement is the **generational garbage collector**, which classif
 
 Java is a platform that offers a large class library. The Collections Framework in particular offers the **Iterable** and **Collection** interfaces (`Iterable` is the parent). They define operations such as `add(Object o)`, `clear()`, `next()`, `isEmpty()` – if a particular class doesn't offer the operation, it will `throw UnsupportedOperationException`.
 
-These operations only work on objects, not primitives. The workaround is **autoboxing**: for each primitive type, Java provides an object wrapper (e.g `Integer`, `Boolean`). The compiler autoboxes and unboxes, replacing the primitive with its object wrapper and vice versa as needed.
+These operations only work on objects, not primitives. The workaround is **autoboxing**: for each primitive type, Java provides an object wrapper (e.g. `Integer`, `Boolean`). The compiler autoboxes and unboxes, replacing the primitive with its object wrapper and vice versa as needed.
 
 ```java
 List<Integer> li = new ArrayList<>();
@@ -446,7 +446,7 @@ for (Map.Entry<String, String> entry : map.entrySet())
 hash.forEach((key, tab) -> /* do something with key and tab */);
 ```
 
-When iterating over a collection, it is dangerous to change the structure (e.g by deleting). To do this we must use the `Iterator` class, which supports `hasNext()`, `next()` and `remove()`, but does not support `forEach`.
+When iterating over a collection, it is dangerous to change the structure (e.g. by deleting). To do this we must use the `Iterator` class, which supports `hasNext()`, `next()` and `remove()`, but does not support `forEach`.
 
 ```java
 Iterator<Integer> it = list.iterator();
@@ -505,7 +505,7 @@ Errors fall broadly into three categories: syntactic, logical (bugs), external. 
 
 - unit testing: OOP allows for modular testing
 - assertions to mark things that must be true if the algorithm is working
-- defensive programming styles e.g code reuse
+- defensive programming styles e.g. code reuse
 - pair programming
 
 Traditional imperative languages deal with errors using **return codes**. But you have to constantly check what return values signify, and it means code can't conveniently just use the result of a method. 
@@ -771,13 +771,13 @@ list.stream().map(x -> x*x).collect(Collectors.toList());
 
 A **design pattern** is a general reusable solution to a commonly occurring problem in software design. Many of them follow the **Open-Closed principle**, that classes should be open for extension but closed for modification. There are three classes of design pattern:
 
-- **Creational patterns** - creating objects, e.g Singleton
-- **Structural patterns** - composition of objects, e.g Decorator, Composite 
-- **Behavioural Patterns** - object interaction, e.g Observer, State, Strategy.
+- **Creational patterns** - creating objects, e.g. Singleton
+- **Structural patterns** - composition of objects, e.g. Decorator, Composite 
+- **Behavioural Patterns** - object interaction, e.g. Observer, State, Strategy.
 
 ### Singleton
 
-How can we ensure that only one instance of an object is created by developers using the code? e.g database connections.
+How can we ensure that only one instance of an object is created by developers using the code? e.g. database connections.
 
 The Singleton pattern does this by having a private constructor and storing the only instance as a private static final field. 
 
@@ -800,7 +800,7 @@ We can then call it with `Singleton.getInstance()`. This version of Singleton is
 
 ### Decorator
 
-How can we add state or methods at runtime? e.g supporting gift-wrapped books in an online store.
+How can we add state or methods at runtime? e.g. supporting gift-wrapped books in an online store.
 
 This pattern describes how we can **Decorate** implementations of some **Component** interface. 
 
@@ -816,7 +816,7 @@ This pattern describes how we can **Decorate** implementations of some **Compone
 How can we treat a group of **Component** objects as a single **Composite** object?
 
 - `Composite` has to inherit from the abstract `Component` class, but also maintains a list of `Component` subclass instances, which are called **Leafs**
-- Functions within `Composite` can then be defined to affect all `Leaf` objects, e.g 
+- Functions within `Composite` can then be defined to affect all `Leaf` objects, e.g. 
 
 ```java
 for (Component c: children) c.operation();
@@ -829,7 +829,7 @@ for (Component c: children) c.operation();
 
 ### Observer 
 
-When an object changes state, how can other objects know? e.g action on click in a GUI.
+When an object changes state, how can other objects know? e.g. action on click in a GUI.
 
 This pattern refers to how an **observer** can monitor changes in the state of a **subject**. It is straightforward conceptually: 
 
@@ -843,11 +843,11 @@ This pattern refers to how an **observer** can monitor changes in the state of a
 
 ### State
 
-How can we let a **Context** object alter its behaviour when its internal **state** changes? e.g pressing the play button does something different depending on whether the music is on or off. 
+How can we let a **Context** object alter its behaviour when its internal **state** changes? e.g. pressing the play button does something different depending on whether the music is on or off. 
 
 - `Context` keeps a private reference to an object of type `State` (which can refer to its subtypes as well). When we want to run a particular method, we call `state.action()`.
 - `State` is an interface that contains the abstract methods which depend on state. 
-    - We then implement concrete states (e.g `StartState` and `StopState`), which override `action()` with their own implementation. 
+    - We then implement concrete states (e.g. `StartState` and `StopState`), which override `action()` with their own implementation. 
     - If these subclasses are to change the state, they need to be passed an instance of `Context` so we can `setState()`.
 
 <center>

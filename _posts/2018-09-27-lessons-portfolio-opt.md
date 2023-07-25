@@ -15,7 +15,7 @@ For most people, 'portfolio optimisation' basically refers to mean-variance opti
 
 The standard way (in textbooks or pedagogical materials) to estimate the expected returns is to take the mean annual return over the past few years. However, it is surprisingly easy to accidentally let future data worm its way into the estimate, resulting in vastly overinflated performance. One of the early mistakes I made was to optimise an equity portfolio using data from 2006-2010, then testing it from 2006-2015. The problem here is the overlap – the 2006 test has had access to data up to 2010, so performance in the 2006-2010 portion of the backtest will be very good.
 
-To be fair, this is often quite an obvious mistake to diagnose, because your portfolios will outperform the benchmark by a ridiculous margin and you will realise that something is wrong. But there are also more subtle ways that you can include future data (e.g survivorship bias), in which case it may not be so clear. 
+To be fair, this is often quite an obvious mistake to diagnose, because your portfolios will outperform the benchmark by a ridiculous margin and you will realise that something is wrong. But there are also more subtle ways that you can include future data (e.g. survivorship bias), in which case it may not be so clear. 
 
 
 ## 2. Be extra careful about expected returns
@@ -39,7 +39,7 @@ In my own work I have found that the standard minimum variance portfolio is a ve
 - Shrinkage estimators on the covariance matrix
 - [Exponential weighting]({{ site.url }}/2018/08/15/exponential-covariance/)
 - Different historical windows
-- Additional cost terms in the objective function (e.g small-weights penalty)
+- Additional cost terms in the objective function (e.g. small-weights penalty)
 
 
 ## 4. Don't ignore rebalance costs

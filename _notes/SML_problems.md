@@ -288,7 +288,7 @@ We must now explicitly check for the case where one list is empty.
 
 ### 3.11 Roman numerals
 
-Write a function to convert an integer into Roman numerals, in the expanded form (e.g XIIII) and the condensed form (XIV).  
+Write a function to convert an integer into Roman numerals, in the expanded form (e.g. XIIII) and the condensed form (XIV).  
 
 I realised that this problem was equivalent to greedily making change, so I was able to do the first part as follows:
 
@@ -358,7 +358,7 @@ fun allChange (till, amt) = change(till, amt, [], []);
 
 ### 3.15 Binary sum and product for list of booleans.
 
-Using a list of booleans to represent a reversed binary number (e.g `[false, false, false, true]` => 1000), compute the sum and product of a binary number. 
+Using a list of booleans to represent a reversed binary number (e.g. `[false, false, false, true]` => 1000), compute the sum and product of a binary number. 
 
 This problem just involves a lot of boolean logic:
 

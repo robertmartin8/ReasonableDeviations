@@ -56,13 +56,13 @@ In this section, we aim to understand whether a company is worth doing more rese
 - What is the trend in the stock price?
 - Quick look at financial ratios, and how it compares with competitors
   - use Atom Finance or CapIQ for comps
-  - note anything surprising (e.g very low/high multiples)
+  - note anything surprising (e.g. very low/high multiples)
 - Quick look at the trends in revenue, margins, cash flows.
 - Quick look at the balance sheet. (`veto` if much too complicated for me to understand)
 
 ### Meta issues
 
-- Do I find the company/sector vaguely interesting? (`veto` if I really have no interest in it, e.g Oil and Gas, there is no point moving further)
+- Do I find the company/sector vaguely interesting? (`veto` if I really have no interest in it, e.g. Oil and Gas, there is no point moving further)
 - What edge do I have trading this company?
   - is it small enough that major analysts don't cover it? (a la Lynch)
   - do I have special sector knowledge?
@@ -79,7 +79,7 @@ Once I have decided that it is worth investing the time to deeply research a com
     - Skim through the risk factors to see if there are any that aren't boilerplate
     - Management Discussion & Analysis
     - Look over financial statements
-    - Read the footnotes (`veto` if company has many accounting complexities, e.g cross-holdings, weird leases, unusual capital structures; it is likely not worth the time given my current ability)
+    - Read the footnotes (`veto` if company has many accounting complexities, e.g. cross-holdings, weird leases, unusual capital structures; it is likely not worth the time given my current ability)
 - Read through some recent earnings calls transcripts, in particular the Q&A section, to try and understand what the market is paying attention to.
 - Read through the proxy statement to understand the compensation model.
 - Read the latest news on the company and third party research
@@ -124,7 +124,7 @@ Valuation is quite a deep area, so the depth you go depends on how much time you
 - Using CapIQ, Bloomberg, or a similar tool, construct a list of comparable companies. There is an important tradeoff between having good quality (i.e very similar) comps and having enough of a sample for the mean/median to be meaningful.
   - important to keep an eye on variables that are not captured by the valuation multiples, for example, leverage and cash flow
   - if you notice any outliers among the compset, investigate why, but consider removing them. 
-- We can then compute the average value for each metric (e.g EV/EBITDA, P/E) across multiple values.
+- We can then compute the average value for each metric (e.g. EV/EBITDA, P/E) across multiple values.
 - If our company has multiples much lower than the median, it is important to critically think about why this is the case. Some common reasons for a low P/E are: lower growth than comps, more levered, different risk exposures (geography).
 - If there is a very good reason that the company is trading at a big discount to comps, and hence you don't feel the comps are a fair sample, then you can just use multiples from the company's own history along with your own forecasts of the denominators to estimate the value.
 
@@ -166,7 +166,7 @@ This is really for accountability and self-improvement, so that 6 months from no
 
 - Right for the right reasons (yay!)
 - Right for the wrong reasons, i.e lucky.
-- Wrong but on the right lines, e.g identified the key lever but called it the wrong way.
+- Wrong but on the right lines, e.g. identified the key lever but called it the wrong way.
 - Completely wrong, or black-swanned.
 
 ## After the trade

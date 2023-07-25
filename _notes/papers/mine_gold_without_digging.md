@@ -42,5 +42,5 @@ $$u^* = \frac{1-\kappa}{2\alpha}$$
 
 - Gold miners are more similar to options on physical gold than other equities, which is why the common equity factors don't perform well for gold. 
 - 70% of the variance in gold miner returns can be explained by the replicating portfolio 
-- The replicating portfolio declines slightly more than the gold miner during periods of negative gold returns, but significantly outperforms during periods of ihgh gold prices. Thus is because miners have other real options, e.g due to hedging activities, or the option to cut costs.
+- The replicating portfolio declines slightly more than the gold miner during periods of negative gold returns, but significantly outperforms during periods of ihgh gold prices. Thus is because miners have other real options, e.g. due to hedging activities, or the option to cut costs.
 - A Kalman filter can be used to dynamically estimate the model parameters.

@@ -18,11 +18,11 @@ Unlike fixed income products, the cash flows for equities are not contractually 
 
 $$\text{revenue} \times \text{op. margin} - \text{capex} = \text{free cash flow}$$
 
-Analysts tend to input point estimates into DCFs but because of the difficulty of estimating inputs like the future revenue growth rate, I've often been intrigued by the idea of using distributional inputs instead, e.g using a revenue growth rate of $30\% \pm 20\%$ rather than $30\%$.
+Analysts tend to input point estimates into DCFs but because of the difficulty of estimating inputs like the future revenue growth rate, I've often been intrigued by the idea of using distributional inputs instead, e.g. using a revenue growth rate of $30\% \pm 20\%$ rather than $30\%$.
 
 This is not an original thought: there are tools such as Oracle crystal ball that allow you to construct a valuation distribution using distributional inputs. Aswath Damodaran, NYU's "valuation guru", often includes such analysis in his valuations (a good walkthrough can be found on his [blog](https://aswathdamodaran.blogspot.com/2016/05/dcf-myth-32-if-you-don-look-its-not.html)). Yet my impression is that analysts struggle to derive actionable insights from the resulting value distribution.
 
-Sensitivity analysis -- re-running the DCF with different inputs -- *is* commonly used by equity analysts. But I think even in this case, emphasis is placed on the specific numbers (e.g "if revenue growth is 20% instead of 30% my price target is \\$12 rather than \\$20) rather than the *shape* of the DCF function.
+Sensitivity analysis -- re-running the DCF with different inputs -- *is* commonly used by equity analysts. But I think even in this case, emphasis is placed on the specific numbers (e.g. "if revenue growth is 20% instead of 30% my price target is \\$12 rather than \\$20) rather than the *shape* of the DCF function.
 
 ## An investment puzzle
 
@@ -79,7 +79,7 @@ Uncertainty in the growth rate leads to a higher expected DCF value because the 
 
 The high school definition of convexity: $f(x)$ is convex if its second derivative is positive, i.e. it curves upwards. An equivalent definition is that any straight line between two points is always above $f(x)$. 
 
-In a financial setting, $x$ is normally the price of some security (e.g a stock price), and $f(x)$ is the value of some derivative contract whose payoff depends on the price of the underlying. For example, the plot below shows the price of a call option as a function of the underlying stock price (holding other inputs constant). The payoff diagram "curves upwards", so the payoff is convex.
+In a financial setting, $x$ is normally the price of some security (e.g. a stock price), and $f(x)$ is the value of some derivative contract whose payoff depends on the price of the underlying. For example, the plot below shows the price of a call option as a function of the underlying stock price (holding other inputs constant). The payoff diagram "curves upwards", so the payoff is convex.
 
 <center>
 <img src="{{ site.imageurl }}dcf_convexity/option_price.png" style="width:60%;"/>
@@ -158,6 +158,6 @@ To summarise, we need to make the subtle distinction between an uncertain cash f
 
 The main lesson of this post is that you should pay attention to convexity because it turns uncertainty into increased expected value. When you own a convex payoff, you want uncertainty in the input parameter!
 
-For equity analysts reading this, a more tangible takeaway is as follows: if you can see a credible blue-sky scenario for a company (e.g a scenario that leads to a much higher growth rate or lower cost of capital), because of the convexity of DCFs, that blue-sky scenario might be so accretive to the intrinsic value of an asset that the bear case is irrelevant.
+For equity analysts reading this, a more tangible takeaway is as follows: if you can see a credible blue-sky scenario for a company (e.g. a scenario that leads to a much higher growth rate or lower cost of capital), because of the convexity of DCFs, that blue-sky scenario might be so accretive to the intrinsic value of an asset that the bear case is irrelevant.
 
 More generally, this post is a teaser for the type of insight that can be gleaned when we start considering distributional inputs to DCFs. I'm fascinated by the idea of using old tools in new ways and hope to explore other aspects of "probabilistic valuation" in future posts. 

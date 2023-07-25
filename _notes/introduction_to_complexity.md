@@ -38,12 +38,12 @@ $$n_{t+1} = (r_b - r_d)(n_t - \frac{n_t^2}{n_{max}})$$
   - For some values, there is a **fixed point attractor** to which the system asymptotes.
   - For some values, there is a **periodic attractor** and the system oscillates between two different states. As you increase *R*, you will reach a point where the period doubles to 4. 
   - For a sufficiently high *R*, the system is chaotic -- there is no apparent periodicity.
-- All **unimodal** (single humped) parabola-like maps display this period-doubling route to chaos, e.g $x_{t+1} = \lambda \sin(\pi x_t)$. Furthermore, the limiting rate at which bifurcations shrink is a universal constant (Feigenbaum's constant).
+- All **unimodal** (single humped) parabola-like maps display this period-doubling route to chaos, e.g. $x_{t+1} = \lambda \sin(\pi x_t)$. Furthermore, the limiting rate at which bifurcations shrink is a universal constant (Feigenbaum's constant).
 
 ### Fractals
 
 - Fractals are objects that are self-similar at different scales.
-- Dimension can be defined as the number *D* for which each level is made up of $M^D$ $1/M^D$-sized copies of the previous level, e.g a cube is made out of 8x cubes of side length 1/2 the original. The dimension encodes the number of copies you get when you reduce the side length by a factor of $M$. (Technically, this is the **Haussdorf dimension**)
+- Dimension can be defined as the number *D* for which each level is made up of $M^D$ $1/M^D$-sized copies of the previous level, e.g. a cube is made out of 8x cubes of side length 1/2 the original. The dimension encodes the number of copies you get when you reduce the side length by a factor of $M$. (Technically, this is the **Haussdorf dimension**)
 
 $$D = \frac{\log N}{\log M}$$
 
@@ -85,7 +85,7 @@ $$\log(\text{num boxes}) = D \log (1 / \text{box side length})$$
 
 - Self-organisation is the production of organised patterns resulting from decentralised interactions. These are common in biology.
 - **Flocking** can be explained by the **boids** algorithm, which uses simple rules: collision avoidance, velocity matching, and flock centering.
-- **Synchronisation**, e.g fireflies flashing, cells firing together, is an important adaptive trait. 
+- **Synchronisation**, e.g. fireflies flashing, cells firing together, is an important adaptive trait. 
 - Army ants performing complex tasks (see summary [here]({{ site.url }}/notes/papers/army_ants_collective_intelligence))
 
 ### Cooperation in social systems
@@ -101,12 +101,12 @@ $$\log(\text{num boxes}) = D \log (1 / \text{box side length})$$
 
 ### Networks
 
-- We might guess that real-world networks are either highly regular, with high average distance between nodes and high average clustering, or random, with low average distance between nodes and low clustering. However, many different networks e.g power networks, social graphs, biological neural networks, do not show this (Watts and Strogratz).
+- We might guess that real-world networks are either highly regular, with high average distance between nodes and high average clustering, or random, with low average distance between nodes and low clustering. However, many different networks e.g. power networks, social graphs, biological neural networks, do not show this (Watts and Strogratz).
 - Common properties of real-world networks:
   - Small world property ("six degrees of separation") -- short paths between most pairs of vertices.
   - Clustering and community structure
   - Long-tailed degree distribution. Sometimes, *scale-free* (power law), i.e subgraphs have the same degree distribution as the whole graph.
-  - Robustness to random node failure, unless one node causes others to fail, resulting in cascading failure (e.g power networks, banks).
+  - Robustness to random node failure, unless one node causes others to fail, resulting in cascading failure (e.g. power networks, banks).
   - Vulnerability to targeted hub attack
 - One measure of clustering (with respect to a particular node) is the fraction of pairs of neighbours that are connected to one another
 - The distribution of node degrees is not random, there tend to be **hubs**.
@@ -116,11 +116,11 @@ $$\log(\text{num boxes}) = D \log (1 / \text{box side length})$$
 ### Scaling
 
 - Scaling is the study of how system properties change with the size of the system.
-- In general, many attributes (e.g area-volume) have power-law scaling.
+- In general, many attributes (e.g. area-volume) have power-law scaling.
 - An important problem in biology is understanding **metabolic scaling**, i.e how the power output of an organism varies with size.
 - A natural hypothesis is that metabolic rate is proportional to body mass, but this is incorrect because heat dissipation is proportional to surface area (grows more slowly than volume) so large organisms would be very hot.
 - The *surface hypothesis* is that metabolic rate is proportional to the 2/3 power of mass (so that surface dissipation is constant).
 - However, Kleiber's law is an empirical finding that shows that metabolism varies as the 3/4 power of mass, suggesting that evolution has caused some efficiency gains.
-- It turns out that many biological processes have 1/4 power scaling, e.g heart rate inverse to body mass,  blood circulation time vs body mass, life span vs body mass, growth rate inverse to body mass, tree height vs tree mass.
-- West, Brown, and Enquist hypothesised that biological rates are limited by the rates at which energy can be distributed at interfaces, not by the surface area, so we need to consider the space-filling properties of e.g branching bronchi or capillaries.
+- It turns out that many biological processes have 1/4 power scaling, e.g. heart rate inverse to body mass,  blood circulation time vs body mass, life span vs body mass, growth rate inverse to body mass, tree height vs tree mass.
+- West, Brown, and Enquist hypothesised that biological rates are limited by the rates at which energy can be distributed at interfaces, not by the surface area, so we need to consider the space-filling properties of e.g. branching bronchi or capillaries.
 - Their interpretation is that the surface hypothesis is true if we are referring to 4D volume, because the interfaces are not 2D but rather $2<D<3$.

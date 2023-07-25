@@ -26,7 +26,7 @@ With all this in mind, the overall implementation strategy was as follows:
 
 For the raw data, I decided to use the [CryptoCompare API](https://min-api.cryptocompare.com/documentation) which has a load of free data compiled across multiple exchanges. To get started, you'll need to register to get a free API key.
 
-As mentioned previously, we will only look at data from Binance. I chose Binance not because it has a large selection of altcoins, but because most altcoins can trade directly with multiple pairs (e.g BTC, ETH, USDT, BNB). Some exchanges have many altcoins but you can only buy them with BTC – this is not well suited for arbitrage.
+As mentioned previously, we will only look at data from Binance. I chose Binance not because it has a large selection of altcoins, but because most altcoins can trade directly with multiple pairs (e.g. BTC, ETH, USDT, BNB). Some exchanges have many altcoins but you can only buy them with BTC – this is not well suited for arbitrage.
 
 Firstly, we need to find out which pairs Binance offers. This is done with a simple call (`AUTH` is your API key string):
 

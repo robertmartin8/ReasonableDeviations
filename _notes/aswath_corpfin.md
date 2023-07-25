@@ -19,7 +19,7 @@ Corporate finance is about maximising the value of a firm. There are three broad
 - The **Investment Decision**: return on assets should be greater than a minimum acceptable hurdle rate
   - the hurdle rate should reflect the riskiness of the investment and the debt/equity mix (i.e how it is funded)
   - the return is a function of the magnitude and timing of cash flows. 
-- The **Financing Decision**: choose a debt/equity mix that maximises firm value, e.g by choosing debt that matches the tenor of your assets. 
+- The **Financing Decision**: choose a debt/equity mix that maximises firm value, e.g. by choosing debt that matches the tenor of your assets. 
 - The **Dividend Decision**: if you can't find investments that meet the hurdle rate, you should return cash via dividends or buybacks.
 
 In practice, because the "value of a firm" is unobservable, stock price is used as a proxy. However, using stock price maximisation as the sole objective of corporate finance requires a number of assumptions:
@@ -28,11 +28,11 @@ In practice, because the "value of a firm" is unobservable, stock price is used 
   - in reality, shareholders may not use their proxy rights 
   - managers can build in poison pills, golden parachutes, or overpay on takeovers. All at the cost of shareholders.
   - post-war Germany and Japan managed this by having a cross-holding system, where other managers remove bad managers.
-- Managers don't abuse their lenders -- otherwise they would try to give to equity holders at the lenders' cost (e.g the LBO of RJR Nabisco)
+- Managers don't abuse their lenders -- otherwise they would try to give to equity holders at the lenders' cost (e.g. the LBO of RJR Nabisco)
 - Markets are efficient and management does not misinform the public - so that stock price is a proxy for value
   - many traders trade on short term prospects
   - many companies delay/spin bad news as possible.
-- There are no social costs -- this is a completely untrue assumption, e.g Amazon's workers.
+- There are no social costs -- this is a completely untrue assumption, e.g. Amazon's workers.
 
 ## Hurdle rates
 

@@ -57,7 +57,7 @@ Relevant links:
 
 Towards the end of my undergrad degree, I became very interested in the Julia programming language. With python-like syntax, ridiculous performance, and some really cool metaprogramming, it seems like a great language to use for finance. 
 
-To that end, I built a simple market-making bot in Julia. The goal was to make something extensible, such that we could swap in/out different parts of the bot (e.g midprice estimates and volatility estimates).
+To that end, I built a simple market-making bot in Julia. The goal was to make something extensible, such that we could swap in/out different parts of the bot (e.g. midprice estimates and volatility estimates).
 
 The bot was nowhere close to being profitable, but it was a wonderful dev experience -- Julia will now be my go-to for any performance-critical applications.
 

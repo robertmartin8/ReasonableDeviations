@@ -318,8 +318,8 @@ $$x_t^2 = a_0 + a_1 x_{t-1}^2 + \ldots + a_p x_{t-p}^2$$
 - Futures for a given asset tend to have standard terms.
 - In practice, a position is closed by taking an opposite position in the same contract, at which point the exchange settles the cash for you.
 - The difference between the spot price and future price is known as the **basis**.
-    - a positive basis is a **backwardation** (e.g if there are storage costs)
+    - a positive basis is a **backwardation** (e.g. if there are storage costs)
     - a negative basis is a **contango** situation.
 - Closer to expiry, the basis tends towards zero (i.e spot prices and future prices converge)
-- Similar to pairs trading on equity, it is possible to trade the spread between futures, which is interesting because there are many assets with obvious links e.g soy beans and soy oil.
-- Alternatively, we could trade the spread between a future and an equity or another derivative, e.g between interest rate futures and REITs.
+- Similar to pairs trading on equity, it is possible to trade the spread between futures, which is interesting because there are many assets with obvious links e.g. soy beans and soy oil.
+- Alternatively, we could trade the spread between a future and an equity or another derivative, e.g. between interest rate futures and REITs.

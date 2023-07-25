@@ -27,7 +27,7 @@ We shall revisit this expression later on. For now, the key point is that there 
 
 ## A first approximation: option butterflies
 
-As we established previously, the probability that the underlying stock will close at a particular price next month is somehow baked into the prices of options expiring next month. Intuitively, the price of  calls should be positively related to the probability of an upside move -- people would only want to buy an out-of-the-money (OTM) call, e.g a call with strike \\$120 when the underlying is trading at \\$100, if there is some chance that their option will be in-the-money at expiration. 
+As we established previously, the probability that the underlying stock will close at a particular price next month is somehow baked into the prices of options expiring next month. Intuitively, the price of  calls should be positively related to the probability of an upside move -- people would only want to buy an out-of-the-money (OTM) call, e.g. a call with strike \\$120 when the underlying is trading at \\$100, if there is some chance that their option will be in-the-money at expiration. 
 
 However, we cannot simply say that the probability of a certain price move is proportional to the price of call options with that strike because the price of a call embeds the expected profit from all expiry prices above the strike. In other words, the fair price of the *K*-strike option is related to the entire portion of the probability distribution above *K*, as the integral above demonstrates.
 

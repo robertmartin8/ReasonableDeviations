@@ -37,7 +37,7 @@ where $S_{t-1}$ is the log difference between the values at $t-1$ and $t$
 > 
 > - Poorly written, with misleading grammatical errors.
 > - The bulk of the paper is standard SVM theory which could be copied from a textbook
-> - Very vague experiment design, though this seems to be the industry standard for machine learning finance papers. e.g what parameters were used for the model comparisons?
+> - Very vague experiment design, though this seems to be the industry standard for machine learning finance papers. e.g. what parameters were used for the model comparisons?
 > - Small dataset
 > - No self-criticism/limitations
 > - No comments on actually using such a strategy to trade
