@@ -75,7 +75,7 @@ When I'm ready to start a new book, I look at the reading list and consider some
 
 - Has the book been strongly recommended by credible people?
 - Is the book being referenced by other books I've enjoyed? This was why I reluctantly read Taleb's books. 
-- I keep a rough mental list of topics I'm interested in (e.g finance, decision making, science fiction). Any classics in these areas are always fair game. 
+- I keep a rough mental list of topics I'm interested in (e.g. finance, decision making, science fiction). Any classics in these areas are always fair game. 
 - If I've read a couple of books on the same topic in a row, I'll try to rotate to something else.
 - It's important to sprinkle in some "rogue" books, completely unrelated to my interests. For example, I recently picked up a book on Danish interior design called *The Book of Hygge* (my review [here](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=a904e1e1348843e3be343ac2a1a8bc4a)).
 
@@ -96,7 +96,7 @@ My guiding philosophy when making highlights is the “funnel”. I highlight ve
 - Interesting new concepts
 - Good explanations for concepts that I was already familiar with
 - Anything that feels like a good summary of a key idea
-- Phrases I like (e.g particularly well-constructed sentences)
+- Phrases I like (e.g. particularly well-constructed sentences)
 - Things that make me laugh
 - Things I don’t understand
 
@@ -157,7 +157,7 @@ These little things gamify the process, providing a little dopamine hit.  Rememb
 
 At this point, I have a book review and categorised highlights (see my [book reviews site](https://robertreads.notion.site/) for examples). To maximise the value I get from the book as per my reading triplet, I then try to integrate the book with my second brain.
 
-A second brain is a network of concepts and ideas that are relevant to your life and interests. I run my second brain in [Obsidian](https://obsidian.md/). To fully describe my system would require a separate blog post (to come!), but it is loosely based on the Zettelkasten method, best described in Sonke Ahrens' book *How to Take Smart Notes* (my review [here](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=73d4990369204dabb865543214980788)).
+A second brain is a network of concepts and ideas that are relevant to your life and interests. I run my second brain in [Obsidian](https://obsidian.md/). To fully describe my system would require a [separate blog post]({% post_url 2022-04-18-molecular-notes-part-1 %}), but it is loosely based on the Zettelkasten method, best described in Sonke Ahrens' book *How to Take Smart Notes* (my review [here](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=73d4990369204dabb865543214980788)).
 
 Concretely, my process for integrating the book with my second brain is as follows:
 
@@ -209,7 +209,7 @@ There are several reasons to read fiction.
 
 Firstly, for "culture". A cynical take is that the only purpose of reading the classics is to tell people you’ve read them. This probably used to be a source of motivation for me when I was younger, but I've matured a bit: it's important to read classic/popular books so that you can understand references, and so that you can enrich conversations by pointing out a parallel to a well-known tale. 
 
-Secondly, fiction books often do a good job of illustrating philosophical concepts. Rather than reading a political philosophy textbook to learn the definition of an authoritarian state, you could instead read a dystopian classic. *1984*, *Brave New World*, and *Fahrenheit 451* give three completely different perspectives on an authoritarian state; having read all three allows you to make intelligent commentary on what characteristics the real world shares with each of them, and perhaps even gain insight into where we may be headed. I have learnt more about Japanese history from reading fiction (e.g the work of [Yukio Mishima](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=72aa32e8aa054352a145b732e7cf5b97)), more about Russian history from reading Dostoevsky, than I would have learnt from non-fiction history books. My perspectives on AI, technology, and the long term future of humanity have been influenced by science fiction. 
+Secondly, fiction books often do a good job of illustrating philosophical concepts. Rather than reading a political philosophy textbook to learn the definition of an authoritarian state, you could instead read a dystopian classic. *1984*, *Brave New World*, and *Fahrenheit 451* give three completely different perspectives on an authoritarian state; having read all three allows you to make intelligent commentary on what characteristics the real world shares with each of them, and perhaps even gain insight into where we may be headed. I have learnt more about Japanese history from reading fiction (e.g. the work of [Yukio Mishima](https://robertreads.notion.site/robertreads/d1aa189b12e547799c3a5954b289cb5d?v=c344d511453b46eebace4671761ae631&p=72aa32e8aa054352a145b732e7cf5b97)), more about Russian history from reading Dostoevsky, than I would have learnt from non-fiction history books. My perspectives on AI, technology, and the long term future of humanity have been influenced by science fiction. 
 
 The last reason, of course, is for the entertainment value. This is purely subjective, but I think reading fiction books provides a different kind of entertainment to watching TV. It requires more effort but can provide deeper appreciation. In any case, it's not a binary decision: one should read fiction books and watch TV!
 
